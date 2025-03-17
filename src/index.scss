@@ -1,0 +1,137 @@
+body {
+  background-color: black;
+  color: rgb(127, 208, 245);
+  font-family: "Inter", sans-serif !important;
+}
+
+.custom-tooltip {
+  max-width: 120px;
+  --bs-tooltip-bg: #fff78a;
+  --bs-tooltip-color: black;
+  --bs-tooltip-border-radius: 20px;
+}
+
+.image-border {
+  border: 2px solid #079ab8;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  overflow: hidden;
+  .card {
+    // added !important to avoid a bootstrap conflict with how the border was surrounding the card image. Without forcing the styling there was a space that I couldn't get rid of.
+    display: block !important;
+    width: fit-content !important;
+    min-width: unset !important;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
+
+.navbar-width {
+  max-width: 820px;
+  width: 100%;
+}
+
+.carousel-item {
+  border-top: 2px solid #ffffff42;
+  border-bottom: 2px solid #ffffff42;
+}
+
+.carousel-images {
+  display: block;
+  width: 45vw;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.carousel-icons {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.api-inputs {
+  background-color: #00000042;
+  border: solid 1px #ffffff69;
+  font-size: 0.8rem;
+}
+
+.black-forest-font {
+  font-family: "Playfair", serif;
+  font-size: 40px;
+  color: #fff78a;
+}
+
+@font-face {
+  font-family: "Playfair";
+  src: url("/assets/fonts/PlayfairDisplay-Regular.otf") format("opentype");
+}
+
+html {
+  overflow-y: scroll;
+}
+
+legend {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: white;
+  padding-bottom: 4px;
+}
+
+.api-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.video-small {
+  height: 250px;
+  width: 600px;
+  max-height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 1000px;
+}
+
+.try-here {
+  color: rgba(226, 72, 72, 0.925);
+  font-size: 1rem;
+}
+
+.try-buttons {
+  color: rgba(255, 255, 255, 0.925) !important;
+  border: 2px solid #079ab8;
+  font-family: "Inter", sans-serif !important;
+  border-radius: 25px;
+  transition: background-color 0.2s ease-in-out;
+  width: 120px;
+  text-align: center;
+  padding: 2px;
+  margin-left: 5px;
+  min-width: 60px;
+  max-width: 80px;
+}
+
+/* * {
+  border: solid 1px yellow;
+}
+ */

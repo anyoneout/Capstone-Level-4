@@ -1,0 +1,50 @@
+.modal-content {
+  background-color: #222222 !important;
+  color: white;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+  border-top: none;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-dialog {
+  width: 300px;
+}
+
+.modal-backdrop.show {
+  opacity: 0.7;
+}
+
+.modal-sign-in-btn,
+.modal-btn-secondary,
+.modal-close-button,
+.modal-btn-warning {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+
+.modal-sign-in-btn {
+  background-color: rgb(47, 178, 204);
+  border: none;
+}
+
+.modal-sign-in-btn:hover {
+  background-color: rgb(47, 178, 204, 0.8);
+}
