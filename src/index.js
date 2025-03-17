@@ -8,15 +8,14 @@ import { OaPage } from "./Views/OaPage";
 import Examples from "./Views/Examples";
 import { HandleRefresh } from "./Views/components/HandleRefresh";
 import { CollapsibleNavbar } from "./Views/components/CollapsibleNavbar";
-import SignInArea from "./Views/components/SignInArea"
+import SignInArea from "./Views/components/SignInArea";
 import "./index.scss";
-
 
 const bodyTag = document.getElementById("bodyTag");
 const root = createRoot(bodyTag);
 const domain = window.location.hostname;
 let rootPath = "";
-if (domain === "anyoneout.github.io") rootPath = "/React-Capstone-with-branches";
+if (domain === "anyoneout.github.io") rootPath = "/Capstone-Level-4";
 root.render(
   <BrowserRouter>
     <CollapsibleNavbar />
@@ -32,4 +31,4 @@ root.render(
       </Routes>
     </HandleRefresh>
   </BrowserRouter>
-);   
+);
