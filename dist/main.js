@@ -31374,7 +31374,7 @@ __webpack_require__.r(__webpack_exports__);
 function CollapsibleNavbar() {
   var domain = window.location.hostname;
   var rootPath = "";
-  if (domain === "anyoneout.github.io") rootPath = "/React-Capstone-with-branches";
+  if (domain === "anyoneout.github.io") rootPath = "/Capstone-Level-4";
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
     className: "navbar navbar-expand-lg mb-3 mt-4 py-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
