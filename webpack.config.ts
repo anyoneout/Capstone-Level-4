@@ -1,4 +1,5 @@
 import Dotenv from "dotenv-webpack";
+import { Configuration } from "webpack";
 
 export default {
   module: {
@@ -18,15 +19,18 @@ export default {
       },
     ],
   },
-  watch: true,
   mode: "development",
   devtool: "source-map",
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
+  },
+  devServer: {
+    historyApiFallback: true,
+    open: true,
   },
   plugins: [
     new Dotenv({
       systemvars: true,
     }),
   ],
-};
+} as Configuration;
