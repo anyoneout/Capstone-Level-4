@@ -1,23 +1,25 @@
 import React, { useEffect, useState } from "react";
 
-export function bfSaveUser() {
+export function bfSaveUser(): void {
   const { name, email, hfToken } = getInputValues();
   saveToLocalStorage(name, email, hfToken);
 }
 
-function getInputValues() {
-  const inputName = document.getElementById("nameInput");
-  const inputEmail = document.getElementById("emailInput");
-  const hfUserToken = document.getElementById("hfTokenInput");
+function getInputValues(): { name: string; email: string; hfToken: string } {
+  const inputName = document.getElementById("nameInput") as HTMLInputElement;
+  const inputEmail = document.getElementById("emailInput") as HTMLInputElement;
+  const hfUserToken = document.getElementById(
+    "hfTokenInput"
+  ) as HTMLInputElement;
 
   return {
     name: inputName.value,
     email: inputEmail.value,
-    hfToken: hfUserToken.value
+    hfToken: hfUserToken.value,
   };
 }
 
-function saveToLocalStorage(name, email, hfToken) {
+function saveToLocalStorage(name: string, email: string, hfToken: string) {
   localStorage.setItem("userName", name);
   localStorage.setItem("userEmail", email);
   localStorage.setItem("hfToken", hfToken);
@@ -41,23 +43,21 @@ export function UserInfo() {
         style={{
           fontSize: "11px",
           minHeight: "20px",
-          color: "#fff78a"
-        }}>
-        <div
-          id="userNameHTML">{userName}
-        </div>
+          color: "#fff78a",
+        }}
+      >
+        <div id="userNameHTML">{userName}</div>
       </div>
       <div
         className="row mb-5 text-end"
         style={{
           fontSize: "11px",
           minHeight: "20px",
-          color: "#fff78a"
-        }}>
-        <div
-          id="userEmailHTML">{userEmail}
-        </div>
-      </div >
+          color: "#fff78a",
+        }}
+      >
+        <div id="userEmailHTML">{userEmail}</div>
+      </div>
     </>
   );
 }

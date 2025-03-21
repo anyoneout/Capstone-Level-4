@@ -1,10 +1,8 @@
+import React from "react";
 import { authenticationAws } from "../modules/authenticationAws";
-
-
 
 //handles user attempted sign-in
 export async function handleSignInAttempt(event = new Event(), onSignIn) {
-
   //prevents refresh
   event.preventDefault();
 
@@ -21,7 +19,7 @@ export async function handleSignInAttempt(event = new Event(), onSignIn) {
   //fetch request to authenticate user sign in with DynamoDB
   const isAuthenticated = await authenticationAws(email, password);
 
-  //if user is authenticated, clear fields and call OnSignIn otherwise return false 
+  //if user is authenticated, clear fields and call OnSignIn otherwise return false
   if (isAuthenticated) {
     console.log("is authenticated");
     form.reset();

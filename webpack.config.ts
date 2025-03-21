@@ -22,7 +22,7 @@ export default {
   mode: "development",
   devtool: "source-map",
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx"],
+    extensions: [".js", ".jsx", ".ts", ".tsx", ".mp4", ".png"],
   },
   devServer: {
     historyApiFallback: true,

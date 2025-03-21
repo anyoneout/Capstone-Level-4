@@ -4,7 +4,6 @@ import { CarouselBlackForest } from "./components/CarouselBlackForest";
 import { CarouselDalleIcon, CarouselFluxIcon } from "../modules/icons";
 
 export default function Examples() {
-
   const [didMount, setDidMount] = useState(false);
 
   useEffect(componentDidMount, []);
@@ -16,19 +15,27 @@ export default function Examples() {
   return (
     <div className="container navbar-width carousel-container mt-5">
       <div className="row mt-5">
-        <div className="col-1 carousel-icons"><CarouselDalleIcon /></div>
-        <div className="col-11"><CarouselOpenAi /></div>
+        <div className="col-1 carousel-icons">
+          <CarouselDalleIcon />
+        </div>
+        <div className="col-11">
+          <CarouselOpenAi />
+        </div>
       </div>
       <div className="row mt-2">
-        <div className="col-1 carousel-icons"><CarouselFluxIcon /></div>
-        <div className="col-11"><CarouselBlackForest /></div>
+        <div className="col-1 carousel-icons">
+          <CarouselFluxIcon />
+        </div>
+        <div className="col-11">
+          <CarouselBlackForest />
+        </div>
       </div>
-    </div >
-  )
+    </div>
+  );
   function componentDidMount() {
     setDidMount(true);
     console.log("The Examples page component has mounted");
-    document.title = "Recipe Deconstructor - Examples";;
+    document.title = "Recipe Deconstructor - Examples";
   }
 
   function componentDidUpdate() {
@@ -37,9 +44,8 @@ export default function Examples() {
 
   function componentDidUnmount() {
     function delayedUnmount() {
-      console.log("component has unmounted")
+      console.log("component has unmounted");
     }
     return delayedUnmount;
   }
 }
-

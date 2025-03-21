@@ -4,15 +4,17 @@ export function oaSaveUser() {
   updateUI();
 }
 
-function getInputValues() {
-  const inputName = document.getElementById("nameInput");
-  const inputEmail = document.getElementById("emailInput");
-  const oaiUserToken = document.getElementById("openAiTokenInput");
+function getInputValues(): { name: string; email: string; oaiToken: string } {
+  const inputName = document.getElementById("nameInput") as HTMLInputElement;
+  const inputEmail = document.getElementById("emailInput") as HTMLInputElement;
+  const oaiUserToken = document.getElementById(
+    "openAiTokenInput"
+  ) as HTMLInputElement;
 
   return {
     name: inputName.value,
     email: inputEmail.value,
-    oaiToken: oaiUserToken.value
+    oaiToken: oaiUserToken.value,
   };
 }
 

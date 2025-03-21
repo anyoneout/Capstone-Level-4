@@ -5,13 +5,15 @@ export default function SignInContent() {
   return (
     <fieldset className="signInContentFieldset">
       <div className="input-container">
-        <input className="input-style"
+        <input
+          className="input-style"
           type="email"
           name="email"
           placeholder="Email"
           required
         />
-        <input className="input-style"
+        <input
+          className="input-style"
           name="password"
           type="password"
           placeholder="Password"
@@ -19,5 +21,5 @@ export default function SignInContent() {
         />
       </div>
     </fieldset>
-  )
+  );
 }

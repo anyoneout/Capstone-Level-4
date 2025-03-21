@@ -12,7 +12,6 @@ export default function SignInArea() {
   const [buttonClass, setButtonClass] = useState("sign-in-btn"); // Controls button style
   const [showModal, setShowModal] = useState(null); // Tracks which modal is displayed
 
-
   useEffect(componentDidMount, []); // Runs once when component mounts
   useEffect(componentDidUpdate, [isSignedIn]); // Runs when isSignedIn state changes
 
@@ -29,15 +28,21 @@ export default function SignInArea() {
       </li>
 
       {/* Conditionally Render Sign-In Modal */}
-      {showModal === "signIn" && <SignInModal
-        className="modal-width"
-        onSignIn={handleSubmitCloseSignIn}
-        closeButton={handleCloseSignIn} />}
+      {showModal === "signIn" && (
+        <SignInModal
+          className="modal-width"
+          onSignIn={handleSubmitCloseSignIn}
+          closeButton={handleCloseSignIn}
+        />
+      )}
 
       {/* Conditionally Render Sign-Out Modal */}
-      {showModal === "signOut" && <SignOutModal
-        onSignOut={handleSubmitCloseSignOut}
-        closeButton={handleCloseSignOut} />}
+      {showModal === "signOut" && (
+        <SignOutModal
+          onSignOut={handleSubmitCloseSignOut}
+          closeButton={handleCloseSignOut}
+        />
+      )}
     </>
   );
 
@@ -63,7 +68,6 @@ export default function SignInArea() {
     }
   }
 
-
   // Handles the sign-in button click.
   // Opens the Sign-In Modal and adds a backdrop.
 
@@ -75,7 +79,6 @@ export default function SignInArea() {
     document.body.appendChild(backdrop);
   }
 
-
   // Closes the Sign-In Modal and removes the backdrop.
 
   function handleCloseSignIn() {
@@ -83,7 +86,6 @@ export default function SignInArea() {
     setShowModal(null);
     removeBackdrop();
   }
-
 
   // Handles sign-in submission
   //  Marks the user as signed in and closes the modal
@@ -94,7 +96,6 @@ export default function SignInArea() {
     setShowModal(null);
     removeBackdrop();
   }
-
 
   // Handles the sign-out button click
   // Opens the Sign-Out Modal and adds a backdrop
@@ -107,7 +108,6 @@ export default function SignInArea() {
     document.body.appendChild(backdrop);
   }
 
-
   // Closes the Sign-Out Modal and removes the backdrop
 
   function handleCloseSignOut() {
@@ -115,7 +115,6 @@ export default function SignInArea() {
     setShowModal(null);
     removeBackdrop();
   }
-
 
   // Handles sign-out
   // Marks the user as signed out and closes the modal.
@@ -126,7 +125,6 @@ export default function SignInArea() {
     setShowModal(null);
     removeBackdrop();
   }
-
 
   // Removes the modal backdrop after a delay.
 
