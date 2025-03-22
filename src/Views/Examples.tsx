@@ -4,7 +4,7 @@ import { CarouselBlackForest } from "./components/CarouselBlackForest";
 import { CarouselDalleIcon, CarouselFluxIcon } from "../modules/icons";
 
 export default function Examples() {
-  const [didMount, setDidMount] = useState(false);
+  const [didMount, setDidMount] = useState<boolean>(false);
 
   useEffect(componentDidMount, []);
   useEffect(componentDidUpdate, [didMount]);
@@ -32,18 +32,18 @@ export default function Examples() {
       </div>
     </div>
   );
-  function componentDidMount() {
+  function componentDidMount(): void {
     setDidMount(true);
     console.log("The Examples page component has mounted");
     document.title = "Recipe Deconstructor - Examples";
   }
 
-  function componentDidUpdate() {
+  function componentDidUpdate(): void {
     if (didMount) console.log("component has updated");
   }
 
-  function componentDidUnmount() {
-    function delayedUnmount() {
+  function componentDidUnmount(): () => void {
+    function delayedUnmount(): void {
       console.log("component has unmounted");
     }
     return delayedUnmount;

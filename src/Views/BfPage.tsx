@@ -5,7 +5,7 @@ import { recipeArray } from "../modules/recipeArray";
 import { UserInfo } from "../modules/bfSaveUser";
 
 export function BfPage() {
-  const [didMount, setDidMount] = useState(false);
+  const [didMount, setDidMount] = useState<boolean>(false);
 
   useEffect(componentDidMount, []);
   useEffect(componentDidUpdate, [didMount]);
@@ -143,20 +143,20 @@ export function BfPage() {
     </div>
   );
 
-  function componentDidMount() {
+  function componentDidMount(): void {
     setDidMount(true);
     console.log("The Black Forest page component has mounted");
     document.title = "Recipe Deconstructor - Black Forest Flux";
   }
 
-  function componentDidUpdate() {
+  function componentDidUpdate(): void {
     if (didMount) {
       console.log("component has updated");
     }
   }
 
-  function componentDidUnmount() {
-    return function delayedUnmount() {
+  function componentDidUnmount(): () => void {
+    return function delayedUnmount(): void {
       console.log("component has unmounted");
     };
   }

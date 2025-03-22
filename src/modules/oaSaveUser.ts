@@ -5,11 +5,9 @@ export function oaSaveUser() {
 }
 
 function getInputValues(): { name: string; email: string; oaiToken: string } {
-  const inputName = document.getElementById("nameInput") as HTMLInputElement;
-  const inputEmail = document.getElementById("emailInput") as HTMLInputElement;
-  const oaiUserToken = document.getElementById(
-    "openAiTokenInput"
-  ) as HTMLInputElement;
+  const inputName = document.getElementById("nameInput") as any;
+  const inputEmail = document.getElementById("emailInput") as any;
+  const oaiUserToken = document.getElementById("openAiTokenInput") as any;
 
   return {
     name: inputName.value,
@@ -18,13 +16,17 @@ function getInputValues(): { name: string; email: string; oaiToken: string } {
   };
 }
 
-function saveToLocalStorage(name, email, oaiToken) {
+function saveToLocalStorage(
+  name: string,
+  email: string,
+  oaiToken: string
+): void {
   localStorage.setItem("userName", name);
   localStorage.setItem("userEmail", email);
   localStorage.setItem("oaiToken", oaiToken);
 }
 
-function updateUI() {
+function updateUI(): void {
   const userNameHandle = document.getElementById("userNameHTML");
   const userEmailHandle = document.getElementById("userEmailHTML");
   const userName = localStorage.getItem("userName");

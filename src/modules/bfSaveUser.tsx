@@ -6,11 +6,9 @@ export function bfSaveUser(): void {
 }
 
 function getInputValues(): { name: string; email: string; hfToken: string } {
-  const inputName = document.getElementById("nameInput") as HTMLInputElement;
-  const inputEmail = document.getElementById("emailInput") as HTMLInputElement;
-  const hfUserToken = document.getElementById(
-    "hfTokenInput"
-  ) as HTMLInputElement;
+  const inputName = document.getElementById("nameInput") as any;
+  const inputEmail = document.getElementById("emailInput") as any;
+  const hfUserToken = document.getElementById("hfTokenInput") as any;
 
   return {
     name: inputName.value,
@@ -19,15 +17,19 @@ function getInputValues(): { name: string; email: string; hfToken: string } {
   };
 }
 
-function saveToLocalStorage(name: string, email: string, hfToken: string) {
+function saveToLocalStorage(
+  name: string,
+  email: string,
+  hfToken: string
+): void {
   localStorage.setItem("userName", name);
   localStorage.setItem("userEmail", email);
   localStorage.setItem("hfToken", hfToken);
 }
 
 export function UserInfo() {
-  const [userName, setUserName] = useState("");
-  const [userEmail, setUserEmail] = useState("");
+  const [userName, setUserName] = useState<string>("");
+  const [userEmail, setUserEmail] = useState<string>("");
 
   useEffect(() => {
     const userName = localStorage.getItem("userName");

@@ -6,11 +6,11 @@ import "./SignInArea.scss";
 
 export default function SignInArea() {
   // State variables to manage user sign-in status and UI updates
-  const [isSignedIn, setIsSignedIn] = useState(false); // Tracks if user is signed in
-  const [didMount, setDidMount] = useState(false); // Tracks if component has mounted
-  const [buttonText, setButtonText] = useState("Sign In"); // Controls button text
-  const [buttonClass, setButtonClass] = useState("sign-in-btn"); // Controls button style
-  const [showModal, setShowModal] = useState(null); // Tracks which modal is displayed
+  const [isSignedIn, setIsSignedIn] = useState<boolean>(false); // Tracks if user is signed in
+  const [didMount, setDidMount] = useState<boolean>(false); // Tracks if component has mounted
+  const [buttonText, setButtonText] = useState<string>("Sign In"); // Controls button text
+  const [buttonClass, setButtonClass] = useState<string>("sign-in-btn"); // Controls button style
+  const [showModal, setShowModal] = useState<string | null>(null); // Tracks which modal is displayed
 
   useEffect(componentDidMount, []); // Runs once when component mounts
   useEffect(componentDidUpdate, [isSignedIn]); // Runs when isSignedIn state changes

@@ -48,7 +48,8 @@ export default function SignInModal(props) {
       </div>
     </form>
   );
-  async function handleSubmit(event) {
+
+  async function handleSubmit(event: any) {
     event.preventDefault();
     const isAuthenticated = await handleSignInAttempt(event, onSignIn);
 

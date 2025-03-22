@@ -4,14 +4,14 @@ import { useNavigate } from "react-router-dom";
 export function HandleRefresh(props) {
   const children = props.children;
   const navigateTo = useNavigate();
-  const [didMount, setDidMount] = useState(false);
+  const [didMount, setDidMount] = useState<boolean>(false);
 
   useEffect(componentDidMount, []);
 
   if (didMount) return <>{children}</>;
   else return <></>;
 
-  function componentDidMount() {
+  function componentDidMount(): void {
     const redirectPath = localStorage.getItem("redirect");
 
     if (redirectPath) {

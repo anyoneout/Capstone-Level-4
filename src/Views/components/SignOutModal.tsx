@@ -39,7 +39,7 @@ export default function SignOutModal(props) {
       </div>
     </form>
   );
-  function handleSubmit(event) {
+  function handleSubmit(event: any): void {
     event.preventDefault();
     console.log("Module has signed out");
     onSignOut();

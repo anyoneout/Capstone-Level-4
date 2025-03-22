@@ -1,4 +1,4 @@
-export const recipeArray = [
+export const recipeArray: string[] = [
   //generated an array of recipes by country for mapping instead of hardcoding the recipes into the api pages
 
   "Margherita Pizza",
@@ -101,6 +101,5 @@ export const recipeArray = [
   "Borscht",
   "Kimchi",
   "Haggis",
-  "Banana Split"
+  "Banana Split",
 ];
-

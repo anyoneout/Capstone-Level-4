@@ -4,7 +4,7 @@ import { ApiDalleIcon, ApiOpenAiIcon } from "../modules/icons";
 import { recipeArray } from "../modules/recipeArray";
 
 export function OaPage() {
-  const [didMount, setDidMount] = useState(false);
+  const [didMount, setDidMount] = useState<boolean>(false);
 
   useEffect(componentDidMount, []);
   useEffect(componentDidUpdate, [didMount]);
@@ -160,18 +160,18 @@ export function OaPage() {
     </div>
   );
 
-  function componentDidMount() {
+  function componentDidMount(): void {
     setDidMount(true);
     console.log("The OaPage page component has mounted");
     document.title = "Recipe Deconstructor - Open AI Dall-E-3";
   }
 
-  function componentDidUpdate() {
+  function componentDidUpdate(): void {
     if (didMount) console.log("component has updated");
   }
 
-  function componentDidUnmount() {
-    return function delayedUnmount() {
+  function componentDidUnmount(): () => void {
+    return function delayedUnmount(): void {
       console.log("component has unmounted");
     };
   }
