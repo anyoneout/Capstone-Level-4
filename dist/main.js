@@ -72619,9 +72619,9 @@ function Examples() {
 
 /***/ }),
 
-/***/ "./src/Views/Home.jsx":
+/***/ "./src/Views/Home.tsx":
 /*!****************************!*\
-  !*** ./src/Views/Home.jsx ***!
+  !*** ./src/Views/Home.tsx ***!
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -75226,7 +75226,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/client.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/.pnpm/react-router-dom@6.30.0_rea_6b58b4787c243edcd3a991ae74e383c1/node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/.pnpm/react-router@6.30.0_react@18.3.1/node_modules/react-router/dist/index.js");
-/* harmony import */ var _Views_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Views/Home */ "./src/Views/Home.jsx");
+/* harmony import */ var _Views_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Views/Home */ "./src/Views/Home.tsx");
 /* harmony import */ var _Views_About__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Views/About */ "./src/Views/About.tsx");
 /* harmony import */ var _Views_BfPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Views/BfPage */ "./src/Views/BfPage.tsx");
 /* harmony import */ var _Views_OaPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Views/OaPage */ "./src/Views/OaPage.tsx");

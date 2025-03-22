@@ -135,11 +135,11 @@ export function Home() {
     console.log("The Home page component has mounted");
     document.title = "Recipe Deconstructor - Home";
     //Tooltip initialization
-    const bfBsR = document.getElementById("bfBsR");
+    const bfBsR = document.getElementById("bfBsR") as any;
     new bootstrap.Tooltip(bfBsR, { html: true, sanitize: false });
-    const bfBsI = document.getElementById("bfBsI");
+    const bfBsI = document.getElementById("bfBsI") as any;
     new bootstrap.Tooltip(bfBsI, { html: true, sanitize: false });
-    const bfCsR = document.getElementById("bfCsR");
+    const bfCsR = document.getElementById("bfCsR") as any;
     new bootstrap.Tooltip(bfCsR, { html: true, sanitize: false });
     const bfCsI = document.getElementById("bfCsI");
     new bootstrap.Tooltip(bfCsI, { html: true, sanitize: false });
