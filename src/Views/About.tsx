@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ingredientsVideo from "../../assets/videos/ingredients.mp4";
 
 export function About() {
-  const [didMount, setDidMount] = useState(false);
+  const [didMount, setDidMount] = useState<boolean>(false);
 
   useEffect(componentDidMount, []);
   useEffect(componentDidUpdate, [didMount]);
@@ -41,18 +41,18 @@ export function About() {
     </div>
   );
 
-  function componentDidMount() {
+  function componentDidMount(): void {
     setDidMount(true);
     console.log("The About page component has mounted");
     document.title = "Recipe Deconstructor - About";
   }
 
-  function componentDidUpdate() {
+  function componentDidUpdate(): void {
     if (didMount) console.log("component had updated");
   }
 
-  function componentDidUnmount() {
-    function delayedUnmount() {
+  function componentDidUnmount(): () => void {
+    function delayedUnmount(): void {
       console.log("component has unmounted");
     }
     return delayedUnmount;

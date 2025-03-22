@@ -72289,10 +72289,10 @@ function validate(uuid) {
 
 /***/ }),
 
-/***/ "./src/Views/About.js":
-/*!****************************!*\
-  !*** ./src/Views/About.js ***!
-  \****************************/
+/***/ "./src/Views/About.tsx":
+/*!*****************************!*\
+  !*** ./src/Views/About.tsx ***!
+  \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -72563,8 +72563,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_CarouselOpenAi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/CarouselOpenAi */ "./src/Views/components/CarouselOpenAi.jsx");
-/* harmony import */ var _components_CarouselBlackForest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/CarouselBlackForest */ "./src/Views/components/CarouselBlackForest.jsx");
+/* harmony import */ var _components_CarouselOpenAi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/CarouselOpenAi */ "./src/Views/components/CarouselOpenAi.tsx");
+/* harmony import */ var _components_CarouselBlackForest__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/CarouselBlackForest */ "./src/Views/components/CarouselBlackForest.tsx");
 /* harmony import */ var _modules_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/icons */ "./src/modules/icons.tsx");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -73047,9 +73047,9 @@ function Card(props) {
 
 /***/ }),
 
-/***/ "./src/Views/components/CarouselBlackForest.jsx":
+/***/ "./src/Views/components/CarouselBlackForest.tsx":
 /*!******************************************************!*\
-  !*** ./src/Views/components/CarouselBlackForest.jsx ***!
+  !*** ./src/Views/components/CarouselBlackForest.tsx ***!
   \******************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -73168,9 +73168,9 @@ function CarouselBlackForest() {
 
 /***/ }),
 
-/***/ "./src/Views/components/CarouselOpenAi.jsx":
+/***/ "./src/Views/components/CarouselOpenAi.tsx":
 /*!*************************************************!*\
-  !*** ./src/Views/components/CarouselOpenAi.jsx ***!
+  !*** ./src/Views/components/CarouselOpenAi.tsx ***!
   \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -75227,7 +75227,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/.pnpm/react-router-dom@6.30.0_rea_6b58b4787c243edcd3a991ae74e383c1/node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/.pnpm/react-router@6.30.0_react@18.3.1/node_modules/react-router/dist/index.js");
 /* harmony import */ var _Views_Home__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Views/Home */ "./src/Views/Home.jsx");
-/* harmony import */ var _Views_About__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Views/About */ "./src/Views/About.js");
+/* harmony import */ var _Views_About__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Views/About */ "./src/Views/About.tsx");
 /* harmony import */ var _Views_BfPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Views/BfPage */ "./src/Views/BfPage.tsx");
 /* harmony import */ var _Views_OaPage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Views/OaPage */ "./src/Views/OaPage.tsx");
 /* harmony import */ var _Views_Examples__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Views/Examples */ "./src/Views/Examples.tsx");
