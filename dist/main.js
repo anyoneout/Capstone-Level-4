@@ -74371,9 +74371,9 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 //assigned environment variables to local credential consts
-var accessKeyId = "AKIAQ4NSBJEZ4Q4GQU6T";
-var secretAccessKey = "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";
-var region = "us-east-1";
+var accessKeyId = "MISSING_ENV_VAR".REACT_APP_AWS_ACCESS_KEY_ID;
+var secretAccessKey = "MISSING_ENV_VAR".REACT_APP_AWS_SECRET_ACCESS_KEY;
+var region = "MISSING_ENV_VAR".REACT_APP_AWS_REGION;
 
 //DynamoDB user authentication with AWS credentials
 function authenticationAws() {

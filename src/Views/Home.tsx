@@ -13,7 +13,7 @@ import oaCapreseSaladI from "../../assets/images/OpenAiImages/oaCapreseSaladI.jp
 
 export function Home() {
   // initialize didMount state variable and set it to false
-  const [didMount, setDidMount] = useState(false);
+  const [didMount, setDidMount] = useState<boolean>(false);
 
   //handles component phases
   useEffect(componentDidMount, []);
