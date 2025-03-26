@@ -23186,7 +23186,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var hostname = "localhost"; // Local domain
-var port = 9000; // Common backend ports : 8000, 9000, 3000
+var port = 3000; // Common backend ports : 8000, 9000, 3000
 
 var app = express__WEBPACK_IMPORTED_MODULE_0___default()(); // Instantiate the Express.js object
 app.use(cors__WEBPACK_IMPORTED_MODULE_1___default()());

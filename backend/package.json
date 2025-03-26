@@ -10,8 +10,8 @@
     "build": "npm run open-tab && npm run start-build",
     "test": "npx jest ./src/utils/addition.test.js",
     "-------": "------------------------------------------",
-    "open-tab": "npx open-cli http://localhost:8000",
-    "close-port": "npx kill-port 8000",
+    "open-tab": "npx open-cli http://localhost:3000",
+    "close-port": "npx kill-port 3000",
     "start-server": "npx nodemon ./dist/main.js",
     "start-build": "npx webpack --watch"
   },
