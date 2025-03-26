@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve", // allows use of JSX
+    "module": "Preserve" // allows default imports of modules written in JavaScript
+  }
+}
