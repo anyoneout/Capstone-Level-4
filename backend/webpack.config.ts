@@ -1,4 +1,3 @@
-import Dotenv from "dotenv-webpack";
 import { Configuration } from "webpack";
 
 export default {
@@ -29,9 +28,4 @@ export default {
     historyApiFallback: true,
     open: true,
   },
-  plugins: [
-    new Dotenv({
-      systemvars: true,
-    }),
-  ],
 } as Configuration;
