@@ -7,10 +7,7 @@ const secretAccessKey = process.env.REACT_APP_AWS_SECRET_ACCESS_KEY;
 const region = process.env.REACT_APP_AWS_REGION;
 
 //DynamoDB user authentication with AWS credentials
-export async function authenticationAws(
-  email: string = "",
-  password: string = ""
-) {
+export async function authenticationAws(email: string, password: string) {
   const apiKey = {
     region: region,
     credentials: {

@@ -79155,10 +79155,12 @@ function _handleSignInAttempt() {
           event.preventDefault();
 
           //extracts elements from form and assigns them to variables
+          //Added HTMLFormElement type to form so that typescript knows it's safe to call querySelector
           form = event.target;
-          emailInput = form.querySelector("[name='email']");
-          passwordInput = form.querySelector("[name='password']");
-          closeButton = form.querySelector("[data-bs-dismiss='modal']"); //assigns extracted email and password to variables
+          emailInput = form.querySelector("[name='email']"); //also could be HTMLInputElement;
+          passwordInput = form.querySelector("[name='password']"); //also could be HTMLInputElement;
+          closeButton = form.querySelector("[data-bs-dismiss='modal']"); //also could be HTMLInputElement;
+          //assigns extracted email and password to variables
           email = emailInput.value;
           password = passwordInput.value; //fetch request to authenticate user sign in with DynamoDB
           _context.next = 9;
@@ -79266,25 +79268,15 @@ var secretAccessKey = "fvFk4X376iqvi1hYFHSKUICEYrDmHTwAJPsQ7sN3";
 var region = "us-east-1";
 
 //DynamoDB user authentication with AWS credentials
-function authenticationAws() {
+function authenticationAws(_x, _x2) {
   return _authenticationAws.apply(this, arguments);
 }
 function _authenticationAws() {
-  _authenticationAws = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-    var email,
-      password,
-      apiKey,
-      client,
-      niceClient,
-      request,
-      response,
-      awsPassword,
-      _args = arguments;
+  _authenticationAws = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(email, password) {
+    var apiKey, client, niceClient, request, response, awsPassword;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          email = _args.length > 0 && _args[0] !== undefined ? _args[0] : "";
-          password = _args.length > 1 && _args[1] !== undefined ? _args[1] : "";
           apiKey = {
             region: region,
             credentials: {
@@ -79300,26 +79292,26 @@ function _authenticationAws() {
               email: email
             }
           }; //fetch request
-          _context.next = 8;
+          _context.next = 6;
           return niceClient.get(request);
-        case 8:
+        case 6:
           response = _context.sent;
           if (response.Item) {
-            _context.next = 11;
+            _context.next = 9;
             break;
           }
           return _context.abrupt("return", false);
-        case 11:
+        case 9:
           //assigned retrieved password from DynamoDB
           awsPassword = response.Item.password; //Checks if user password matches DynamoDB password
           if (!(awsPassword === password)) {
-            _context.next = 16;
+            _context.next = 14;
             break;
           }
           return _context.abrupt("return", true);
-        case 16:
+        case 14:
           return _context.abrupt("return", false);
-        case 17:
+        case 15:
         case "end":
           return _context.stop();
       }

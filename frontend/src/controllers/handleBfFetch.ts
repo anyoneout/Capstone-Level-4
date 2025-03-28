@@ -4,7 +4,7 @@ import { bfIngredientsList } from "../modules/bfIngredientsList";
 import { bfIngredientsImage } from "../modules/bfIngredientsImage";
 
 //handles fetch request and UI updates
-export async function handleBfFetch(event) {
+export async function handleBfFetch(event: Event) {
   event.preventDefault();
   const hfUserToken = localStorage.getItem("hfToken");
 

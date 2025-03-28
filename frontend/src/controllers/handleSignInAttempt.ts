@@ -1,15 +1,16 @@
 import { authenticationAws } from "../modules/authenticationAws";
 
 //handles user attempted sign-in
-export async function handleSignInAttempt(event: any, onSignIn: any) {
+export async function handleSignInAttempt(event: Event, onSignIn: () => void) {
   //prevents refresh
   event.preventDefault();
 
   //extracts elements from form and assigns them to variables
-  const form = event.target;
-  const emailInput = form.querySelector("[name='email']") as any;
-  const passwordInput = form.querySelector("[name='password']") as any;
-  const closeButton = form.querySelector("[data-bs-dismiss='modal']") as any;
+  //Added HTMLFormElement type to form so that typescript knows it's safe to call querySelector
+  const form = event.target as HTMLFormElement;
+  const emailInput = form.querySelector("[name='email']") as any; //also could be HTMLInputElement;
+  const passwordInput = form.querySelector("[name='password']") as any; //also could be HTMLInputElement;
+  const closeButton = form.querySelector("[data-bs-dismiss='modal']") as any; //also could be HTMLInputElement;
 
   //assigns extracted email and password to variables
   const email = emailInput.value;
