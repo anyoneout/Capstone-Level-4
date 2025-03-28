@@ -17,24 +17,24 @@ export function Server() {
       {homeResponse}
       <br />
       {rootResponse} */}
-      {headerResponse}
+      {clientResponse}
       <br></br>
       {requestResponse}
     </main>
   );
 
   function componentDidMount() {
-    getHeaderResponse();
+    getClientResponse();
     getRequestResponse();
   }
 
-  async function getHeaderResponse() {
-    const response = await axios.get("http://localhost:9000/headers");
+  async function getClientResponse() {
+    const response = await axios.get("http://localhost:3000/client");
     const stringified = JSON.stringify(response.data);
-    setHeaderResponse(stringified);
+    setClientResponse(stringified);
   }
   async function getRequestResponse() {
-    const response = await axios.get("http://localhost:9000/request");
+    const response = await axios.get("http://localhost:3000/request");
     const stringified = JSON.stringify(response.data);
     setRequestResponse(stringified);
   }

@@ -77805,33 +77805,33 @@ function Server() {
     requestResponse = _useState12[0],
     setRequestResponse = _useState12[1];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "server: this connects to the backend via the hostname and port"), headerResponse, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), requestResponse);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "server: this connects to the backend via the hostname and port"), clientResponse, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), requestResponse);
   function componentDidMount() {
-    getHeaderResponse();
+    getClientResponse();
     getRequestResponse();
   }
-  function getHeaderResponse() {
-    return _getHeaderResponse.apply(this, arguments);
+  function getClientResponse() {
+    return _getClientResponse.apply(this, arguments);
   }
-  function _getHeaderResponse() {
-    _getHeaderResponse = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+  function _getClientResponse() {
+    _getClientResponse = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
       var response, stringified;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return axios__WEBPACK_IMPORTED_MODULE_1__["default"].get("http://localhost:9000/headers");
+            return axios__WEBPACK_IMPORTED_MODULE_1__["default"].get("http://localhost:3000/client");
           case 2:
             response = _context.sent;
             stringified = JSON.stringify(response.data);
-            setHeaderResponse(stringified);
+            setClientResponse(stringified);
           case 5:
           case "end":
             return _context.stop();
         }
       }, _callee);
     }));
-    return _getHeaderResponse.apply(this, arguments);
+    return _getClientResponse.apply(this, arguments);
   }
   function getRequestResponse() {
     return _getRequestResponse.apply(this, arguments);
@@ -77843,7 +77843,7 @@ function Server() {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
             _context2.next = 2;
-            return axios__WEBPACK_IMPORTED_MODULE_1__["default"].get("http://localhost:9000/request");
+            return axios__WEBPACK_IMPORTED_MODULE_1__["default"].get("http://localhost:3000/request");
           case 2:
             response = _context2.sent;
             stringified = JSON.stringify(response.data);
