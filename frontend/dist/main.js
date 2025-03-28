@@ -78848,8 +78848,7 @@ function SignOutModal(props) {
     className: "modal-footer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     type: "submit",
-    className: "btn btn-warning modal-btn-warning",
-    "data-bs-dismiss": "modal"
+    className: "btn btn-warning modal-btn-warning"
   }, "Sign Out"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     type: "button",
     className: "btn btn-secondary modal-btn-secondary",

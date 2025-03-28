@@ -20,11 +20,7 @@ export default function SignOutModal(props) {
           </div>
           <div className="modal-body">Are you sure you want to sign out?</div>
           <div className="modal-footer">
-            <button
-              type="submit"
-              className="btn btn-warning modal-btn-warning"
-              data-bs-dismiss="modal"
-            >
+            <button type="submit" className="btn btn-warning modal-btn-warning">
               Sign Out
             </button>
             <button
