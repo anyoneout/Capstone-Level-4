@@ -8,4 +8,12 @@ describe("getApiResponse from OpenTDB", () => {
     //ASSERT
     expect(result).toHaveProperty("results");
   });
+
+  it("returns a response with a question field", async () => {
+    //ACT
+    const response = await getApiResponse();
+
+    //ASSERT
+    expect(response.results[0]).toHaveProperty("question");
+  });
 });
