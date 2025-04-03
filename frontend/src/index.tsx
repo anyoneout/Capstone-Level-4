@@ -12,6 +12,7 @@ import SignInArea from "./Views/components/SignInArea";
 import "./index.scss";
 import { Server } from "./Views/Server";
 import { ApiResponsePage } from "./Views/ApiResponsePage";
+import { DynamoAuthPage } from "./Views/DynamoAuthPage";
 
 const bodyTag = document.getElementById("bodyTag");
 const root = createRoot(bodyTag);
@@ -31,6 +32,7 @@ root.render(
         <Route path={`${rootPath}/signin`} element={<SignInArea />} />
         <Route path={`${rootPath}/server`} element={<Server />} />
         <Route path={`${rootPath}/Api`} element={<ApiResponsePage />} />
+        <Route path={`${rootPath}/auth`} element={<DynamoAuthPage />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </HandleRefresh>
