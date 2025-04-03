@@ -1,19 +1,18 @@
 import { getApiResponse } from "./getApiResponse";
 
 describe("getApiResponse from OpenTDB", () => {
-  it("returns trivia results from OpenTDB", async () => {
-    //ACT
-    const result = await getApiResponse();
+  let result: any;
 
-    //ASSERT
+  // I found this function that allows a single api call to be run that allows the results to be checked against different expected conditions: https://stackoverflow.com/questions/54517032/beforeall-vs-beforeeach-when-to-use-them
+  beforeAll(async () => {
+    result = await getApiResponse();
+  });
+
+  it("returns trivia results from OpenTDB", () => {
     expect(result).toHaveProperty("results");
   });
 
-  it("returns a response with a question field", async () => {
-    //ACT
-    const response = await getApiResponse();
-
-    //ASSERT
-    expect(response.results[0]).toHaveProperty("question");
+  it("returns a response with a question field", () => {
+    expect(result.results[0]).toHaveProperty("question");
   });
 });
