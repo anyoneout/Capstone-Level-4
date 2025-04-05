@@ -1,13 +1,14 @@
-import { dynamoAuthCred } from "./dynamoAuthCred";
+import { getDynamoAuth } from "./getDynamoAuth";
 
 let successResult: boolean;
 let wrongPasswordResult: boolean;
 let noUserResult: boolean;
 
+//beforeAll is being used to deal with multiple api calls in a short span being rejected
 beforeAll(async () => {
-  successResult = await dynamoAuthCred("aaa@aaa.com", "aaa");
-  wrongPasswordResult = await dynamoAuthCred("aaa@aaa.com", "wrongPassword");
-  noUserResult = await dynamoAuthCred("nonUser@email.com", "aaa");
+  successResult = await getDynamoAuth("aaa@aaa.com", "aaa");
+  wrongPasswordResult = await getDynamoAuth("aaa@aaa.com", "wrongPassword");
+  noUserResult = await getDynamoAuth("nonUser@email.com", "aaa");
 });
 
 describe("dynamoAuth", () => {
