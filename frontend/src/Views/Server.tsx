@@ -12,7 +12,7 @@ export function Server() {
   return (
     <main>
       <h1>server: this connects to the backend via the hostname and port</h1>
-      {/*      {rootResponse}
+      {/*{rootResponse}
       <br />
       {homeResponse}
       <br />

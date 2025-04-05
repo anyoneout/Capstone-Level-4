@@ -3,29 +3,37 @@ import React, { useEffect, useState } from "react";
 
 export function DynamoAuthPage() {
   const [authResponse, setAuthResponse] = useState<boolean>(null);
-  const [notReachable, setNotReachable] = useState<boolean>(null);
-
-  function componentDidMount() {
-    getAuthResponse();
-  }
-
-  async function getAuthResponse() {
-    const response = await axios.get("http://localhost:3000/dynamoAuth?email=aaa@aaa.com&password=aaa");
-    console.log("Backend response:", response.data);
-    setAuthResponse(response.data);
-  }
 
   useEffect(componentDidMount, []);
   let message = "";
-  if (authResponse) {
+  if (authResponse === null) {
+    message = "backend unreachable";
+  } else if (authResponse) {
     message = "User exists";
   } else if (!authResponse) {
     message = "User does not exist";
   }
+
+  function componentDidMount() {
+    /*   checkBackend(); */
+    getAuthResponse();
+  }
+
   return (
     <main>
       <h2>backend dynamo response</h2>
       {message}
     </main>
   );
+
+  //Added try/catch as the backend was crashing with a different port and wouldn't render {message}
+  async function getAuthResponse() {
+    try {
+      const response = await axios.get("http://localhost:3100/dynamoAuth?email=aaa@aaa.com&password=aaa");
+      console.log("Backend response:", response.data);
+      setAuthResponse(response.data);
+    } catch {
+      setAuthResponse(null);
+    }
+  }
 }
