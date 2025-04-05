@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { getApiResponse } from "../modules/getApiResponse";
+import { getTriviaApiResponse } from "../modules/getTriviaApiResponse";
 
 export async function triviaApiRoute(request: Request, response: Response) {
-  const result = await getApiResponse();
+  const result = await getTriviaApiResponse();
   response.send(result);
 }
