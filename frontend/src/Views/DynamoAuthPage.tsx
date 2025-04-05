@@ -29,7 +29,7 @@ export function DynamoAuthPage() {
   //Added try/catch as the backend was crashing with a different port and wouldn't render {message}
   async function getAuthResponse() {
     try {
-      const response = await axios.get("http://localhost:3100/dynamoAuth?email=aaa@aaa.com&password=aaa");
+      const response = await axios.get("http://localhost:3000/dynamoAuth?email=aaa@aaa.com&password=aaa");
       console.log("Backend response:", response.data);
       setAuthResponse(response.data);
     } catch {
