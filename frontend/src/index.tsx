@@ -31,10 +31,7 @@ root.render(
         <Route path={`${rootPath}/About`} element={<About />} />
         <Route path={`${rootPath}/signin`} element={<SignInArea />} />
         <Route path={`${rootPath}/server`} element={<Server />} />
-        <Route
-          path={`${rootPath}/trivia`}
-          element={<TriviaApiResponsePage />}
-        />
+        <Route path={`${rootPath}/trivia`} element={<TriviaApiResponsePage />} />
         <Route path={`${rootPath}/dynamo`} element={<DynamoAuthPage />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
