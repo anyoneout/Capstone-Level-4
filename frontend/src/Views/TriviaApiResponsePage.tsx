@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
-export function ApiResponsePage() {
+export function TriviaApiResponsePage() {
   const [apiTrivia, setApiTrivia] = useState<string>("");
   useEffect(componentDidMount, []);
   return <main>{apiTrivia}</main>;

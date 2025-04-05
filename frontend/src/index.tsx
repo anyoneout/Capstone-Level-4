@@ -11,7 +11,7 @@ import { CollapsibleNavbar } from "./Views/components/CollapsibleNavbar";
 import SignInArea from "./Views/components/SignInArea";
 import "./index.scss";
 import { Server } from "./Views/Server";
-import { ApiResponsePage } from "./Views/ApiResponsePage";
+import { TriviaApiResponsePage } from "./Views/TriviaApiResponsePage";
 import { DynamoAuthPage } from "./Views/DynamoAuthPage";
 
 const bodyTag = document.getElementById("bodyTag");
@@ -31,8 +31,11 @@ root.render(
         <Route path={`${rootPath}/About`} element={<About />} />
         <Route path={`${rootPath}/signin`} element={<SignInArea />} />
         <Route path={`${rootPath}/server`} element={<Server />} />
-        <Route path={`${rootPath}/Api`} element={<ApiResponsePage />} />
-        <Route path={`${rootPath}/auth`} element={<DynamoAuthPage />} />
+        <Route
+          path={`${rootPath}/trivia`}
+          element={<TriviaApiResponsePage />}
+        />
+        <Route path={`${rootPath}/dynamo`} element={<DynamoAuthPage />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </HandleRefresh>

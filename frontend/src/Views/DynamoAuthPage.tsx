@@ -3,9 +3,6 @@ import React, { useEffect, useState } from "react";
 
 export function DynamoAuthPage() {
   const [authResponse, setAuthResponse] = useState<boolean>(null);
-  useEffect(componentDidMount, []);
-
-  return <main>{authResponse}</main>;
 
   function componentDidMount() {
     getAuthResponse();
@@ -15,6 +12,16 @@ export function DynamoAuthPage() {
     const response = await axios.get(
       "http://localhost:3000/dynamoAuth?email=aaa@aaa.com&password=aaa"
     );
+    console.log("Backend response:", response.data);
     setAuthResponse(response.data);
   }
+
+  useEffect(componentDidMount, []);
+  let message = "";
+  if (authResponse) {
+    message = "User exists";
+  } else if (!authResponse) {
+    message = "User does not exist";
+  }
+  return <main>{message}</main>;
 }
