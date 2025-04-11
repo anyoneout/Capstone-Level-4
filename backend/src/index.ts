@@ -11,6 +11,7 @@ import { request } from "./routes/request";
 import { dynamoAuthRoute } from "./routes/dynamoAuthRoute"; */
 import { createUserRoute } from "./routes/dynamoRoutes/createUserRoute";
 import { readUserRoute } from "./routes/dynamoRoutes/readUserRoute";
+import { deleteUserRoute } from "./routes/dynamoRoutes/deleteUserRoute";
 
 const hostname = "localhost"; // Local domain
 const port = 3000; // Common backend ports : 8000, 9000, 3000
@@ -28,6 +29,7 @@ app.get("/trivia", trivia);
 app.get("/dynamoAuth", dynamoAuthRoute); */
 app.get("/createUser", createUserRoute);
 app.get("/readUser", readUserRoute);
+app.get("/deleteUser", deleteUserRoute);
 
 app.listen(port, hostname, handleListen); // The server listens at the specified hostname and port.
 
