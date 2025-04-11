@@ -13,7 +13,7 @@ describe("createDynamoUser", () => {
     //ACT
     const result = await createDynamoUser(userTest);
     //ASSERT
-    expect(result).toBeUndefined;
+    expect(result).toBeUndefined();
   });
 
   it("returns undefined if the password is missing", async () => {
@@ -27,7 +27,7 @@ describe("createDynamoUser", () => {
     //ACT
     const result = await createDynamoUser(userTest);
     //ASSERT
-    expect(result).toBeUndefined;
+    expect(result).toBeUndefined();
   });
 
   it("returns undefined if the name is missing", async () => {
@@ -41,7 +41,7 @@ describe("createDynamoUser", () => {
     //ACT
     const result = await createDynamoUser(userTest);
     //ASSERT
-    expect(result).toBeUndefined;
+    expect(result).toBeUndefined();
   });
 
   it("returns undefined if the phone is missing", async () => {
@@ -55,7 +55,7 @@ describe("createDynamoUser", () => {
     //ACT
     const result = await createDynamoUser(userTest);
     //ASSERT
-    expect(result).toBeUndefined;
+    expect(result).toBeUndefined();
   });
 
   it("should not return undefined when all fields are filled out", async () => {
@@ -69,6 +69,6 @@ describe("createDynamoUser", () => {
     //ACT
     const result = await createDynamoUser(userTest);
     //ASSERT
-    expect(result).not.toBeUndefined;
+    expect(result).not.toBeUndefined();
   });
 });

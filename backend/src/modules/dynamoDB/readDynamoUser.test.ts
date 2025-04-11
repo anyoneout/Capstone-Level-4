@@ -27,7 +27,7 @@ describe("readDynamoUser", () => {
     //ACT
     const result = await readDynamoUser(email);
     //ASSERT
-    expect(result).toBe(undefined);
+    expect(result).toBeUndefined();
   });
   it("doesn't return a result if the email is an object", async () => {
     //ARRANGE
@@ -35,7 +35,7 @@ describe("readDynamoUser", () => {
     //ACT
     const result = await readDynamoUser(email);
     //ASSERT
-    expect(result).toBe(undefined);
+    expect(result).toBeUndefined();
   });
   it("doesn't return a result if the email is incorrect", async () => {
     //ARRANGE
@@ -43,6 +43,6 @@ describe("readDynamoUser", () => {
     //ACT
     const result = await readDynamoUser(email);
     //ASSERT
-    expect(result).toBe(undefined);
+    expect(result).toBeUndefined();
   });
 });
