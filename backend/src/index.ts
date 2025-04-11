@@ -7,8 +7,9 @@ import { quote } from "./routes/quote";
 import { trivia } from "./routes/trivia";
 import { client } from "./routes/client";
 import { request } from "./routes/request";
-import { triviaApiRoute } from "./routes/triviaApiRoute";
-import { dynamoAuthRoute } from "./routes/dynamoAuthRoute";
+/* import { triviaApiRoute } from "./routes/triviaApiRoute";
+import { dynamoAuthRoute } from "./routes/dynamoAuthRoute"; */
+import { createUserRoute } from "./routes/dynamoRoutes/createUserRoute";
 
 const hostname = "localhost"; // Local domain
 const port = 3000; // Common backend ports : 8000, 9000, 3000
@@ -22,8 +23,9 @@ app.get("/client", client);
 app.get("/quote", quote);
 app.get("/request", request);
 app.get("/trivia", trivia);
-app.get("/triviaRoute", triviaApiRoute);
-app.get("/dynamoAuth", dynamoAuthRoute);
+/* app.get("/triviaRoute", triviaApiRoute);
+app.get("/dynamoAuth", dynamoAuthRoute); */
+app.get("/createUser", createUserRoute);
 
 app.listen(port, hostname, handleListen); // The server listens at the specified hostname and port.
 
