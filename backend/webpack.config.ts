@@ -1,4 +1,5 @@
 import { Configuration } from "webpack";
+import ZipWebpackPlugin from "zip-webpack-plugin";
 
 export default {
   module: {
@@ -24,8 +25,9 @@ export default {
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx", ".mp4", ".png"],
   },
-  devServer: {
-    historyApiFallback: true,
-    open: true,
+  output: {
+    filename: "index.js",
+    library: { type: "commonjs" },
   },
+  plugins: [new ZipWebpackPlugin()],
 } as Configuration;
