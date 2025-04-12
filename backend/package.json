@@ -14,7 +14,7 @@
     "build-production": "npx webpack --mode=production",
     "close-port": "npx kill-port 3000",
     "open-tab": "npx open-cli http://localhost:3000",
-    "start-server": "npx nodemon ./dist/main.js",
+    "start-server": "npx nodemon ./dist/index.js",
     "start-build": "npx webpack --watch",
     "upload-zip": "aws lambda update-function-code --function-name capstone-level-4 --zip-file fileb://dist/index.js.zip"
   },
