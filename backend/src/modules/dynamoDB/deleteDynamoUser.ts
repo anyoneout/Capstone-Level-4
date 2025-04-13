@@ -1,4 +1,3 @@
-import { Account } from "../../types/Account";
 import { getDynamoNiceClient } from "./getDynamoNiceClient";
 
 //DynamoDB user authentication with AWS credentials

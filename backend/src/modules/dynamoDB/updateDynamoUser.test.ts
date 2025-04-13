@@ -46,7 +46,7 @@ describe("readDynamoUser", () => {
   });
   it("returns undefined when email is not in the database", async () => {
     //ACT
-    const result = await updateDynamoUser("", "");
+    const result = await updateDynamoUser("emailnotindatabase@gmail.com", "testPassword");
 
     //ASSERT
     expect(result).toBeUndefined();

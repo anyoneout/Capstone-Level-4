@@ -1,11 +1,16 @@
 import { Account } from "../../types/Account";
 import { getDynamoNiceClient } from "./getDynamoNiceClient";
+import { readDynamoUser } from "./readDynamoUser";
 
 //DynamoDB user authentication with AWS credentials
 export async function updateDynamoUser(email: string, password: string): Promise<any> {
   if (!email || !password) {
     return undefined;
   }
+
+  //to check if the email already exists
+  const existingUser = await readDynamoUser(email);
+  if (!existingUser) return undefined;
 
   const niceClient = getDynamoNiceClient();
 
