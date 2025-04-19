@@ -29,5 +29,5 @@ export default {
     filename: "index.js",
     library: { type: "commonjs" },
   },
-  plugins: [new ZipWebpackPlugin()],
+  plugins: [new ZipWebpackPlugin({ include: /^index.zip$/ })],
 } as Configuration;
