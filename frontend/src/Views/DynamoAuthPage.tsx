@@ -21,8 +21,10 @@ export function DynamoAuthPage() {
 
   return (
     <main>
-      <h2>backend dynamo response</h2>
-      {message}
+      <div className="container navbar-width ">
+        <h2>backend dynamo response</h2>
+        {message}
+      </div>
     </main>
   );
 

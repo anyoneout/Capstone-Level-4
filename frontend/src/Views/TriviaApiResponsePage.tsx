@@ -9,10 +9,12 @@ export function TriviaApiResponsePage() {
 
   return (
     <main>
-      <h2>Api Trivia</h2>
-      <p>{apiTrivia}</p>
-      <h4>Backend Status</h4>
-      <p>{apiStatus}</p>
+      <div className="container navbar-width">
+        <h2>Api Trivia</h2>
+        <p>{apiTrivia}</p>
+        <h4>Backend Status</h4>
+        <p>{apiStatus}</p>
+      </div>
     </main>
   );
 
