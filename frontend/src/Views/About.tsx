@@ -13,22 +13,15 @@ export function About() {
       <div className="row mt-0 mt-md-5"></div>
       <div className="row justify-content-center spacing mt-sm-5">
         <div className="col-8 col-md-6 col-lg-5 col-xl-3">
-          <div
-            className="card text-center"
-            style={{ backgroundColor: "black" }}
-          >
+          <div className="card text-center" style={{ backgroundColor: "black" }}>
             <div className="col-12 d-flex mt-5 justify-content-center">
               <video className="video-small" autoPlay muted loop>
                 <source src={ingredientsVideo} type="video/mp4"></source>
               </video>
             </div>
             <div className="card-body">
-              <div className="card-title display-6 d-flex justify-content-center text-light">
-                Chris Ali
-              </div>
-              <div className="card-text text-light justify-content-center d-flex">
-                Student
-              </div>
+              <div className="card-title display-6 d-flex justify-content-center text-light">Chris Ali</div>
+              <div className="card-text text-light justify-content-center d-flex">Student</div>
               <div className="card-text justify-content-center d-flex">
                 <a href="mailto: chrisdafur@gmail.com" className="text-info">
                   chrisdafur@gmail.com

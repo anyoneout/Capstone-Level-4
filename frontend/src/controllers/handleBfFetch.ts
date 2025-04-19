@@ -23,24 +23,11 @@ export async function handleBfFetch(event: Event) {
 
   iconVisibility(spinnerOneHTML, true);
 
-  await updateRecipeImage(
-    recipeChoice,
-    recipeImgHTML,
-    spinnerOneHTML,
-    spinnerTwoHTML,
-    secondArrow,
-    hfUserToken
-  );
+  await updateRecipeImage(recipeChoice, recipeImgHTML, spinnerOneHTML, spinnerTwoHTML, secondArrow, hfUserToken);
 
   const ingredientsFetched = await bfIngredientsList(recipeChoice, hfUserToken);
 
-  await updateIngredients(
-    ingredientsFetched,
-    recipeIngredientsHTML,
-    ingredientsImgHTML,
-    spinnerTwoHTML,
-    hfUserToken
-  );
+  await updateIngredients(ingredientsFetched, recipeIngredientsHTML, ingredientsImgHTML, spinnerTwoHTML, hfUserToken);
 }
 
 //Get DOM elements
@@ -88,10 +75,7 @@ async function updateIngredients(
 ) {
   recipeIngredientsHTML.innerHTML = ingredientsFetched;
 
-  const dataIngredientsImage = await bfIngredientsImage(
-    ingredientsFetched,
-    hfUserToken
-  );
+  const dataIngredientsImage = await bfIngredientsImage(ingredientsFetched, hfUserToken);
 
   iconVisibility(spinnerTwoHTML, false);
   ingredientsImgHTML.src = dataIngredientsImage;
