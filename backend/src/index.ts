@@ -7,14 +7,14 @@ import { quote } from "./routes/quote";
 import { trivia } from "./routes/trivia";
 import { client } from "./routes/client";
 import { request } from "./routes/request";
-/* import { triviaApiRoute } from "./routes/triviaApiRoute";
-import { dynamoAuthRoute } from "./routes/dynamoAuthRoute"; */
 import { createUserRoute } from "./routes/dynamoRoutes/createUserRoute";
 import { readUserRoute } from "./routes/dynamoRoutes/readUserRoute";
 import { deleteUserRoute } from "./routes/dynamoRoutes/deleteUserRoute";
 import { updateUserRoute } from "./routes/dynamoRoutes/updateUserRoute";
 import serverless from "serverless-http";
 import dotenv from "dotenv";
+import { triviaApiRoute } from "./routes/triviaApiRoute";
+import { dynamoAuthRoute } from "./routes/dynamoAuthRoute";
 
 dotenv.config();
 
@@ -30,8 +30,8 @@ app.get("/client", client);
 app.get("/quote", quote);
 app.get("/request", request);
 app.get("/trivia", trivia);
-/* app.get("/triviaRoute", triviaApiRoute);
-app.get("/dynamoAuth", dynamoAuthRoute); */
+app.get("/triviaRoute", triviaApiRoute);
+app.get("/dynamoAuth", dynamoAuthRoute);
 app.get("/createUser", createUserRoute);
 app.get("/readUser", readUserRoute);
 app.get("/deleteUser", deleteUserRoute);
