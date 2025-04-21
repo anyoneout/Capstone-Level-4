@@ -13,6 +13,7 @@ import "./index.scss";
 import { Server } from "./Views/Server";
 import { TriviaApiResponsePage } from "./Views/TriviaApiResponsePage";
 import { DynamoAuthPage } from "./Views/DynamoAuthPage";
+import { CreateAccountForm } from "./Views/crudForms/CreateAccountForm";
 
 const bodyTag = document.getElementById("bodyTag");
 const root = createRoot(bodyTag);
@@ -33,6 +34,7 @@ root.render(
         <Route path={`${rootPath}/server`} element={<Server />} />
         <Route path={`${rootPath}/trivia`} element={<TriviaApiResponsePage />} />
         <Route path={`${rootPath}/dynamo`} element={<DynamoAuthPage />} />
+        <Route path={`${rootPath}/createUser`} element={<CreateAccountForm />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </HandleRefresh>
