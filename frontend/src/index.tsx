@@ -14,6 +14,7 @@ import { Server } from "./Views/Server";
 import { TriviaApiResponsePage } from "./Views/TriviaApiResponsePage";
 import { DynamoAuthPage } from "./Views/DynamoAuthPage";
 import { CreateAccountForm } from "./Views/crudForms/CreateAccountForm";
+import { ReadAccountForm } from "./Views/crudForms/ReadAccountForm";
 
 const bodyTag = document.getElementById("bodyTag");
 const root = createRoot(bodyTag);
@@ -35,6 +36,7 @@ root.render(
         <Route path={`${rootPath}/trivia`} element={<TriviaApiResponsePage />} />
         <Route path={`${rootPath}/dynamo`} element={<DynamoAuthPage />} />
         <Route path={`${rootPath}/createUser`} element={<CreateAccountForm />} />
+        <Route path={`${rootPath}/readUser`} element={<ReadAccountForm />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </HandleRefresh>
