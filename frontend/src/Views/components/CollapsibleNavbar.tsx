@@ -54,6 +54,11 @@ export function CollapsibleNavbar() {
               </NavLink>
             </li>
             <li className="nav-item">
+              <NavLink to={`${rootPath}/aws`} className="nav-link">
+                <i className="bi bi-images me-2"></i>AWS
+              </NavLink>
+            </li>
+            <li className="nav-item">
               <NavLink to={`${rootPath}/About`} className="nav-link">
                 <i className="bi-file-person me-2"></i>About
               </NavLink>

@@ -17,6 +17,7 @@ import { CreateAccountForm } from "./Views/crudForms/CreateAccountForm";
 import { ReadAccountForm } from "./Views/crudForms/ReadAccountForm";
 import { UpdateAccountForm } from "./Views/crudForms/UpdateAccountForm";
 import { DeleteAccountForm } from "./Views/crudForms/DeleteAccountForm";
+import AwsForms from "./Views/AwsForms";
 
 const bodyTag = document.getElementById("bodyTag");
 const root = createRoot(bodyTag);
@@ -41,6 +42,7 @@ root.render(
         <Route path={`${rootPath}/readUser`} element={<ReadAccountForm />} />
         <Route path={`${rootPath}/updateUser`} element={<UpdateAccountForm />} />
         <Route path={`${rootPath}/deleteUser`} element={<DeleteAccountForm />} />
+        <Route path={`${rootPath}/aws`} element={<AwsForms />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </HandleRefresh>
