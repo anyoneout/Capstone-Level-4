@@ -18,15 +18,30 @@ export function ReadAccountForm() {
     }
   }
   return (
-    <>
-      <form className="form-control api-inputs input-group mb-2" data-bs-theme="dark" onSubmit={handleSubmit}>
-        <h2>Show User</h2>
-        <label>Email</label>
-        <input value={email} onChange={(e) => setEmail(e.target.value)} />
-        <br></br>
-        <button type="submit">Show</button>
-        <p>{responseMessage}</p>
-      </form>
-    </>
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <form onSubmit={handleSubmit}>
+            <fieldset>
+              <legend>Read user</legend>
+
+              <div className="input-group mb-2" data-bs-theme="dark">
+                <input
+                  type="email"
+                  className="form-control api-inputs"
+                  placeholder="Email"
+                  aria-label="create user email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+            </fieldset>
+
+            <button type="submit">Read</button>
+            <p>{responseMessage}</p>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }

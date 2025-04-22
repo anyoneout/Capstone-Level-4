@@ -23,17 +23,41 @@ export function DeleteAccountForm() {
     }
   }
   return (
-    <>
-      <form className="form-control api-inputs input-group mb-2" data-bs-theme="dark" onSubmit={handleSubmit}>
-        <h2>Delete User</h2>
-        <label>Email</label>
-        <input value={email} onChange={(e) => setEmail(e.target.value)} />
-        <label>Password</label>
-        <input value={password} onChange={(e) => setPassword(e.target.value)} />
-        <br></br>
-        <button type="submit">Delete</button>
-        <p>{responseMessage}</p>
-      </form>
-    </>
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <form onSubmit={handleSubmit}>
+            <fieldset>
+              <legend>Delete user</legend>
+
+              <div className="input-group mb-2" data-bs-theme="dark">
+                <input
+                  type="email"
+                  className="form-control api-inputs"
+                  placeholder="Email"
+                  aria-label="create user email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+
+              <div className="input-group mb-2" data-bs-theme="dark">
+                <input
+                  type="text"
+                  placeholder="Password"
+                  className="form-control api-inputs"
+                  aria-label="create user password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+            </fieldset>
+
+            <button type="submit">Delete</button>
+            <p>{responseMessage}</p>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }

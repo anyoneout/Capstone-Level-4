@@ -22,15 +22,41 @@ export function UpdateAccountForm() {
   }
 
   return (
-    <form className="form-control api-inputs input-group mb-2" data-bs-theme="dark" onSubmit={handleSubmit}>
-      <h2>Update User</h2>
-      <label>Email (required)</label>
-      <input value={email} onChange={(e) => setEmail(e.target.value)} required />
-      <br />
-      <label>Password </label>
-      <input value={password} onChange={(e) => setPassword(e.target.value)} />
-      <button type="submit">Update</button>
-      <p>{responseMessage}</p>
-    </form>
+    <div className="container">
+      <div className="row">
+        <div className="col">
+          <form onSubmit={handleSubmit}>
+            <fieldset>
+              <legend>Update user</legend>
+
+              <div className="input-group mb-2" data-bs-theme="dark">
+                <input
+                  type="email"
+                  className="form-control api-inputs"
+                  placeholder="Email"
+                  aria-label="create user email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+
+              <div className="input-group mb-2" data-bs-theme="dark">
+                <input
+                  type="text"
+                  placeholder="Password"
+                  className="form-control api-inputs"
+                  aria-label="create user password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+            </fieldset>
+
+            <button type="submit">Update</button>
+            <p>{responseMessage}</p>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 }
