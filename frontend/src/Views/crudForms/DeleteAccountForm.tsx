@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { deleteAccount } from "../../modules/crud/deleteAccount";
 
@@ -24,13 +23,11 @@ export function DeleteAccountForm() {
   }
   return (
     <div className="container">
-      <div className="row">
-        <div className="col">
+      <div className="row crud-forms d-flex align-items-center p-4">
+        <div className="col-4">
           <form onSubmit={handleSubmit}>
             <fieldset>
-              <legend>Delete user</legend>
-
-              <div className="input-group mb-2" data-bs-theme="dark">
+              <div className="input-group mb-1" data-bs-theme="dark">
                 <input
                   type="email"
                   className="form-control api-inputs"
@@ -41,7 +38,7 @@ export function DeleteAccountForm() {
                 />
               </div>
 
-              <div className="input-group mb-2" data-bs-theme="dark">
+              <div className="input-group" data-bs-theme="dark">
                 <input
                   type="text"
                   placeholder="Password"
@@ -53,9 +50,13 @@ export function DeleteAccountForm() {
               </div>
             </fieldset>
 
-            <button type="submit">Delete</button>
-            <p>{responseMessage}</p>
+            <button type="submit" className="btn btn-danger btn-sm">
+              Delete
+            </button>
           </form>
+        </div>
+        <div className="col-7 d-flex align-items-center">
+          <p>{responseMessage}</p>
         </div>
       </div>
     </div>

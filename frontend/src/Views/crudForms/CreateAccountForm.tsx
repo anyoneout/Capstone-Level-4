@@ -39,13 +39,11 @@ export function CreateAccountForm() {
 
   return (
     <div className="container">
-      <div className="row">
-        <div className="col">
+      <div className="row crud-forms d-flex align-items-center p-4">
+        <div className="col-4">
           <form onSubmit={handleSubmit}>
             <fieldset>
-              <legend>Create user</legend>
-
-              <div className="input-group mb-2" data-bs-theme="dark">
+              <div className="input-group mb-1" data-bs-theme="dark">
                 <input
                   type="email"
                   className="form-control api-inputs"
@@ -56,7 +54,7 @@ export function CreateAccountForm() {
                 />
               </div>
 
-              <div className="input-group mb-2" data-bs-theme="dark">
+              <div className="input-group mb-1" data-bs-theme="dark">
                 <input
                   type="text"
                   placeholder="Password"
@@ -67,7 +65,7 @@ export function CreateAccountForm() {
                 />
               </div>
 
-              <div className="input-group mb-2" data-bs-theme="dark">
+              <div className="input-group mb-1" data-bs-theme="dark">
                 <input
                   type="text"
                   className="form-control api-inputs"
@@ -78,7 +76,7 @@ export function CreateAccountForm() {
                 />
               </div>
 
-              <div className="input-group mb-2" data-bs-theme="dark">
+              <div className="input-group" data-bs-theme="dark">
                 <input
                   type="text"
                   className="form-control api-inputs"
@@ -90,10 +88,13 @@ export function CreateAccountForm() {
               </div>
             </fieldset>
 
-            <button type="submit">Create</button>
-            <p>{responseMessage}</p>
-            <p>{readResponse}</p>
+            <button type="submit" className="btn btn-success btn-sm">
+              Create
+            </button>
           </form>
+        </div>
+        <div className="col-7 d-flex align-items-center">
+          <p>{responseMessage}</p>
         </div>
       </div>
     </div>

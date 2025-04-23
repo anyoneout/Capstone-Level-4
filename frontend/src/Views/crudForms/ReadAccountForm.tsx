@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { readAccount } from "../../modules/crud/readAccount";
 
@@ -19,13 +18,11 @@ export function ReadAccountForm() {
   }
   return (
     <div className="container">
-      <div className="row">
-        <div className="col">
+      <div className="row crud-forms d-flex align-items-center p-4">
+        <div className="col-4">
           <form onSubmit={handleSubmit}>
             <fieldset>
-              <legend>Read user</legend>
-
-              <div className="input-group mb-2" data-bs-theme="dark">
+              <div className="input-group" data-bs-theme="dark">
                 <input
                   type="email"
                   className="form-control api-inputs"
@@ -36,10 +33,15 @@ export function ReadAccountForm() {
                 />
               </div>
             </fieldset>
-
-            <button type="submit">Read</button>
-            <p>{responseMessage}</p>
+            <div className="col-1 d-flex align-items-center">
+              <button type="submit" className="btn btn-primary btn-sm">
+                Read
+              </button>
+            </div>
           </form>
+        </div>
+        <div className="col-7">
+          <p>{responseMessage}</p>
         </div>
       </div>
     </div>
