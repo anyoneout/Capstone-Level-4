@@ -1,14 +1,24 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React from "react";
 import { createAccount } from "../../modules/crud/createAccount";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectCreateEmail,
+  selectCreateName,
+  selectCreatePassword,
+  selectCreatePhone,
+  selectCreateResponseMessage,
+} from "../../redux/stateSelectors";
+import { set } from "../../redux/store";
 
 export function CreateAccountForm() {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [name, setName] = useState<string>("");
-  const [phone, setPhone] = useState<string>("");
-  const [responseMessage, setResponseMessage] = useState<string>("");
-  const [readResponse, setReadResponse] = useState<string>("");
+  const email = useSelector(selectCreateEmail);
+  const password = useSelector(selectCreatePassword);
+  const responseMessage = useSelector(selectCreateResponseMessage);
+  const name = useSelector(selectCreateName);
+  const phone = useSelector(selectCreatePhone);
+
+  const dispatch = useDispatch();
   const baseUrl = process.env.REACT_APP_API_URL;
 
   async function handleSubmit(event: React.FormEvent) {
@@ -19,21 +29,21 @@ export function CreateAccountForm() {
     const result = await createAccount(account);
 
     if (result.status === 400) {
-      return setResponseMessage("Please fill out all fields before submitting.");
+      return dispatch(set.createResponseMessage("Please fill out all fields before submitting."));
     }
 
     if (result.status === 409) {
-      return setResponseMessage(`User ${email} already exists.`);
+      return dispatch(set.createResponseMessage(`User ${email} already exists.`));
     }
 
     if (result.status === 200) {
-      setResponseMessage(`User ${email} created successfully`);
+      dispatch(set.createResponseMessage(`User ${email} created successfully`));
 
       const readUrl = `${baseUrl}/readUser?email=${email}`;
       const readUrlResponse = await axios.get(readUrl);
-      setReadResponse(JSON.stringify(readUrlResponse.data));
+      dispatch(set.createReadResponse(JSON.stringify(readUrlResponse.data)));
     } else {
-      setResponseMessage("User wasn't created.");
+      dispatch(set.createResponseMessage("User wasn't created."));
     }
   }
 
@@ -50,7 +60,7 @@ export function CreateAccountForm() {
                   placeholder="Email"
                   aria-label="create user email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => dispatch(set.createEmail(e.target.value))}
                 />
               </div>
 
@@ -61,7 +71,7 @@ export function CreateAccountForm() {
                   className="form-control api-inputs"
                   aria-label="create user password"
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => dispatch(set.createPassword(e.target.value))}
                 />
               </div>
 
@@ -72,7 +82,7 @@ export function CreateAccountForm() {
                   placeholder="Name"
                   aria-label="create user name"
                   value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => dispatch(set.createName(e.target.value))}
                 />
               </div>
 
@@ -83,7 +93,7 @@ export function CreateAccountForm() {
                   placeholder="Phone"
                   aria-label="create user phone"
                   value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={(e) => dispatch(set.createPhone(e.target.value))}
                 />
               </div>
             </fieldset>
