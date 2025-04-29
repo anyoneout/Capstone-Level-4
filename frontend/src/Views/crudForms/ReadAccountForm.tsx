@@ -26,7 +26,7 @@ export function ReadAccountForm() {
       <div className="row crud-forms d-flex align-items-center p-4">
         <div className="col-4">
           <form onSubmit={handleSubmit}>
-            <fieldset>
+            <fieldset className="mb-1">
               <div className="input-group" data-bs-theme="dark">
                 <input
                   type="email"
