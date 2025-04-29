@@ -19,7 +19,11 @@ export function selectOaPageDidMount(state: StateVariables) {
 export function selectAwsFormsDidMount(state: StateVariables) {
   return state.awsFormsStateVar.didMount;
 }
-
+export function selectHandleRefreshDidMount(state: StateVariables) {
+  {
+    return state.handleRefreshState.didMount;
+  }
+}
 //trivia api
 export function selectTriviaApiDidMount(state: StateVariables) {
   return state.triviaApiStateVar.didMount;

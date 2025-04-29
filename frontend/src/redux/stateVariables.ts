@@ -34,6 +34,10 @@ export const stateVariables = {
     didMount: false,
   },
 
+  handleRefreshState: {
+    didMount: false,
+  },
+
   createAccountState: {
     email: "",
     password: "",

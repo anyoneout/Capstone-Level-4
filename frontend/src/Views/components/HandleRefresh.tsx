@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { selectHandleRefreshDidMount } from "../../redux/stateSelectors";
+import { set } from "../../redux/store";
 
 export function HandleRefresh(props) {
   const children = props.children;
   const navigateTo = useNavigate();
-  const [didMount, setDidMount] = useState<boolean>(false);
+
+  const didMount = useSelector(selectHandleRefreshDidMount);
+  const dispatch = useDispatch();
 
   useEffect(componentDidMount, []);
 
@@ -19,6 +24,6 @@ export function HandleRefresh(props) {
       navigateTo(redirectPath);
     }
 
-    setTimeout(() => setDidMount(true), 1000);
+    setTimeout(() => dispatch(set.DidMount(true), 1000));
   }
 }

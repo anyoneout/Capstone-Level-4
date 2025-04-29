@@ -26,6 +26,10 @@ export const stateSetters = {
     const newValue = action.payload;
     state.awsFormsStateVar.didMount = newValue;
   },
+  handleRefreshDidMount: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.handleRefreshState.didMount = newValue;
+  },
 
   // trivia api
   triviaApiDidMount: function (state: StateVariables, action: ActionBoolean) {
