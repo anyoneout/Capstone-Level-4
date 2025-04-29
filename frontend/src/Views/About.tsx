@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ingredientsVideo from "../../assets/videos/ingredients.mp4";
+import { useDispatch, useSelector } from "react-redux";
+import { selectAboutDidMount } from "../redux/stateSelectors";
+import { set } from "../redux/store";
 
 export function About() {
-  const [didMount, setDidMount] = useState<boolean>(false);
+  const didMount = useSelector(selectAboutDidMount);
+  const dispatch = useDispatch();
 
   useEffect(componentDidMount, []);
   useEffect(componentDidUpdate, [didMount]);
@@ -35,7 +39,7 @@ export function About() {
   );
 
   function componentDidMount(): void {
-    setDidMount(true);
+    dispatch(set.aboutDidMount(true));
     console.log("The About page component has mounted");
     document.title = "Recipe Deconstructor - About";
   }
