@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { CarouselOpenAi } from "./components/CarouselOpenAi";
 import { CarouselBlackForest } from "./components/CarouselBlackForest";
 import { CarouselDalleIcon, CarouselFluxIcon } from "../modules/icons";
+import { selectExampleDidMount } from "../redux/stateSelectors";
+import { useDispatch, useSelector } from "react-redux";
+import { set } from "../redux/store";
 
 export default function Examples() {
-  const [didMount, setDidMount] = useState<boolean>(false);
+  const didMount = useSelector(selectExampleDidMount);
+  const dispatch = useDispatch();
 
   useEffect(componentDidMount, []);
   useEffect(componentDidUpdate, [didMount]);
@@ -33,7 +37,7 @@ export default function Examples() {
     </div>
   );
   function componentDidMount(): void {
-    setDidMount(true);
+    dispatch(set.examplesDidMount(true));
     console.log("The Examples page component has mounted");
     document.title = "Recipe Deconstructor - Examples";
   }
