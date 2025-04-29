@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { readAccount } from "../../modules/crud/readAccount";
+import { selectReadEmail, selectReadResponseMessage } from "../../redux/stateSelectors";
+import { useDispatch, useSelector } from "react-redux";
+import { set } from "../../redux/store";
 
 export function ReadAccountForm() {
-  const [email, setEmail] = useState<string>("");
-  const [responseMessage, setResponseMessage] = useState<string>("");
+  const email = useSelector(selectReadEmail);
+  const responseMessage = useSelector(selectReadResponseMessage);
+
+  const dispatch = useDispatch();
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -11,9 +16,9 @@ export function ReadAccountForm() {
     const response = await readAccount({ email, password: "", name: "", phone: "" });
 
     if (response.status === 200) {
-      setResponseMessage(`User (${email}) was found`);
+      dispatch(set.readResponseMessage(`User (${email}) was found`));
     } else {
-      setResponseMessage("user missing");
+      dispatch(set.readResponseMessage("user missing"));
     }
   }
   return (
@@ -29,7 +34,7 @@ export function ReadAccountForm() {
                   placeholder="Email"
                   aria-label="create user email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => dispatch(set.readEmail(e.target.value))}
                 />
               </div>
             </fieldset>
