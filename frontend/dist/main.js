@@ -86846,9 +86846,8 @@ var recipeArray = [
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   awsFormsDidMount: () => (/* binding */ awsFormsDidMount),
-/* harmony export */   dynamoAuthDidMount: () => (/* binding */ dynamoAuthDidMount),
 /* harmony export */   selectAboutDidMount: () => (/* binding */ selectAboutDidMount),
+/* harmony export */   selectAwsFormsDidMount: () => (/* binding */ selectAwsFormsDidMount),
 /* harmony export */   selectBfPageDidMount: () => (/* binding */ selectBfPageDidMount),
 /* harmony export */   selectCreateEmail: () => (/* binding */ selectCreateEmail),
 /* harmony export */   selectCreateName: () => (/* binding */ selectCreateName),
@@ -86859,15 +86858,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   selectDeleteEmail: () => (/* binding */ selectDeleteEmail),
 /* harmony export */   selectDeletePassword: () => (/* binding */ selectDeletePassword),
 /* harmony export */   selectDeleteResponseMessage: () => (/* binding */ selectDeleteResponseMessage),
+/* harmony export */   selectDynamoAuthDidMount: () => (/* binding */ selectDynamoAuthDidMount),
+/* harmony export */   selectDynamoAuthResponse: () => (/* binding */ selectDynamoAuthResponse),
 /* harmony export */   selectExampleDidMount: () => (/* binding */ selectExampleDidMount),
 /* harmony export */   selectHomeDidMount: () => (/* binding */ selectHomeDidMount),
 /* harmony export */   selectOaPageDidMount: () => (/* binding */ selectOaPageDidMount),
 /* harmony export */   selectReadEmail: () => (/* binding */ selectReadEmail),
 /* harmony export */   selectReadResponseMessage: () => (/* binding */ selectReadResponseMessage),
+/* harmony export */   selectTriviaApiDidMount: () => (/* binding */ selectTriviaApiDidMount),
+/* harmony export */   selectTriviaApiStatus: () => (/* binding */ selectTriviaApiStatus),
+/* harmony export */   selectTriviaApiTrivia: () => (/* binding */ selectTriviaApiTrivia),
 /* harmony export */   selectUpdateEmail: () => (/* binding */ selectUpdateEmail),
 /* harmony export */   selectUpdatePassword: () => (/* binding */ selectUpdatePassword),
-/* harmony export */   selectUpdateResponseMessage: () => (/* binding */ selectUpdateResponseMessage),
-/* harmony export */   triviaApiDidMount: () => (/* binding */ triviaApiDidMount)
+/* harmony export */   selectUpdateResponseMessage: () => (/* binding */ selectUpdateResponseMessage)
 /* harmony export */ });
 //didMount
 function selectAboutDidMount(state) {
@@ -86885,14 +86888,27 @@ function selectHomeDidMount(state) {
 function selectOaPageDidMount(state) {
   return state.oaPageStateVar.didMount;
 }
-function dynamoAuthDidMount(state) {
-  return state.dynamoAuthStateVar.didMount;
+function selectAwsFormsDidMount(state) {
+  return state.awsFormsStateVar.didMount;
 }
-function triviaApiDidMount(state) {
+
+//trivia api
+function selectTriviaApiDidMount(state) {
   return state.triviaApiStateVar.didMount;
 }
-function awsFormsDidMount(state) {
-  return state.awsFormsStateVar.didMount;
+function selectTriviaApiTrivia(state) {
+  return state.triviaApiStateVar.apiTrivia;
+}
+function selectTriviaApiStatus(state) {
+  return state.triviaApiStateVar.apiStatus;
+}
+
+//dynamo auth
+function selectDynamoAuthDidMount(state) {
+  return state.dynamoAuthStateVar.didMount;
+}
+function selectDynamoAuthResponse(state) {
+  return state.dynamoAuthStateVar.authResponse;
 }
 
 //create account
@@ -86982,17 +86998,31 @@ var stateSetters = {
     var newValue = action.payload;
     state.oaPageStateVar.didMount = newValue;
   },
-  dynamoAuthDidMount: function dynamoAuthDidMount(state, action) {
+  awsFormsDidMount: function awsFormsDidMount(state, action) {
     var newValue = action.payload;
-    state.dynamoAuthStateVar.didMount = newValue;
+    state.awsFormsStateVar.didMount = newValue;
   },
+  // trivia api
   triviaApiDidMount: function triviaApiDidMount(state, action) {
     var newValue = action.payload;
     state.triviaApiStateVar.didMount = newValue;
   },
-  awsFormsDidMount: function awsFormsDidMount(state, action) {
+  triviaApiTrivia: function triviaApiTrivia(state, action) {
     var newValue = action.payload;
-    state.awsFormsStateVar.didMount = newValue;
+    state.triviaApiStateVar.apiTrivia = newValue;
+  },
+  triviaApiStatus: function triviaApiStatus(state, action) {
+    var newValue = action.payload;
+    state.triviaApiStateVar.apiStatus = newValue;
+  },
+  //dynamo auth
+  dynamoAuthDidMount: function dynamoAuthDidMount(state, action) {
+    var newValue = action.payload;
+    state.dynamoAuthStateVar.didMount = newValue;
+  },
+  dynamoAuthResponse: function dynamoAuthResponse(state, action) {
+    var newValue = action.payload;
+    state.dynamoAuthStateVar.authResponse = newValue;
   },
   //create account
   createEmail: function createEmail(state, action) {
@@ -87086,10 +87116,13 @@ var stateVariables = {
     didMount: false
   },
   dynamoAuthStateVar: {
-    didMount: false
+    didMount: false,
+    authResponse: false
   },
   triviaApiStateVar: {
-    didMount: false
+    didMount: false,
+    apiTrivia: "",
+    apiStatus: "active"
   },
   awsFormsStateVar: {
     didMount: false

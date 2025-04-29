@@ -16,14 +16,27 @@ export function selectHomeDidMount(state: StateVariables) {
 export function selectOaPageDidMount(state: StateVariables) {
   return state.oaPageStateVar.didMount;
 }
-export function dynamoAuthDidMount(state: StateVariables) {
-  return state.dynamoAuthStateVar.didMount;
+export function selectAwsFormsDidMount(state: StateVariables) {
+  return state.awsFormsStateVar.didMount;
 }
-export function triviaApiDidMount(state: StateVariables) {
+
+//trivia api
+export function selectTriviaApiDidMount(state: StateVariables) {
   return state.triviaApiStateVar.didMount;
 }
-export function awsFormsDidMount(state: StateVariables) {
-  return state.awsFormsStateVar.didMount;
+export function selectTriviaApiTrivia(state: StateVariables) {
+  return state.triviaApiStateVar.apiTrivia;
+}
+export function selectTriviaApiStatus(state: StateVariables) {
+  return state.triviaApiStateVar.apiStatus;
+}
+
+//dynamo auth
+export function selectDynamoAuthDidMount(state: StateVariables) {
+  return state.dynamoAuthStateVar.didMount;
+}
+export function selectDynamoAuthResponse(state: StateVariables) {
+  return state.dynamoAuthStateVar.authResponse;
 }
 
 //create account

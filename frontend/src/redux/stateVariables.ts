@@ -21,10 +21,13 @@ export const stateVariables = {
 
   dynamoAuthStateVar: {
     didMount: false,
+    authResponse: false,
   },
 
   triviaApiStateVar: {
     didMount: false,
+    apiTrivia: "",
+    apiStatus: "active",
   },
 
   awsFormsStateVar: {

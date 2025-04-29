@@ -22,17 +22,33 @@ export const stateSetters = {
     const newValue = action.payload;
     state.oaPageStateVar.didMount = newValue;
   },
-  dynamoAuthDidMount: function (state: StateVariables, action: ActionBoolean) {
+  awsFormsDidMount: function (state: StateVariables, action: ActionBoolean) {
     const newValue = action.payload;
-    state.dynamoAuthStateVar.didMount = newValue;
+    state.awsFormsStateVar.didMount = newValue;
   },
+
+  // trivia api
   triviaApiDidMount: function (state: StateVariables, action: ActionBoolean) {
     const newValue = action.payload;
     state.triviaApiStateVar.didMount = newValue;
   },
-  awsFormsDidMount: function (state: StateVariables, action: ActionBoolean) {
+  triviaApiTrivia: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
-    state.awsFormsStateVar.didMount = newValue;
+    state.triviaApiStateVar.apiTrivia = newValue;
+  },
+  triviaApiStatus: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.triviaApiStateVar.apiStatus = newValue;
+  },
+
+  //dynamo auth
+  dynamoAuthDidMount: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.dynamoAuthStateVar.didMount = newValue;
+  },
+  dynamoAuthResponse: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.dynamoAuthStateVar.authResponse = newValue;
   },
 
   //create account
