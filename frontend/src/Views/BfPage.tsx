@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { ApiFluxIcon } from "../modules/icons";
 import { handleBfFetch } from "../controllers/handleBfFetch";
 import { recipeArray } from "../modules/recipeArray";
 import { UserInfo } from "../modules/bfSaveUser";
+import { useDispatch, useSelector } from "react-redux";
+import { selectBfPageDidMount } from "../redux/stateSelectors";
+import { set } from "../redux/store";
 
 export function BfPage() {
-  const [didMount, setDidMount] = useState<boolean>(false);
+  const didMount = useSelector(selectBfPageDidMount);
+  const dispatch = useDispatch();
 
   useEffect(componentDidMount, []);
   useEffect(componentDidUpdate, [didMount]);
@@ -16,15 +20,12 @@ export function BfPage() {
       <UserInfo />
       <div className="row">
         <div className="col-md-6 mb-5">
-          <div className="d-flex black-forest-font justify-content-start">
-            black forest labs.
-          </div>
+          <div className="d-flex black-forest-font justify-content-start">black forest labs.</div>
           <div className="d-flex justify-content-start mb-3">
             <ApiFluxIcon />
           </div>
           <div style={{ color: "red", fontSize: ".7rem", width: "230px" }}>
-            *This model may timeout on the first attempt, if not currently warm
-            on huggingface.co
+            *This model may timeout on the first attempt, if not currently warm on huggingface.co
           </div>
         </div>
         <div className="col-md-6">
@@ -67,11 +68,7 @@ export function BfPage() {
               <legend>Generate ingredients</legend>
               <div className="input-group" data-bs-theme="dark">
                 {/*   added a recipe array for mapping */}
-                <select
-                  className="form-select"
-                  id="chosenRecipe"
-                  style={{ fontSize: ".8rem" }}
-                >
+                <select className="form-select" id="chosenRecipe" style={{ fontSize: ".8rem" }}>
                   <option value="">Select a Recipe...</option>
                   {recipeArray.map((recipe, index) => (
                     <option key={index} value={recipe}>
@@ -79,12 +76,7 @@ export function BfPage() {
                     </option>
                   ))}
                 </select>
-                <button
-                  className="btn btn-outline-secondary"
-                  type="button"
-                  id="fetchButton"
-                  onClick={handleBfFetch}
-                >
+                <button className="btn btn-outline-secondary" type="button" id="fetchButton" onClick={handleBfFetch}>
                   Submit
                 </button>
               </div>
@@ -95,19 +87,10 @@ export function BfPage() {
 
       <div className="row mt-5">
         <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
-          <div
-            className="spinner-border text-info"
-            role="status"
-            style={{ visibility: "hidden" }}
-            id="spinnerOne"
-          >
+          <div className="spinner-border text-info" role="status" style={{ visibility: "hidden" }} id="spinnerOne">
             <span className="visually-hidden"></span>
           </div>
-          <img
-            id="recipeAI"
-            className="rounded-circle"
-            style={{ maxWidth: "100%" }}
-          />
+          <img id="recipeAI" className="rounded-circle" style={{ maxWidth: "100%" }} />
         </div>
 
         <div className="col-12  d-none d-flex align-items-center justify-content-center">
@@ -123,12 +106,7 @@ export function BfPage() {
         </div>
 
         <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
-          <div
-            className="spinner-border text-info"
-            role="status"
-            style={{ visibility: "hidden" }}
-            id="spinnerTwo"
-          >
+          <div className="spinner-border text-info" role="status" style={{ visibility: "hidden" }} id="spinnerTwo">
             <span className="visually-hidden"></span>
           </div>
           <img id="ingredientsAI" style={{ maxWidth: "100%" }} />
@@ -144,7 +122,7 @@ export function BfPage() {
   );
 
   function componentDidMount(): void {
-    setDidMount(true);
+    dispatch(set.bfPageDidMount(true));
     console.log("The Black Forest page component has mounted");
     document.title = "Recipe Deconstructor - Black Forest Flux";
   }

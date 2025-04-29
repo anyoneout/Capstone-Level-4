@@ -83138,22 +83138,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _controllers_handleBfFetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../controllers/handleBfFetch */ "./src/controllers/handleBfFetch.ts");
 /* harmony import */ var _modules_recipeArray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/recipeArray */ "./src/modules/recipeArray.ts");
 /* harmony import */ var _modules_bfSaveUser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modules/bfSaveUser */ "./src/modules/bfSaveUser.tsx");
-function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
-function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
-function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
-function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-redux */ "./node_modules/.pnpm/react-redux@9.2.0_@types+re_09dfa075fee95aeaf90c5002f190b9a3/node_modules/react-redux/dist/react-redux.mjs");
+/* harmony import */ var _redux_stateSelectors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../redux/stateSelectors */ "./src/redux/stateSelectors.ts");
+/* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../redux/store */ "./src/redux/store.ts");
+
+
+
 
 
 
 
 
 function BfPage() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState2 = _slicedToArray(_useState, 2),
-    didMount = _useState2[0],
-    setDidMount = _useState2[1];
+  var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_7__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_5__.selectBfPageDidMount);
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_7__.useDispatch)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUpdate, [didMount]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUnmount, []);
@@ -83281,7 +83279,7 @@ function BfPage() {
     id: "recipeIngredients"
   }))));
   function componentDidMount() {
-    setDidMount(true);
+    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.bfPageDidMount(true));
     console.log("The Black Forest page component has mounted");
     document.title = "Recipe Deconstructor - Black Forest Flux";
   }
@@ -85546,33 +85544,32 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 //handles fetch request and UI updates
-function handleBfFetch(_x) {
+function handleBfFetch() {
   return _handleBfFetch.apply(this, arguments);
 }
 
 //Get DOM elements
 function _handleBfFetch() {
-  _handleBfFetch = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
+  _handleBfFetch = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
     var hfUserToken, elements, recipeChoice, recipeIngredientsHTML, ingredientsImgHTML, recipeImgHTML, secondArrow, spinnerOneHTML, spinnerTwoHTML, ingredientsFetched;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          event.preventDefault();
           hfUserToken = localStorage.getItem("hfToken");
           elements = getDomElements();
           recipeChoice = elements.recipeChoice, recipeIngredientsHTML = elements.recipeIngredientsHTML, ingredientsImgHTML = elements.ingredientsImgHTML, recipeImgHTML = elements.recipeImgHTML, secondArrow = elements.secondArrow, spinnerOneHTML = elements.spinnerOneHTML, spinnerTwoHTML = elements.spinnerTwoHTML;
           (0,_modules_bfSaveUser__WEBPACK_IMPORTED_MODULE_0__.bfSaveUser)();
           iconVisibility(spinnerOneHTML, true);
-          _context.next = 8;
+          _context.next = 7;
           return updateRecipeImage(recipeChoice, recipeImgHTML, spinnerOneHTML, spinnerTwoHTML, secondArrow, hfUserToken);
-        case 8:
-          _context.next = 10;
+        case 7:
+          _context.next = 9;
           return (0,_modules_bfIngredientsList__WEBPACK_IMPORTED_MODULE_2__.bfIngredientsList)(recipeChoice, hfUserToken);
-        case 10:
+        case 9:
           ingredientsFetched = _context.sent;
-          _context.next = 13;
+          _context.next = 12;
           return updateIngredients(ingredientsFetched, recipeIngredientsHTML, ingredientsImgHTML, spinnerTwoHTML, hfUserToken);
-        case 13:
+        case 12:
         case "end":
           return _context.stop();
       }
@@ -85598,7 +85595,7 @@ function iconVisibility(element, isVisible) {
 }
 
 //fetches recipe image by user choice, controls icon visibility
-function updateRecipeImage(_x2, _x3, _x4, _x5, _x6, _x7) {
+function updateRecipeImage(_x, _x2, _x3, _x4, _x5, _x6) {
   return _updateRecipeImage.apply(this, arguments);
 } //fetches ingredients list and image
 function _updateRecipeImage() {
@@ -85624,7 +85621,7 @@ function _updateRecipeImage() {
   }));
   return _updateRecipeImage.apply(this, arguments);
 }
-function updateIngredients(_x8, _x9, _x10, _x11, _x12) {
+function updateIngredients(_x7, _x8, _x9, _x10, _x11) {
   return _updateIngredients.apply(this, arguments);
 }
 function _updateIngredients() {
