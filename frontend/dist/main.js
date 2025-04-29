@@ -83076,22 +83076,47 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _crudForms_CreateAccountForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./crudForms/CreateAccountForm */ "./src/Views/crudForms/CreateAccountForm.tsx");
-/* harmony import */ var _crudForms_UpdateAccountForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./crudForms/UpdateAccountForm */ "./src/Views/crudForms/UpdateAccountForm.tsx");
-/* harmony import */ var _crudForms_DeleteAccountForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./crudForms/DeleteAccountForm */ "./src/Views/crudForms/DeleteAccountForm.tsx");
-/* harmony import */ var _crudForms_ReadAccountForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./crudForms/ReadAccountForm */ "./src/Views/crudForms/ReadAccountForm.tsx");
+/* harmony import */ var _crudForms_DeleteAccountForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./crudForms/DeleteAccountForm */ "./src/Views/crudForms/DeleteAccountForm.tsx");
+/* harmony import */ var _crudForms_ReadAccountForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./crudForms/ReadAccountForm */ "./src/Views/crudForms/ReadAccountForm.tsx");
+/* harmony import */ var _crudForms_UpdateAccountForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./crudForms/UpdateAccountForm */ "./src/Views/crudForms/UpdateAccountForm.tsx");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-redux */ "./node_modules/.pnpm/react-redux@9.2.0_@types+re_09dfa075fee95aeaf90c5002f190b9a3/node_modules/react-redux/dist/react-redux.mjs");
+/* harmony import */ var _redux_stateSelectors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../redux/stateSelectors */ "./src/redux/stateSelectors.ts");
+/* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../redux/store */ "./src/redux/store.ts");
+
+
+
 
 
 
 
 
 function AwsForms() {
+  var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_7__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_5__.selectAwsFormsDidMount);
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_7__.useDispatch)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUpdate, [didMount]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUnmount, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "row d-flex justify-content-center m-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "CRUD forms")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-10 m-2"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_crudForms_CreateAccountForm__WEBPACK_IMPORTED_MODULE_1__.CreateAccountForm, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_crudForms_ReadAccountForm__WEBPACK_IMPORTED_MODULE_4__.ReadAccountForm, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_crudForms_UpdateAccountForm__WEBPACK_IMPORTED_MODULE_2__.UpdateAccountForm, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_crudForms_DeleteAccountForm__WEBPACK_IMPORTED_MODULE_3__.DeleteAccountForm, null)))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_crudForms_CreateAccountForm__WEBPACK_IMPORTED_MODULE_1__.CreateAccountForm, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_crudForms_ReadAccountForm__WEBPACK_IMPORTED_MODULE_3__.ReadAccountForm, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_crudForms_UpdateAccountForm__WEBPACK_IMPORTED_MODULE_4__.UpdateAccountForm, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_crudForms_DeleteAccountForm__WEBPACK_IMPORTED_MODULE_2__.DeleteAccountForm, null)))));
+  function componentDidMount() {
+    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.awsFormsDidMount(true));
+    console.log("The AWS Forms page component has mounted");
+    document.title = "Recipe Deconstructor - AWS Forms";
+  }
+  function componentDidUpdate() {
+    if (didMount) console.log("component had updated");
+  }
+  function componentDidUnmount() {
+    function delayedUnmount() {
+      console.log("component has unmounted");
+    }
+    return delayedUnmount;
+  }
 }
 
 /***/ }),
