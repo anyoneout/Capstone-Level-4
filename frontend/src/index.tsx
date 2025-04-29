@@ -18,6 +18,8 @@ import { ReadAccountForm } from "./Views/crudForms/ReadAccountForm";
 import { UpdateAccountForm } from "./Views/crudForms/UpdateAccountForm";
 import { DeleteAccountForm } from "./Views/crudForms/DeleteAccountForm";
 import AwsForms from "./Views/AwsForms";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
 
 const bodyTag = document.getElementById("bodyTag");
 const root = createRoot(bodyTag);
@@ -25,26 +27,28 @@ const domain = window.location.hostname;
 let rootPath = "";
 if (domain === "anyoneout.github.io") rootPath = "/Capstone-Level-4";
 root.render(
-  <BrowserRouter>
-    <CollapsibleNavbar />
-    <HandleRefresh>
-      <Routes>
-        <Route path={`${rootPath}/`} element={<Home />} />
-        <Route path={`${rootPath}/BfPage`} element={<BfPage />} />
-        <Route path={`${rootPath}/OaPage`} element={<OaPage />} />
-        <Route path={`${rootPath}/Examples`} element={<Examples />} />
-        <Route path={`${rootPath}/About`} element={<About />} />
-        <Route path={`${rootPath}/signin`} element={<SignInArea />} />
-        <Route path={`${rootPath}/server`} element={<Server />} />
-        <Route path={`${rootPath}/trivia`} element={<TriviaApiResponsePage />} />
-        <Route path={`${rootPath}/dynamo`} element={<DynamoAuthPage />} />
-        <Route path={`${rootPath}/createUser`} element={<CreateAccountForm />} />
-        <Route path={`${rootPath}/readUser`} element={<ReadAccountForm />} />
-        <Route path={`${rootPath}/updateUser`} element={<UpdateAccountForm />} />
-        <Route path={`${rootPath}/deleteUser`} element={<DeleteAccountForm />} />
-        <Route path={`${rootPath}/aws`} element={<AwsForms />} />
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </HandleRefresh>
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <CollapsibleNavbar />
+      <HandleRefresh>
+        <Routes>
+          <Route path={`${rootPath}/`} element={<Home />} />
+          <Route path={`${rootPath}/BfPage`} element={<BfPage />} />
+          <Route path={`${rootPath}/OaPage`} element={<OaPage />} />
+          <Route path={`${rootPath}/Examples`} element={<Examples />} />
+          <Route path={`${rootPath}/About`} element={<About />} />
+          <Route path={`${rootPath}/signin`} element={<SignInArea />} />
+          <Route path={`${rootPath}/server`} element={<Server />} />
+          <Route path={`${rootPath}/trivia`} element={<TriviaApiResponsePage />} />
+          <Route path={`${rootPath}/dynamo`} element={<DynamoAuthPage />} />
+          <Route path={`${rootPath}/createUser`} element={<CreateAccountForm />} />
+          <Route path={`${rootPath}/readUser`} element={<ReadAccountForm />} />
+          <Route path={`${rootPath}/updateUser`} element={<UpdateAccountForm />} />
+          <Route path={`${rootPath}/deleteUser`} element={<DeleteAccountForm />} />
+          <Route path={`${rootPath}/aws`} element={<AwsForms />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+      </HandleRefresh>
+    </BrowserRouter>
+  </Provider>
 );
