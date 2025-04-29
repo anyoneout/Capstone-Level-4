@@ -84627,40 +84627,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SignOutModal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SignOutModal */ "./src/Views/components/SignOutModal.tsx");
 /* harmony import */ var _CollapsibleNavbar_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CollapsibleNavbar.scss */ "./src/Views/components/CollapsibleNavbar.scss");
 /* harmony import */ var _SignInArea_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SignInArea.scss */ "./src/Views/components/SignInArea.scss");
-function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
-function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
-function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
-function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-redux */ "./node_modules/.pnpm/react-redux@9.2.0_@types+re_09dfa075fee95aeaf90c5002f190b9a3/node_modules/react-redux/dist/react-redux.mjs");
+/* harmony import */ var _redux_stateSelectors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../redux/stateSelectors */ "./src/redux/stateSelectors.ts");
+/* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../redux/store */ "./src/redux/store.ts");
+
+
+
 
 
 
 
 
 function SignInArea() {
-  // State variables to manage user sign-in status and UI updates
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState2 = _slicedToArray(_useState, 2),
-    isSignedIn = _useState2[0],
-    setIsSignedIn = _useState2[1]; // Tracks if user is signed in
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
-    _useState4 = _slicedToArray(_useState3, 2),
-    didMount = _useState4[0],
-    setDidMount = _useState4[1]; // Tracks if component has mounted
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("Sign In"),
-    _useState6 = _slicedToArray(_useState5, 2),
-    buttonText = _useState6[0],
-    setButtonText = _useState6[1]; // Controls button text
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("sign-in-btn"),
-    _useState8 = _slicedToArray(_useState7, 2),
-    buttonClass = _useState8[0],
-    setButtonClass = _useState8[1]; // Controls button style
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
-    _useState10 = _slicedToArray(_useState9, 2),
-    showModal = _useState10[0],
-    setShowModal = _useState10[1]; // Tracks which modal is displayed
-
+  var isSignedIn = (0,react_redux__WEBPACK_IMPORTED_MODULE_7__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_5__.selectSignInIsSignedIn);
+  var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_7__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_5__.selectSignInDidMount);
+  var buttonText = (0,react_redux__WEBPACK_IMPORTED_MODULE_7__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_5__.selectSignInButtonText);
+  var buttonClass = (0,react_redux__WEBPACK_IMPORTED_MODULE_7__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_5__.selectSignInButtonClass);
+  var showModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_7__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_5__.selectSignInShowModal);
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_7__.useDispatch)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []); // Runs once when component mounts
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUpdate, [isSignedIn]); // Runs when isSignedIn state changes
 
@@ -84680,7 +84664,7 @@ function SignInArea() {
 
   // Runs only when the component is first mounted
   function componentDidMount() {
-    setDidMount(true);
+    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInDidMount(true));
     console.log("SignInArea Mounted");
   }
 
@@ -84691,11 +84675,11 @@ function SignInArea() {
 
       // Update button text and style based on sign-in status
       if (isSignedIn) {
-        setButtonText("Sign Out");
-        setButtonClass("sign-out-btn");
+        dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInButtonText("Sign Out"));
+        dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInButtonClass("sign-out-btn"));
       } else {
-        setButtonText("Sign In");
-        setButtonClass("sign-in-btn");
+        dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInButtonText("Sign In"));
+        dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInButtonClass("sign-in-btn"));
       }
     }
   }
@@ -84705,7 +84689,7 @@ function SignInArea() {
 
   function handleSignIn() {
     console.log("User is signing in...");
-    setShowModal("signIn");
+    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal("signIn"));
     var backdrop = document.createElement("div");
     backdrop.className = "modal-backdrop fade show";
     document.body.appendChild(backdrop);
@@ -84715,7 +84699,7 @@ function SignInArea() {
 
   function handleCloseSignIn() {
     console.log("Closing Sign-In Modal...");
-    setShowModal(null);
+    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal(null));
     removeBackdrop();
   }
 
@@ -84724,8 +84708,8 @@ function SignInArea() {
 
   function handleSubmitCloseSignIn() {
     console.log("Closing Sign-In Modal...");
-    setIsSignedIn(true);
-    setShowModal(null);
+    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInIsSignedIn(true));
+    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal(null));
     removeBackdrop();
   }
 
@@ -84734,7 +84718,7 @@ function SignInArea() {
 
   function handleSignOut() {
     console.log("User is signing out...");
-    setShowModal("signOut");
+    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal("signOut"));
     var backdrop = document.createElement("div");
     backdrop.className = "modal-backdrop fade show";
     document.body.appendChild(backdrop);
@@ -84744,7 +84728,7 @@ function SignInArea() {
 
   function handleCloseSignOut() {
     console.log("Closing Sign-Out Modal...");
-    setShowModal(null);
+    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal(null));
     removeBackdrop();
   }
 
@@ -84753,8 +84737,8 @@ function SignInArea() {
 
   function handleSubmitCloseSignOut() {
     console.log("Closing Sign-Out Modal...");
-    setIsSignedIn(false);
-    setShowModal(null);
+    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInIsSignedIn(false));
+    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal(null));
     removeBackdrop();
   }
 
@@ -86907,6 +86891,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   selectOaPageDidMount: () => (/* binding */ selectOaPageDidMount),
 /* harmony export */   selectReadEmail: () => (/* binding */ selectReadEmail),
 /* harmony export */   selectReadResponseMessage: () => (/* binding */ selectReadResponseMessage),
+/* harmony export */   selectSignInButtonClass: () => (/* binding */ selectSignInButtonClass),
+/* harmony export */   selectSignInButtonText: () => (/* binding */ selectSignInButtonText),
+/* harmony export */   selectSignInDidMount: () => (/* binding */ selectSignInDidMount),
+/* harmony export */   selectSignInIsSignedIn: () => (/* binding */ selectSignInIsSignedIn),
+/* harmony export */   selectSignInShowModal: () => (/* binding */ selectSignInShowModal),
 /* harmony export */   selectTriviaApiDidMount: () => (/* binding */ selectTriviaApiDidMount),
 /* harmony export */   selectTriviaApiStatus: () => (/* binding */ selectTriviaApiStatus),
 /* harmony export */   selectTriviaApiTrivia: () => (/* binding */ selectTriviaApiTrivia),
@@ -87003,6 +86992,24 @@ function selectDeletePassword(state) {
 }
 function selectDeleteResponseMessage(state) {
   return state.deleteAccountState.responseMessage;
+}
+
+//sign in area
+
+function selectSignInIsSignedIn(state) {
+  return state.isSignedInState.isSignedIn;
+}
+function selectSignInDidMount(state) {
+  return state.isSignedInState.didMount;
+}
+function selectSignInButtonText(state) {
+  return state.isSignedInState.buttonText;
+}
+function selectSignInButtonClass(state) {
+  return state.isSignedInState.buttonClass;
+}
+function selectSignInShowModal(state) {
+  return state.isSignedInState.showModal;
 }
 
 /***/ }),
@@ -87125,6 +87132,27 @@ var stateSetters = {
   deleteResponseMessage: function deleteResponseMessage(state, action) {
     var newValue = action.payload;
     state.deleteAccountState.responseMessage = newValue;
+  },
+  //sign in area
+  signInDidMount: function signInDidMount(state, action) {
+    var newValue = action.payload;
+    state.isSignedInState.didMount = newValue;
+  },
+  signInIsSignedIn: function signInIsSignedIn(state, action) {
+    var newValue = action.payload;
+    state.isSignedInState.isSignedIn = newValue;
+  },
+  signInButtonText: function signInButtonText(state, action) {
+    var newValue = action.payload;
+    state.isSignedInState.buttonText = newValue;
+  },
+  signInButtonClass: function signInButtonClass(state, action) {
+    var newValue = action.payload;
+    state.isSignedInState.buttonClass = newValue;
+  },
+  signInShowModal: function signInShowModal(state, action) {
+    var newValue = action.payload;
+    state.isSignedInState.showModal = newValue;
   }
 };
 
@@ -87190,6 +87218,13 @@ var stateVariables = {
     email: "",
     password: "",
     responseMessage: ""
+  },
+  isSignedInState: {
+    isSignedIn: false,
+    didMount: false,
+    buttonText: "Sign In",
+    buttonClass: "sign-in-btn",
+    showModal: null
   }
 };
 

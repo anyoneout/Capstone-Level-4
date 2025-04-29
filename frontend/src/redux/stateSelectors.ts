@@ -90,3 +90,21 @@ export function selectDeletePassword(state: StateVariables) {
 export function selectDeleteResponseMessage(state: StateVariables) {
   return state.deleteAccountState.responseMessage;
 }
+
+//sign in area
+
+export function selectSignInIsSignedIn(state: StateVariables) {
+  return state.isSignedInState.isSignedIn;
+}
+export function selectSignInDidMount(state: StateVariables) {
+  return state.isSignedInState.didMount;
+}
+export function selectSignInButtonText(state: StateVariables) {
+  return state.isSignedInState.buttonText;
+}
+export function selectSignInButtonClass(state: StateVariables) {
+  return state.isSignedInState.buttonClass;
+}
+export function selectSignInShowModal(state: StateVariables) {
+  return state.isSignedInState.showModal;
+}

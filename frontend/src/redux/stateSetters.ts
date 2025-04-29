@@ -114,6 +114,28 @@ export const stateSetters = {
     const newValue = action.payload;
     state.deleteAccountState.responseMessage = newValue;
   },
+
+  //sign in area
+  signInDidMount: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.isSignedInState.didMount = newValue;
+  },
+  signInIsSignedIn: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.isSignedInState.isSignedIn = newValue;
+  },
+  signInButtonText: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.isSignedInState.buttonText = newValue;
+  },
+  signInButtonClass: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.isSignedInState.buttonClass = newValue;
+  },
+  signInShowModal: function (state: StateVariables, action) {
+    const newValue = action.payload;
+    state.isSignedInState.showModal = newValue;
+  },
 };
 
 type Action = {

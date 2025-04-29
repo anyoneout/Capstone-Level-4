@@ -1,16 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import SignInModal from "./SignInModal";
 import SignOutModal from "./SignOutModal";
 import "./CollapsibleNavbar.scss";
 import "./SignInArea.scss";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectSignInButtonClass,
+  selectSignInButtonText,
+  selectSignInDidMount,
+  selectSignInIsSignedIn,
+  selectSignInShowModal,
+} from "../../redux/stateSelectors";
+import { set } from "../../redux/store";
 
 export default function SignInArea() {
-  // State variables to manage user sign-in status and UI updates
-  const [isSignedIn, setIsSignedIn] = useState<boolean>(false); // Tracks if user is signed in
-  const [didMount, setDidMount] = useState<boolean>(false); // Tracks if component has mounted
-  const [buttonText, setButtonText] = useState<string>("Sign In"); // Controls button text
-  const [buttonClass, setButtonClass] = useState<string>("sign-in-btn"); // Controls button style
-  const [showModal, setShowModal] = useState<string | null>(null); // Tracks which modal is displayed
+  const isSignedIn = useSelector(selectSignInIsSignedIn);
+  const didMount = useSelector(selectSignInDidMount);
+  const buttonText = useSelector(selectSignInButtonText);
+  const buttonClass = useSelector(selectSignInButtonClass);
+  const showModal = useSelector(selectSignInShowModal);
+
+  const dispatch = useDispatch();
 
   useEffect(componentDidMount, []); // Runs once when component mounts
   useEffect(componentDidUpdate, [isSignedIn]); // Runs when isSignedIn state changes
@@ -19,36 +29,26 @@ export default function SignInArea() {
     <>
       {/* Navigation Button for Sign In/Out */}
       <li className="nav-item">
-        <button
-          className={buttonClass}
-          onClick={isSignedIn ? handleSignOut : handleSignIn}
-        >
+        <button className={buttonClass} onClick={isSignedIn ? handleSignOut : handleSignIn}>
           {buttonText}
         </button>
       </li>
 
       {/* Conditionally Render Sign-In Modal */}
       {showModal === "signIn" && (
-        <SignInModal
-          className="modal-width"
-          onSignIn={handleSubmitCloseSignIn}
-          closeButton={handleCloseSignIn}
-        />
+        <SignInModal className="modal-width" onSignIn={handleSubmitCloseSignIn} closeButton={handleCloseSignIn} />
       )}
 
       {/* Conditionally Render Sign-Out Modal */}
       {showModal === "signOut" && (
-        <SignOutModal
-          onSignOut={handleSubmitCloseSignOut}
-          closeButton={handleCloseSignOut}
-        />
+        <SignOutModal onSignOut={handleSubmitCloseSignOut} closeButton={handleCloseSignOut} />
       )}
     </>
   );
 
   // Runs only when the component is first mounted
-  function componentDidMount(): void{
-    setDidMount(true);
+  function componentDidMount(): void {
+    dispatch(set.signInDidMount(true));
     console.log("SignInArea Mounted");
   }
 
@@ -59,11 +59,11 @@ export default function SignInArea() {
 
       // Update button text and style based on sign-in status
       if (isSignedIn) {
-        setButtonText("Sign Out");
-        setButtonClass("sign-out-btn");
+        dispatch(set.signInButtonText("Sign Out"));
+        dispatch(set.signInButtonClass("sign-out-btn"));
       } else {
-        setButtonText("Sign In");
-        setButtonClass("sign-in-btn");
+        dispatch(set.signInButtonText("Sign In"));
+        dispatch(set.signInButtonClass("sign-in-btn"));
       }
     }
   }
@@ -73,7 +73,7 @@ export default function SignInArea() {
 
   function handleSignIn(): void {
     console.log("User is signing in...");
-    setShowModal("signIn");
+    dispatch(set.signInShowModal("signIn"));
     const backdrop = document.createElement("div");
     backdrop.className = "modal-backdrop fade show";
     document.body.appendChild(backdrop);
@@ -83,7 +83,7 @@ export default function SignInArea() {
 
   function handleCloseSignIn(): void {
     console.log("Closing Sign-In Modal...");
-    setShowModal(null);
+    dispatch(set.signInShowModal(null));
     removeBackdrop();
   }
 
@@ -92,8 +92,8 @@ export default function SignInArea() {
 
   function handleSubmitCloseSignIn(): void {
     console.log("Closing Sign-In Modal...");
-    setIsSignedIn(true);
-    setShowModal(null);
+    dispatch(set.signInIsSignedIn(true));
+    dispatch(set.signInShowModal(null));
     removeBackdrop();
   }
 
@@ -102,7 +102,7 @@ export default function SignInArea() {
 
   function handleSignOut(): void {
     console.log("User is signing out...");
-    setShowModal("signOut");
+    dispatch(set.signInShowModal("signOut"));
     const backdrop = document.createElement("div");
     backdrop.className = "modal-backdrop fade show";
     document.body.appendChild(backdrop);
@@ -112,7 +112,7 @@ export default function SignInArea() {
 
   function handleCloseSignOut(): void {
     console.log("Closing Sign-Out Modal...");
-    setShowModal(null);
+    dispatch(set.signInShowModal(null));
     removeBackdrop();
   }
 
@@ -121,8 +121,8 @@ export default function SignInArea() {
 
   function handleSubmitCloseSignOut(): void {
     console.log("Closing Sign-Out Modal...");
-    setIsSignedIn(false);
-    setShowModal(null);
+    dispatch(set.signInIsSignedIn(false));
+    dispatch(set.signInShowModal(null));
     removeBackdrop();
   }
 

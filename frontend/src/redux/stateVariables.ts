@@ -59,6 +59,14 @@ export const stateVariables = {
     password: "",
     responseMessage: "",
   },
+
+  isSignedInState: {
+    isSignedIn: false,
+    didMount: false,
+    buttonText: "Sign In",
+    buttonClass: "sign-in-btn",
+    showModal: null,
+  },
 };
 
 export type StateVariables = typeof stateVariables;
