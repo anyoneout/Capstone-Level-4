@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { HomeDalleIcon, HomeFluxIcon } from "../modules/icons";
 import Card from "./components/Card";
@@ -10,10 +10,13 @@ import bfCapreseSaladR from "../../assets/images/BlackForestImages/bfCapreseSala
 import bfCapreseSaladI from "../../assets/images/BlackForestImages/bfCapreseSaladI.jpg";
 import oaCapreseSaladR from "../../assets/images/OpenAiImages/oaCapreseSaladR.jpg";
 import oaCapreseSaladI from "../../assets/images/OpenAiImages/oaCapreseSaladI.jpg";
+import { useDispatch, useSelector } from "react-redux";
+import { selectHomeDidMount } from "../redux/stateSelectors";
+import { set } from "../redux/store";
 
 export function Home() {
-  // initialize didMount state variable and set it to false
-  const [didMount, setDidMount] = useState<boolean>(false);
+  const didMount = useSelector(selectHomeDidMount);
+  const dispatch = useDispatch();
 
   //handles component phases
   useEffect(componentDidMount, []);
@@ -25,34 +28,22 @@ export function Home() {
       <div className="container navbar-width">
         <div className="row row-cols-lg-auto mt-lg-5">
           <div className="col-12 mt-5">
-            <p
-              className="display-2 fw-bold mt-lg-5 mx-4 "
-              style={{ color: "#fff78a" }}
-            >
+            <p className="display-2 fw-bold mt-lg-5 mx-4 " style={{ color: "#fff78a" }}>
               Recipe Deconstructor
             </p>
           </div>
           <div className="col-12 col-lg-7">
-            <h1
-              className="display-6 mx-4"
-              style={{ color: "rgb(238, 238, 238)" }}
-            >
+            <h1 className="display-6 mx-4" style={{ color: "rgb(238, 238, 238)" }}>
               Separate dishes into their ingredients
             </h1>
           </div>
           <div className="col-12 col-lg-5 d-flex align-items-center mt-4 mt-lg-0 justify-content-start">
             <span className="try-here ms-4 ms-lg-0">
               Try here!
-              <Link
-                to="BfPage"
-                className="ms-3 btn btn-sm btn-outline-info try-buttons"
-              >
+              <Link to="BfPage" className="ms-3 btn btn-sm btn-outline-info try-buttons">
                 Flux
               </Link>
-              <Link
-                to="OaPage"
-                className="btn btn-sm btn-outline-info try-buttons "
-              >
+              <Link to="OaPage" className="btn btn-sm btn-outline-info try-buttons ">
                 Dall-E-3
               </Link>
             </span>
@@ -131,7 +122,7 @@ export function Home() {
   );
   //component mounts
   function componentDidMount() {
-    setDidMount(true);
+    dispatch(set.homeDidMount(true));
     console.log("The Home page component has mounted");
     document.title = "Recipe Deconstructor - Home";
     //Tooltip initialization
