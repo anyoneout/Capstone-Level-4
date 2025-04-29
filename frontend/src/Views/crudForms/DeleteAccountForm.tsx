@@ -27,7 +27,7 @@ export function DeleteAccountForm() {
     }
   }
   return (
-    <div className="container">
+    <div className="container mb-2">
       <div className="row crud-forms d-flex align-items-center p-4">
         <div className="col-4">
           <form onSubmit={handleSubmit}>

@@ -20,16 +20,13 @@ export default function AwsForms() {
     <main>
       <div className="container">
         <div className="row d-flex justify-content-center m-5">
-          <div>
-            <h2>CRUD forms</h2>
+          <div className="d-flex justify-content-center mb-4">
+            <h2>CRUD Forms</h2>
           </div>
           <div className="col-10 m-2">
             <CreateAccountForm />
-            <br />
             <ReadAccountForm />
-            <br />
             <UpdateAccountForm />
-            <br />
             <DeleteAccountForm />
           </div>
         </div>

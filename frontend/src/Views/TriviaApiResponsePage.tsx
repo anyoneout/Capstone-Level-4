@@ -28,9 +28,9 @@ export function TriviaApiResponsePage() {
     try {
       const response = await axios.get("http://localhost:3000/triviaRoute");
       const stringified = JSON.stringify(response.data);
-      dispatch(set.apiTrivia(stringified));
+      dispatch(set.triviaApiTrivia(stringified));
     } catch {
-      dispatch(set.apiStatus("unreachable"));
+      dispatch(set.triviaApiStatus("unreachable"));
     }
   }
 
