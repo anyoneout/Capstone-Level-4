@@ -24,6 +24,6 @@ export function HandleRefresh(props) {
       navigateTo(redirectPath);
     }
 
-    setTimeout(() => dispatch(set.DidMount(true), 1000));
+    setTimeout(() => dispatch(set.handleRefreshDidMount(true), 1000));
   }
 }

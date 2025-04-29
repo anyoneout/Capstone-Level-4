@@ -84548,7 +84548,7 @@ function HandleRefresh(props) {
       navigateTo(redirectPath);
     }
     setTimeout(function () {
-      return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.DidMount(true), 1000);
+      return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.handleRefreshDidMount(true), 1000);
     });
   }
 }
