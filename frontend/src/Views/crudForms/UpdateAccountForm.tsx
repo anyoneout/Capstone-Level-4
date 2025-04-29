@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { updateAccount } from "../../modules/crud/updateAccount";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUpdateEmail, selectUpdatePassword, selectUpdateResponseMessage } from "../../redux/stateSelectors";
+import { set } from "../../redux/store";
 
 export function UpdateAccountForm() {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [responseMessage, setResponseMessage] = useState<string>("");
+  const email = useSelector(selectUpdateEmail);
+  const password = useSelector(selectUpdatePassword);
+  const responseMessage = useSelector(selectUpdateResponseMessage);
+
+  const dispatch = useDispatch();
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -12,9 +17,9 @@ export function UpdateAccountForm() {
     const response = await updateAccount({ email, password, name: "", phone: "" });
 
     if (response.status === 200) {
-      setResponseMessage(`user (${email}) updated successfully`);
+      dispatch(set.updateResponseMessage(`user (${email}) updated successfully`));
     } else {
-      setResponseMessage("user wasn't updated");
+      dispatch(set.UpdateResponseMessage("user wasn't updated"));
     }
   }
 
@@ -31,7 +36,7 @@ export function UpdateAccountForm() {
                   placeholder="Email"
                   aria-label="create user email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => dispatch(set.updateEmail(e.target.value))}
                 />
               </div>
 
@@ -42,7 +47,7 @@ export function UpdateAccountForm() {
                   className="form-control api-inputs"
                   aria-label="create user password"
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => dispatch(set.updatePassword(e.target.value))}
                 />
               </div>
             </fieldset>
