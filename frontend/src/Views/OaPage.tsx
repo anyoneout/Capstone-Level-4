@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { handleOaFetch } from "../controllers/handleOaFetch";
 import { ApiDalleIcon, ApiOpenAiIcon } from "../modules/icons";
 import { recipeArray } from "../modules/recipeArray";
+import { useDispatch, useSelector } from "react-redux";
+import { selectOaPageDidMount } from "../redux/stateSelectors";
+import { set } from "../redux/store";
 
 export function OaPage() {
-  const [didMount, setDidMount] = useState<boolean>(false);
+  const didMount = useSelector(selectOaPageDidMount);
+  const dispatch = useDispatch();
 
   useEffect(componentDidMount, []);
   useEffect(componentDidUpdate, [didMount]);
@@ -84,11 +88,7 @@ export function OaPage() {
               <legend>Generate ingredients</legend>
               <div className="input-group" data-bs-theme="dark">
                 {/*   added a recipe array for mapping */}
-                <select
-                  className="form-select"
-                  id="chosenRecipe"
-                  style={{ fontSize: ".8rem" }}
-                >
+                <select className="form-select" id="chosenRecipe" style={{ fontSize: ".8rem" }}>
                   <option value="">Select a Recipe...</option>
                   {recipeArray.map((recipe, index) => (
                     <option key={index} value={recipe}>
@@ -96,12 +96,7 @@ export function OaPage() {
                     </option>
                   ))}
                 </select>
-                <button
-                  className="btn btn-outline-secondary"
-                  type="button"
-                  id="fetchButton"
-                  onClick={handleOaFetch}
-                >
+                <button className="btn btn-outline-secondary" type="button" id="fetchButton" onClick={handleOaFetch}>
                   Submit
                 </button>
               </div>
@@ -112,19 +107,10 @@ export function OaPage() {
 
       <div className="row mt-5">
         <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
-          <div
-            className="spinner-border text-info"
-            role="status"
-            style={{ visibility: "hidden" }}
-            id="spinnerOne"
-          >
+          <div className="spinner-border text-info" role="status" style={{ visibility: "hidden" }} id="spinnerOne">
             <span className="visually-hidden"></span>
           </div>
-          <img
-            id="recipeAI"
-            className="rounded-circle"
-            style={{ maxWidth: "100%" }}
-          />
+          <img id="recipeAI" className="rounded-circle" style={{ maxWidth: "100%" }} />
         </div>
 
         <div className="col-12  d-none d-flex align-items-center justify-content-center">
@@ -140,12 +126,7 @@ export function OaPage() {
         </div>
 
         <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
-          <div
-            className="spinner-border text-info"
-            role="status"
-            style={{ visibility: "hidden" }}
-            id="spinnerTwo"
-          >
+          <div className="spinner-border text-info" role="status" style={{ visibility: "hidden" }} id="spinnerTwo">
             <span className="visually-hidden"></span>
           </div>
           <img id="ingredientsAI" style={{ maxWidth: "100%" }} />
@@ -161,7 +142,7 @@ export function OaPage() {
   );
 
   function componentDidMount(): void {
-    setDidMount(true);
+    dispatch(set.oaPageDidMount(true));
     console.log("The OaPage page component has mounted");
     document.title = "Recipe Deconstructor - Open AI Dall-E-3";
   }
