@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { deleteAccount } from "../../modules/crud/deleteAccount";
+import { selectDeleteEmail, selectDeletePassword, selectDeleteResponseMessage } from "../../redux/stateSelectors";
+import { useDispatch, useSelector } from "react-redux";
+import { set } from "../../redux/store";
 
 export function DeleteAccountForm() {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [responseMessage, setResponseMessage] = useState<string>("");
+  const email = useSelector(selectDeleteEmail);
+  const password = useSelector(selectDeletePassword);
+  const responseMessage = useSelector(selectDeleteResponseMessage);
+
+  const dispatch = useDispatch();
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -12,13 +17,13 @@ export function DeleteAccountForm() {
     const response = await deleteAccount({ email, password, name: "", phone: "" });
 
     if (response.status === 401) {
-      return setResponseMessage(`Invalid password entered`);
+      return dispatch(set.deleteResponseMessage(`Invalid password entered`));
     }
 
     if (response.status === 200) {
-      setResponseMessage(`user (${email}) deleted successfully`);
+      return dispatch(set.deleteResponseMessage(`user (${email}) deleted successfully`));
     } else {
-      setResponseMessage("user wasn't deleted");
+      return dispatch(set.deleteResponseMessage("user wasn't deleted"));
     }
   }
   return (
@@ -34,7 +39,7 @@ export function DeleteAccountForm() {
                   placeholder="Email"
                   aria-label="create user email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => dispatch(set.deleteEmail(e.target.value))}
                 />
               </div>
 
@@ -45,7 +50,7 @@ export function DeleteAccountForm() {
                   className="form-control api-inputs"
                   aria-label="create user password"
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => dispatch(set.deletePassword(e.target.value))}
                 />
               </div>
             </fieldset>
