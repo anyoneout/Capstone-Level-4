@@ -1,10 +1,18 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectDynamoAuthDidMount, selectDynamoAuthResponse } from "../redux/stateSelectors";
+import { set } from "../redux/store";
 
 export function DynamoAuthPage() {
-  const [authResponse, setAuthResponse] = useState<boolean>(null);
+  const didMount = useSelector(selectDynamoAuthDidMount);
+  const authResponse = useSelector(selectDynamoAuthResponse);
+  const dispatch = useDispatch();
 
   useEffect(componentDidMount, []);
+  useEffect(componentDidUpdate, [didMount]);
+  useEffect(componentDidUnmount, []);
+
   let message = "";
   if (authResponse === null) {
     message = "backend unreachable";
@@ -14,17 +22,10 @@ export function DynamoAuthPage() {
     message = "User does not exist";
   }
 
-  function componentDidMount() {
-    /*   checkBackend(); */
-    getAuthResponse();
-  }
-
   return (
     <main>
-      <div className="container navbar-width ">
-        <h2>backend dynamo response</h2>
-        {message}
-      </div>
+      <h2>backend dynamo response</h2>
+      {message}
     </main>
   );
 
@@ -33,9 +34,27 @@ export function DynamoAuthPage() {
     try {
       const response = await axios.get("http://localhost:3000/dynamoAuth?email=aaa@aaa.com&password=aaa");
       console.log("Backend response:", response.data);
-      setAuthResponse(response.data);
+      dispatch(set.dynamoAuthResponse(response.data));
     } catch {
-      setAuthResponse(null);
+      dispatch(set.dynamoAuthResponse(null));
     }
+  }
+
+  function componentDidMount(): void {
+    dispatch(set.dynamoAuthDidMount(true));
+    getAuthResponse();
+    console.log("The Dynamo Auth page component has mounted");
+    document.title = "Recipe Deconstructor - Dynamo Auth Page";
+  }
+
+  function componentDidUpdate(): void {
+    if (didMount) console.log("component had updated");
+  }
+
+  function componentDidUnmount(): () => void {
+    function delayedUnmount(): void {
+      console.log("component has unmounted");
+    }
+    return delayedUnmount;
   }
 }
