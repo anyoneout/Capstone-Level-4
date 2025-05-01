@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "module": "Preserve",
+    "types": ["vitest/globals"] // declares the test functions (describe, it and expect) for typescript. list of folders that have declaration files.
+  }
+}

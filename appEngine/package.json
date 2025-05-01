@@ -1,0 +1,44 @@
+{
+  "name": "express-template-backend",
+  "version": "1.0.0",
+  "main": "./index.ts",
+  "scripts": {
+    "start": "npm run close-port && npm run start-server",
+    "start2": "npm run open-tab && npm run start-build",
+    "build": "npm run build-production",
+    "test": "npx jest ./src/utils/addition.test.js",
+    "deploy": "gcloud app deploy ./dist/app.yaml",
+    "-------": "------------------------------------------",
+    "build-production": "npx webpack --mode=production",
+    "open-live": "npx open-cli https://sandbox-level-4",
+    "open-tab": "npx open-cli http://localhost:3000",
+    "close-port": "npx kill-port 3000",
+    "start-server": "npx nodemon ./dist/main.js",
+    "start-build": "npx webpack --watch"
+  },
+  "dependencies": {
+    "@xenova/transformers": "^2.17.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.26.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "babel-loader": "^10.0.0",
+    "kill-port": "^2.0.1",
+    "nodemon": "^3.1.9",
+    "open-cli": "^8.0.0",
+    "ts-node": "^10.9.2",
+    "vitest": "^3.1.2",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "protobufjs",
+      "sharp"
+    ]
+  }
+}
