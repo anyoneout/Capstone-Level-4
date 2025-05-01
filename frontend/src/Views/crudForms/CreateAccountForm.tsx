@@ -29,21 +29,25 @@ export function CreateAccountForm() {
     const result = await createAccount(account);
 
     if (result.status === 400) {
-      return dispatch(set.createResponseMessage("Please fill out all fields before submitting."));
+      const action = set.createResponseMessage("Please fill out all fields before submitting.");
+      return dispatch(action);
     }
 
     if (result.status === 409) {
-      return dispatch(set.createResponseMessage(`User ${email} already exists.`));
+      const action = set.createResponseMessage(`User ${email} already exists.`);
+      return dispatch(action);
     }
 
     if (result.status === 200) {
-      dispatch(set.createResponseMessage(`User ${email} created successfully`));
-
+      const action = set.createResponseMessage(`User ${email} created successfully`);
+      return dispatch(action);
       const readUrl = `${baseUrl}/readUser?email=${email}`;
       const readUrlResponse = await axios.get(readUrl);
-      dispatch(set.createReadResponse(JSON.stringify(readUrlResponse.data)));
+      const readAction = set.createReadResponse(JSON.stringify(readUrlResponse.data));
+      return dispatch(readAction);
     } else {
-      dispatch(set.createResponseMessage("User wasn't created."));
+      const action = set.createResponseMessage(`User wasn't created`);
+      return dispatch(action);
     }
   }
 

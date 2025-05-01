@@ -17,9 +17,11 @@ export function UpdateAccountForm() {
     const response = await updateAccount({ email, password, name: "", phone: "" });
 
     if (response.status === 200) {
-      dispatch(set.updateResponseMessage(`user (${email}) updated successfully`));
+      const action = set.updateResponseMessage(`user (${email}) updated successfully`);
+      return dispatch(action);
     } else {
-      dispatch(set.UpdateResponseMessage("user wasn't updated"));
+      const action = set.UpdateResponseMessage("user wasn't updated");
+      return dispatch(action);
     }
   }
 

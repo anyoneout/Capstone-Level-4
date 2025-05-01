@@ -37,7 +37,8 @@ export default function Examples() {
     </div>
   );
   function componentDidMount(): void {
-    dispatch(set.examplesDidMount(true));
+    const action = set.examplesDidMount(true);
+    dispatch(action);
     console.log("The Examples page component has mounted");
     document.title = "Recipe Deconstructor - Examples";
   }

@@ -39,7 +39,8 @@ export function About() {
   );
 
   function componentDidMount(): void {
-    dispatch(set.aboutDidMount(true));
+    const action = set.aboutDidMount(true);
+    dispatch(action);
     console.log("The About page component has mounted");
     document.title = "Recipe Deconstructor - About";
   }

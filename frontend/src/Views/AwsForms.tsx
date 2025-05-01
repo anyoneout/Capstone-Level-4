@@ -34,7 +34,8 @@ export default function AwsForms() {
     </main>
   );
   function componentDidMount(): void {
-    dispatch(set.awsFormsDidMount(true));
+    const action = set.awsFormsDidMount(true);
+    dispatch(action);
     console.log("The AWS Forms page component has mounted");
     document.title = "Recipe Deconstructor - AWS Forms";
   }

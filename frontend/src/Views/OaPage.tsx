@@ -142,7 +142,8 @@ export function OaPage() {
   );
 
   function componentDidMount(): void {
-    dispatch(set.oaPageDidMount(true));
+    const action = set.oaPageDidMount(true);
+    dispatch(action);
     console.log("The OaPage page component has mounted");
     document.title = "Recipe Deconstructor - Open AI Dall-E-3";
   }

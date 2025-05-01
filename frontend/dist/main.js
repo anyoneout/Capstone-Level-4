@@ -83044,7 +83044,8 @@ function About() {
     className: "text-info"
   }, "chrisdafur@gmail.com")))))));
   function componentDidMount() {
-    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.aboutDidMount(true));
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.aboutDidMount(true);
+    dispatch(action);
     console.log("The About page component has mounted");
     document.title = "Recipe Deconstructor - About";
   }
@@ -83105,7 +83106,8 @@ function AwsForms() {
     className: "col-10 m-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_crudForms_CreateAccountForm__WEBPACK_IMPORTED_MODULE_1__.CreateAccountForm, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_crudForms_ReadAccountForm__WEBPACK_IMPORTED_MODULE_3__.ReadAccountForm, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_crudForms_UpdateAccountForm__WEBPACK_IMPORTED_MODULE_4__.UpdateAccountForm, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_crudForms_DeleteAccountForm__WEBPACK_IMPORTED_MODULE_2__.DeleteAccountForm, null)))));
   function componentDidMount() {
-    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.awsFormsDidMount(true));
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.awsFormsDidMount(true);
+    dispatch(action);
     console.log("The AWS Forms page component has mounted");
     document.title = "Recipe Deconstructor - AWS Forms";
   }
@@ -83280,7 +83282,8 @@ function BfPage() {
     id: "recipeIngredients"
   }))));
   function componentDidMount() {
-    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.bfPageDidMount(true));
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.bfPageDidMount(true);
+    dispatch(action);
     console.log("The Black Forest page component has mounted");
     document.title = "Recipe Deconstructor - Black Forest Flux";
   }
@@ -83347,7 +83350,7 @@ function DynamoAuthPage() {
   }
   function _getAuthResponse() {
     _getAuthResponse = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-      var response;
+      var response, action, _action;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -83357,23 +83360,26 @@ function DynamoAuthPage() {
           case 3:
             response = _context.sent;
             console.log("Backend response:", response.data);
-            dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.dynamoAuthResponse(response.data));
-            _context.next = 11;
+            action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.dynamoAuthResponse(response.data);
+            dispatch(action);
+            _context.next = 13;
             break;
-          case 8:
-            _context.prev = 8;
+          case 9:
+            _context.prev = 9;
             _context.t0 = _context["catch"](0);
-            dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.dynamoAuthResponse(null));
-          case 11:
+            _action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.dynamoAuthResponse(null);
+            dispatch(_action);
+          case 13:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[0, 8]]);
+      }, _callee, null, [[0, 9]]);
     }));
     return _getAuthResponse.apply(this, arguments);
   }
   function componentDidMount() {
-    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.dynamoAuthDidMount(true));
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.dyanamoAuthDidMount(true);
+    dispatch(action);
     getAuthResponse();
     console.log("The Dynamo Auth page component has mounted");
     document.title = "Recipe Deconstructor - Dynamo Auth Page";
@@ -83441,7 +83447,8 @@ function Examples() {
     className: "col-11"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_CarouselBlackForest__WEBPACK_IMPORTED_MODULE_2__.CarouselBlackForest, null))));
   function componentDidMount() {
-    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_5__.set.examplesDidMount(true));
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_5__.set.examplesDidMount(true);
+    dispatch(action);
     console.log("The Examples page component has mounted");
     document.title = "Recipe Deconstructor - Examples";
   }
@@ -83597,7 +83604,8 @@ function Home() {
   }))))));
   //component mounts
   function componentDidMount() {
-    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_12__.set.homeDidMount(true));
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_12__.set.homeDidMount(true);
+    dispatch(action);
     console.log("The Home page component has mounted");
     document.title = "Recipe Deconstructor - Home";
     //Tooltip initialization
@@ -83829,7 +83837,8 @@ function OaPage() {
     id: "recipeIngredients"
   }))));
   function componentDidMount() {
-    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_5__.set.oaPageDidMount(true));
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_5__.set.oaPageDidMount(true);
+    dispatch(action);
     console.log("The OaPage page component has mounted");
     document.title = "Recipe Deconstructor - Open AI Dall-E-3";
   }
@@ -84033,7 +84042,7 @@ function TriviaApiResponsePage() {
   }
   function _getApiResponse() {
     _getApiResponse = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-      var response, stringified;
+      var response, stringified, action, _action;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -84043,23 +84052,26 @@ function TriviaApiResponsePage() {
           case 3:
             response = _context.sent;
             stringified = JSON.stringify(response.data);
-            dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.triviaApiTrivia(stringified));
-            _context.next = 11;
+            action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.triviaApiTrivia(stringified);
+            dispatch(action);
+            _context.next = 13;
             break;
-          case 8:
-            _context.prev = 8;
+          case 9:
+            _context.prev = 9;
             _context.t0 = _context["catch"](0);
-            dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.triviaApiStatus("unreachable"));
-          case 11:
+            _action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.triviaApiState("unreachable");
+            dispatch(_action);
+          case 13:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[0, 8]]);
+      }, _callee, null, [[0, 9]]);
     }));
     return _getApiResponse.apply(this, arguments);
   }
   function componentDidMount() {
-    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.triviaApiDidMount(true));
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.triviaApiDidMount(true);
+    dispatch(action);
     getApiResponse();
     console.log("The Trivia Api page component has mounted");
     document.title = "Recipe Deconstructor - Trivia Api Page";
@@ -84547,8 +84559,9 @@ function HandleRefresh(props) {
       localStorage.removeItem("redirect");
       navigateTo(redirectPath);
     }
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.handleRefreshDidMount(true);
     setTimeout(function () {
-      return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.handleRefreshDidMount(true), 1000);
+      return dispatch(action, 1000);
     });
   }
 }
@@ -84662,7 +84675,8 @@ function SignInArea() {
 
   // Runs only when the component is first mounted
   function componentDidMount() {
-    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInDidMount(true));
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInDiDMount(true);
+    dispatch(action);
     console.log("SignInArea Mounted");
   }
 
@@ -84673,11 +84687,15 @@ function SignInArea() {
 
       // Update button text and style based on sign-in status
       if (isSignedIn) {
-        dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInButtonText("Sign Out"));
-        dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInButtonClass("sign-out-btn"));
+        var action = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInButtonText("Sign Out");
+        dispatch(action);
+        var classAction = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInButtonClass("sign-out-btn");
+        dispatch(classAction);
       } else {
-        dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInButtonText("Sign In"));
-        dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInButtonClass("sign-in-btn"));
+        var _action = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInButtonText("Sign In");
+        dispatch(_action);
+        var _classAction = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInButtonClass("sign-in-btn");
+        dispatch(_classAction);
       }
     }
   }
@@ -84687,7 +84705,8 @@ function SignInArea() {
 
   function handleSignIn() {
     console.log("User is signing in...");
-    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal("signIn"));
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal("signIn");
+    dispatch(action);
     var backdrop = document.createElement("div");
     backdrop.className = "modal-backdrop fade show";
     document.body.appendChild(backdrop);
@@ -84697,7 +84716,8 @@ function SignInArea() {
 
   function handleCloseSignIn() {
     console.log("Closing Sign-In Modal...");
-    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal(null));
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal(null);
+    dispatch(action);
     removeBackdrop();
   }
 
@@ -84706,8 +84726,10 @@ function SignInArea() {
 
   function handleSubmitCloseSignIn() {
     console.log("Closing Sign-In Modal...");
-    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInIsSignedIn(true));
-    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal(null));
+    var actionSignedIn = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInIsSignedIn(true);
+    dispatch(actionSignedIn);
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal(null);
+    dispatch(action);
     removeBackdrop();
   }
 
@@ -84716,7 +84738,8 @@ function SignInArea() {
 
   function handleSignOut() {
     console.log("User is signing out...");
-    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal("signOut"));
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal("signOut");
+    dispatch(action);
     var backdrop = document.createElement("div");
     backdrop.className = "modal-backdrop fade show";
     document.body.appendChild(backdrop);
@@ -84726,7 +84749,8 @@ function SignInArea() {
 
   function handleCloseSignOut() {
     console.log("Closing Sign-Out Modal...");
-    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal(null));
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal(null);
+    dispatch(action);
     removeBackdrop();
   }
 
@@ -84735,8 +84759,10 @@ function SignInArea() {
 
   function handleSubmitCloseSignOut() {
     console.log("Closing Sign-Out Modal...");
-    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInIsSignedIn(false));
-    dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal(null));
+    var actionSignedIn = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInIsSignedIn(false);
+    dispatch(actionSignedIn);
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInShowModal(null);
+    dispatch(action);
     removeBackdrop();
   }
 
@@ -85053,7 +85079,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   CreateAccountForm: () => (/* binding */ CreateAccountForm)
 /* harmony export */ });
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/.pnpm/axios@1.8.4/node_modules/axios/lib/axios.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _modules_crud_createAccount__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../modules/crud/createAccount */ "./src/modules/crud/createAccount.ts");
@@ -85083,7 +85108,7 @@ function CreateAccountForm() {
   }
   function _handleSubmit() {
     _handleSubmit = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
-      var account, result, readUrl, readUrlResponse;
+      var account, result, action, _action, _action2, readUrl, readUrlResponse, readAction, _action3;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -85099,33 +85124,33 @@ function CreateAccountForm() {
           case 4:
             result = _context.sent;
             if (!(result.status === 400)) {
-              _context.next = 7;
+              _context.next = 8;
               break;
             }
-            return _context.abrupt("return", dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.createResponseMessage("Please fill out all fields before submitting.")));
-          case 7:
+            action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.createResponseMessage("Please fill out all fields before submitting.");
+            return _context.abrupt("return", dispatch(action));
+          case 8:
             if (!(result.status === 409)) {
-              _context.next = 9;
+              _context.next = 11;
               break;
             }
-            return _context.abrupt("return", dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.createResponseMessage("User ".concat(email, " already exists."))));
-          case 9:
+            _action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.createResponseMessage("User ".concat(email, " already exists."));
+            return _context.abrupt("return", dispatch(_action));
+          case 11:
             if (!(result.status === 200)) {
-              _context.next = 18;
+              _context.next = 22;
               break;
             }
-            dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.createResponseMessage("User ".concat(email, " created successfully")));
-            readUrl = "".concat(baseUrl, "/readUser?email=").concat(email);
-            _context.next = 14;
-            return axios__WEBPACK_IMPORTED_MODULE_5__["default"].get(readUrl);
-          case 14:
+            _action2 = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.createResponseMessage("User ".concat(email, " created successfully"));
+            return _context.abrupt("return", dispatch(_action2));
+          case 17:
             readUrlResponse = _context.sent;
-            dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.createReadResponse(JSON.stringify(readUrlResponse.data)));
-            _context.next = 19;
-            break;
-          case 18:
-            dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.createResponseMessage("User wasn't created."));
-          case 19:
+            readAction = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.createReadResponse(JSON.stringify(readUrlResponse.data));
+            return _context.abrupt("return", dispatch(readAction));
+          case 22:
+            _action3 = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.createResponseMessage("User wasn't created");
+            return _context.abrupt("return", dispatch(_action3));
+          case 24:
           case "end":
             return _context.stop();
         }
@@ -85237,7 +85262,7 @@ function DeleteAccountForm() {
   }
   function _handleSubmit() {
     _handleSubmit = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
-      var response;
+      var response, action, _action;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -85258,13 +85283,15 @@ function DeleteAccountForm() {
             return _context.abrupt("return", dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.deleteResponseMessage("Invalid password entered")));
           case 6:
             if (!(response.status === 200)) {
-              _context.next = 10;
+              _context.next = 11;
               break;
             }
-            return _context.abrupt("return", dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.deleteResponseMessage("user (".concat(email, ") deleted successfully"))));
-          case 10:
-            return _context.abrupt("return", dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.deleteResponseMessage("user wasn't deleted")));
+            action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.deleteResponseMessage("user (".concat(email, ") deleted successfully"));
+            return _context.abrupt("return", dispatch(action));
           case 11:
+            _action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.deleteResponseMessage("user wasn't deleted");
+            return _context.abrupt("return", dispatch(_action));
+          case 13:
           case "end":
             return _context.stop();
         }
@@ -85351,7 +85378,7 @@ function ReadAccountForm() {
   }
   function _handleSubmit() {
     _handleSubmit = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
-      var response;
+      var response, action, _action;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -85365,12 +85392,16 @@ function ReadAccountForm() {
             });
           case 3:
             response = _context.sent;
-            if (response.status === 200) {
-              dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.readResponseMessage("User (".concat(email, ") was found")));
-            } else {
-              dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.readResponseMessage("user missing"));
+            if (!(response.status === 200)) {
+              _context.next = 9;
+              break;
             }
-          case 5:
+            action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.readResponseMessage("User (".concat(email, ") was found"));
+            return _context.abrupt("return", dispatch(action));
+          case 9:
+            _action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.readResponseMessage("user missing");
+            return _context.abrupt("return", dispatch(_action));
+          case 11:
           case "end":
             return _context.stop();
         }
@@ -85448,7 +85479,7 @@ function UpdateAccountForm() {
   }
   function _handleSubmit() {
     _handleSubmit = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
-      var response;
+      var response, action, _action;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -85462,12 +85493,16 @@ function UpdateAccountForm() {
             });
           case 3:
             response = _context.sent;
-            if (response.status === 200) {
-              dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.updateResponseMessage("user (".concat(email, ") updated successfully")));
-            } else {
-              dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.UpdateResponseMessage("user wasn't updated"));
+            if (!(response.status === 200)) {
+              _context.next = 9;
+              break;
             }
-          case 5:
+            action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.updateResponseMessage("user (".concat(email, ") updated successfully"));
+            return _context.abrupt("return", dispatch(action));
+          case 9:
+            _action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.UpdateResponseMessage("user wasn't updated");
+            return _context.abrupt("return", dispatch(_action));
+          case 11:
           case "end":
             return _context.stop();
         }
@@ -86926,6 +86961,7 @@ function selectHandleRefreshDidMount(state) {
     return state.handleRefreshState.didMount;
   }
 }
+
 //trivia api
 function selectTriviaApiDidMount(state) {
   return state.triviaApiStateVar.didMount;

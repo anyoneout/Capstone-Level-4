@@ -28,14 +28,17 @@ export function TriviaApiResponsePage() {
     try {
       const response = await axios.get("http://localhost:3000/triviaRoute");
       const stringified = JSON.stringify(response.data);
-      dispatch(set.triviaApiTrivia(stringified));
+      const action = set.triviaApiTrivia(stringified);
+      dispatch(action);
     } catch {
-      dispatch(set.triviaApiStatus("unreachable"));
+      const action = set.triviaApiState("unreachable");
+      dispatch(action);
     }
   }
 
   function componentDidMount(): void {
-    dispatch(set.triviaApiDidMount(true));
+    const action = set.triviaApiDidMount(true);
+    dispatch(action);
     getApiResponse();
     console.log("The Trivia Api page component has mounted");
     document.title = "Recipe Deconstructor - Trivia Api Page";

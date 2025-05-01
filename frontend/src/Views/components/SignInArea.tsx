@@ -48,7 +48,9 @@ export default function SignInArea() {
 
   // Runs only when the component is first mounted
   function componentDidMount(): void {
-    dispatch(set.signInDidMount(true));
+    const action = set.signInDiDMount(true);
+    dispatch(action);
+
     console.log("SignInArea Mounted");
   }
 
@@ -59,11 +61,15 @@ export default function SignInArea() {
 
       // Update button text and style based on sign-in status
       if (isSignedIn) {
-        dispatch(set.signInButtonText("Sign Out"));
-        dispatch(set.signInButtonClass("sign-out-btn"));
+        const action = set.signInButtonText("Sign Out");
+        dispatch(action);
+        const classAction = set.signInButtonClass("sign-out-btn");
+        dispatch(classAction);
       } else {
-        dispatch(set.signInButtonText("Sign In"));
-        dispatch(set.signInButtonClass("sign-in-btn"));
+        const action = set.signInButtonText("Sign In");
+        dispatch(action);
+        const classAction = set.signInButtonClass("sign-in-btn");
+        dispatch(classAction);
       }
     }
   }
@@ -73,7 +79,8 @@ export default function SignInArea() {
 
   function handleSignIn(): void {
     console.log("User is signing in...");
-    dispatch(set.signInShowModal("signIn"));
+    const action = set.signInShowModal("signIn");
+    dispatch(action);
     const backdrop = document.createElement("div");
     backdrop.className = "modal-backdrop fade show";
     document.body.appendChild(backdrop);
@@ -83,7 +90,8 @@ export default function SignInArea() {
 
   function handleCloseSignIn(): void {
     console.log("Closing Sign-In Modal...");
-    dispatch(set.signInShowModal(null));
+    const action = set.signInShowModal(null);
+    dispatch(action);
     removeBackdrop();
   }
 
@@ -92,8 +100,10 @@ export default function SignInArea() {
 
   function handleSubmitCloseSignIn(): void {
     console.log("Closing Sign-In Modal...");
-    dispatch(set.signInIsSignedIn(true));
-    dispatch(set.signInShowModal(null));
+    const actionSignedIn = set.signInIsSignedIn(true);
+    dispatch(actionSignedIn);
+    const action = set.signInShowModal(null);
+    dispatch(action);
     removeBackdrop();
   }
 
@@ -102,7 +112,8 @@ export default function SignInArea() {
 
   function handleSignOut(): void {
     console.log("User is signing out...");
-    dispatch(set.signInShowModal("signOut"));
+    const action = set.signInShowModal("signOut");
+    dispatch(action);
     const backdrop = document.createElement("div");
     backdrop.className = "modal-backdrop fade show";
     document.body.appendChild(backdrop);
@@ -112,7 +123,8 @@ export default function SignInArea() {
 
   function handleCloseSignOut(): void {
     console.log("Closing Sign-Out Modal...");
-    dispatch(set.signInShowModal(null));
+    const action = set.signInShowModal(null);
+    dispatch(action);
     removeBackdrop();
   }
 
@@ -121,8 +133,10 @@ export default function SignInArea() {
 
   function handleSubmitCloseSignOut(): void {
     console.log("Closing Sign-Out Modal...");
-    dispatch(set.signInIsSignedIn(false));
-    dispatch(set.signInShowModal(null));
+    const actionSignedIn = set.signInIsSignedIn(false);
+    dispatch(actionSignedIn);
+    const action = set.signInShowModal(null);
+    dispatch(action);
     removeBackdrop();
   }
 

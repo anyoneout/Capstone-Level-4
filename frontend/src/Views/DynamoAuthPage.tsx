@@ -34,14 +34,17 @@ export function DynamoAuthPage() {
     try {
       const response = await axios.get("http://localhost:3000/dynamoAuth?email=aaa@aaa.com&password=aaa");
       console.log("Backend response:", response.data);
-      dispatch(set.dynamoAuthResponse(response.data));
+      const action = set.dynamoAuthResponse(response.data);
+      dispatch(action);
     } catch {
-      dispatch(set.dynamoAuthResponse(null));
+      const action = set.dynamoAuthResponse(null);
+      dispatch(action);
     }
   }
 
   function componentDidMount(): void {
-    dispatch(set.dynamoAuthDidMount(true));
+    const action = set.dyanamoAuthDidMount(true);
+    dispatch(action);
     getAuthResponse();
     console.log("The Dynamo Auth page component has mounted");
     document.title = "Recipe Deconstructor - Dynamo Auth Page";

@@ -21,9 +21,11 @@ export function DeleteAccountForm() {
     }
 
     if (response.status === 200) {
-      return dispatch(set.deleteResponseMessage(`user (${email}) deleted successfully`));
+      const action = set.deleteResponseMessage(`user (${email}) deleted successfully`);
+      return dispatch(action);
     } else {
-      return dispatch(set.deleteResponseMessage("user wasn't deleted"));
+      const action = set.deleteResponseMessage("user wasn't deleted");
+      return dispatch(action);
     }
   }
   return (

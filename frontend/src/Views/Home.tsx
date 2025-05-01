@@ -122,7 +122,8 @@ export function Home() {
   );
   //component mounts
   function componentDidMount() {
-    dispatch(set.homeDidMount(true));
+    const action = set.homeDidMount(true);
+    dispatch(action);
     console.log("The Home page component has mounted");
     document.title = "Recipe Deconstructor - Home";
     //Tooltip initialization

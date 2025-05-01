@@ -16,9 +16,11 @@ export function ReadAccountForm() {
     const response = await readAccount({ email, password: "", name: "", phone: "" });
 
     if (response.status === 200) {
-      dispatch(set.readResponseMessage(`User (${email}) was found`));
+      const action = set.readResponseMessage(`User (${email}) was found`);
+      return dispatch(action);
     } else {
-      dispatch(set.readResponseMessage("user missing"));
+      const action = set.readResponseMessage(`user missing`);
+      return dispatch(action);
     }
   }
   return (

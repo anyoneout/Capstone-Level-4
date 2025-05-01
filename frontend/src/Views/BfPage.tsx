@@ -122,7 +122,8 @@ export function BfPage() {
   );
 
   function componentDidMount(): void {
-    dispatch(set.bfPageDidMount(true));
+    const action = set.bfPageDidMount(true);
+    dispatch(action);
     console.log("The Black Forest page component has mounted");
     document.title = "Recipe Deconstructor - Black Forest Flux";
   }

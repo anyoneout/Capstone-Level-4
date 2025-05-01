@@ -23,7 +23,7 @@ export function HandleRefresh(props) {
       localStorage.removeItem("redirect");
       navigateTo(redirectPath);
     }
-
-    setTimeout(() => dispatch(set.handleRefreshDidMount(true), 1000));
+    const action = set.handleRefreshDidMount(true);
+    setTimeout(() => dispatch(action, 1000));
   }
 }
