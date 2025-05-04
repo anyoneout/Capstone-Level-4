@@ -6,6 +6,7 @@ import { set } from "../redux/store";
 
 export function About() {
   const didMount = useSelector(selectAboutDidMount);
+  debugger;
   const dispatch = useDispatch();
 
   useEffect(componentDidMount, []);
@@ -40,6 +41,7 @@ export function About() {
 
   function componentDidMount(): void {
     const action = set.aboutDidMount(true);
+    debugger;
     dispatch(action);
     console.log("The About page component has mounted");
     document.title = "Recipe Deconstructor - About";

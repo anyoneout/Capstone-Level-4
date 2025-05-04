@@ -3,6 +3,7 @@ import { StateVariables } from "./stateVariables";
 //didMount
 export const stateSetters = {
   aboutDidMount: function (state: StateVariables, action: ActionBoolean) {
+    debugger;
     const newValue = action.payload;
     state.aboutStateVar.didMount = newValue;
   },

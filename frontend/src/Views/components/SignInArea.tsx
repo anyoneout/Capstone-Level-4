@@ -48,7 +48,7 @@ export default function SignInArea() {
 
   // Runs only when the component is first mounted
   function componentDidMount(): void {
-    const action = set.signInDiDMount(true);
+    const action = set.signInDidMount(true);
     dispatch(action);
 
     console.log("SignInArea Mounted");

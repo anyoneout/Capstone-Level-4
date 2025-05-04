@@ -83004,6 +83004,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function About() {
   var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectAboutDidMount);
+  debugger;
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useDispatch)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUpdate, [didMount]);
@@ -83045,6 +83046,7 @@ function About() {
   }, "chrisdafur@gmail.com")))))));
   function componentDidMount() {
     var action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.aboutDidMount(true);
+    debugger;
     dispatch(action);
     console.log("The About page component has mounted");
     document.title = "Recipe Deconstructor - About";
@@ -84675,7 +84677,7 @@ function SignInArea() {
 
   // Runs only when the component is first mounted
   function componentDidMount() {
-    var action = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInDiDMount(true);
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.signInDidMount(true);
     dispatch(action);
     console.log("SignInArea Mounted");
   }
@@ -87067,6 +87069,7 @@ __webpack_require__.r(__webpack_exports__);
 //didMount
 var stateSetters = {
   aboutDidMount: function aboutDidMount(state, action) {
+    debugger;
     var newValue = action.payload;
     state.aboutStateVar.didMount = newValue;
   },
@@ -87299,11 +87302,12 @@ var sliceOptions = {
   initialState: _stateVariables__WEBPACK_IMPORTED_MODULE_1__.stateVariables,
   reducers: _stateSetters__WEBPACK_IMPORTED_MODULE_0__.stateSetters
 };
-var slice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_2__.createSlice)(sliceOptions);
-var set = slice.actions;
+var slice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_2__.createSlice)(sliceOptions); //creates a new object using the redux createSlice method with the sliceOptions object properties
+
+var set = slice.actions; // an object of actions
 var storeOptions = {
   reducer: slice.reducer
-};
+}; //the slice object contains the reducer property, ConfigureStoreOptions is a type
 var store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_2__.configureStore)(storeOptions);
 
 /***/ })
