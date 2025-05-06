@@ -83403,7 +83403,7 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 function DynamoAuthPage() {
   var localPath = window.location.hostname;
   var lambdaLocalPort = "http://localhost:3001";
-  var lambdaUrl = "MISSING_ENV_VAR".REACT_APP_API_URL;
+  var lambdaUrl = "https://lqdp6w66jyvu6uzkc4wsqgvs2i0hhpvk.lambda-url.us-east-1.on.aws";
   var baseUrl;
   if (localPath === "localhost") {
     baseUrl = lambdaLocalPort;

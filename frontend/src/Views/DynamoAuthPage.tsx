@@ -7,7 +7,7 @@ import { set } from "../redux/store";
 export function DynamoAuthPage() {
   const localPath = window.location.hostname;
   const lambdaLocalPort = "http://localhost:3001";
-  const lambdaUrl = process.env.REACT_APP_API_URL;
+  const lambdaUrl = process.env.REACT_APP_LAMBDA_URL;
 
   let baseUrl: string;
 
