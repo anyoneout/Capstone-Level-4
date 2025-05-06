@@ -8,14 +8,14 @@ export function BackendTest() {
     ? "http://localhost:3001"
     : "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws";
 
-  const appEngineUrl = isLocal ? "http://localhost:3000" : "d1bow2s9ufvhpv.cloudfront.net";
+  const appEngineUrl = isLocal ? "http://localhost:3000" : "https://capstone-level-4.uc.r.appspot.com";
 
   const [connectionResult, setConnectionResult] = useState("");
 
   async function testBackend(path: string) {
     const response = await axios.get(path);
     if (response.status === 200) {
-      setConnectionResult(`${response.data} at ${path}`);
+      setConnectionResult(`${response.data} at: ${path}`);
     } else {
       setConnectionResult("Unable to connect to backend");
     }
@@ -23,10 +23,18 @@ export function BackendTest() {
 
   return (
     <div>
-      <h2>Test Backend Connections</h2>
-      <button onClick={() => testBackend(`${lambdaUrl}/`)}>Test Lambda</button>
-      <button onClick={() => testBackend(`${appEngineUrl}/`)}>Test App Engine</button>
-      <p>{connectionResult}</p>
+      <div className="container">
+        <div className="row d-flex justify-content-center m-5">
+          <div className="d-flex justify-content-center mb-4">
+            <h2>Test Backend Connections</h2>
+          </div>
+          <div className="col-10 m-2">
+            <button onClick={() => testBackend(`${lambdaUrl}/`)}>Test Lambda</button>
+            <button onClick={() => testBackend(`${appEngineUrl}/`)}>Test App Engine</button>
+            <p>{connectionResult}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

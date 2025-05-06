@@ -83226,7 +83226,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 function BackendTest() {
   var isLocal = window.location.hostname === "localhost";
   var lambdaUrl = isLocal ? "http://localhost:3001" : "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws";
-  var appEngineUrl = isLocal ? "http://localhost:3000" : "d1bow2s9ufvhpv.cloudfront.net";
+  var appEngineUrl = isLocal ? "http://localhost:3000" : "https://capstone-level-4.uc.r.appspot.com";
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState2 = _slicedToArray(_useState, 2),
     connectionResult = _useState2[0],
@@ -83245,7 +83245,7 @@ function BackendTest() {
           case 2:
             response = _context.sent;
             if (response.status === 200) {
-              setConnectionResult("".concat(response.data, " at ").concat(path));
+              setConnectionResult("".concat(response.data, " at: ").concat(path));
             } else {
               setConnectionResult("Unable to connect to backend");
             }
@@ -87177,7 +87177,6 @@ __webpack_require__.r(__webpack_exports__);
 //didMount
 var stateSetters = {
   aboutDidMount: function aboutDidMount(state, action) {
-    debugger;
     var newValue = action.payload;
     state.aboutStateVar.didMount = newValue;
   },
