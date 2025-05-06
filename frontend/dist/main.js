@@ -86030,22 +86030,28 @@ function getAnswer(_x, _x2) {
 }
 function _getAnswer() {
   _getAnswer = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(userQuestion, userContext) {
-    var url, data, response;
+    var localPath, appEngineUrl, baseUrl, url, data, response;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          url = "http://localhost:3000/aiPost";
+          localPath = window.location.hostname;
+          appEngineUrl = "https://capstone-level-4.uc.r.appspot.com";
+          if (localPath === "localhost") {
+            baseUrl = "http://localhost:3000";
+          } else {
+            baseUrl = appEngineUrl;
+          }
+          url = "".concat(baseUrl, "/aiPost");
           data = {
             question: userQuestion,
             context: userContext
           };
-          console.log("Sending POST to /aiPost with:", data);
-          _context.next = 5;
+          _context.next = 7;
           return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(url, data);
-        case 5:
+        case 7:
           response = _context.sent;
           return _context.abrupt("return", response.data);
-        case 7:
+        case 9:
         case "end":
           return _context.stop();
       }
@@ -87029,7 +87035,6 @@ var recipeArray = [
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   selectAboutDidMount: () => (/* binding */ selectAboutDidMount),
-/* harmony export */   selectAiAnswerAnswer: () => (/* binding */ selectAiAnswerAnswer),
 /* harmony export */   selectAwsFormsDidMount: () => (/* binding */ selectAwsFormsDidMount),
 /* harmony export */   selectBfPageDidMount: () => (/* binding */ selectBfPageDidMount),
 /* harmony export */   selectCreateEmail: () => (/* binding */ selectCreateEmail),
@@ -87173,12 +87178,6 @@ function selectSignInButtonClass(state) {
 }
 function selectSignInShowModal(state) {
   return state.isSignedInState.showModal;
-}
-
-//ai answer
-
-function selectAiAnswerAnswer(state) {
-  return state.aiAnswerState.answer;
 }
 
 /***/ }),
@@ -87327,10 +87326,6 @@ var stateSetters = {
   signInShowModal: function signInShowModal(state, action) {
     var newValue = action.payload;
     state.isSignedInState.showModal = newValue;
-  },
-  aiAnswerAnswer: function aiAnswerAnswer(state, action) {
-    var newValue = action.payload;
-    state.aiAnswerState.answer = newValue;
   }
 };
 
@@ -87406,9 +87401,6 @@ var stateVariables = {
     buttonText: "Sign In",
     buttonClass: "sign-in-btn",
     showModal: null
-  },
-  aiAnswerState: {
-    answer: ""
   }
 };
 
