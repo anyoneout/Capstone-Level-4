@@ -1,5 +1,5 @@
 {
-  "name": "express-template-backend",
+  "name": "app-engine-backend",
   "version": "1.0.0",
   "main": "./index.ts",
   "scripts": {
@@ -11,8 +11,8 @@
     "-------": "------------------------------------------",
     "build-production": "npx webpack --mode=production",
     "open-live": "npx open-cli https://sandbox-level-4",
-    "open-tab": "npx open-cli http://localhost:3000",
-    "close-port": "npx kill-port 3000",
+    "open-tab": "npx open-cli http://localhost:3050",
+    "close-port": "npx kill-port 3050",
     "start-server": "npx nodemon ./dist/main.js",
     "start-build": "npx webpack --watch"
   },
