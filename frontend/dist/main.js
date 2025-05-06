@@ -83225,8 +83225,8 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 function BackendTest() {
   var isLocal = window.location.hostname === "localhost";
-  var lambdaUrl = isLocal ? "http://localhost:3001" : "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws/";
-  var appEngineUrl = isLocal ? "http://localhost:3000" : "https://capstone-level-4.uc.r.appspot.com";
+  var lambdaUrl = isLocal ? "http://localhost:3001" : "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws";
+  var appEngineUrl = isLocal ? "http://localhost:3000" : "d1bow2s9ufvhpv.cloudfront.net";
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState2 = _slicedToArray(_useState, 2),
     connectionResult = _useState2[0],
@@ -83476,7 +83476,7 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 function DynamoAuthPage() {
   var localPath = window.location.hostname;
   var lambdaLocalPort = "http://localhost:3001";
-  var lambdaUrl = "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws/";
+  var lambdaUrl = "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws";
   var baseUrl;
   if (localPath === "localhost") {
     baseUrl = lambdaLocalPort;
@@ -84038,7 +84038,7 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 function TriviaApiResponsePage() {
   var localPath = window.location.hostname;
   var lambdaLocalPort = "http://localhost:3001";
-  var lambdaUrl = "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws/";
+  var lambdaUrl = "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws";
   var baseUrl;
   if (localPath === "localhost") {
     baseUrl = lambdaLocalPort;
@@ -85123,7 +85123,7 @@ function CreateAccountForm() {
   //run locally or remotely
   var localPath = window.location.hostname;
   var lambdaLocalPort = "http://localhost:3001";
-  var lambdaUrl = "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws/";
+  var lambdaUrl = "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws";
   var baseUrl;
   if (localPath === "localhost") {
     baseUrl = lambdaLocalPort;
@@ -86399,7 +86399,7 @@ function _createAccount() {
         case 0:
           localPath = window.location.hostname;
           lambdaLocalPort = "http://localhost:3001";
-          lambdaUrl = "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws/";
+          lambdaUrl = "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws";
           if (localPath === "localhost") {
             baseUrl = lambdaLocalPort;
           } else {
@@ -86476,7 +86476,7 @@ function _deleteAccount() {
         case 0:
           localPath = window.location.hostname;
           lambdaLocalPort = "http://localhost:3001";
-          lambdaUrl = "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws/";
+          lambdaUrl = "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws";
           if (localPath === "localhost") {
             baseUrl = lambdaLocalPort;
           } else {
@@ -86560,7 +86560,7 @@ function _readAccount() {
         case 0:
           localPath = window.location.hostname;
           lambdaLocalPort = "http://localhost:3001";
-          lambdaUrl = "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws/";
+          lambdaUrl = "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws";
           if (localPath === "localhost") {
             baseUrl = lambdaLocalPort;
           } else {
@@ -86635,7 +86635,7 @@ function _updateAccount() {
         case 0:
           localPath = window.location.hostname;
           lambdaLocalPort = "http://localhost:3001";
-          lambdaUrl = "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws/";
+          lambdaUrl = "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws";
           if (localPath === "localhost") {
             baseUrl = lambdaLocalPort;
           } else {

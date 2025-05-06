@@ -6,9 +6,9 @@ export function BackendTest() {
 
   const lambdaUrl = isLocal
     ? "http://localhost:3001"
-    : "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws/";
+    : "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws";
 
-  const appEngineUrl = isLocal ? "http://localhost:3000" : "https://capstone-level-4.uc.r.appspot.com";
+  const appEngineUrl = isLocal ? "http://localhost:3000" : "d1bow2s9ufvhpv.cloudfront.net";
 
   const [connectionResult, setConnectionResult] = useState("");
 
