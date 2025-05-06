@@ -19,7 +19,7 @@ import { dynamoAuthRoute } from "./routes/dynamoAuthRoute";
 dotenv.config();
 
 const hostname = "localhost"; // Local domain
-const port = 3000; // Common backend ports : 8000, 9000, 3000
+const port = 3001; // Common backend ports : 8000, 9000, 3000
 
 const app = express(); // Instantiate the Express.js object
 app.use(cors());
