@@ -37672,7 +37672,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.navbar {
   font-family: "Inter", sans-serif !important;
   font-weight: 500 !important;
   letter-spacing: -0.05em !important;
-  padding: 0.5rem 2rem !important;
+  /*   padding: 0.5rem 2rem !important; */
+  padding: 0.5rem 1.4rem !important;
   margin: 0.24rem 0.12rem;
 }
 .navbar-nav .home-nav-style {
@@ -37704,7 +37705,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.navbar {
   background-color: rgba(255, 255, 255, 0.259);
   color: rgb(255, 255, 255) !important;
   border-radius: 12px;
-}`, "",{"version":3,"sources":["webpack://./src/Views/components/CollapsibleNavbar.scss"],"names":[],"mappings":"AAAA;EACE,yCAAA;EACA,mBAAA;AACF;;AAEA;EACE,8CAAA;EACA,mBAAA;AACF;AACE;EACE,4CAAA;EACA,2CAAA;EACA,2BAAA;EACA,kCAAA;EACA,+BAAA;EACA,uBAAA;AACJ;AACE;EACE,8BAAA;AACJ;AACE;EACE,YAAA;AACJ;AACE;EACE,mDAAA;EACA,2CAAA;EACA,mBAAA;AACJ;AACE;EACE,kBAAA;EACA,SAAA;AACJ;;AAGA;EACE,oBAAA;AAAF;;AAGA;EACE,uBAAA;EACA,yBAAA;AAAF;;AAGA;EACE,4CAAA;EACA,oCAAA;EACA,mBAAA;AAAF","sourcesContent":[".navbar {\n  background-color: rgba(0, 0, 0) !important;\n  white-space: nowrap;\n}\n\n.navbar-nav {\n  border: solid, 1px, rgba(255, 255, 255, 0.259);\n  border-radius: 12px;\n  // I had to add !important or the bootstrap style would overwrite the style I wanted.\n  .nav-link {\n    color: rgb(238, 238, 238, 0.925) !important;\n    font-family: \"Inter\", sans-serif !important;\n    font-weight: 500 !important;\n    letter-spacing: -0.05em !important;\n    padding: 0.5rem 2rem !important;\n    margin: 0.24rem 0.12rem;\n  }\n  .home-nav-style {\n    margin-left: 0.2rem !important;\n  }\n  .nav-link i {\n    border: none;\n  }\n  .nav-link:hover {\n    color: #ffffffb2 !important;\n    background-color: rgba(255, 255, 255, 0.15);\n    border-radius: 12px;\n  }\n  svg {\n    position: relative;\n    top: -2px;\n  }\n}\n\n.navbar-toggler-icon {\n  filter: invert(100%);\n}\n\n.navbar-toggler {\n  background-color: black;\n  border: 2px solid #0dcaf0;\n}\n\n.nav-link.active {\n  background-color: rgba(255, 255, 255, 0.259);\n  color: rgb(255, 255, 255) !important;\n  border-radius: 12px;\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/Views/components/CollapsibleNavbar.scss"],"names":[],"mappings":"AAAA;EACE,yCAAA;EACA,mBAAA;AACF;;AAEA;EACE,8CAAA;EACA,mBAAA;AACF;AACE;EACE,4CAAA;EACA,2CAAA;EACA,2BAAA;EACA,kCAAA;EACA,uCAAA;EACA,iCAAA;EACA,uBAAA;AACJ;AACE;EACE,8BAAA;AACJ;AACE;EACE,YAAA;AACJ;AACE;EACE,mDAAA;EACA,2CAAA;EACA,mBAAA;AACJ;AACE;EACE,kBAAA;EACA,SAAA;AACJ;;AAGA;EACE,oBAAA;AAAF;;AAGA;EACE,uBAAA;EACA,yBAAA;AAAF;;AAGA;EACE,4CAAA;EACA,oCAAA;EACA,mBAAA;AAAF","sourcesContent":[".navbar {\n  background-color: rgba(0, 0, 0) !important;\n  white-space: nowrap;\n}\n\n.navbar-nav {\n  border: solid, 1px, rgba(255, 255, 255, 0.259);\n  border-radius: 12px;\n  // I had to add !important or the bootstrap style would overwrite the style I wanted.\n  .nav-link {\n    color: rgb(238, 238, 238, 0.925) !important;\n    font-family: \"Inter\", sans-serif !important;\n    font-weight: 500 !important;\n    letter-spacing: -0.05em !important;\n    /*   padding: 0.5rem 2rem !important; */ //will be reverted to once final capstone design is implemented\n    padding: 0.5rem 1.4rem !important;\n    margin: 0.24rem 0.12rem;\n  }\n  .home-nav-style {\n    margin-left: 0.2rem !important;\n  }\n  .nav-link i {\n    border: none;\n  }\n  .nav-link:hover {\n    color: #ffffffb2 !important;\n    background-color: rgba(255, 255, 255, 0.15);\n    border-radius: 12px;\n  }\n  svg {\n    position: relative;\n    top: -2px;\n  }\n}\n\n.navbar-toggler-icon {\n  filter: invert(100%);\n}\n\n.navbar-toggler {\n  background-color: black;\n  border: 2px solid #0dcaf0;\n}\n\n.nav-link.active {\n  background-color: rgba(255, 255, 255, 0.259);\n  color: rgb(255, 255, 255) !important;\n  border-radius: 12px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -83226,7 +83227,7 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 function BackendTest() {
   var isLocal = window.location.hostname === "localhost";
   var lambdaUrl = isLocal ? "http://localhost:3001" : "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws";
-  var appEngineUrl = isLocal ? "http://localhost:3000" : "https://capstone-level-4.uc.r.appspot.com";
+  var appEngineUrl = isLocal ? "http://localhost:3050" : "https://capstone-level-4.uc.r.appspot.com";
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
     _useState2 = _slicedToArray(_useState, 2),
     connectionResult = _useState2[0],
@@ -83257,15 +83258,27 @@ function BackendTest() {
     }));
     return _testBackend.apply(this, arguments);
   }
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Test Backend Connections"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "container mt-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "row d-flex justify-content-center m-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "d-flex justify-content-center  mt-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Test Backend Connections")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "col-10 m-2 mt-2 justify-content-center d-flex"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "btn btn-danger btn-sm m-1",
     onClick: function onClick() {
       return testBackend("".concat(lambdaUrl, "/"));
     }
-  }, "Test Lambda"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  }, "Lambda"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "btn btn-danger btn-sm m-1",
     onClick: function onClick() {
       return testBackend("".concat(appEngineUrl, "/"));
     }
-  }, "Test App Engine"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, connectionResult));
+  }, "App Engine")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "mt-3 justify-content-center d-flex text-light"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, connectionResult)))));
 }
 
 /***/ }),
@@ -83497,7 +83510,15 @@ function DynamoAuthPage() {
   } else if (!authResponse) {
     message = "User does not exist";
   }
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "backend dynamo response"), message);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "container mt-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "row d-flex justify-content-center m-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "d-flex justify-content-center  mt-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "backend dynamo response")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "mt-3 justify-content-center d-flex text-light"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, " ", message))))));
 
   //Added try/catch as the backend was crashing with a different port and wouldn't render {message}
   function getAuthResponse() {
@@ -84052,7 +84073,19 @@ function TriviaApiResponsePage() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUpdate, [didMount]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUnmount, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Api Trivia"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, apiTrivia), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "Backend Status"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, apiStatus));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "container mt-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "row d-flex justify-content-center m-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "d-flex justify-content-center  mt-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Api Trivia")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "mt-3 justify-content-center d-flex text-light"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, apiTrivia)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "d-flex justify-content-center  mt-5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "Backend Status")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "mt-3 justify-content-center d-flex text-light"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, apiStatus)))))));
   function getApiResponse() {
     return _getApiResponse.apply(this, arguments);
   }
@@ -84529,6 +84562,13 @@ function CollapsibleNavbar() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
     className: "bi bi-images me-2"
   }), "AWS")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+    className: "nav-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
+    to: "".concat(rootPath, "/backendTest"),
+    className: "nav-link"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "bi bi-images me-2"
+  }), "Test Backend")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "nav-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
     to: "".concat(rootPath, "/About"),
@@ -85987,7 +86027,7 @@ function _getAnswer() {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           localPath = window.location.hostname;
-          appEngineLocalPort = "http://localhost:3000";
+          appEngineLocalPort = "http://localhost:3050";
           appEngineUrl = "https://capstone-level-4.uc.r.appspot.com";
           if (localPath === "localhost") {
             baseUrl = appEngineLocalPort;

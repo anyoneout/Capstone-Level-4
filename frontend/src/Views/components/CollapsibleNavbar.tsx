@@ -59,6 +59,11 @@ export function CollapsibleNavbar() {
               </NavLink>
             </li>
             <li className="nav-item">
+              <NavLink to={`${rootPath}/backendTest`} className="nav-link">
+                <i className="bi bi-images me-2"></i>Test Backend
+              </NavLink>
+            </li>
+            <li className="nav-item">
               <NavLink to={`${rootPath}/About`} className="nav-link">
                 <i className="bi-file-person me-2"></i>About
               </NavLink>

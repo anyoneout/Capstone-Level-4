@@ -36,8 +36,18 @@ export function DynamoAuthPage() {
 
   return (
     <main>
-      <h2>backend dynamo response</h2>
-      {message}
+      <div>
+        <div className="container mt-5">
+          <div className="row d-flex justify-content-center m-5">
+            <div className="d-flex justify-content-center  mt-5">
+              <h2>backend dynamo response</h2>
+            </div>
+            <div className="mt-3 justify-content-center d-flex text-light">
+              <p> {message}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   );
 

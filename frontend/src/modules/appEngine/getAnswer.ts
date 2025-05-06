@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function getAnswer(userQuestion: string, userContext: string) {
   const localPath = window.location.hostname;
-  const appEngineLocalPort = "http://localhost:3000";
+  const appEngineLocalPort = "http://localhost:3050";
   const appEngineUrl = "https://capstone-level-4.uc.r.appspot.com";
 
   let baseUrl: string;

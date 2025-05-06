@@ -29,10 +29,28 @@ export function TriviaApiResponsePage() {
 
   return (
     <main>
-      <h2>Api Trivia</h2>
-      <p>{apiTrivia}</p>
-      <h4>Backend Status</h4>
-      <p>{apiStatus}</p>
+      <main>
+        <div>
+          <div className="container mt-5">
+            <div className="row d-flex justify-content-center m-5">
+              <div className="d-flex justify-content-center  mt-5">
+                <h2>Api Trivia</h2>
+              </div>
+
+              <div className="mt-3 justify-content-center d-flex text-light">
+                <p>{apiTrivia}</p>
+              </div>
+              <div className="d-flex justify-content-center  mt-5">
+                <h4>Backend Status</h4>
+              </div>
+
+              <div className="mt-3 justify-content-center d-flex text-light">
+                <p>{apiStatus}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </main>
   );
 
