@@ -12,6 +12,7 @@ import {
 import { set } from "../../redux/store";
 
 export function CreateAccountForm() {
+  //redux
   const email = useSelector(selectCreateEmail);
   const password = useSelector(selectCreatePassword);
   const responseMessage = useSelector(selectCreateResponseMessage);
@@ -19,7 +20,19 @@ export function CreateAccountForm() {
   const phone = useSelector(selectCreatePhone);
 
   const dispatch = useDispatch();
-  const baseUrl = process.env.REACT_APP_API_URL;
+
+  //run locally or remotely
+  const localPath = window.location.hostname;
+  const lambdaLocalPort = "http://localhost:3001";
+  const lambdaUrl = process.env.REACT_APP_LAMBDA_URL;
+
+  let baseUrl: string;
+
+  if (localPath === "localhost") {
+    baseUrl = lambdaLocalPort;
+  } else {
+    baseUrl = lambdaUrl;
+  }
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();

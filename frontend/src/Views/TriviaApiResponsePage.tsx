@@ -5,6 +5,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { set } from "../redux/store";
 
 export function TriviaApiResponsePage() {
+  const localPath = window.location.hostname;
+  const lambdaLocalPort = "http://localhost:3001";
+  const lambdaUrl = process.env.REACT_APP_LAMBDA_URL;
+
+  let baseUrl: string;
+
+  if (localPath === "localhost") {
+    baseUrl = lambdaLocalPort;
+  } else {
+    baseUrl = lambdaUrl;
+  }
+
   const didMount = useSelector(selectTriviaApiDidMount);
   const apiTrivia = useSelector(selectTriviaApiTrivia);
   const apiStatus = useSelector(selectTriviaApiStatus);
@@ -26,12 +38,12 @@ export function TriviaApiResponsePage() {
 
   async function getApiResponse() {
     try {
-      const response = await axios.get("http://localhost:3000/triviaRoute");
+      const response = await axios.get(`${baseUrl}/triviaRoute`);
       const stringified = JSON.stringify(response.data);
       const action = set.triviaApiTrivia(stringified);
       dispatch(action);
     } catch {
-      const action = set.triviaApiState("unreachable");
+      const action = set.triviaApiStatus("unreachable");
       dispatch(action);
     }
   }

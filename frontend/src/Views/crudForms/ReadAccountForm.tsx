@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { readAccount } from "../../modules/crud/readAccount";
 import { selectReadEmail, selectReadResponseMessage } from "../../redux/stateSelectors";
 import { useDispatch, useSelector } from "react-redux";

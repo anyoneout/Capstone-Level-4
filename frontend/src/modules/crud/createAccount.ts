@@ -2,8 +2,19 @@ import axios from "axios";
 import { Account } from "../../types/Account";
 
 export async function createAccount(account: Account): Promise<{ status: number }> {
+  const localPath = window.location.hostname;
+  const lambdaLocalPort = "http://localhost:3001";
+  const lambdaUrl = process.env.REACT_APP_LAMBDA_URL;
+
+  let baseUrl: string;
+
+  if (localPath === "localhost") {
+    baseUrl = lambdaLocalPort;
+  } else {
+    baseUrl = lambdaUrl;
+  }
+
   const { email, password, name, phone } = account;
-  const baseUrl = process.env.REACT_APP_API_URL;
 
   //checks if fields are all filled in
   if (!email || !password || !name || !phone) {

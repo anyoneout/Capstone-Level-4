@@ -10,7 +10,6 @@ import { HandleRefresh } from "./Views/components/HandleRefresh";
 import { CollapsibleNavbar } from "./Views/components/CollapsibleNavbar";
 import SignInArea from "./Views/components/SignInArea";
 import "./index.scss";
-import { Server } from "./Views/Server";
 import { TriviaApiResponsePage } from "./Views/TriviaApiResponsePage";
 import { DynamoAuthPage } from "./Views/DynamoAuthPage";
 import { CreateAccountForm } from "./Views/crudForms/CreateAccountForm";
@@ -39,7 +38,6 @@ root.render(
           <Route path={`${rootPath}/Examples`} element={<Examples />} />
           <Route path={`${rootPath}/About`} element={<About />} />
           <Route path={`${rootPath}/signin`} element={<SignInArea />} />
-          <Route path={`${rootPath}/server`} element={<Server />} />
           <Route path={`${rootPath}/trivia`} element={<TriviaApiResponsePage />} />
           <Route path={`${rootPath}/dynamo`} element={<DynamoAuthPage />} />
           <Route path={`${rootPath}/createUser`} element={<CreateAccountForm />} />

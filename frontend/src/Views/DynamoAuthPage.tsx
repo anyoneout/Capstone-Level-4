@@ -5,6 +5,18 @@ import { selectDynamoAuthDidMount, selectDynamoAuthResponse } from "../redux/sta
 import { set } from "../redux/store";
 
 export function DynamoAuthPage() {
+  const localPath = window.location.hostname;
+  const lambdaLocalPort = "http://localhost:3001";
+  const lambdaUrl = process.env.REACT_APP_API_URL;
+
+  let baseUrl: string;
+
+  if (localPath === "localhost") {
+    baseUrl = lambdaLocalPort;
+  } else {
+    baseUrl = lambdaUrl;
+  }
+
   const didMount = useSelector(selectDynamoAuthDidMount);
   const authResponse = useSelector(selectDynamoAuthResponse);
   const dispatch = useDispatch();
@@ -32,7 +44,7 @@ export function DynamoAuthPage() {
   //Added try/catch as the backend was crashing with a different port and wouldn't render {message}
   async function getAuthResponse() {
     try {
-      const response = await axios.get("http://localhost:3000/dynamoAuth?email=aaa@aaa.com&password=aaa");
+      const response = await axios.get(`${baseUrl}/dynamoAuth?email=aaa@aaa.com&password=aaa`);
       console.log("Backend response:", response.data);
       const action = set.dynamoAuthResponse(response.data);
       dispatch(action);
@@ -43,7 +55,7 @@ export function DynamoAuthPage() {
   }
 
   function componentDidMount(): void {
-    const action = set.dyanamoAuthDidMount(true);
+    const action = set.dynamoAuthDidMount(true);
     dispatch(action);
     getAuthResponse();
     console.log("The Dynamo Auth page component has mounted");
