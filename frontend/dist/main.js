@@ -86455,9 +86455,11 @@ function _createAccount() {
           });
         case 7:
           //checks if email already exists on the server
-          readUrl = "".concat(baseUrl, "/readUser?email=").concat(email);
+          readUrl = "".concat(baseUrl, "/readUser");
           _context.next = 10;
-          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].get(readUrl);
+          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(readUrl, {
+            email: email
+          });
         case 10:
           readUser = _context.sent;
           if (!((readUser === null || readUser === void 0 || (_readUser$data = readUser.data) === null || _readUser$data === void 0 ? void 0 : _readUser$data.email) === email)) {
@@ -86469,9 +86471,14 @@ function _createAccount() {
           });
         case 13:
           //creates new user and returns status code
-          url = "".concat(baseUrl, "/createUser?email=").concat(email, "&password=").concat(password, "&name=").concat(name, "&phone=").concat(phone);
+          url = "".concat(baseUrl, "/createUser");
           _context.next = 16;
-          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].get(url);
+          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(url, {
+            email: email,
+            password: password,
+            name: name,
+            phone: phone
+          });
         case 16:
           response = _context.sent;
           return _context.abrupt("return", {
@@ -86532,9 +86539,11 @@ function _deleteAccount() {
             status: 400
           });
         case 8:
-          readUrl = "".concat(baseUrl, "/readUser?email=").concat(email);
+          readUrl = "".concat(baseUrl, "/readUser");
           _context.next = 11;
-          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].get(readUrl);
+          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(readUrl, {
+            email: email
+          });
         case 11:
           readUser = _context.sent;
           if (readUser.data.email) {
@@ -86553,9 +86562,12 @@ function _deleteAccount() {
             status: 401
           });
         case 16:
-          url = "".concat(baseUrl, "/deleteUser?email=").concat(email, "&").concat(password);
+          url = "".concat(baseUrl, "/deleteUser");
           _context.next = 19;
-          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].get(url);
+          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(url, {
+            email: email,
+            password: password
+          });
         case 19:
           deleteResponse = _context.sent;
           return _context.abrupt("return", {
@@ -86616,9 +86628,11 @@ function _readAccount() {
             status: 400
           });
         case 8:
-          readUrl = "".concat(baseUrl, "/readUser?email=").concat(email);
+          readUrl = "".concat(baseUrl, "/readUser");
           _context.next = 11;
-          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].get(readUrl);
+          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(readUrl, {
+            email: email
+          });
         case 11:
           readUser = _context.sent;
           if (!(readUser.data.email === email)) {
@@ -86691,9 +86705,11 @@ function _updateAccount() {
           });
         case 7:
           //checks if email already exists on server
-          readUrl = "".concat(baseUrl, "/readUser?email=").concat(email);
+          readUrl = "".concat(baseUrl, "/readUser");
           _context.next = 10;
-          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].get(readUrl);
+          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(readUrl, {
+            email: email
+          });
         case 10:
           readUser = _context.sent;
           console.log("readUser.data =", readUser.data);
@@ -86708,9 +86724,12 @@ function _updateAccount() {
           });
         case 14:
           //updates user with password
-          url = "".concat(baseUrl, "/updateUser?email=").concat(email, "&password=").concat(password);
+          url = "".concat(baseUrl, "/updateUser");
           _context.next = 17;
-          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].get(url);
+          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(url, {
+            email: email,
+            password: password
+          });
         case 17:
           response = _context.sent;
           return _context.abrupt("return", {

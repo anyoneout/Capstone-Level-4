@@ -36,14 +36,12 @@ export function TriviaApiResponsePage() {
               <div className="d-flex justify-content-center  mt-5">
                 <h2>Api Trivia</h2>
               </div>
-
               <div className="mt-3 justify-content-center d-flex text-light">
                 <p>{apiTrivia}</p>
               </div>
               <div className="d-flex justify-content-center  mt-5">
                 <h4>Backend Status</h4>
               </div>
-
               <div className="mt-3 justify-content-center d-flex text-light">
                 <p>{apiStatus}</p>
               </div>

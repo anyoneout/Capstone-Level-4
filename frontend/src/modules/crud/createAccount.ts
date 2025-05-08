@@ -21,15 +21,15 @@ export async function createAccount(account: Account): Promise<{ status: number 
     return { status: 400 };
   }
   //checks if email already exists on the server
-  const readUrl = `${baseUrl}/readUser?email=${email}`;
-  const readUser = await axios.get(readUrl);
+  const readUrl = `${baseUrl}/readUser`;
+  const readUser = await axios.post(readUrl, { email });
 
   //if email already exists return status code 409
   if (readUser?.data?.email === email) {
     return { status: 409 };
   }
   //creates new user and returns status code
-  const url = `${baseUrl}/createUser?email=${email}&password=${password}&name=${name}&phone=${phone}`;
-  const response = await axios.get(url);
+  const url = `${baseUrl}/createUser`;
+  const response = await axios.post(url, { email, password, name, phone });
   return { status: response.status };
 }

@@ -23,6 +23,7 @@ const port = 3001; // Common backend ports : 8000, 9000, 3000
 
 const app = express(); // Instantiate the Express.js object
 app.use(cors());
+app.use(express.json());
 app.get("/", root); // The handler runs when the path is visited in the URL.
 app.get("/api", api);
 app.get("/home", home);
@@ -32,10 +33,10 @@ app.get("/request", request);
 app.get("/trivia", trivia);
 app.get("/triviaRoute", triviaApiRoute);
 app.get("/dynamoAuth", dynamoAuthRoute);
-app.get("/createUser", createUserRoute);
-app.get("/readUser", readUserRoute);
-app.get("/deleteUser", deleteUserRoute);
-app.get("/updateUser", updateUserRoute);
+app.post("/createUser", createUserRoute);
+app.post("/readUser", readUserRoute);
+app.post("/deleteUser", deleteUserRoute);
+app.post("/updateUser", updateUserRoute);
 
 const mode = process.env.mode;
 const isRunningLocally = mode === "development";
