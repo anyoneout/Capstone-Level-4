@@ -28,18 +28,10 @@ export default function SignInModal(props) {
               <SignInContent />
             </div>
             <div className="modal-footer">
-              <button
-                type="submit"
-                className="btn btn-primary modal-sign-in-btn"
-                data-bs-dismiss="modal"
-              >
+              <button type="submit" className="btn btn-primary modal-sign-in-btn" data-bs-dismiss="modal">
                 Sign In
               </button>
-              <button
-                type="button"
-                className="btn btn-secondary modal-close-button"
-                onClick={closeButton}
-              >
+              <button type="button" className="btn btn-secondary modal-close-button" onClick={closeButton}>
                 Close
               </button>
             </div>

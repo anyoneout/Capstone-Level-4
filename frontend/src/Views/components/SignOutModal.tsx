@@ -23,11 +23,7 @@ export default function SignOutModal(props) {
             <button type="submit" className="btn btn-warning modal-btn-warning">
               Sign Out
             </button>
-            <button
-              type="button"
-              className="btn btn-secondary modal-btn-secondary"
-              onClick={closeButton}
-            >
+            <button type="button" className="btn btn-secondary modal-btn-secondary" onClick={closeButton}>
               Close
             </button>
           </div>
