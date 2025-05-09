@@ -1,17 +1,27 @@
+import { Account } from "../../types/Account";
 import { getDynamoNiceClient } from "./getDynamoNiceClient";
 
 //DynamoDB user authentication with AWS credentials
-export async function deleteDynamoUser(email: string): Promise<any> {
+export async function deleteDynamoUser(deleteUser: Account): Promise<number | undefined> {
+  const { email, password, name, phone } = deleteUser;
+
   if (typeof email === "object") return undefined;
-  if (!email) return undefined;
+  if (!email || !password) return undefined;
 
   const niceClient = getDynamoNiceClient();
 
   const request = {
     TableName: "login",
     Key: { email },
+    AttributeUpdates: {
+      password: {
+        Value: password,
+      },
+    },
   };
 
   const response = await niceClient.delete(request);
-  return response;
+  console.log("backend delete user response", response);
+  const statusCode = response.$metadata?.httpStatusCode;
+  return statusCode;
 }

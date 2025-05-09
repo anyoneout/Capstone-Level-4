@@ -14,19 +14,19 @@ export async function readAccount(account: Account): Promise<{ status: number }>
     baseUrl = lambdaUrl;
   }
 
-  const { email } = account;
+  const { email, password } = account;
 
   //checks if email has an @ symbol and a .
   const emailIsValidFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   //checks if email is missing or in an incorrect format
-  if (!email || !emailIsValidFormat) {
+  if (!email || !emailIsValidFormat || !password) {
     return { status: 400 };
   }
 
   const readUrl = `${baseUrl}/readUser`;
-  const readUser = await axios.post(readUrl, { email });
-
+  const readUser = await axios.post(readUrl, { email, password, name: "", phone: "" });
+  console.log("readUser response for read account", readUser);
   //checks if that email exists on the server
   if (readUser.data.email === email) {
     return { status: 200 };

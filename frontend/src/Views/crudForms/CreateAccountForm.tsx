@@ -40,7 +40,7 @@ export function CreateAccountForm() {
     const account = { email, password, name, phone };
 
     const result = await createAccount(account);
-
+    console.log("create account form response", result);
     if (result.status === 400) {
       const action = set.createResponseMessage("Please fill out all fields before submitting.");
       return dispatch(action);
@@ -54,10 +54,6 @@ export function CreateAccountForm() {
     if (result.status === 200) {
       const action = set.createResponseMessage(`User ${email} created successfully`);
       return dispatch(action);
-      const readUrl = `${baseUrl}/readUser?email=${email}`;
-      const readUrlResponse = await axios.get(readUrl);
-      const readAction = set.createReadResponse(JSON.stringify(readUrlResponse.data));
-      return dispatch(readAction);
     } else {
       const action = set.createResponseMessage(`User wasn't created`);
       return dispatch(action);

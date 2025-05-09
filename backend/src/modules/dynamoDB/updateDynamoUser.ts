@@ -3,14 +3,15 @@ import { getDynamoNiceClient } from "./getDynamoNiceClient";
 import { readDynamoUser } from "./readDynamoUser";
 
 //DynamoDB user authentication with AWS credentials
-export async function updateDynamoUser(email: string, password: string): Promise<any> {
+export async function updateDynamoUser(account: Account): Promise<number | undefined> {
+  const { email, password, name, phone } = account;
   if (!email || !password) {
     return undefined;
   }
 
   //to check if the email already exists
-  const existingUser = await readDynamoUser(email);
-  if (!existingUser) return undefined;
+  const existingUser = await readDynamoUser({ email, password, name: "", phone: "" });
+  if (!existingUser || existingUser.password !== password) return undefined;
 
   const niceClient = getDynamoNiceClient();
 
@@ -23,10 +24,18 @@ export async function updateDynamoUser(email: string, password: string): Promise
       password: {
         Value: password,
       },
+      name: {
+        Value: name,
+      },
+      phone: {
+        Value: phone,
+      },
     },
   };
 
   //fetch request
-  const result = await niceClient.update(request);
-  return result;
+  const response = await niceClient.update(request);
+  console.log("backend update user response", response);
+  const statusCode = response.$metadata?.httpStatusCode;
+  return statusCode;
 }

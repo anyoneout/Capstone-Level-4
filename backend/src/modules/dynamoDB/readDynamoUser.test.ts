@@ -1,11 +1,17 @@
+import { Account } from "../../types/Account";
 import { readDynamoUser } from "./readDynamoUser";
 
 describe("readDynamoUser", () => {
-  it("returns an email, password, name, and phone when given an existing email", async () => {
+  it("returns an email, password, name, and phone when given an existing email and password", async () => {
     //ARRANGE
-    const email = "aaa@aaa.com";
+    const readUser: Account = {
+      email: "aaa@aaa.com",
+      password: "aaa",
+      name: "",
+      phone: "",
+    };
     //ACT
-    const result = await readDynamoUser(email);
+    const result = await readDynamoUser(readUser);
     //ASSERT
     expect(result).toHaveProperty("email");
     expect(result).toHaveProperty("password");
@@ -15,33 +21,53 @@ describe("readDynamoUser", () => {
 
   it("returns a result with the matching email", async () => {
     //ARRANGE
-    const email = "bbb@bbb.com";
+    const readUser: Account = {
+      email: "aaa@aaa.com",
+      password: "aaa",
+      name: "",
+      phone: "",
+    };
     //ACT
-    const result = await readDynamoUser(email);
+    const result = await readDynamoUser(readUser);
     //ASSERT
-    expect(result.email).toBe(email);
+    expect(result.email).toBe(readUser.email);
   });
-  it("doesn't return a result if the email is not in the list", async () => {
+  it("doesn't return a result if the email is empty", async () => {
     //ARRANGE
-    const email = "";
+    const readUser: Account = {
+      email: "",
+      password: "",
+      name: "",
+      phone: "",
+    };
     //ACT
-    const result = await readDynamoUser(email);
+    const result = await readDynamoUser(readUser);
     //ASSERT
     expect(result).toBeUndefined();
   });
-  it("doesn't return a result if the email is an object", async () => {
+  it("doesn't return a result if the password is empty", async () => {
     //ARRANGE
-    const email: any = {};
+    const readUser: Account = {
+      email: "aaa@aaa.com",
+      password: "",
+      name: "",
+      phone: "",
+    };
     //ACT
-    const result = await readDynamoUser(email);
+    const result = await readDynamoUser(readUser);
     //ASSERT
     expect(result).toBeUndefined();
   });
-  it("doesn't return a result if the email is incorrect", async () => {
+  it("doesn't return a result if the password is incorrect", async () => {
     //ARRANGE
-    const email = "wrong@email.com";
+    const readUser: Account = {
+      email: "aaa@aaa.com",
+      password: "bbb",
+      name: "",
+      phone: "",
+    };
     //ACT
-    const result = await readDynamoUser(email);
+    const result = await readDynamoUser(readUser);
     //ASSERT
     expect(result).toBeUndefined();
   });

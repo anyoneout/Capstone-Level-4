@@ -69,6 +69,9 @@ export function selectCreateReadMessage(state: StateVariables) {
 export function selectReadEmail(state: StateVariables) {
   return state.readAccountState.email;
 }
+export function selectReadPassword(state: StateVariables) {
+  return state.readAccountState.password;
+}
 export function selectReadResponseMessage(state: StateVariables) {
   return state.readAccountState.responseMessage;
 }
@@ -79,6 +82,12 @@ export function selectUpdateEmail(state: StateVariables) {
 }
 export function selectUpdatePassword(state: StateVariables) {
   return state.updateAccountState.password;
+}
+export function selectUpdateName(state: StateVariables) {
+  return state.updateAccountState.name;
+}
+export function selectUpdatePhone(state: StateVariables) {
+  return state.updateAccountState.phone;
 }
 export function selectUpdateResponseMessage(state: StateVariables) {
   return state.updateAccountState.responseMessage;

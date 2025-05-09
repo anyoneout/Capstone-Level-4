@@ -1,11 +1,12 @@
 import React from "react";
 import { readAccount } from "../../modules/crud/readAccount";
-import { selectReadEmail, selectReadResponseMessage } from "../../redux/stateSelectors";
+import { selectReadEmail, selectReadPassword, selectReadResponseMessage } from "../../redux/stateSelectors";
 import { useDispatch, useSelector } from "react-redux";
 import { set } from "../../redux/store";
 
 export function ReadAccountForm() {
   const email = useSelector(selectReadEmail);
+  const password = useSelector(selectReadPassword);
   const responseMessage = useSelector(selectReadResponseMessage);
 
   const dispatch = useDispatch();
@@ -13,8 +14,8 @@ export function ReadAccountForm() {
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    const response = await readAccount({ email, password: "", name: "", phone: "" });
-
+    const response = await readAccount({ email, password, name: "", phone: "" });
+    console.log("read account form response", response);
     if (response.status === 200) {
       const action = set.readResponseMessage(`User (${email}) was found`);
       return dispatch(action);
@@ -34,9 +35,19 @@ export function ReadAccountForm() {
                   type="email"
                   className="form-control api-inputs"
                   placeholder="Email"
-                  aria-label="create user email"
+                  aria-label="user email"
                   value={email}
                   onChange={(e) => dispatch(set.readEmail(e.target.value))}
+                />
+              </div>
+              <div className="input-group" data-bs-theme="dark">
+                <input
+                  type="text"
+                  placeholder="Password"
+                  className="form-control api-inputs"
+                  aria-label="user password"
+                  value={password}
+                  onChange={(e) => dispatch(set.readPassword(e.target.value))}
                 />
               </div>
             </fieldset>

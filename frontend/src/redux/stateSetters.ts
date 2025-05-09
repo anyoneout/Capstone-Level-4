@@ -86,6 +86,10 @@ export const stateSetters = {
     const newValue = action.payload;
     state.readAccountState.email = newValue;
   },
+  readPassword: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.readAccountState.password = newValue;
+  },
   readResponseMessage: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
     state.readAccountState.responseMessage = newValue;
@@ -99,6 +103,14 @@ export const stateSetters = {
   updatePassword: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
     state.updateAccountState.password = newValue;
+  },
+  updateName: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.updateAccountState.name = newValue;
+  },
+  updatePhone: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.updateAccountState.phone = newValue;
   },
   updateResponseMessage: function (state: StateVariables, action: Action) {
     const newValue = action.payload;

@@ -85150,7 +85150,6 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 
-
 function CreateAccountForm() {
   //redux
   var email = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectCreateEmail);
@@ -85175,7 +85174,7 @@ function CreateAccountForm() {
   }
   function _handleSubmit() {
     _handleSubmit = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
-      var account, result, action, _action, _action2, readUrl, readUrlResponse, readAction, _action3;
+      var account, result, action, _action, _action2, _action3;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -85190,34 +85189,31 @@ function CreateAccountForm() {
             return (0,_modules_crud_createAccount__WEBPACK_IMPORTED_MODULE_1__.createAccount)(account);
           case 4:
             result = _context.sent;
+            console.log("create account form response", result);
             if (!(result.status === 400)) {
-              _context.next = 8;
+              _context.next = 9;
               break;
             }
             action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.createResponseMessage("Please fill out all fields before submitting.");
             return _context.abrupt("return", dispatch(action));
-          case 8:
+          case 9:
             if (!(result.status === 409)) {
-              _context.next = 11;
+              _context.next = 12;
               break;
             }
             _action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.createResponseMessage("User ".concat(email, " already exists."));
             return _context.abrupt("return", dispatch(_action));
-          case 11:
+          case 12:
             if (!(result.status === 200)) {
-              _context.next = 22;
+              _context.next = 17;
               break;
             }
             _action2 = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.createResponseMessage("User ".concat(email, " created successfully"));
             return _context.abrupt("return", dispatch(_action2));
           case 17:
-            readUrlResponse = _context.sent;
-            readAction = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.createReadResponse(JSON.stringify(readUrlResponse.data));
-            return _context.abrupt("return", dispatch(readAction));
-          case 22:
             _action3 = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.createResponseMessage("User wasn't created");
             return _context.abrupt("return", dispatch(_action3));
-          case 24:
+          case 19:
           case "end":
             return _context.stop();
         }
@@ -85343,22 +85339,23 @@ function DeleteAccountForm() {
             });
           case 3:
             response = _context.sent;
+            console.log("delete account form response", response);
             if (!(response.status === 401)) {
-              _context.next = 6;
+              _context.next = 7;
               break;
             }
             return _context.abrupt("return", dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.deleteResponseMessage("Invalid password entered")));
-          case 6:
+          case 7:
             if (!(response.status === 200)) {
-              _context.next = 11;
+              _context.next = 12;
               break;
             }
             action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.deleteResponseMessage("user (".concat(email, ") deleted successfully"));
             return _context.abrupt("return", dispatch(action));
-          case 11:
+          case 12:
             _action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.deleteResponseMessage("user wasn't deleted");
             return _context.abrupt("return", dispatch(_action));
-          case 13:
+          case 14:
           case "end":
             return _context.stop();
         }
@@ -85383,7 +85380,7 @@ function DeleteAccountForm() {
     type: "email",
     className: "form-control api-inputs",
     placeholder: "Email",
-    "aria-label": "create user email",
+    "aria-label": "delete user email",
     value: email,
     onChange: function onChange(e) {
       return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.deleteEmail(e.target.value));
@@ -85395,7 +85392,7 @@ function DeleteAccountForm() {
     type: "text",
     placeholder: "Password",
     className: "form-control api-inputs",
-    "aria-label": "create user password",
+    "aria-label": "delete user password",
     value: password,
     onChange: function onChange(e) {
       return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.deletePassword(e.target.value));
@@ -85438,6 +85435,7 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 function ReadAccountForm() {
   var email = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectReadEmail);
+  var password = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectReadPassword);
   var responseMessage = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectReadResponseMessage);
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useDispatch)();
   function handleSubmit(_x) {
@@ -85453,22 +85451,23 @@ function ReadAccountForm() {
             _context.next = 3;
             return (0,_modules_crud_readAccount__WEBPACK_IMPORTED_MODULE_1__.readAccount)({
               email: email,
-              password: "",
+              password: password,
               name: "",
               phone: ""
             });
           case 3:
             response = _context.sent;
+            console.log("read account form response", response);
             if (!(response.status === 200)) {
-              _context.next = 9;
+              _context.next = 10;
               break;
             }
             action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.readResponseMessage("User (".concat(email, ") was found"));
             return _context.abrupt("return", dispatch(action));
-          case 9:
+          case 10:
             _action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.readResponseMessage("user missing");
             return _context.abrupt("return", dispatch(_action));
-          case 11:
+          case 12:
           case "end":
             return _context.stop();
         }
@@ -85493,10 +85492,22 @@ function ReadAccountForm() {
     type: "email",
     className: "form-control api-inputs",
     placeholder: "Email",
-    "aria-label": "create user email",
+    "aria-label": "user email",
     value: email,
     onChange: function onChange(e) {
       return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.readEmail(e.target.value));
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "input-group",
+    "data-bs-theme": "dark"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "text",
+    placeholder: "Password",
+    className: "form-control api-inputs",
+    "aria-label": "user password",
+    value: password,
+    onChange: function onChange(e) {
+      return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.readPassword(e.target.value));
     }
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-1 d-flex align-items-center"
@@ -85539,6 +85550,8 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 function UpdateAccountForm() {
   var email = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectUpdateEmail);
   var password = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectUpdatePassword);
+  var name = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectUpdateName);
+  var phone = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectUpdatePhone);
   var responseMessage = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectUpdateResponseMessage);
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useDispatch)();
   function handleSubmit(_x) {
@@ -85555,21 +85568,22 @@ function UpdateAccountForm() {
             return (0,_modules_crud_updateAccount__WEBPACK_IMPORTED_MODULE_1__.updateAccount)({
               email: email,
               password: password,
-              name: "",
-              phone: ""
+              name: name,
+              phone: phone
             });
           case 3:
             response = _context.sent;
+            console.log("update account form response", response);
             if (!(response.status === 200)) {
-              _context.next = 9;
+              _context.next = 10;
               break;
             }
             action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.updateResponseMessage("user (".concat(email, ") updated successfully"));
             return _context.abrupt("return", dispatch(action));
-          case 9:
-            _action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.UpdateResponseMessage("user wasn't updated");
+          case 10:
+            _action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.updateResponseMessage("user wasn't updated");
             return _context.abrupt("return", dispatch(_action));
-          case 11:
+          case 12:
           case "end":
             return _context.stop();
         }
@@ -85594,7 +85608,7 @@ function UpdateAccountForm() {
     type: "email",
     className: "form-control api-inputs",
     placeholder: "Email",
-    "aria-label": "create user email",
+    "aria-label": "update user email",
     value: email,
     onChange: function onChange(e) {
       return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.updateEmail(e.target.value));
@@ -85606,10 +85620,34 @@ function UpdateAccountForm() {
     type: "text",
     placeholder: "Password",
     className: "form-control api-inputs",
-    "aria-label": "create user password",
+    "aria-label": "update user password",
     value: password,
     onChange: function onChange(e) {
       return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.updatePassword(e.target.value));
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "input-group mb-1",
+    "data-bs-theme": "dark"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "text",
+    className: "form-control api-inputs",
+    placeholder: "Name",
+    "aria-label": "update user name",
+    value: name,
+    onChange: function onChange(e) {
+      return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.updateName(e.target.value));
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "input-group",
+    "data-bs-theme": "dark"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "text",
+    className: "form-control api-inputs",
+    placeholder: "Phone",
+    "aria-label": "update user phone",
+    value: phone,
+    onChange: function onChange(e) {
+      return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_3__.set.updatePhone(e.target.value));
     }
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-1 d-flex align-items-center"
@@ -86433,7 +86471,7 @@ function createAccount(_x) {
 function _createAccount() {
   _createAccount = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(account) {
     var _readUser$data;
-    var localPath, lambdaLocalPort, lambdaUrl, baseUrl, email, password, name, phone, readUrl, readUser, url, response;
+    var localPath, lambdaLocalPort, lambdaUrl, baseUrl, email, password, name, phone, readUrl, readUser, createUrl, response;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
@@ -86458,33 +86496,39 @@ function _createAccount() {
           readUrl = "".concat(baseUrl, "/readUser");
           _context.next = 10;
           return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(readUrl, {
-            email: email
+            email: email,
+            password: password,
+            name: "",
+            phone: ""
           });
         case 10:
           readUser = _context.sent;
+          console.log("readUser response for create account", readUser);
+          //if email already exists return status code 409
           if (!((readUser === null || readUser === void 0 || (_readUser$data = readUser.data) === null || _readUser$data === void 0 ? void 0 : _readUser$data.email) === email)) {
-            _context.next = 13;
+            _context.next = 14;
             break;
           }
           return _context.abrupt("return", {
             status: 409
           });
-        case 13:
+        case 14:
           //creates new user and returns status code
-          url = "".concat(baseUrl, "/createUser");
-          _context.next = 16;
-          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(url, {
+          createUrl = "".concat(baseUrl, "/createUser");
+          _context.next = 17;
+          return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(createUrl, {
             email: email,
             password: password,
             name: name,
             phone: phone
           });
-        case 16:
+        case 17:
           response = _context.sent;
+          console.log("createUser response for create account", response);
           return _context.abrupt("return", {
             status: response.status
           });
-        case 18:
+        case 20:
         case "end":
           return _context.stop();
       }
@@ -86542,38 +86586,46 @@ function _deleteAccount() {
           readUrl = "".concat(baseUrl, "/readUser");
           _context.next = 11;
           return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(readUrl, {
-            email: email
+            email: email,
+            password: password,
+            name: "",
+            phone: ""
           });
         case 11:
           readUser = _context.sent;
+          console.log("readUser response for delete account", readUser);
+          //checks if email does not exist
           if (readUser.data.email) {
-            _context.next = 14;
+            _context.next = 15;
             break;
           }
           return _context.abrupt("return", {
             status: 404
           });
-        case 14:
+        case 15:
           if (!(readUser.data.password !== password)) {
-            _context.next = 16;
+            _context.next = 17;
             break;
           }
           return _context.abrupt("return", {
             status: 401
           });
-        case 16:
+        case 17:
           url = "".concat(baseUrl, "/deleteUser");
-          _context.next = 19;
+          _context.next = 20;
           return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(url, {
             email: email,
-            password: password
+            password: password,
+            name: "",
+            phone: ""
           });
-        case 19:
+        case 20:
           deleteResponse = _context.sent;
+          console.log("deleteUser response for delete account", deleteResponse);
           return _context.abrupt("return", {
             status: deleteResponse.status
           });
-        case 21:
+        case 23:
         case "end":
           return _context.stop();
       }
@@ -86606,7 +86658,7 @@ function readAccount(_x) {
 }
 function _readAccount() {
   _readAccount = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(account) {
-    var localPath, lambdaLocalPort, lambdaUrl, baseUrl, email, emailIsValidFormat, readUrl, readUser;
+    var localPath, lambdaLocalPort, lambdaUrl, baseUrl, email, password, emailIsValidFormat, readUrl, readUser;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
@@ -86618,9 +86670,9 @@ function _readAccount() {
           } else {
             baseUrl = lambdaUrl;
           }
-          email = account.email; //checks if email has an @ symbol and a .
+          email = account.email, password = account.password; //checks if email has an @ symbol and a .
           emailIsValidFormat = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); //checks if email is missing or in an incorrect format
-          if (!(!email || !emailIsValidFormat)) {
+          if (!(!email || !emailIsValidFormat || !password)) {
             _context.next = 8;
             break;
           }
@@ -86631,26 +86683,31 @@ function _readAccount() {
           readUrl = "".concat(baseUrl, "/readUser");
           _context.next = 11;
           return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(readUrl, {
-            email: email
+            email: email,
+            password: password,
+            name: "",
+            phone: ""
           });
         case 11:
           readUser = _context.sent;
+          console.log("readUser response for read account", readUser);
+          //checks if that email exists on the server
           if (!(readUser.data.email === email)) {
-            _context.next = 14;
+            _context.next = 15;
             break;
           }
           return _context.abrupt("return", {
             status: 200
           });
-        case 14:
+        case 15:
           if (readUser.data.email) {
-            _context.next = 16;
+            _context.next = 17;
             break;
           }
           return _context.abrupt("return", {
             status: 404
           });
-        case 16:
+        case 17:
         case "end":
           return _context.stop();
       }
@@ -86683,7 +86740,7 @@ function updateAccount(_x) {
 }
 function _updateAccount() {
   _updateAccount = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(account) {
-    var localPath, lambdaLocalPort, lambdaUrl, baseUrl, email, password, readUrl, readUser, url, response;
+    var localPath, lambdaLocalPort, lambdaUrl, baseUrl, email, password, name, phone, readUrl, readUser, url, response;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
@@ -86695,7 +86752,7 @@ function _updateAccount() {
           } else {
             baseUrl = lambdaUrl;
           }
-          email = account.email, password = account.password; //makes sure both fields are filled in
+          email = account.email, password = account.password, name = account.name, phone = account.phone; //makes sure both fields are filled in
           if (!(!email || !password)) {
             _context.next = 7;
             break;
@@ -86708,12 +86765,14 @@ function _updateAccount() {
           readUrl = "".concat(baseUrl, "/readUser");
           _context.next = 10;
           return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(readUrl, {
-            email: email
+            email: email,
+            password: password,
+            name: "",
+            phone: ""
           });
         case 10:
           readUser = _context.sent;
-          console.log("readUser.data =", readUser.data);
-
+          console.log("readUser response for update account", readUser);
           //if user does not exist, returns 404 error to keep update from creating a new user
           if (readUser.data.email) {
             _context.next = 14;
@@ -86728,14 +86787,17 @@ function _updateAccount() {
           _context.next = 17;
           return axios__WEBPACK_IMPORTED_MODULE_0__["default"].post(url, {
             email: email,
-            password: password
+            password: password,
+            name: name,
+            phone: phone
           });
         case 17:
           response = _context.sent;
+          console.log("updateUser response for update account", response);
           return _context.abrupt("return", {
             status: response.status
           });
-        case 19:
+        case 20:
         case "end":
           return _context.stop();
       }
@@ -87093,6 +87155,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   selectHomeDidMount: () => (/* binding */ selectHomeDidMount),
 /* harmony export */   selectOaPageDidMount: () => (/* binding */ selectOaPageDidMount),
 /* harmony export */   selectReadEmail: () => (/* binding */ selectReadEmail),
+/* harmony export */   selectReadPassword: () => (/* binding */ selectReadPassword),
 /* harmony export */   selectReadResponseMessage: () => (/* binding */ selectReadResponseMessage),
 /* harmony export */   selectSignInButtonClass: () => (/* binding */ selectSignInButtonClass),
 /* harmony export */   selectSignInButtonText: () => (/* binding */ selectSignInButtonText),
@@ -87103,7 +87166,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   selectTriviaApiStatus: () => (/* binding */ selectTriviaApiStatus),
 /* harmony export */   selectTriviaApiTrivia: () => (/* binding */ selectTriviaApiTrivia),
 /* harmony export */   selectUpdateEmail: () => (/* binding */ selectUpdateEmail),
+/* harmony export */   selectUpdateName: () => (/* binding */ selectUpdateName),
 /* harmony export */   selectUpdatePassword: () => (/* binding */ selectUpdatePassword),
+/* harmony export */   selectUpdatePhone: () => (/* binding */ selectUpdatePhone),
 /* harmony export */   selectUpdateResponseMessage: () => (/* binding */ selectUpdateResponseMessage)
 /* harmony export */ });
 //didMount
@@ -87175,6 +87240,9 @@ function selectCreateReadMessage(state) {
 function selectReadEmail(state) {
   return state.readAccountState.email;
 }
+function selectReadPassword(state) {
+  return state.readAccountState.password;
+}
 function selectReadResponseMessage(state) {
   return state.readAccountState.responseMessage;
 }
@@ -87185,6 +87253,12 @@ function selectUpdateEmail(state) {
 }
 function selectUpdatePassword(state) {
   return state.updateAccountState.password;
+}
+function selectUpdateName(state) {
+  return state.updateAccountState.name;
+}
+function selectUpdatePhone(state) {
+  return state.updateAccountState.phone;
 }
 function selectUpdateResponseMessage(state) {
   return state.updateAccountState.responseMessage;
@@ -87315,6 +87389,10 @@ var stateSetters = {
     var newValue = action.payload;
     state.readAccountState.email = newValue;
   },
+  readPassword: function readPassword(state, action) {
+    var newValue = action.payload;
+    state.readAccountState.password = newValue;
+  },
   readResponseMessage: function readResponseMessage(state, action) {
     var newValue = action.payload;
     state.readAccountState.responseMessage = newValue;
@@ -87327,6 +87405,14 @@ var stateSetters = {
   updatePassword: function updatePassword(state, action) {
     var newValue = action.payload;
     state.updateAccountState.password = newValue;
+  },
+  updateName: function updateName(state, action) {
+    var newValue = action.payload;
+    state.updateAccountState.name = newValue;
+  },
+  updatePhone: function updatePhone(state, action) {
+    var newValue = action.payload;
+    state.updateAccountState.phone = newValue;
   },
   updateResponseMessage: function updateResponseMessage(state, action) {
     var newValue = action.payload;
@@ -87422,11 +87508,14 @@ var stateVariables = {
   },
   readAccountState: {
     email: "",
+    password: "",
     responseMessage: ""
   },
   updateAccountState: {
     email: "",
     password: "",
+    name: "",
+    phone: "",
     responseMessage: ""
   },
   deleteAccountState: {

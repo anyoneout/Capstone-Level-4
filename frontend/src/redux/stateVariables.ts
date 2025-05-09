@@ -49,12 +49,15 @@ export const stateVariables = {
 
   readAccountState: {
     email: "",
+    password: "",
     responseMessage: "",
   },
 
   updateAccountState: {
     email: "",
     password: "",
+    name: "",
+    phone: "",
     responseMessage: "",
   },
 

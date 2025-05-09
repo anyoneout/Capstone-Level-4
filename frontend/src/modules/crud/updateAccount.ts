@@ -14,7 +14,7 @@ export async function updateAccount(account: Account): Promise<{ status: number 
     baseUrl = lambdaUrl;
   }
 
-  const { email, password } = account;
+  const { email, password, name, phone } = account;
 
   //makes sure both fields are filled in
   if (!email || !password) {
@@ -22,15 +22,15 @@ export async function updateAccount(account: Account): Promise<{ status: number 
   }
   //checks if email already exists on server
   const readUrl = `${baseUrl}/readUser`;
-  const readUser = await axios.post(readUrl, { email });
-  console.log("readUser.data =", readUser.data);
-
+  const readUser = await axios.post(readUrl, { email, password, name: "", phone: "" });
+  console.log("readUser response for update account", readUser);
   //if user does not exist, returns 404 error to keep update from creating a new user
   if (!readUser.data.email) {
     return { status: 404 };
   }
   //updates user with password
   const url = `${baseUrl}/updateUser`;
-  const response = await axios.post(url, { email, password });
+  const response = await axios.post(url, { email, password, name, phone });
+  console.log("updateUser response for update account", response);
   return { status: response.status };
 }

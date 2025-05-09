@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { updateAccount } from "../../modules/crud/updateAccount";
 import { useDispatch, useSelector } from "react-redux";
-import { selectUpdateEmail, selectUpdatePassword, selectUpdateResponseMessage } from "../../redux/stateSelectors";
+import {
+  selectUpdateEmail,
+  selectUpdateName,
+  selectUpdatePassword,
+  selectUpdatePhone,
+  selectUpdateResponseMessage,
+} from "../../redux/stateSelectors";
 import { set } from "../../redux/store";
 
 export function UpdateAccountForm() {
   const email = useSelector(selectUpdateEmail);
   const password = useSelector(selectUpdatePassword);
+  const name = useSelector(selectUpdateName);
+  const phone = useSelector(selectUpdatePhone);
   const responseMessage = useSelector(selectUpdateResponseMessage);
 
   const dispatch = useDispatch();
@@ -14,13 +22,13 @@ export function UpdateAccountForm() {
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    const response = await updateAccount({ email, password, name: "", phone: "" });
-
+    const response = await updateAccount({ email, password, name, phone });
+    console.log("update account form response", response);
     if (response.status === 200) {
       const action = set.updateResponseMessage(`user (${email}) updated successfully`);
       return dispatch(action);
     } else {
-      const action = set.UpdateResponseMessage("user wasn't updated");
+      const action = set.updateResponseMessage("user wasn't updated");
       return dispatch(action);
     }
   }
@@ -36,7 +44,7 @@ export function UpdateAccountForm() {
                   type="email"
                   className="form-control api-inputs"
                   placeholder="Email"
-                  aria-label="create user email"
+                  aria-label="update user email"
                   value={email}
                   onChange={(e) => dispatch(set.updateEmail(e.target.value))}
                 />
@@ -47,9 +55,30 @@ export function UpdateAccountForm() {
                   type="text"
                   placeholder="Password"
                   className="form-control api-inputs"
-                  aria-label="create user password"
+                  aria-label="update user password"
                   value={password}
                   onChange={(e) => dispatch(set.updatePassword(e.target.value))}
+                />
+              </div>
+              <div className="input-group mb-1" data-bs-theme="dark">
+                <input
+                  type="text"
+                  className="form-control api-inputs"
+                  placeholder="Name"
+                  aria-label="update user name"
+                  value={name}
+                  onChange={(e) => dispatch(set.updateName(e.target.value))}
+                />
+              </div>
+
+              <div className="input-group" data-bs-theme="dark">
+                <input
+                  type="text"
+                  className="form-control api-inputs"
+                  placeholder="Phone"
+                  aria-label="update user phone"
+                  value={phone}
+                  onChange={(e) => dispatch(set.updatePhone(e.target.value))}
                 />
               </div>
             </fieldset>

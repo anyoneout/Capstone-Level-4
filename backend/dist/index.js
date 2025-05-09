@@ -58520,32 +58520,39 @@ function createDynamoUser(_x) {
 }
 function _createDynamoUser() {
   _createDynamoUser = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(newUser) {
-    var niceClient, newLogin, result;
+    var email, password, name, phone, niceClient, newLogin, response;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          if (!(!newUser.email || !newUser.password || !newUser.name || !newUser.phone)) {
-            _context.next = 2;
+          email = newUser.email, password = newUser.password, name = newUser.name, phone = newUser.phone;
+          if (!(!email || !password || !name || !phone)) {
+            _context.next = 3;
             break;
           }
           return _context.abrupt("return", undefined);
-        case 2:
+        case 3:
           niceClient = (0,_getDynamoNiceClient__WEBPACK_IMPORTED_MODULE_0__.getDynamoNiceClient)(); //fetch request user parameters
           newLogin = {
             TableName: "login",
             Item: {
-              email: newUser.email,
-              password: newUser.password,
-              name: newUser.name,
-              phone: newUser.phone
+              email: email,
+              password: password,
+              name: name,
+              phone: phone
             }
           }; //fetch request
-          _context.next = 6;
+          _context.next = 7;
           return niceClient.put(newLogin);
-        case 6:
-          result = _context.sent;
-          return _context.abrupt("return", result);
-        case 8:
+        case 7:
+          response = _context.sent;
+          console.log("backend create user response", response);
+          return _context.abrupt("return", {
+            email: email,
+            password: password,
+            name: name,
+            phone: phone
+          });
+        case 10:
         case "end":
           return _context.stop();
       }
@@ -58579,36 +58586,45 @@ function deleteDynamoUser(_x) {
   return _deleteDynamoUser.apply(this, arguments);
 }
 function _deleteDynamoUser() {
-  _deleteDynamoUser = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(email) {
-    var niceClient, request, response;
+  _deleteDynamoUser = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(deleteUser) {
+    var _response$$metadata;
+    var email, password, name, phone, niceClient, request, response, statusCode;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
+          email = deleteUser.email, password = deleteUser.password, name = deleteUser.name, phone = deleteUser.phone;
           if (!(_typeof(email) === "object")) {
-            _context.next = 2;
+            _context.next = 3;
             break;
           }
           return _context.abrupt("return", undefined);
-        case 2:
-          if (email) {
-            _context.next = 4;
+        case 3:
+          if (!(!email || !password)) {
+            _context.next = 5;
             break;
           }
           return _context.abrupt("return", undefined);
-        case 4:
+        case 5:
           niceClient = (0,_getDynamoNiceClient__WEBPACK_IMPORTED_MODULE_0__.getDynamoNiceClient)();
           request = {
             TableName: "login",
             Key: {
               email: email
+            },
+            AttributeUpdates: {
+              password: {
+                Value: password
+              }
             }
           };
-          _context.next = 8;
+          _context.next = 9;
           return niceClient["delete"](request);
-        case 8:
+        case 9:
           response = _context.sent;
-          return _context.abrupt("return", response);
-        case 10:
+          console.log("backend delete user response", response);
+          statusCode = (_response$$metadata = response.$metadata) === null || _response$$metadata === void 0 ? void 0 : _response$$metadata.httpStatusCode;
+          return _context.abrupt("return", statusCode);
+        case 13:
         case "end":
           return _context.stop();
       }
@@ -58680,23 +58696,24 @@ function readDynamoUser(_x) {
   return _readDynamoUser.apply(this, arguments);
 }
 function _readDynamoUser() {
-  _readDynamoUser = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(email) {
-    var niceClient, request, response, readResponse;
+  _readDynamoUser = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(readUser) {
+    var email, password, name, phone, niceClient, request, response, readResponse;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
+          email = readUser.email, password = readUser.password, name = readUser.name, phone = readUser.phone;
           if (!(_typeof(email) === "object")) {
-            _context.next = 2;
+            _context.next = 3;
             break;
           }
           return _context.abrupt("return", undefined);
-        case 2:
-          if (email) {
-            _context.next = 4;
+        case 3:
+          if (!(!email || !password)) {
+            _context.next = 5;
             break;
           }
           return _context.abrupt("return", undefined);
-        case 4:
+        case 5:
           niceClient = (0,_getDynamoNiceClient__WEBPACK_IMPORTED_MODULE_0__.getDynamoNiceClient)();
           request = {
             TableName: "login",
@@ -58704,13 +58721,20 @@ function _readDynamoUser() {
               email: email
             }
           };
-          _context.next = 8;
+          _context.next = 9;
           return niceClient.get(request);
-        case 8:
+        case 9:
           response = _context.sent;
           readResponse = response.Item;
+          console.log("backend read user response", readResponse);
+          if (!(!readResponse || readResponse.password !== password)) {
+            _context.next = 14;
+            break;
+          }
+          return _context.abrupt("return", undefined);
+        case 14:
           return _context.abrupt("return", readResponse);
-        case 11:
+        case 15:
         case "end":
           return _context.stop();
       }
@@ -58742,31 +58766,38 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 //DynamoDB user authentication with AWS credentials
-function updateDynamoUser(_x, _x2) {
+function updateDynamoUser(_x) {
   return _updateDynamoUser.apply(this, arguments);
 }
 function _updateDynamoUser() {
-  _updateDynamoUser = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(email, password) {
-    var existingUser, niceClient, request, result;
+  _updateDynamoUser = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(account) {
+    var _response$$metadata;
+    var email, password, name, phone, existingUser, niceClient, request, response, statusCode;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
+          email = account.email, password = account.password, name = account.name, phone = account.phone;
           if (!(!email || !password)) {
-            _context.next = 2;
+            _context.next = 3;
             break;
           }
           return _context.abrupt("return", undefined);
-        case 2:
-          _context.next = 4;
-          return (0,_readDynamoUser__WEBPACK_IMPORTED_MODULE_1__.readDynamoUser)(email);
-        case 4:
+        case 3:
+          _context.next = 5;
+          return (0,_readDynamoUser__WEBPACK_IMPORTED_MODULE_1__.readDynamoUser)({
+            email: email,
+            password: password,
+            name: "",
+            phone: ""
+          });
+        case 5:
           existingUser = _context.sent;
-          if (existingUser) {
-            _context.next = 7;
+          if (!(!existingUser || existingUser.password !== password)) {
+            _context.next = 8;
             break;
           }
           return _context.abrupt("return", undefined);
-        case 7:
+        case 8:
           niceClient = (0,_getDynamoNiceClient__WEBPACK_IMPORTED_MODULE_0__.getDynamoNiceClient)();
           request = {
             TableName: "login",
@@ -58776,15 +58807,23 @@ function _updateDynamoUser() {
             AttributeUpdates: {
               password: {
                 Value: password
+              },
+              name: {
+                Value: name
+              },
+              phone: {
+                Value: phone
               }
             }
           }; //fetch request
-          _context.next = 11;
+          _context.next = 12;
           return niceClient.update(request);
-        case 11:
-          result = _context.sent;
-          return _context.abrupt("return", result);
-        case 13:
+        case 12:
+          response = _context.sent;
+          console.log("backend update user response", response);
+          statusCode = (_response$$metadata = response.$metadata) === null || _response$$metadata === void 0 ? void 0 : _response$$metadata.httpStatusCode;
+          return _context.abrupt("return", statusCode);
+        case 16:
         case "end":
           return _context.stop();
       }
@@ -59131,23 +59170,17 @@ function createUserRoute(_x, _x2) {
 }
 function _createUserRoute() {
   _createUserRoute = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(request, response) {
-    var _request$body, name, phone, email, password, userToAdd, result;
+    var createUser, result;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          _request$body = request.body, name = _request$body.name, phone = _request$body.phone, email = _request$body.email, password = _request$body.password;
-          userToAdd = {
-            email: String(email),
-            password: String(password),
-            name: String(name),
-            phone: String(phone)
-          };
-          _context.next = 4;
-          return (0,_modules_dynamoDB_createDynamoUser__WEBPACK_IMPORTED_MODULE_0__.createDynamoUser)(userToAdd);
-        case 4:
+          createUser = request.body;
+          _context.next = 3;
+          return (0,_modules_dynamoDB_createDynamoUser__WEBPACK_IMPORTED_MODULE_0__.createDynamoUser)(createUser);
+        case 3:
           result = _context.sent;
           response.send(result);
-        case 6:
+        case 5:
         case "end":
           return _context.stop();
       }
@@ -59180,13 +59213,13 @@ function deleteUserRoute(_x, _x2) {
 }
 function _deleteUserRoute() {
   _deleteUserRoute = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(request, response) {
-    var email, result;
+    var deleteUser, result;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          email = request.body.email;
+          deleteUser = request.body;
           _context.next = 3;
-          return (0,_modules_dynamoDB_deleteDynamoUser__WEBPACK_IMPORTED_MODULE_0__.deleteDynamoUser)(String(email));
+          return (0,_modules_dynamoDB_deleteDynamoUser__WEBPACK_IMPORTED_MODULE_0__.deleteDynamoUser)(deleteUser);
         case 3:
           result = _context.sent;
           response.send(result);
@@ -59223,13 +59256,13 @@ function readUserRoute(_x, _x2) {
 }
 function _readUserRoute() {
   _readUserRoute = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(request, response) {
-    var email, result;
+    var readUser, result;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          email = request.body.email;
+          readUser = request.body;
           _context.next = 3;
-          return (0,_modules_dynamoDB_readDynamoUser__WEBPACK_IMPORTED_MODULE_0__.readDynamoUser)(String(email));
+          return (0,_modules_dynamoDB_readDynamoUser__WEBPACK_IMPORTED_MODULE_0__.readDynamoUser)(readUser);
         case 3:
           result = _context.sent;
           response.send(result);
@@ -59266,13 +59299,13 @@ function updateUserRoute(_x, _x2) {
 }
 function _updateUserRoute() {
   _updateUserRoute = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(request, response) {
-    var _request$body, email, password, result;
+    var updateUser, result;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          _request$body = request.body, email = _request$body.email, password = _request$body.password;
+          updateUser = request.body;
           _context.next = 3;
-          return (0,_modules_dynamoDB_updateDynamoUser__WEBPACK_IMPORTED_MODULE_0__.updateDynamoUser)(String(email), String(password));
+          return (0,_modules_dynamoDB_updateDynamoUser__WEBPACK_IMPORTED_MODULE_0__.updateDynamoUser)(updateUser);
         case 3:
           result = _context.sent;
           response.send(result);

@@ -15,7 +15,7 @@ export function DeleteAccountForm() {
     event.preventDefault();
 
     const response = await deleteAccount({ email, password, name: "", phone: "" });
-
+    console.log("delete account form response", response);
     if (response.status === 401) {
       return dispatch(set.deleteResponseMessage(`Invalid password entered`));
     }
@@ -39,7 +39,7 @@ export function DeleteAccountForm() {
                   type="email"
                   className="form-control api-inputs"
                   placeholder="Email"
-                  aria-label="create user email"
+                  aria-label="delete user email"
                   value={email}
                   onChange={(e) => dispatch(set.deleteEmail(e.target.value))}
                 />
@@ -50,7 +50,7 @@ export function DeleteAccountForm() {
                   type="text"
                   placeholder="Password"
                   className="form-control api-inputs"
-                  aria-label="create user password"
+                  aria-label="delete user password"
                   value={password}
                   onChange={(e) => dispatch(set.deletePassword(e.target.value))}
                 />
