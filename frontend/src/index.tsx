@@ -20,6 +20,7 @@ import AwsForms from "./Views/AwsForms";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { BackendTest } from "./Views/BackendTest";
+import { Ai } from "./Views/Ai";
 
 const bodyTag = document.getElementById("bodyTag");
 const root = createRoot(bodyTag);
@@ -46,6 +47,7 @@ root.render(
           <Route path={`${rootPath}/deleteUser`} element={<DeleteAccountForm />} />
           <Route path={`${rootPath}/aws`} element={<AwsForms />} />
           <Route path={`${rootPath}/backendTest`} element={<BackendTest />} />
+          <Route path={`${rootPath}/ai`} element={<Ai />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </HandleRefresh>
