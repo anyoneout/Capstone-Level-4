@@ -60,6 +60,10 @@ export const stateSetters = {
     const newValue = action.payload;
     state.createAccountState.email = newValue;
   },
+  createUserName: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.createAccountState.userName = newValue;
+  },
   createPassword: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
     state.createAccountState.password = newValue;
@@ -79,6 +83,18 @@ export const stateSetters = {
   createReadResponse: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
     state.createAccountState.readResponse = newValue;
+  },
+  createShowModal: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.createAccountState.showModal = newValue;
+  },
+  createIsSignedIn: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.createAccountState.isSignedIn = newValue;
+  },
+  createDidMount: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.createAccountState.didMount = newValue;
   },
 
   //read account
@@ -116,6 +132,43 @@ export const stateSetters = {
     const newValue = action.payload;
     state.updateAccountState.responseMessage = newValue;
   },
+  updateShowModal: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.updateAccountState.showModal = newValue;
+  },
+  updateDidMount: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.updateAccountState.didMount = newValue;
+  },
+  //account profile
+  accountProfileEmail: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.accountProfileState.email = newValue;
+  },
+  accountProfilePassword: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.updateAccountState.password = newValue;
+  },
+  accountProfileName: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.accountProfileState.name = newValue;
+  },
+  accountProfilePhone: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.updateAccountState.phone = newValue;
+  },
+  accountProfileResponseMessage: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.accountProfileState.responseMessage = newValue;
+  },
+  accountProfileShowModal: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.accountProfileState.showModal = newValue;
+  },
+  accountProfileDidMount: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.accountProfileState.didMount = newValue;
+  },
 
   //delete account
   deleteEmail: function (state: StateVariables, action: Action) {
@@ -148,9 +201,31 @@ export const stateSetters = {
     const newValue = action.payload;
     state.isSignedInState.buttonClass = newValue;
   },
-  signInShowModal: function (state: StateVariables, action) {
+  signInShowModal: function (state: StateVariables, action: ActionBoolean) {
     const newValue = action.payload;
     state.isSignedInState.showModal = newValue;
+  },
+  signInEmail: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.isSignedInState.email = newValue;
+  },
+  signInPassword: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.isSignedInState.password = newValue;
+  },
+  signInError: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.isSignedInState.error = newValue;
+  },
+
+  //sign-up modal
+  authIsLoggedIn: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.authStateVar.isLoggedIn = newValue;
+  },
+  authUserEmail: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.authStateVar.userEmail = newValue;
   },
 };
 

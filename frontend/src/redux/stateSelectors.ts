@@ -48,6 +48,9 @@ export function selectDynamoAuthResponse(state: StateVariables) {
 export function selectCreateEmail(state: StateVariables) {
   return state.createAccountState.email;
 }
+export function selectCreateUserName(state: StateVariables) {
+  return state.createAccountState.userName;
+}
 export function selectCreatePassword(state: StateVariables) {
   return state.createAccountState.password;
 }
@@ -62,6 +65,15 @@ export function selectCreateResponseMessage(state: StateVariables) {
 }
 export function selectCreateReadMessage(state: StateVariables) {
   return state.createAccountState.readResponse;
+}
+export function selectCreateShowModal(state: StateVariables) {
+  return state.createAccountState.showModal;
+}
+export function selectCreateIsSignedIn(state: StateVariables) {
+  return state.createAccountState.isSignedIn;
+}
+export function selectCreateDidMount(state: StateVariables) {
+  return state.createAccountState.didMount;
 }
 
 //read account
@@ -92,6 +104,35 @@ export function selectUpdatePhone(state: StateVariables) {
 export function selectUpdateResponseMessage(state: StateVariables) {
   return state.updateAccountState.responseMessage;
 }
+export function selectUpdateShowModal(state: StateVariables) {
+  return state.updateAccountState.showModal;
+}
+export function selectUpdateDidMount(state: StateVariables) {
+  return state.updateAccountState.didMount;
+}
+
+//account profile
+export function selectProfileEmail(state: StateVariables) {
+  return state.accountProfileState.email;
+}
+export function selectProfilePassword(state: StateVariables) {
+  return state.accountProfileState.password;
+}
+export function selectProfileName(state: StateVariables) {
+  return state.accountProfileState.name;
+}
+export function selectProfilePhone(state: StateVariables) {
+  return state.accountProfileState.phone;
+}
+export function selectProfileResponseMessage(state: StateVariables) {
+  return state.accountProfileState.responseMessage;
+}
+export function selectProfileShowModal(state: StateVariables) {
+  return state.accountProfileState.showModal;
+}
+export function selectProfileDidMount(state: StateVariables) {
+  return state.accountProfileState.didMount;
+}
 
 //delete account
 
@@ -121,4 +162,22 @@ export function selectSignInButtonClass(state: StateVariables) {
 }
 export function selectSignInShowModal(state: StateVariables) {
   return state.isSignedInState.showModal;
+}
+export function selectSignInEmail(state: StateVariables) {
+  return state.isSignedInState.email;
+}
+export function selectSignInPassword(state: StateVariables) {
+  return state.isSignedInState.password;
+}
+export function selectSignInError(state: StateVariables) {
+  return state.isSignedInState.error;
+}
+
+//sign-up modal
+
+export function selectIsLoggedIn(state: StateVariables) {
+  return state.authStateVar.isLoggedIn;
+}
+export function selectAuthUserEmail(state: StateVariables) {
+  return state.authStateVar.userEmail;
 }

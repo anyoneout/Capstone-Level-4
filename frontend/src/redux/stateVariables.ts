@@ -40,11 +40,15 @@ export const stateVariables = {
 
   createAccountState: {
     email: "",
+    userName: "",
     password: "",
     name: "",
     phone: "",
     responseMessage: "",
     readResponse: "",
+    showModal: false,
+    isSignedIn: false,
+    didMount: false,
   },
 
   readAccountState: {
@@ -59,6 +63,18 @@ export const stateVariables = {
     name: "",
     phone: "",
     responseMessage: "",
+    showModal: false,
+    didMount: false,
+  },
+
+  accountProfileState: {
+    email: "",
+    password: "",
+    name: "",
+    phone: "",
+    responseMessage: "",
+    showModal: false,
+    didMount: false,
   },
 
   deleteAccountState: {
@@ -72,7 +88,21 @@ export const stateVariables = {
     didMount: false,
     buttonText: "Sign In",
     buttonClass: "sign-in-btn",
-    showModal: null,
+    showModal: false,
+    email: "",
+    password: "",
+    error: "",
+  },
+
+  authStateVar: {
+    isLoggedIn: false,
+    userEmail: "",
+  },
+
+  signUpState: {
+    email: "",
+    password: "",
+    response: "",
   },
 };
 

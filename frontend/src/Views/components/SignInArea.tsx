@@ -35,14 +35,12 @@ export default function SignInArea() {
       </li>
 
       {/* Conditionally Render Sign-In Modal */}
-      {showModal === "signIn" && (
+      {showModal && (
         <SignInModal className="modal-width" onSignIn={handleSubmitCloseSignIn} closeButton={handleCloseSignIn} />
       )}
 
       {/* Conditionally Render Sign-Out Modal */}
-      {showModal === "signOut" && (
-        <SignOutModal onSignOut={handleSubmitCloseSignOut} closeButton={handleCloseSignOut} />
-      )}
+      {!showModal && <SignOutModal onSignOut={handleSubmitCloseSignOut} closeButton={handleCloseSignOut} />}
     </>
   );
 
