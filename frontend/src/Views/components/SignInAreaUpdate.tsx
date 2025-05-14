@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCreateShowModal, selectSignInIsSignedIn, selectSignInShowModal } from "../../redux/stateSelectors";
 import { set } from "../../redux/store";
 import { LoginModal } from "../loginModals/LoginModal";
-import { CreateAccountModal } from "../loginModals/CreateAccountModal";
 
 export default function SignInAreaUpdate() {
   const isSignedIn = useSelector(selectSignInIsSignedIn);
@@ -15,14 +14,12 @@ export default function SignInAreaUpdate() {
   function handleSignIn(): void {
     const action = set.signInShowModal(true);
     dispatch(action);
-    debugger;
   }
 
   //clears authorized user email and signs out
   function handleSignOut(): void {
     const clearAuthUserEmail = set.authUserEmail("");
     dispatch(clearAuthUserEmail);
-    debugger;
     const clearIsSignedIn = set.signInIsSignedIn(false);
     dispatch(clearIsSignedIn);
     debugger;
@@ -39,7 +36,6 @@ export default function SignInAreaUpdate() {
         </button>
       </li>
       {showLoginModal && <LoginModal />}
-      {showCreateModal && <CreateAccountModal />}
     </>
   );
 }

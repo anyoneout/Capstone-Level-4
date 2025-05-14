@@ -86,6 +86,8 @@ export function LoginModal() {
           <div
             className="modal-dialog 
            modal-dialog-centered mx-auto"
+            style={{ width: "350px" }}
+            data-bs-theme="dark"
           >
             <div className="modal-content mx-auto bg-dark text-white border rounded-0">
               <div className="modal-header">
@@ -93,7 +95,7 @@ export function LoginModal() {
                   <div className="mb-2" style={{ fontSize: "13px", color: "rgba(156, 156, 156, 0.7)" }}>
                     Please enter your details{" "}
                   </div>{" "}
-                  <h3> Welcome Back</h3>
+                  <h2> Welcome Back</h2>
                 </div>
               </div>
 
@@ -101,7 +103,8 @@ export function LoginModal() {
                 <div className="modal-body">
                   <input
                     type="email"
-                    className="form-control mb-2"
+                    className="form-control my-2"
+                    data-bs-theme="dark"
                     placeholder="Email"
                     value={email}
                     onChange={(e) => {
@@ -119,17 +122,20 @@ export function LoginModal() {
                       dispatch(action);
                     }}
                   />
-                  <div style={{ minHeight: "1.35rem", fontSize: ".85rem" }} className="mt-1 text-danger">
+                  <div
+                    style={{ minHeight: "1.35rem", fontSize: ".85rem" }}
+                    className="mt-1 text-danger text-center fw-bold"
+                  >
                     {" "}
                     {errorResponse}
                   </div>
                   <div>
-                    <button type="submit" className="btn btn-primary mt-2  w-100 btn-sm">
+                    <button type="submit" className="btn btn-sm  mt-2 w-100 modal-button-style">
                       Log In
                     </button>
                   </div>
                   <div>
-                    <button onClick={handleCloseModal} className="btn btn-secondary mt-2 w-100 btn-sm">
+                    <button onClick={handleCloseModal} className="btn btn-secondary mt-2 mb-2 w-100 btn-sm">
                       Close
                     </button>
                   </div>

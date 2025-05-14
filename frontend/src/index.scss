@@ -138,4 +138,23 @@ legend {
 
 /* * {
   border: solid 1px yellow;
-} */
+}
+ */
+
+.form-control:focus {
+  background-color: transparent;
+}
+
+.create-user-style {
+  background-color: "transparent";
+  box-shadow: "none";
+}
+
+.modal-button-style {
+  background-color: rgba(47, 178, 204, 0.8);
+  color: rgba(255, 255, 255, 0.925);
+}
+
+.modal-button-style:hover {
+  background-color: rgba(47, 178, 204, 0.7);
+}

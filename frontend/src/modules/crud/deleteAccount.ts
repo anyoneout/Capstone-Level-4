@@ -26,7 +26,6 @@ export async function deleteAccount(account: Account): Promise<{ status: number 
 
   const readUrl = `${baseUrl}/readUser`;
   const readUser = await axios.post(readUrl, { email, password, name: "", phone: "" });
-  console.log("readUser response for delete account", readUser);
   //checks if email does not exist
   if (!readUser.data.email) {
     return { status: 404 };
@@ -36,6 +35,5 @@ export async function deleteAccount(account: Account): Promise<{ status: number 
   }
   const url = `${baseUrl}/deleteUser`;
   const deleteResponse = await axios.post(url, { email, password, name: "", phone: "" });
-  console.log("deleteUser response for delete account", deleteResponse);
   return { status: deleteResponse.status };
 }
