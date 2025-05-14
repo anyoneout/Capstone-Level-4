@@ -1,8 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { set } from "../redux/store";
+import { useDispatch, useSelector } from "react-redux";
+import { selectTestBackendDidMount } from "../redux/stateSelectors";
 
 export function BackendTest() {
   const isLocal = window.location.hostname === "localhost";
+
+  const didMount = useSelector(selectTestBackendDidMount);
+  const dispatch = useDispatch();
+
+  useEffect(componentDidMount, []);
+  useEffect(componentDidUpdate, [didMount]);
+  useEffect(componentDidUnmount, []);
 
   const lambdaUrl = isLocal
     ? "http://localhost:3001"
@@ -44,4 +54,23 @@ export function BackendTest() {
       </div>
     </div>
   );
+
+  function componentDidMount(): void {
+    const action = set.testBackendDidMount(true);
+    dispatch(action);
+    console.log("The Ai page component has mounted");
+    document.title = "Recipe Deconstructor - Test Backend";
+  }
+
+  function componentDidUpdate(): void {
+    if (didMount) {
+      console.log("component has updated");
+    }
+  }
+
+  function componentDidUnmount(): () => void {
+    return function delayedUnmount(): void {
+      console.log("component has unmounted");
+    };
+  }
 }

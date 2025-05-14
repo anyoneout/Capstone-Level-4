@@ -24,7 +24,7 @@ describe("readAccount", () => {
     //ARRANGE
     const userThatDoesNotExist: Account = {
       email: "emailThatDoesntExist@email.com",
-      password: "",
+      password: "test",
       name: "",
       phone: "",
     };
@@ -40,7 +40,7 @@ describe("readAccount", () => {
     //ARRANGE
     const existingUser: Account = {
       email: "test@email.com",
-      password: "",
+      password: "testPassword",
       name: "",
       phone: "",
     };

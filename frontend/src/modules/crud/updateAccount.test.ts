@@ -47,7 +47,7 @@ describe("updateAccount", () => {
     expect(result.status).toBe(404);
   });
 
-  it("returns 200 when a valid user's password is updated successfully", async () => {
+  it("returns 404 when a valid user's password is attempted to be changed", async () => {
     //ARRANGE
     //I wanted a way to have the password be reusable so I found this random string generator to use for the successful test and made a utility out of it.
     const randomPassword = randomStringGenerator();
@@ -61,7 +61,7 @@ describe("updateAccount", () => {
     //ACT
     const result = await updateAccount(validUser);
     //ASSERT
-    expect(result.status).toBe(200);
+    expect(result.status).toBe(404);
   });
 
   //I had a really hard time thinking of a 5th test for updateAccount

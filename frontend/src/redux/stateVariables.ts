@@ -19,6 +19,14 @@ export const stateVariables = {
     didMount: false,
   },
 
+  aiPageStateVar: {
+    didMount: false,
+  },
+
+  testBackendStateVar: {
+    didMount: false,
+  },
+
   dynamoAuthStateVar: {
     didMount: false,
     authResponse: false,

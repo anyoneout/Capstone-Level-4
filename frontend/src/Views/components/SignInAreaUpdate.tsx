@@ -12,6 +12,7 @@ export default function SignInAreaUpdate() {
   //shows signInModal
   function handleSignIn(): void {
     dispatch(set.signInShowModal(true));
+    debugger;
   }
 
   //clears authorized user email and signs out
@@ -19,16 +20,15 @@ export default function SignInAreaUpdate() {
     dispatch(set.authUserEmail(""));
     dispatch(set.signInIsSignedIn(false));
   }
+  const label = isSignedIn ? "Sign Out" : "Sign In";
+  const handler = isSignedIn ? handleSignOut : handleSignIn;
+  const buttonStyle = isSignedIn ? "sign-out-btn" : "sign-in-btn";
 
   return (
     <>
       <li className="nav-item">
-        <button
-          //this seemed like a small amount of logic to have in the jsx so I didn't bother creating functions that conditionally rendered for the onClick"
-          className={isSignedIn ? "sign-out-btn" : "sign-in-btn"}
-          onClick={isSignedIn ? handleSignOut : handleSignIn}
-        >
-          {isSignedIn ? "Sign Out" : "Sign In"}
+        <button className={buttonStyle} onClick={handler}>
+          {label}
         </button>
       </li>
       {showModal && <LoginModal />}

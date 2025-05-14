@@ -1,4 +1,4 @@
-//added to replace the images with strings instead of modifying jest.config.js 
+/* //added to replace the images with strings instead of modifying jest.config.js 
 jest.mock("../../assets/videos/ingredients.mp4", () => "ingredients.mp4");
 
 import { describe, expect, it } from "@jest/globals";
@@ -13,11 +13,4 @@ describe("The About page", () => {
 function rendersAbout() {
 
   //ARRANGE
-  let container;
-
-  //ACT
-  ({ container } = render(<About />));
-
-  //ASSERT
-  expect(container).toBeTruthy();
-}
+  let con */

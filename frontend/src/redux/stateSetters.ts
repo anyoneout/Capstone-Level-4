@@ -30,6 +30,14 @@ export const stateSetters = {
     const newValue = action.payload;
     state.handleRefreshState.didMount = newValue;
   },
+  aiPageDidMount: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.aiPageStateVar.didMount = newValue;
+  },
+  testBackendDidMount: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.testBackendStateVar.didMount = newValue;
+  },
 
   // trivia api
   triviaApiDidMount: function (state: StateVariables, action: ActionBoolean) {

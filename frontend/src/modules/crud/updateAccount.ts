@@ -25,7 +25,7 @@ export async function updateAccount(account: Account): Promise<{ status: number 
   const readUser = await axios.post(readUrl, { email, password, name: "", phone: "" });
   console.log("readUser response for update account", readUser);
   //if user does not exist, returns 404 error to keep update from creating a new user
-  if (!readUser.data.email) {
+  if (!readUser.data.email || readUser.data.password !== password) {
     return { status: 404 };
   }
   //updates user with password

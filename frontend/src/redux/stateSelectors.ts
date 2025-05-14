@@ -24,6 +24,12 @@ export function selectHandleRefreshDidMount(state: StateVariables) {
     return state.handleRefreshState.didMount;
   }
 }
+export function selectAiPageDidMount(state: StateVariables) {
+  return state.aiPageStateVar.didMount;
+}
+export function selectTestBackendDidMount(state: StateVariables) {
+  return state.testBackendStateVar.didMount;
+}
 
 //trivia api
 export function selectTriviaApiDidMount(state: StateVariables) {
