@@ -107,56 +107,71 @@ export function CreateAccountModal() {
         >
           <div className="modal-dialog modal-dialog-centered mx-auto" style={{ width: "350px" }} data-bs-theme="dark">
             <div className="modal-content mx-auto bg-dark text-white border rounded-0">
-              <div className="modal-header">
-                <h3 className="modal-title mb-3 mt-2">Sign up</h3>
+              <div className="modal-header d-flex justify-content-center">
+                <h2 className="modal-title mb-3 mt-2" style={{ width: "95%" }}>
+                  Sign up
+                </h2>
               </div>
               <form onSubmit={handleSubmit}>
-                <div className="modal-body">
-                  <input
-                    type="email"
-                    className="form-control mb-2"
-                    placeholder="Email"
-                    aria-label="create user email"
-                    value={email}
-                    onChange={(e) => dispatch(set.createEmail(e.target.value))}
-                  />
-                  <input
-                    type="text"
-                    placeholder="Password"
-                    className="form-control mb-2"
-                    aria-label="create user password"
-                    value={password}
-                    onChange={(e) => dispatch(set.createPassword(e.target.value))}
-                  />
-                  <input
-                    type="text"
-                    className="form-control mb-2"
-                    placeholder="Name"
-                    aria-label="create user name"
-                    value={name}
-                    onChange={(e) => dispatch(set.createName(e.target.value))}
-                  />
-                  <input
-                    type="text"
-                    className="form-control mb-2"
-                    placeholder="Phone"
-                    aria-label="create user phone"
-                    value={phone}
-                    onChange={(e) => dispatch(set.createPhone(e.target.value))}
-                  />
-                  <div
-                    style={{ minHeight: "1.35rem", fontSize: ".85rem" }}
-                    className="mt-1 text-danger text-center fw-bold mb-2"
-                  >
+                <div className="modal-body d-flex justify-content-center">
+                  <div className="d-flex justify-content-center">
+                    <input
+                      type="email"
+                      className="form-control mb-1"
+                      placeholder="Email"
+                      aria-label="create user email "
+                      value={email}
+                      onChange={(e) => dispatch(set.createEmail(e.target.value))}
+                      style={{ width: "95%" }}
+                    />
+                  </div>
+                  <div className="d-flex justify-content-center">
+                    <input
+                      type="text"
+                      placeholder="Password"
+                      className="form-control mb-1"
+                      aria-label="create user password"
+                      value={password}
+                      onChange={(e) => dispatch(set.createPassword(e.target.value))}
+                      style={{ width: "95%" }}
+                    />
+                  </div>
+                  <div className="d-flex justify-content-center">
+                    <input
+                      type="text"
+                      className="form-control mb-1"
+                      placeholder="Name"
+                      aria-label="create user name"
+                      value={name}
+                      onChange={(e) => dispatch(set.createName(e.target.value))}
+                      style={{ width: "95%" }}
+                    />
+                  </div>
+                  <div className="d-flex justify-content-center">
+                    <input
+                      type="text"
+                      className="form-control mb-1"
+                      placeholder="Phone"
+                      aria-label="create user phone"
+                      value={phone}
+                      onChange={(e) => dispatch(set.createPhone(e.target.value))}
+                      style={{ width: "95%" }}
+                    />
+                  </div>
+                  <div style={{ minHeight: "1.35rem", fontSize: ".85rem" }} className="text-danger text-center fw-bold">
                     {" "}
                     {responseMessage}
                   </div>
-                  <button type="submit" className="mx-auto btn btn-sm w-100 modal-button-style">
-                    Create
-                  </button>
-                  <button onClick={handleCloseModal} className="btn btn-secondary mb-5 mt-2 w-100 btn-sm">
-                    Close
-                  </button>
+                  <div className="d-flex justify-content-center">
+                    <button type="submit" className="mx-auto btn btn-sm modal-button-style" style={{ width: "95%" }}>
+                      Create
+                    </button>
+                  </div>
+                  <div className="d-flex justify-content-center">
+                    <button onClick={handleCloseModal} className="btn btn-secondary btn-sm" style={{ width: "95%" }}>
+                      Close
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>

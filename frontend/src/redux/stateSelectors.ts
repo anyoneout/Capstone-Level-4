@@ -187,3 +187,6 @@ export function selectIsLoggedIn(state: StateVariables) {
 export function selectAuthUserEmail(state: StateVariables) {
   return state.authStateVar.userEmail;
 }
+export function selectAuthUserPassword(state: StateVariables) {
+  return state.authStateVar.userPassword;
+}

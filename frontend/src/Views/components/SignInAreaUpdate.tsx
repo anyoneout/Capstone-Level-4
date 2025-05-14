@@ -1,14 +1,23 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectCreateShowModal, selectSignInIsSignedIn, selectSignInShowModal } from "../../redux/stateSelectors";
+import {
+  selectCreateShowModal,
+  selectSignInIsSignedIn,
+  selectSignInShowModal,
+  selectUpdateShowModal,
+} from "../../redux/stateSelectors";
 import { set } from "../../redux/store";
 import { LoginModal } from "../loginModals/LoginModal";
 import { CreateAccountModal } from "../loginModals/CreateAccountModal";
+import { UpdateAccountModal } from "../loginModals/UpdateAccountModal";
+import "./CollapsibleNavbar.scss";
+import "./SignInArea.scss";
 
 export default function SignInAreaUpdate() {
   const isSignedIn = useSelector(selectSignInIsSignedIn);
   const showLoginModal = useSelector(selectSignInShowModal);
   const showCreateModal = useSelector(selectCreateShowModal);
+  const showUpdateModal = useSelector(selectUpdateShowModal);
   const dispatch = useDispatch();
 
   //shows signInModal
@@ -23,7 +32,6 @@ export default function SignInAreaUpdate() {
     dispatch(clearAuthUserEmail);
     const clearIsSignedIn = set.signInIsSignedIn(false);
     dispatch(clearIsSignedIn);
-    debugger;
   }
   const label = isSignedIn ? "Sign Out" : "Sign In";
   const handler = isSignedIn ? handleSignOut : handleSignIn;
@@ -32,12 +40,13 @@ export default function SignInAreaUpdate() {
   return (
     <>
       <li className="nav-item">
-        <button className={buttonStyle} onClick={handler}>
+        <button className={buttonStyle} style={{ width: "120px", textAlign: "center" }} onClick={handler}>
           {label}
         </button>
       </li>
       {showLoginModal && <LoginModal />}
       {showCreateModal && <CreateAccountModal />}
+      {showUpdateModal && <UpdateAccountModal />}
     </>
   );
 }

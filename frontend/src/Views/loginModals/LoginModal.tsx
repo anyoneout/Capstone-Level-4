@@ -67,8 +67,12 @@ export function LoginModal() {
     dispatch(currentLoginState);
     const saveEmail = set.authUserEmail(email);
     dispatch(saveEmail);
+    const savePassword = set.authUserPassword(password);
+    dispatch(savePassword);
     const closeModal = set.signInShowModal(false);
     dispatch(closeModal);
+    const showUpdateAccountModal = set.updateShowModal(true);
+    dispatch(showUpdateAccountModal);
   }
 
   function showCreateAccountModal(event: React.FormEvent) {
@@ -77,6 +81,13 @@ export function LoginModal() {
     dispatch(hideLoginModal);
     const showCreateAccountModal = set.createShowModal(true);
     dispatch(showCreateAccountModal);
+  }
+  function showUpdateAccountModal(event: React.FormEvent) {
+    event.preventDefault();
+    const hideLoginModal = set.signInShowModal(false);
+    dispatch(hideLoginModal);
+    const showUpdateAccountModal = set.updateShowModal(true);
+    dispatch(showUpdateAccountModal);
   }
 
   return (
@@ -90,62 +101,75 @@ export function LoginModal() {
             data-bs-theme="dark"
           >
             <div className="modal-content mx-auto bg-dark text-white border rounded-0">
-              <div className="modal-header">
-                <div className=" modal-title">
-                  <div className="mb-2" style={{ fontSize: "13px", color: "rgba(156, 156, 156, 0.7)" }}>
+              <div className="modal-header d-flex justify-content-center">
+                <div className=" modal-title" style={{ width: "95%" }}>
+                  <div className="mb-1 pt-2" style={{ fontSize: "13px", color: "rgba(156, 156, 156, 0.7)" }}>
                     Please enter your details{" "}
                   </div>{" "}
                   <h2> Welcome Back</h2>
                 </div>
               </div>
-
               <form onSubmit={handleSubmit}>
                 <div className="modal-body">
-                  <input
-                    type="email"
-                    className="form-control my-2"
-                    data-bs-theme="dark"
-                    placeholder="Email"
-                    value={email}
-                    onChange={(e) => {
-                      const action = set.signInEmail(e.target.value);
-                      dispatch(action);
-                    }}
-                  />
-                  <input
-                    type="password"
-                    className="form-control mb-2"
-                    placeholder="Password"
-                    value={password}
-                    onChange={(e) => {
-                      const action = set.signInPassword(e.target.value);
-                      dispatch(action);
-                    }}
-                  />
-                  <div
-                    style={{ minHeight: "1.35rem", fontSize: ".85rem" }}
-                    className="mt-1 text-danger text-center fw-bold"
-                  >
-                    {" "}
-                    {errorResponse}
+                  <div className="d-flex justify-content-center">
+                    <input
+                      type="email"
+                      className="form-control my-1"
+                      data-bs-theme="dark"
+                      placeholder="Email"
+                      value={email}
+                      onChange={(e) => {
+                        const action = set.signInEmail(e.target.value);
+                        dispatch(action);
+                      }}
+                      style={{ width: "95%" }}
+                    />
                   </div>
-                  <div>
-                    <button type="submit" className="btn btn-sm  mt-2 w-100 modal-button-style">
+                  <div className="d-flex justify-content-center">
+                    <input
+                      type="password"
+                      className="form-control mb-1"
+                      placeholder="Password"
+                      value={password}
+                      onChange={(e) => {
+                        const action = set.signInPassword(e.target.value);
+                        dispatch(action);
+                      }}
+                      style={{ width: "95%" }}
+                    />
+                  </div>
+                  <div className="d-flex justify-content-center">
+                    <div
+                      style={{ minHeight: "1.35rem", fontSize: ".85rem", width: "95%" }}
+                      className="text-danger text-center fw-bold"
+                    >
+                      {" "}
+                      {errorResponse}
+                    </div>
+                  </div>
+                  <div className="d-flex justify-content-center">
+                    <button type="submit" className="btn btn-sm modal-button-style" style={{ width: "95%" }}>
                       Log In
                     </button>
                   </div>
-                  <div>
-                    <button onClick={handleCloseModal} className="btn btn-secondary mt-2 mb-2 w-100 btn-sm">
+                  <div className="d-flex justify-content-center">
+                    <button onClick={handleCloseModal} className="btn btn-secondary btn-sm" style={{ width: "95%" }}>
                       Close
                     </button>
                   </div>
                 </div>
                 <div className="modal-footer">
-                  <div className="mb-2 mx-auto" style={{ fontSize: "13px", color: "rgba(156, 156, 156, 0.7)" }}>
+                  <div className="mx-auto" style={{ fontSize: "13px", color: "rgba(156, 156, 156, 0.7)" }}>
                     Don't have an account yet?{" "}
                     <a href="#" className="text-decoration-none" onClick={showCreateAccountModal}>
                       Sign Up
-                    </a>
+                    </a>{" "}
+                  </div>
+                  <div className="mx-auto" style={{ fontSize: "13px", color: "rgba(156, 156, 156, 0.7)" }}>
+                    Need to make changes?{" "}
+                    <a href="#" className="text-decoration-none" onClick={showUpdateAccountModal}>
+                      Update Account
+                    </a>{" "}
                   </div>
                 </div>
               </form>

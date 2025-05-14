@@ -235,6 +235,10 @@ export const stateSetters = {
     const newValue = action.payload;
     state.authStateVar.userEmail = newValue;
   },
+  authUserPassword: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.authStateVar.userPassword = newValue;
+  },
 };
 
 type Action = {

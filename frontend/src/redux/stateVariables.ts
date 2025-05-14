@@ -105,6 +105,7 @@ export const stateVariables = {
   authStateVar: {
     isLoggedIn: false,
     userEmail: "",
+    userPassword: "",
   },
 
   signUpState: {
