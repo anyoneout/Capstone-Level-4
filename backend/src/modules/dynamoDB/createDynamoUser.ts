@@ -20,9 +20,20 @@ export async function createDynamoUser(newUser: Account): Promise<Account | unde
     },
   };
 
+  //get request to check if user already exists so as to not overwrite password on accidental create user attempt
+  const existingUserCheck = {
+    TableName: "login",
+    Key: { email },
+  };
+
+  const existingUserResponse = await niceClient.get(existingUserCheck);
+
+  if (existingUserResponse.Item) {
+    return undefined;
+  }
+
   //fetch request
   const response = await niceClient.put(newLogin);
-  console.log("backend create user response", response);
   return {
     email,
     password,

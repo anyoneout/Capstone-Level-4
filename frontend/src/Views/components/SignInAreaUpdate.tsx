@@ -1,24 +1,31 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectSignInIsSignedIn, selectSignInShowModal } from "../../redux/stateSelectors";
+import { selectCreateShowModal, selectSignInIsSignedIn, selectSignInShowModal } from "../../redux/stateSelectors";
 import { set } from "../../redux/store";
 import { LoginModal } from "../loginModals/LoginModal";
+import { CreateAccountModal } from "../loginModals/CreateAccountModal";
 
 export default function SignInAreaUpdate() {
   const isSignedIn = useSelector(selectSignInIsSignedIn);
-  const showModal = useSelector(selectSignInShowModal);
+  const showLoginModal = useSelector(selectSignInShowModal);
+  const showCreateModal = useSelector(selectCreateShowModal);
   const dispatch = useDispatch();
 
   //shows signInModal
   function handleSignIn(): void {
-    dispatch(set.signInShowModal(true));
+    const action = set.signInShowModal(true);
+    dispatch(action);
     debugger;
   }
 
   //clears authorized user email and signs out
   function handleSignOut(): void {
-    dispatch(set.authUserEmail(""));
-    dispatch(set.signInIsSignedIn(false));
+    const clearAuthUserEmail = set.authUserEmail("");
+    dispatch(clearAuthUserEmail);
+    debugger;
+    const clearIsSignedIn = set.signInIsSignedIn(false);
+    dispatch(clearIsSignedIn);
+    debugger;
   }
   const label = isSignedIn ? "Sign Out" : "Sign In";
   const handler = isSignedIn ? handleSignOut : handleSignIn;
@@ -31,7 +38,8 @@ export default function SignInAreaUpdate() {
           {label}
         </button>
       </li>
-      {showModal && <LoginModal />}
+      {showLoginModal && <LoginModal />}
+      {showCreateModal && <CreateAccountModal />}
     </>
   );
 }

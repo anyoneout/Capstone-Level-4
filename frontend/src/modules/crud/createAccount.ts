@@ -20,17 +20,18 @@ export async function createAccount(account: Account): Promise<{ status: number 
   if (!email || !password || !name || !phone) {
     return { status: 400 };
   }
+
   //checks if email already exists on the server
   const readUrl = `${baseUrl}/readUser`;
-  const readUser = await axios.post(readUrl, { email, password, name: "", phone: "" });
-  console.log("readUser response for create account", readUser);
-  //if email already exists return status code 409
-  if (readUser?.data?.email === email) {
+  const readResponse = await axios.post(readUrl, { email, password, name: "", phone: "" });
+  //since readAccount returns 200 on a successful request,I'm using that to denote an error response to avoid updating a user on create
+  if (readResponse.status === 200) {
     return { status: 409 };
   }
+
   //creates new user and returns status code
   const createUrl = `${baseUrl}/createUser`;
+
   const response = await axios.post(createUrl, { email, password, name, phone });
-  console.log("createUser response for create account", response);
   return { status: response.status };
 }

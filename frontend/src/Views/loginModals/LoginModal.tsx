@@ -3,12 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { set } from "../../redux/store";
 import { readAccount } from "../../modules/crud/readAccount";
 import {
+  selectSignInDidMount,
   selectSignInEmail,
   selectSignInError,
   selectSignInIsSignedIn,
   selectSignInPassword,
   selectSignInShowModal,
 } from "../../redux/stateSelectors";
+import { CreateAccountModal } from "./CreateAccountModal";
 
 export function LoginModal() {
   //declares Redux
@@ -17,18 +19,21 @@ export function LoginModal() {
   const email = useSelector(selectSignInEmail);
   const password = useSelector(selectSignInPassword);
   const errorResponse = useSelector(selectSignInError);
+  const didMount = useSelector(selectSignInDidMount);
 
   //invokes useDispatch
   const dispatch = useDispatch();
 
   useEffect(componentDidMount, []);
   //sets modal visibility to true upon page load via componentDidMount
-  function handleOpenModal() {
-    const showSignInModal = set.signInShowModal(true);
-    dispatch(showSignInModal);
-  }
   function componentDidMount(): void {
     handleOpenModal();
+  }
+  function handleOpenModal() {
+    const didMount = set.signInDidMount(true);
+    dispatch(didMount);
+    const showSignInModal = set.signInShowModal(true);
+    dispatch(showSignInModal);
   }
   //closes modal on close button click, clears sign in redux variables
   function handleCloseModal() {
@@ -44,11 +49,13 @@ export function LoginModal() {
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
+
     //condition to make sure fields are filled out
     if (!email || !password) {
       const setErrorResponse = set.signInError("Email and password must be filled out");
       return dispatch(setErrorResponse);
     }
+
     //read request to check if user exists via status code
     const result = await readAccount({ email, password, name: "", phone: "" });
 
@@ -56,6 +63,7 @@ export function LoginModal() {
       const setErrorResponse = set.signInError("User not found");
       return dispatch(setErrorResponse);
     }
+
     //if user exists, signs in, saves authorized user email, and closes login modal
     const currentLoginState = set.signInIsSignedIn(true);
     dispatch(currentLoginState);
@@ -63,6 +71,14 @@ export function LoginModal() {
     dispatch(saveEmail);
     const closeModal = set.signInShowModal(false);
     dispatch(closeModal);
+  }
+
+  function showCreateAccountModal(event: React.FormEvent) {
+    event.preventDefault();
+    const hideLoginModal = set.signInShowModal(false);
+    dispatch(hideLoginModal);
+    const showCreateAccountModal = set.createShowModal(true);
+    dispatch(showCreateAccountModal);
   }
 
   return (
@@ -123,6 +139,9 @@ export function LoginModal() {
                 <div className="modal-footer">
                   <div className="mb-2 mx-auto" style={{ fontSize: "13px", color: "rgba(156, 156, 156, 0.7)" }}>
                     Don't have an account yet?{" "}
+                    <a href="#" className="text-decoration-none" onClick={showCreateAccountModal}>
+                      Sign Up
+                    </a>
                   </div>
                 </div>
               </form>
@@ -130,6 +149,7 @@ export function LoginModal() {
           </div>
         </div>
       )}
+      <CreateAccountModal />
     </>
   );
 }

@@ -26,6 +26,7 @@ export async function readAccount(account: Account): Promise<{ status: number }>
 
   const readUrl = `${baseUrl}/readUser`;
   const readUser = await axios.post(readUrl, { email, password, name: "", phone: "" });
+  /*  const readUserParsed = JSON.parse(readUser.data); */
   console.log("readUser response for read account", readUser);
   //checks if that email exists on the server
   if (readUser.data.email === email) {
