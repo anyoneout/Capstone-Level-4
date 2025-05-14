@@ -10,7 +10,6 @@ import {
   selectSignInPassword,
   selectSignInShowModal,
 } from "../../redux/stateSelectors";
-import { CreateAccountModal } from "./CreateAccountModal";
 
 export function LoginModal() {
   //declares Redux
@@ -19,7 +18,6 @@ export function LoginModal() {
   const email = useSelector(selectSignInEmail);
   const password = useSelector(selectSignInPassword);
   const errorResponse = useSelector(selectSignInError);
-  const didMount = useSelector(selectSignInDidMount);
 
   //invokes useDispatch
   const dispatch = useDispatch();
@@ -149,7 +147,6 @@ export function LoginModal() {
           </div>
         </div>
       )}
-      <CreateAccountModal />
     </>
   );
 }
