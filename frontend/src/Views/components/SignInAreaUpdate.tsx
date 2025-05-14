@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectCreateShowModal, selectSignInIsSignedIn, selectSignInShowModal } from "../../redux/stateSelectors";
 import { set } from "../../redux/store";
 import { LoginModal } from "../loginModals/LoginModal";
+import { CreateAccountModal } from "../loginModals/CreateAccountModal";
 
 export default function SignInAreaUpdate() {
   const isSignedIn = useSelector(selectSignInIsSignedIn);
@@ -36,6 +37,7 @@ export default function SignInAreaUpdate() {
         </button>
       </li>
       {showLoginModal && <LoginModal />}
+      {showCreateModal && <CreateAccountModal />}
     </>
   );
 }
