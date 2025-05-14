@@ -17,7 +17,6 @@ export async function readDynamoUser(readUser: Account): Promise<Account | undef
 
   const response = await niceClient.get(request);
   const readResponse = response.Item as Account;
-  console.log("backend read user response", readResponse);
 
   if (!readResponse || readResponse.password !== password) {
     return undefined;

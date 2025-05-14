@@ -6,6 +6,5 @@ export async function createUserRoute(request: Request, response: Response) {
   const createUser: Account = request.body;
 
   const result = await createDynamoUser(createUser);
-
   response.send(result);
 }

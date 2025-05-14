@@ -35,7 +35,6 @@ export async function updateDynamoUser(account: Account): Promise<number | undef
 
   //fetch request
   const response = await niceClient.update(request);
-  console.log("backend update user response", response);
   const statusCode = response.$metadata?.httpStatusCode;
   return statusCode;
 }

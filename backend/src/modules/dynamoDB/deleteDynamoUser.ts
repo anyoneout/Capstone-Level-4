@@ -21,7 +21,6 @@ export async function deleteDynamoUser(deleteUser: Account): Promise<number | un
   };
 
   const response = await niceClient.delete(request);
-  console.log("backend delete user response", response);
   const statusCode = response.$metadata?.httpStatusCode;
   return statusCode;
 }

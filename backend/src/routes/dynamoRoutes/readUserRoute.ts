@@ -6,6 +6,5 @@ export async function readUserRoute(request: Request, response: Response) {
   const readUser: Account = request.body;
 
   const result = await readDynamoUser(readUser);
-
   response.send(result);
 }

@@ -58520,7 +58520,7 @@ function createDynamoUser(_x) {
 }
 function _createDynamoUser() {
   _createDynamoUser = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(newUser) {
-    var email, password, name, phone, niceClient, newLogin, response;
+    var email, password, name, phone, niceClient, newLogin, existingUserCheck, existingUserResponse, response;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
@@ -58540,19 +58540,34 @@ function _createDynamoUser() {
               name: name,
               phone: phone
             }
-          }; //fetch request
-          _context.next = 7;
+          }; //get request to check if user already exists so as to not overwrite password on accidental create user attempt
+          existingUserCheck = {
+            TableName: "login",
+            Key: {
+              email: email
+            }
+          };
+          _context.next = 8;
+          return niceClient.get(existingUserCheck);
+        case 8:
+          existingUserResponse = _context.sent;
+          if (!existingUserResponse.Item) {
+            _context.next = 11;
+            break;
+          }
+          return _context.abrupt("return", undefined);
+        case 11:
+          _context.next = 13;
           return niceClient.put(newLogin);
-        case 7:
+        case 13:
           response = _context.sent;
-          console.log("backend create user response", response);
           return _context.abrupt("return", {
             email: email,
             password: password,
             name: name,
             phone: phone
           });
-        case 10:
+        case 15:
         case "end":
           return _context.stop();
       }
@@ -58621,10 +58636,9 @@ function _deleteDynamoUser() {
           return niceClient["delete"](request);
         case 9:
           response = _context.sent;
-          console.log("backend delete user response", response);
           statusCode = (_response$$metadata = response.$metadata) === null || _response$$metadata === void 0 ? void 0 : _response$$metadata.httpStatusCode;
           return _context.abrupt("return", statusCode);
-        case 13:
+        case 12:
         case "end":
           return _context.stop();
       }
@@ -58726,15 +58740,14 @@ function _readDynamoUser() {
         case 9:
           response = _context.sent;
           readResponse = response.Item;
-          console.log("backend read user response", readResponse);
           if (!(!readResponse || readResponse.password !== password)) {
-            _context.next = 14;
+            _context.next = 13;
             break;
           }
           return _context.abrupt("return", undefined);
-        case 14:
+        case 13:
           return _context.abrupt("return", readResponse);
-        case 15:
+        case 14:
         case "end":
           return _context.stop();
       }
@@ -58820,10 +58833,9 @@ function _updateDynamoUser() {
           return niceClient.update(request);
         case 12:
           response = _context.sent;
-          console.log("backend update user response", response);
           statusCode = (_response$$metadata = response.$metadata) === null || _response$$metadata === void 0 ? void 0 : _response$$metadata.httpStatusCode;
           return _context.abrupt("return", statusCode);
-        case 16:
+        case 15:
         case "end":
           return _context.stop();
       }

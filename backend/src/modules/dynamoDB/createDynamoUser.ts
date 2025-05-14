@@ -32,7 +32,7 @@ export async function createDynamoUser(newUser: Account): Promise<Account | unde
     return undefined;
   }
 
-  //fetch request
+  //create user
   const response = await niceClient.put(newLogin);
   return {
     email,
