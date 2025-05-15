@@ -36,8 +36,8 @@ export function CreateAccountModal() {
     dispatch(clearPhone);
     const clearError = set.createResponseMessage("");
     dispatch(clearError);
-    const closeSignInModal = set.createShowModal(false);
-    dispatch(closeSignInModal);
+    const closeUpdateModal = set.createShowModal(false);
+    dispatch(closeUpdateModal);
     const showProfileModal = set.accountProfileShowModal(true);
     dispatch(showProfileModal);
   }
@@ -85,8 +85,8 @@ export function CreateAccountModal() {
       const userEmail = set.authUserEmail(email);
       console.log("userEmail", userEmail);
       dispatch(userEmail);
-      /*      const closeModal = set.createShowModal(false);
-      dispatch(closeModal); */
+      const closeModal = set.createShowModal(false);
+      dispatch(closeModal);
       return dispatch(action);
     } else {
       const action = set.createResponseMessage(`User wasn't created`);
@@ -94,7 +94,7 @@ export function CreateAccountModal() {
     }
   }
   if (isSignedIn) {
-    return null;
+    return <></>;
   }
 
   return (

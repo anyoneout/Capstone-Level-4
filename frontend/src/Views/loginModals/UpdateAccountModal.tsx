@@ -25,12 +25,12 @@ export function UpdateAccountModal() {
   const phone = useSelector(selectUpdatePhone);
 
   const dispatch = useDispatch();
-  useEffect(componentDidMount, []);
+  /*  useEffect(componentDidMount, []);
 
   function componentDidMount() {
     handleOpenModal();
   }
-
+ */
   function handleOpenModal() {
     const showSignInModal = set.updateShowModal(true);
     dispatch(showSignInModal);
@@ -93,7 +93,7 @@ export function UpdateAccountModal() {
       {showModal && (
         <div
           className="modal fade show"
-          id="registerModal"
+          id="updateModal"
           style={{ display: "block", backgroundColor: "rgba(0,0,0,0.7)" }}
         >
           <div className="modal-dialog modal-dialog-centered mx-auto" style={{ width: "350px" }} data-bs-theme="dark">

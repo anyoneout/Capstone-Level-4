@@ -56,23 +56,34 @@ export function LoginModal() {
 
     //read request to check if user exists via status code
     const result = await readAccount({ email, password, name: "", phone: "" });
+    console.log(result);
 
-    if (result.status !== 200) {
-      const setErrorResponse = set.signInError("User not found");
-      return dispatch(setErrorResponse);
+    //I needed a way to check whether a status code or an Account were being returned and this seemed to be the most simple way to do it
+    if ("status" in result) {
+      if (result.status === 400) {
+        const setErrorResponse = set.signInError("Input format is invalid.");
+        return dispatch(setErrorResponse);
+      }
+      if (result.status === 404) {
+        const setErrorResponse = set.signInError("User not found");
+        return dispatch(setErrorResponse);
+      }
+    } else {
+      //if user exists, signs in, saves authorized user email, password, sets localstorage, and closes login modal
+      const currentLoginState = set.signInIsSignedIn(true);
+      dispatch(currentLoginState);
+      localStorage.setItem("loggedIn", "true");
+      const saveEmail = set.authUserEmail(email);
+      dispatch(saveEmail);
+      localStorage.setItem("loggedInEmail", email);
+      const savePassword = set.authUserPassword(password);
+      dispatch(savePassword);
+      localStorage.setItem("loggedInPassword", password);
+      const closeModal = set.signInShowModal(false);
+      dispatch(closeModal);
+      const showUpdateAccountModal = set.updateShowModal(true);
+      dispatch(showUpdateAccountModal);
     }
-
-    //if user exists, signs in, saves authorized user email, and closes login modal
-    const currentLoginState = set.signInIsSignedIn(true);
-    dispatch(currentLoginState);
-    const saveEmail = set.authUserEmail(email);
-    dispatch(saveEmail);
-    const savePassword = set.authUserPassword(password);
-    dispatch(savePassword);
-    const closeModal = set.signInShowModal(false);
-    dispatch(closeModal);
-    const showUpdateAccountModal = set.updateShowModal(true);
-    dispatch(showUpdateAccountModal);
   }
 
   function showCreateAccountModal(event: React.FormEvent) {
@@ -93,7 +104,11 @@ export function LoginModal() {
   return (
     <>
       {signInModal && (
-        <div className="modal fade show" style={{ display: "block", backgroundColor: "rgba(0,0,0,0.7)" }}>
+        <div
+          className="modal fade show"
+          id="loginModal"
+          style={{ display: "block", backgroundColor: "rgba(0,0,0,0.7)" }}
+        >
           <div
             className="modal-dialog 
            modal-dialog-centered mx-auto"

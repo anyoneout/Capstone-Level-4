@@ -24,7 +24,7 @@ export async function createAccount(account: Account): Promise<{ status: number 
   //creates new user and returns status code
   const createUrl = `${baseUrl}/createUser`;
 
-  const response = await axios.post(createUrl, { email, password, name, phone });
+  const response = await axios.post(createUrl, account);
 
   //if undefined or email not returned,
   if (!response.data || !response.data.email) {

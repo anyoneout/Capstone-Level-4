@@ -81,7 +81,7 @@ export const stateVariables = {
     name: "",
     phone: "",
     responseMessage: "",
-    showModal: false,
+    showModal: true,
     didMount: false,
   },
 

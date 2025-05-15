@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Account } from "../../types/Account";
 
-export async function readAccount(account: Account): Promise<{ status: number }> {
+export async function readAccount(account: Account): Promise<{ status: number } | Account> {
   const localPath = window.location.hostname;
   const lambdaLocalPort = "http://localhost:3001";
   const lambdaUrl = process.env.REACT_APP_LAMBDA_URL;
@@ -26,16 +26,10 @@ export async function readAccount(account: Account): Promise<{ status: number }>
 
   const readUrl = `${baseUrl}/readUser`;
   const readUser = await axios.post(readUrl, { email, password, name: "", phone: "" });
-  if (readUser === undefined) {
-    return { status: 404 };
-  }
-  //checks if that email exists on the server
-  if (readUser.data.email === email) {
-    return { status: 200 };
-  }
 
-  //checks if email does not exist
-  if (!readUser.data.email) {
+  const userResponse = readUser.data;
+
+  if (!userResponse || !userResponse.email) {
     return { status: 404 };
-  }
+  } else return userResponse as Account;
 }
