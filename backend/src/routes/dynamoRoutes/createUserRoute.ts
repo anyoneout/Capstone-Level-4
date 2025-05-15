@@ -3,8 +3,8 @@ import { createDynamoUser } from "../../modules/dynamoDB/createDynamoUser";
 import { Account } from "../../types/Account";
 
 export async function createUserRoute(request: Request, response: Response) {
-  const createUser: Account = request.body;
+  const account: Account = request.body;
 
-  const result = await createDynamoUser(createUser);
+  const result = await createDynamoUser(account);
   response.send(result);
 }

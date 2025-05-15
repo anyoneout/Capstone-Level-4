@@ -109,7 +109,6 @@ export function AccountProfileModal() {
           </div>
         </div>
       )}
-      <UpdateAccountModal />
     </>
   );
 }

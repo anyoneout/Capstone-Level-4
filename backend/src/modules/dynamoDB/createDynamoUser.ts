@@ -2,23 +2,13 @@ import { Account } from "../../types/Account";
 import { getDynamoNiceClient } from "./getDynamoNiceClient";
 
 //DynamoDB user authentication with AWS credentials
-export async function createDynamoUser(newUser: Account): Promise<Account | undefined> {
-  const { email, password, name, phone } = newUser;
+export async function createDynamoUser(account: Account): Promise<Account | undefined> {
+  const { email, password, name, phone } = account;
   if (!email || !password || !name || !phone) {
     return undefined;
   }
 
   const niceClient = getDynamoNiceClient();
-  //fetch request user parameters
-  const newLogin = {
-    TableName: "login",
-    Item: {
-      email: email,
-      password: password,
-      name: name,
-      phone: phone,
-    },
-  };
 
   //get request to check if user already exists so as to not overwrite password on accidental create user attempt
   const existingUserCheck = {
@@ -32,12 +22,18 @@ export async function createDynamoUser(newUser: Account): Promise<Account | unde
     return undefined;
   }
 
+  //fetch request user parameters
+  const newLogin = {
+    TableName: "login",
+    Item: {
+      email: email,
+      password: password,
+      name: name,
+      phone: phone,
+    },
+  };
+  // todo check status if it's 200 then return account
   //create user
   const response = await niceClient.put(newLogin);
-  return {
-    email,
-    password,
-    name,
-    phone,
-  };
+  return account;
 }
