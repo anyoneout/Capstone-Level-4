@@ -37665,16 +37665,14 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.navbar {
 
 .navbar-nav {
   border: solid, 1px, rgba(255, 255, 255, 0.259);
-  border-radius: 12px;
+  border-radius: 16px;
 }
 .navbar-nav .nav-link {
   color: rgba(238, 238, 238, 0.925) !important;
   font-family: "Inter", sans-serif !important;
-  font-weight: 500 !important;
-  letter-spacing: -0.05em !important;
-  padding: 0.5rem 2rem !important;
-  /*   padding: 0.5rem 1.4rem !important; */
-  margin: 0.24rem 0.12rem;
+  letter-spacing: -0.04em !important;
+  padding: 0.5rem 1.5rem !important;
+  margin: 0.23rem 0.1rem;
 }
 .navbar-nav .home-nav-style {
   margin-left: 0.2rem !important;
@@ -37685,7 +37683,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.navbar {
 .navbar-nav .nav-link:hover {
   color: rgba(255, 255, 255, 0.6980392157) !important;
   background-color: rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
+  border-radius: 16px;
 }
 .navbar-nav svg {
   position: relative;
@@ -37704,8 +37702,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.navbar {
 .nav-link.active {
   background-color: rgba(255, 255, 255, 0.259);
   color: rgb(255, 255, 255) !important;
-  border-radius: 12px;
-}`, "",{"version":3,"sources":["webpack://./src/Views/components/CollapsibleNavbar.scss"],"names":[],"mappings":"AAAA;EACE,yCAAA;EACA,mBAAA;AACF;;AAEA;EACE,8CAAA;EACA,mBAAA;AACF;AACE;EACE,4CAAA;EACA,2CAAA;EACA,2BAAA;EACA,kCAAA;EACA,+BAAA;EACA,yCAAA;EACA,uBAAA;AACJ;AACE;EACE,8BAAA;AACJ;AACE;EACE,YAAA;AACJ;AACE;EACE,mDAAA;EACA,2CAAA;EACA,mBAAA;AACJ;AACE;EACE,kBAAA;EACA,SAAA;AACJ;;AAGA;EACE,oBAAA;AAAF;;AAGA;EACE,uBAAA;EACA,yBAAA;AAAF;;AAGA;EACE,4CAAA;EACA,oCAAA;EACA,mBAAA;AAAF","sourcesContent":[".navbar {\n  background-color: rgba(0, 0, 0) !important;\n  white-space: nowrap;\n}\n\n.navbar-nav {\n  border: solid, 1px, rgba(255, 255, 255, 0.259);\n  border-radius: 12px;\n  // I had to add !important or the bootstrap style would overwrite the style I wanted.\n  .nav-link {\n    color: rgb(238, 238, 238, 0.925) !important;\n    font-family: \"Inter\", sans-serif !important;\n    font-weight: 500 !important;\n    letter-spacing: -0.05em !important;\n    padding: 0.5rem 2rem !important; //will be reverted to once final capstone design is implemented\n    /*   padding: 0.5rem 1.4rem !important; */\n    margin: 0.24rem 0.12rem;\n  }\n  .home-nav-style {\n    margin-left: 0.2rem !important;\n  }\n  .nav-link i {\n    border: none;\n  }\n  .nav-link:hover {\n    color: #ffffffb2 !important;\n    background-color: rgba(255, 255, 255, 0.15);\n    border-radius: 12px;\n  }\n  svg {\n    position: relative;\n    top: -2px;\n  }\n}\n\n.navbar-toggler-icon {\n  filter: invert(100%);\n}\n\n.navbar-toggler {\n  background-color: black;\n  border: 2px solid #0dcaf0;\n}\n\n.nav-link.active {\n  background-color: rgba(255, 255, 255, 0.259);\n  color: rgb(255, 255, 255) !important;\n  border-radius: 12px;\n}\n"],"sourceRoot":""}]);
+  border-radius: 16px;
+}`, "",{"version":3,"sources":["webpack://./src/Views/components/CollapsibleNavbar.scss"],"names":[],"mappings":"AAAA;EACE,yCAAA;EACA,mBAAA;AACF;;AAEA;EACE,8CAAA;EACA,mBAAA;AACF;AACE;EACE,4CAAA;EACA,2CAAA;EACA,kCAAA;EACA,iCAAA;EACA,sBAAA;AACJ;AACE;EACE,8BAAA;AACJ;AACE;EACE,YAAA;AACJ;AACE;EACE,mDAAA;EACA,2CAAA;EACA,mBAAA;AACJ;AACE;EACE,kBAAA;EACA,SAAA;AACJ;;AAGA;EACE,oBAAA;AAAF;;AAGA;EACE,uBAAA;EACA,yBAAA;AAAF;;AAGA;EACE,4CAAA;EACA,oCAAA;EACA,mBAAA;AAAF","sourcesContent":[".navbar {\n  background-color: rgba(0, 0, 0) !important;\n  white-space: nowrap;\n}\n\n.navbar-nav {\n  border: solid, 1px, rgba(255, 255, 255, 0.259);\n  border-radius: 16px;\n  // I had to add !important or the bootstrap style would overwrite the style I wanted.\n  .nav-link {\n    color: rgb(238, 238, 238, 0.925) !important;\n    font-family: \"Inter\", sans-serif !important;\n    letter-spacing: -0.04em !important;\n    padding: 0.5rem 1.5rem !important; //will be reverted to once final capstone design is implemented\n    margin: 0.23rem 0.1rem;\n  }\n  .home-nav-style {\n    margin-left: 0.2rem !important;\n  }\n  .nav-link i {\n    border: none;\n  }\n  .nav-link:hover {\n    color: #ffffffb2 !important;\n    background-color: rgba(255, 255, 255, 0.15);\n    border-radius: 16px;\n  }\n  svg {\n    position: relative;\n    top: -2px;\n  }\n}\n\n.navbar-toggler-icon {\n  filter: invert(100%);\n}\n\n.navbar-toggler {\n  background-color: black;\n  border: 2px solid #0dcaf0;\n}\n\n.nav-link.active {\n  background-color: rgba(255, 255, 255, 0.259);\n  color: rgb(255, 255, 255) !important;\n  border-radius: 16px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -37748,6 +37746,27 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.sign-in-btn,
   text-align: center;
 }
 
+.account-button {
+  color: rgba(47, 178, 204, 0.8) !important;
+  font-family: "Inter", sans-serif !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.05em !important;
+  border-radius: 16px;
+  border: none;
+  transition: background-color 0.2s ease-in-out;
+  padding: 0.5rem !important;
+  margin: 0.24rem 0.12rem;
+  margin-right: 0.2rem;
+  width: 110px;
+  text-align: center;
+}
+
+.account-button:hover {
+  color: rgba(255, 255, 255, 0.6980392157) !important;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+}
+
 .sign-in-btn {
   background-color: rgba(47, 178, 204, 0.8) !important;
 }
@@ -37773,7 +37792,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.sign-in-btn,
   padding: 0.5rem 2rem !important;
   border-radius: 12px;
   border: none;
-}`, "",{"version":3,"sources":["webpack://./src/Views/components/SignInArea.scss"],"names":[],"mappings":"AAAA;;EAEE,4CAAA;EACA,2CAAA;EACA,2BAAA;EACA,kCAAA;EACA,mBAAA;EACA,YAAA;EACA,6CAAA;EACA,+BAAA;EAEA,uBAAA;EACA,oBAAA;EAEA,YAAA;EACA,kBAAA;AADF;;AAIA;EACE,oDAAA;AADF;;AAIA;EACE,wCAAA;AADF;;AAIA;EACE,8CAAA;AADF;;AAIA;EACE,mDAAA;EACA,uBAAA;AADF;;AAIA;EACE,4CAAA;EACA,2CAAA;EACA,2BAAA;EACA,kCAAA;EACA,+BAAA;EACA,mBAAA;EACA,YAAA;AADF","sourcesContent":[".sign-in-btn,\r\n.sign-out-btn {\r\n  color: rgba(255, 255, 255, 0.925) !important;\r\n  font-family: \"Inter\", sans-serif !important;\r\n  font-weight: 500 !important;\r\n  letter-spacing: -0.05em !important;\r\n  border-radius: 12px;\r\n  border: none;\r\n  transition: background-color 0.2s ease-in-out;\r\n  padding: 0.5rem 2rem !important;\r\n  //these odd margins are to compensate for the added signIn/Out button while keeping spacing consistent.\r\n  margin: 0.24rem 0.12rem;\r\n  margin-right: 0.2rem;\r\n  //this keeps the navbar from adjusting it's width when the extra letter from sign out is added\r\n  width: 110px;\r\n  text-align: center;\r\n}\r\n\r\n.sign-in-btn {\r\n  background-color: rgb(47, 178, 204, 0.8) !important;\r\n}\r\n\r\n.sign-out-btn {\r\n  background-color: rgba(220, 53, 69, 0.5);\r\n}\r\n\r\n.sign-in-btn:hover {\r\n  background-color: rgb(47, 178, 204) !important;\r\n}\r\n\r\n.sign-out-btn:hover {\r\n  background-color: rgba(220, 53, 69, 0.8) !important;\r\n  color: white !important;\r\n}\r\n\r\n.close-button {\r\n  color: rgba(255, 255, 255, 0.925) !important;\r\n  font-family: \"Inter\", sans-serif !important;\r\n  font-weight: 500 !important;\r\n  letter-spacing: -0.05em !important;\r\n  padding: 0.5rem 2rem !important;\r\n  border-radius: 12px;\r\n  border: none;\r\n}\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/Views/components/SignInArea.scss"],"names":[],"mappings":"AAAA;;EAEE,4CAAA;EACA,2CAAA;EACA,2BAAA;EACA,kCAAA;EACA,mBAAA;EACA,YAAA;EACA,6CAAA;EACA,+BAAA;EAEA,uBAAA;EACA,oBAAA;EAEA,YAAA;EACA,kBAAA;AADF;;AAGA;EACE,yCAAA;EACA,2CAAA;EACA,2BAAA;EACA,kCAAA;EACA,mBAAA;EACA,YAAA;EACA,6CAAA;EACA,0BAAA;EAEA,uBAAA;EACA,oBAAA;EAEA,YAAA;EACA,kBAAA;AAFF;;AAIA;EACE,mDAAA;EACA,2CAAA;EACA,mBAAA;AADF;;AAIA;EACE,oDAAA;AADF;;AAIA;EACE,wCAAA;AADF;;AAIA;EACE,8CAAA;AADF;;AAIA;EACE,mDAAA;EACA,uBAAA;AADF;;AAIA;EACE,4CAAA;EACA,2CAAA;EACA,2BAAA;EACA,kCAAA;EACA,+BAAA;EACA,mBAAA;EACA,YAAA;AADF","sourcesContent":[".sign-in-btn,\r\n.sign-out-btn {\r\n  color: rgba(255, 255, 255, 0.925) !important;\r\n  font-family: \"Inter\", sans-serif !important;\r\n  font-weight: 500 !important;\r\n  letter-spacing: -0.05em !important;\r\n  border-radius: 12px;\r\n  border: none;\r\n  transition: background-color 0.2s ease-in-out;\r\n  padding: 0.5rem 2rem !important;\r\n  //these odd margins are to compensate for the added signIn/Out button while keeping spacing consistent.\r\n  margin: 0.24rem 0.12rem;\r\n  margin-right: 0.2rem;\r\n  //this keeps the navbar from adjusting it's width when the extra letter from sign out is added\r\n  width: 110px;\r\n  text-align: center;\r\n}\r\n.account-button {\r\n  color: rgb(47, 178, 204, 0.8) !important;\r\n  font-family: \"Inter\", sans-serif !important;\r\n  font-weight: 500 !important;\r\n  letter-spacing: -0.05em !important;\r\n  border-radius: 16px;\r\n  border: none;\r\n  transition: background-color 0.2s ease-in-out;\r\n  padding: 0.5rem !important;\r\n  //these odd margins are to compensate for the added signIn/Out button while keeping spacing consistent.\r\n  margin: 0.24rem 0.12rem;\r\n  margin-right: 0.2rem;\r\n  //this keeps the navbar from adjusting it's width when the extra letter from sign out is added\r\n  width: 110px;\r\n  text-align: center;\r\n}\r\n.account-button:hover {\r\n  color: #ffffffb2 !important;\r\n  background-color: rgba(255, 255, 255, 0.15);\r\n  border-radius: 12px;\r\n}\r\n\r\n.sign-in-btn {\r\n  background-color: rgb(47, 178, 204, 0.8) !important;\r\n}\r\n\r\n.sign-out-btn {\r\n  background-color: rgba(220, 53, 69, 0.5);\r\n}\r\n\r\n.sign-in-btn:hover {\r\n  background-color: rgb(47, 178, 204) !important;\r\n}\r\n\r\n.sign-out-btn:hover {\r\n  background-color: rgba(220, 53, 69, 0.8) !important;\r\n  color: white !important;\r\n}\r\n\r\n.close-button {\r\n  color: rgba(255, 255, 255, 0.925) !important;\r\n  font-family: \"Inter\", sans-serif !important;\r\n  font-weight: 500 !important;\r\n  letter-spacing: -0.05em !important;\r\n  padding: 0.5rem 2rem !important;\r\n  border-radius: 12px;\r\n  border: none;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -83368,12 +83387,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _modules_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/icons */ "./src/modules/icons.tsx");
-/* harmony import */ var _controllers_handleBfFetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../controllers/handleBfFetch */ "./src/controllers/handleBfFetch.ts");
-/* harmony import */ var _modules_recipeArray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/recipeArray */ "./src/modules/recipeArray.ts");
-/* harmony import */ var _modules_bfSaveUser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modules/bfSaveUser */ "./src/modules/bfSaveUser.tsx");
+/* harmony import */ var _modules_recipeArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/recipeArray */ "./src/modules/recipeArray.ts");
+/* harmony import */ var _modules_bfSaveUser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/bfSaveUser */ "./src/modules/bfSaveUser.tsx");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-redux */ "./node_modules/.pnpm/react-redux@9.2.0_@types+re_09dfa075fee95aeaf90c5002f190b9a3/node_modules/react-redux/dist/react-redux.mjs");
-/* harmony import */ var _redux_stateSelectors__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../redux/stateSelectors */ "./src/redux/stateSelectors.ts");
-/* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../redux/store */ "./src/redux/store.ts");
+/* harmony import */ var _redux_stateSelectors__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../redux/stateSelectors */ "./src/redux/stateSelectors.ts");
+/* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../redux/store */ "./src/redux/store.ts");
+/* harmony import */ var _controllers_handleBfFetchUpdate__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../controllers/handleBfFetchUpdate */ "./src/controllers/handleBfFetchUpdate.ts");
 
 
 
@@ -83383,14 +83402,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function BfPage() {
-  var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_7__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_5__.selectBfPageDidMount);
+  var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_7__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_4__.selectBfPageDidMount);
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_7__.useDispatch)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUpdate, [didMount]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUnmount, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "container api-container navbar-width mt-3"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_modules_bfSaveUser__WEBPACK_IMPORTED_MODULE_4__.UserInfo, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_modules_bfSaveUser__WEBPACK_IMPORTED_MODULE_3__.UserInfo, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-md-6 mb-5"
@@ -83435,11 +83454,21 @@ function BfPage() {
     type: "text",
     className: "form-control api-inputs",
     placeholder: "Token",
-    "aria-label": "OpenAi Token Input",
+    "aria-label": "Hugging Face Token Input",
     "aria-describedby": "basic-addon2",
     id: "hfTokenInput"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "input-group mb-2",
+    "data-bs-theme": "dark"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "text",
+    className: "form-control api-inputs",
+    placeholder: "Token",
+    "aria-label": "OpenAi Token Input",
+    "aria-describedby": "basic-addon2",
+    id: "oaTokenInput"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("fieldset", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("legend", null, "Generate ingredients"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "input-group",
+    className: "input-group mb-2",
     "data-bs-theme": "dark"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", {
     className: "form-select",
@@ -83449,17 +83478,29 @@ function BfPage() {
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
     value: ""
-  }, "Select a Recipe..."), _modules_recipeArray__WEBPACK_IMPORTED_MODULE_3__.recipeArray.map(function (recipe, index) {
+  }, "Select a Recipe..."), _modules_recipeArray__WEBPACK_IMPORTED_MODULE_2__.recipeArray.map(function (recipe, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
       key: index,
       value: recipe
     }, recipe);
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "input-group mb-2",
+    "data-bs-theme": "dark"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "text",
+    className: "form-control",
+    id: "customRecipeInputBf",
+    placeholder: "Or enter a custom recipe...",
+    style: {
+      fontSize: ".8rem"
+    }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "btn btn-outline-secondary",
     type: "button",
     id: "fetchButton",
-    onClick: _controllers_handleBfFetch__WEBPACK_IMPORTED_MODULE_2__.handleBfFetch
-  }, "Submit")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    style: {},
+    onClick: _controllers_handleBfFetchUpdate__WEBPACK_IMPORTED_MODULE_6__.handleBfFetchUpdate
+  }, "Submit"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "row mt-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-12 col-md-6 d-flex align-items-center justify-content-center"
@@ -83512,7 +83553,7 @@ function BfPage() {
     id: "recipeIngredients"
   }))));
   function componentDidMount() {
-    var action = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.bfPageDidMount(true);
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_5__.set.bfPageDidMount(true);
     dispatch(action);
     console.log("The Black Forest page component has mounted");
     document.title = "Recipe Deconstructor - Black Forest Flux";
@@ -83925,12 +83966,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _controllers_handleOaFetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../controllers/handleOaFetch */ "./src/controllers/handleOaFetch.ts");
-/* harmony import */ var _modules_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/icons */ "./src/modules/icons.tsx");
-/* harmony import */ var _modules_recipeArray__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/recipeArray */ "./src/modules/recipeArray.ts");
+/* harmony import */ var _modules_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/icons */ "./src/modules/icons.tsx");
+/* harmony import */ var _modules_recipeArray__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/recipeArray */ "./src/modules/recipeArray.ts");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-redux */ "./node_modules/.pnpm/react-redux@9.2.0_@types+re_09dfa075fee95aeaf90c5002f190b9a3/node_modules/react-redux/dist/react-redux.mjs");
-/* harmony import */ var _redux_stateSelectors__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../redux/stateSelectors */ "./src/redux/stateSelectors.ts");
-/* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../redux/store */ "./src/redux/store.ts");
+/* harmony import */ var _redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../redux/stateSelectors */ "./src/redux/stateSelectors.ts");
+/* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../redux/store */ "./src/redux/store.ts");
+/* harmony import */ var _controllers_handleOaFetchUpdate__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../controllers/handleOaFetchUpdate */ "./src/controllers/handleOaFetchUpdate.ts");
 
 
 
@@ -83939,7 +83980,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function OaPage() {
-  var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_4__.selectOaPageDidMount);
+  var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectOaPageDidMount);
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useDispatch)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUpdate, [didMount]);
@@ -83974,9 +84015,9 @@ function OaPage() {
       color: "#fff78a",
       padding: "10px 0"
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_modules_icons__WEBPACK_IMPORTED_MODULE_2__.ApiOpenAiIcon, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_modules_icons__WEBPACK_IMPORTED_MODULE_1__.ApiOpenAiIcon, null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "d-flex justify-content-start align-items-center"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_modules_icons__WEBPACK_IMPORTED_MODULE_2__.ApiDalleIcon, null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_modules_icons__WEBPACK_IMPORTED_MODULE_1__.ApiDalleIcon, null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-md-6"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
     className: "api-form"
@@ -84011,7 +84052,7 @@ function OaPage() {
     "aria-describedby": "basic-addon2",
     id: "openAiTokenInput"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("fieldset", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("legend", null, "Generate ingredients"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "input-group",
+    className: "input-group mb-2",
     "data-bs-theme": "dark"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("select", {
     className: "form-select",
@@ -84021,17 +84062,29 @@ function OaPage() {
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
     value: ""
-  }, "Select a Recipe..."), _modules_recipeArray__WEBPACK_IMPORTED_MODULE_3__.recipeArray.map(function (recipe, index) {
+  }, "Select a Recipe..."), _modules_recipeArray__WEBPACK_IMPORTED_MODULE_2__.recipeArray.map(function (recipe, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("option", {
       key: index,
       value: recipe
     }, recipe);
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "input-group mb-2",
+    "data-bs-theme": "dark"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "text",
+    className: "form-control",
+    id: "customRecipeInputOa",
+    placeholder: "Or enter a custom recipe...",
+    style: {
+      fontSize: ".8rem"
+    }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "btn btn-outline-secondary",
     type: "button",
     id: "fetchButton",
-    onClick: _controllers_handleOaFetch__WEBPACK_IMPORTED_MODULE_1__.handleOaFetch
-  }, "Submit")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    style: {},
+    onClick: _controllers_handleOaFetchUpdate__WEBPACK_IMPORTED_MODULE_5__.handleOaFetchUpdate
+  }, "Submit"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "row mt-5"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-12 col-md-6 d-flex align-items-center justify-content-center"
@@ -84084,7 +84137,7 @@ function OaPage() {
     id: "recipeIngredients"
   }))));
   function componentDidMount() {
-    var action = _redux_store__WEBPACK_IMPORTED_MODULE_5__.set.oaPageDidMount(true);
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_4__.set.oaPageDidMount(true);
     dispatch(action);
     console.log("The OaPage page component has mounted");
     document.title = "Recipe Deconstructor - Open AI Dall-E-3";
@@ -84603,7 +84656,7 @@ function CollapsibleNavbar() {
     to: "".concat(rootPath, "/OaPage"),
     className: "nav-link"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-    className: "me-2"
+    className: "me-1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_modules_icons__WEBPACK_IMPORTED_MODULE_1__.NavDalleIcon, null)), "OpenAI")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "nav-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
@@ -84614,10 +84667,17 @@ function CollapsibleNavbar() {
   }), "Examples")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "nav-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
+    to: "".concat(rootPath, "/trivia"),
+    className: "nav-link"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "bi bi-images me-2"
+  }), "Trivia Api")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+    className: "nav-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
     to: "".concat(rootPath, "/About"),
     className: "nav-link"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-    className: "bi-file-person me-2"
+    className: "bi-exclamation-circle me-2"
   }), "About")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_SignInAreaUpdate__WEBPACK_IMPORTED_MODULE_3__["default"], null)))));
 }
 
@@ -85000,8 +85060,14 @@ function SignInAreaUpdate() {
     var action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInShowModal(true);
     dispatch(action);
   }
+  //shows profileModal
+  function handleAccountOpen() {
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileShowModal(true);
+    dispatch(action);
+  }
 
-  //clears authorized user email and signs out
+  //clears authorized redux and local storage and signs out
+
   function handleSignOut() {
     var clearIsSignedIn = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInIsSignedIn(false);
     dispatch(clearIsSignedIn);
@@ -85014,138 +85080,45 @@ function SignInAreaUpdate() {
     localStorage.setItem("loggedInPassword", "");
     localStorage.setItem("timeElapsedInMins", "");
     localStorage.setItem("credentials", "");
+    localStorage.setItem("oaToken", "");
+    localStorage.setItem("userEmail", "");
+    localStorage.setItem("userName", "");
+    localStorage.setItem("hfToken", "");
   }
-  var label = isSignedIn ? "Sign Out" : "Sign In";
-  var handler = isSignedIn ? handleSignOut : handleSignIn;
-  var buttonStyle = isSignedIn ? "sign-out-btn" : "sign-in-btn";
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "nav-item"
+  }, isSignedIn ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "dropdown"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    className: buttonStyle,
+    className: "btn  dropdown-toggle mt-1 me-1 account-button",
+    type: "button",
+    id: "accountMenu",
+    "data-bs-toggle": "dropdown",
+    "aria-expanded": "false"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "bi-file-person"
+  }), " Account"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+    className: "dropdown-menu",
+    "data-bs-theme": "dark",
+    "aria-labelledby": "accountMenu"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "dropdown-item",
+    onClick: handleAccountOpen
+  }, "Account")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "dropdown-item",
+    style: {
+      color: "yellow"
+    },
+    onClick: handleSignOut
+  }, "Log Out")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "sign-in-btn",
     style: {
       width: "120px",
       textAlign: "center"
     },
-    onClick: handler
-  }, label)), showLoginModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_LoginModal__WEBPACK_IMPORTED_MODULE_3__.LoginModal, null), showCreateModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_CreateAccountModal__WEBPACK_IMPORTED_MODULE_4__.CreateAccountModal, null), showUpdateModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_UpdateAccountModal__WEBPACK_IMPORTED_MODULE_5__.UpdateAccountModal, null), showAccountModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_AccountProfileModal__WEBPACK_IMPORTED_MODULE_8__.AccountProfileModal, null));
+    onClick: handleSignIn
+  }, "Sign In")), showLoginModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_LoginModal__WEBPACK_IMPORTED_MODULE_3__.LoginModal, null), showCreateModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_CreateAccountModal__WEBPACK_IMPORTED_MODULE_4__.CreateAccountModal, null), showUpdateModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_UpdateAccountModal__WEBPACK_IMPORTED_MODULE_5__.UpdateAccountModal, null), showAccountModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_AccountProfileModal__WEBPACK_IMPORTED_MODULE_8__.AccountProfileModal, null));
 }
-
-/* 
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  selectCreateShowModal,
-  selectProfileShowModal,
-  selectSignInDidMount,
-  selectSignInIsSignedIn,
-  selectSignInShowModal,
-  selectUpdateShowModal,
-} from "../../redux/stateSelectors";
-import { set } from "../../redux/store";
-import { LoginModal } from "../loginModals/LoginModal";
-import { CreateAccountModal } from "../loginModals/CreateAccountModal";
-import { UpdateAccountModal } from "../loginModals/UpdateAccountModal";
-import { AccountProfileModal } from "../loginModals/AccountProfileModal";
-import "./CollapsibleNavbar.scss";
-import "./SignInArea.scss";
-
-export default function SignInAreaUpdate() {
-  const isSignedIn = useSelector(selectSignInIsSignedIn);
-  const showLoginModal = useSelector(selectSignInShowModal);
-  const showCreateModal = useSelector(selectCreateShowModal);
-  const showUpdateModal = useSelector(selectUpdateShowModal);
-  const showAccountModal = useSelector(selectProfileShowModal);
-  const didMount = useSelector(selectSignInDidMount);
-  const dispatch = useDispatch();
-
-  useEffect(componentDidMount, []);
-
-  function componentDidMount(): void {
-    const isLoggedIn = localStorage.getItem("loggedIn") === "true";
-    const email = localStorage.getItem("loggedInEmail") || "";
-    const password = localStorage.getItem("loggedInPassword") || "";
-
-    if (isLoggedIn) {
-      const isSignedIn = set.signInIsSignedIn(true);
-      dispatch(isSignedIn);
-      const authEmail = set.authUserEmail(email);
-      dispatch(authEmail);
-      const authPassword = set.authUserPassword(password);
-      dispatch(authPassword);
-    }
-    const signInAreaDidMount = set.signInDidMount(true);
-    dispatch(signInAreaDidMount);
-  }
-
-  // opens login modal
-  function handleSignIn(): void {
-    const action = set.signInShowModal(true);
-    dispatch(action);
-  }
-
-  // opens profile modal (for account settings)
-  function handleAccount(): void {
-    const action = set.profileShowModal(true);
-    dispatch(action);
-  }
-
-  // clears user login and localStorage
-  function handleSignOut(): void {
-    const clearIsSignedIn = set.signInIsSignedIn(false);
-    dispatch(clearIsSignedIn);
-    localStorage.setItem("loggedIn", "false");
-    const clearAuthUserEmail = set.authUserEmail("");
-    dispatch(clearAuthUserEmail);
-    localStorage.setItem("loggedInEmail", "");
-    const clearAuthUserPassword = set.authUserPassword("");
-    dispatch(clearAuthUserPassword);
-    localStorage.setItem("loggedInPassword", "");
-    localStorage.removeItem("LoggedInPassword");
-  }
-
-  return (
-    <>
-      <li className="nav-item">
-        {isSignedIn ? (
-          <div className="dropdown">
-            <button
-              className="btn btn-secondary dropdown-toggle"
-              type="button"
-              id="accountMenu"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              style={{ width: "120px", textAlign: "center" }}
-            >
-              Account
-            </button>
-            <ul className="dropdown-menu" aria-labelledby="accountMenu">
-              <li>
-                <button className="dropdown-item" onClick={handleAccount}>
-                  Account Settings
-                </button>
-              </li>
-              <li>
-                <button className="dropdown-item" onClick={handleSignOut}>
-                  Log Out
-                </button>
-              </li>
-            </ul>
-          </div>
-        ) : (
-          <button className="sign-in-btn" style={{ width: "120px", textAlign: "center" }} onClick={handleSignIn}>
-            Sign In
-          </button>
-        )}
-      </li>
-
-      {showLoginModal && <LoginModal />}
-      {showCreateModal && <CreateAccountModal />}
-      {showUpdateModal && <UpdateAccountModal />}
-      {showAccountModal && <AccountProfileModal />}
-    </>
-  );
-} 
- */
 
 /***/ }),
 
@@ -86006,14 +85979,15 @@ function AccountProfileModal() {
   var name = localStorage.getItem("userName");
   var phone = localStorage.getItem("userPhone");
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_3__.useDispatch)();
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
-  function componentDidMount() {
+  /*   useEffect(componentDidMount, []);
+    function componentDidMount() {
     handleOpenModal();
-  }
-  function handleOpenModal() {
-    var showProfileModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileShowModal(true);
+  } */
+
+  /* function handleOpenModal() {
+    const showProfileModal = set.accountProfileShowModal(true);
     dispatch(showProfileModal);
-  }
+  } */
   function handleCloseModal() {
     var closeSignInModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileShowModal(false);
     dispatch(closeSignInModal);
@@ -86035,7 +86009,7 @@ function AccountProfileModal() {
   }
   function _handleLogOut() {
     _handleLogOut = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-      var closeProfileModal, openSignInModal;
+      var closeProfileModal, openSignInModal, clearIsSignedIn, clearAuthUserEmail, clearAuthUserPassword;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -86044,7 +86018,17 @@ function AccountProfileModal() {
             dispatch(closeProfileModal);
             openSignInModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInShowModal(true);
             dispatch(openSignInModal);
-          case 5:
+            clearIsSignedIn = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInIsSignedIn(false);
+            dispatch(clearIsSignedIn);
+            localStorage.setItem("loggedIn", "false");
+            clearAuthUserEmail = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserEmail("");
+            dispatch(clearAuthUserEmail);
+            localStorage.setItem("loggedInEmail", "");
+            clearAuthUserPassword = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserPassword("");
+            dispatch(clearAuthUserPassword);
+            localStorage.setItem("loggedInPassword", "");
+            localStorage.removeItem("LoggedInPassword");
+          case 15:
           case "end":
             return _context.stop();
         }
@@ -86814,260 +86798,177 @@ function UpdateAccountModal() {
 
 /***/ }),
 
-/***/ "./src/controllers/handleBfFetch.ts":
-/*!******************************************!*\
-  !*** ./src/controllers/handleBfFetch.ts ***!
-  \******************************************/
+/***/ "./src/controllers/handleBfFetchUpdate.ts":
+/*!************************************************!*\
+  !*** ./src/controllers/handleBfFetchUpdate.ts ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   handleBfFetch: () => (/* binding */ handleBfFetch)
+/* harmony export */   handleBfFetchUpdate: () => (/* binding */ handleBfFetchUpdate)
 /* harmony export */ });
-/* harmony import */ var _modules_bfSaveUser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/bfSaveUser */ "./src/modules/bfSaveUser.tsx");
-/* harmony import */ var _modules_bfRecipeImage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/bfRecipeImage */ "./src/modules/bfRecipeImage.ts");
-/* harmony import */ var _modules_bfIngredientsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/bfIngredientsList */ "./src/modules/bfIngredientsList.ts");
-/* harmony import */ var _modules_bfIngredientsImage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/bfIngredientsImage */ "./src/modules/bfIngredientsImage.ts");
+/* harmony import */ var _modules_bfFetchFunctionsUpdate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/bfFetchFunctionsUpdate */ "./src/modules/bfFetchFunctionsUpdate.ts");
+/* harmony import */ var _modules_bfSaveUser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/bfSaveUser */ "./src/modules/bfSaveUser.tsx");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 
 
-
-
-
-//handles fetch request and UI updates
-function handleBfFetch() {
-  return _handleBfFetch.apply(this, arguments);
+function handleBfFetchUpdate() {
+  return _handleBfFetchUpdate.apply(this, arguments);
 }
-
-//Get DOM elements
-function _handleBfFetch() {
-  _handleBfFetch = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-    var hfUserToken, elements, recipeChoice, recipeIngredientsHTML, ingredientsImgHTML, recipeImgHTML, secondArrow, spinnerOneHTML, spinnerTwoHTML, ingredientsFetched;
+function _handleBfFetchUpdate() {
+  _handleBfFetchUpdate = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+    var hfUserToken, oaUserToken, elements, recipeSelect, recipeImg, ingredientsImg, ingredientsHTML, spinnerOne, spinnerTwo, arrow, customRecipeInput, dropDownRecipeChoice, inputRecipeChoice, recipeChoice, recipeImageUrl, ingredientsText, ingredientsImageUrl, getDomElements, isVisibleElement;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
+          isVisibleElement = function _isVisibleElement(element, isVisible) {
+            if (isVisible === true) {
+              element.style.visibility = "visible";
+            } else {
+              element.style.visibility = "hidden";
+            }
+          };
+          getDomElements = function _getDomElements() {
+            return {
+              recipeSelect: document.getElementById("chosenRecipe"),
+              recipeImg: document.getElementById("recipeAI"),
+              ingredientsImg: document.getElementById("ingredientsAI"),
+              ingredientsHTML: document.getElementById("recipeIngredients"),
+              spinnerOne: document.getElementById("spinnerOne"),
+              spinnerTwo: document.getElementById("spinnerTwo"),
+              arrow: document.getElementById("secondArrowHTML"),
+              customRecipeInput: document.getElementById("customRecipeInputBf")
+            };
+          };
+          (0,_modules_bfSaveUser__WEBPACK_IMPORTED_MODULE_1__.bfSaveUser)();
           hfUserToken = localStorage.getItem("hfToken");
+          oaUserToken = localStorage.getItem("oaToken");
           elements = getDomElements();
-          recipeChoice = elements.recipeChoice, recipeIngredientsHTML = elements.recipeIngredientsHTML, ingredientsImgHTML = elements.ingredientsImgHTML, recipeImgHTML = elements.recipeImgHTML, secondArrow = elements.secondArrow, spinnerOneHTML = elements.spinnerOneHTML, spinnerTwoHTML = elements.spinnerTwoHTML;
-          (0,_modules_bfSaveUser__WEBPACK_IMPORTED_MODULE_0__.bfSaveUser)();
-          iconVisibility(spinnerOneHTML, true);
-          _context.next = 7;
-          return updateRecipeImage(recipeChoice, recipeImgHTML, spinnerOneHTML, spinnerTwoHTML, secondArrow, hfUserToken);
-        case 7:
-          _context.next = 9;
-          return (0,_modules_bfIngredientsList__WEBPACK_IMPORTED_MODULE_2__.bfIngredientsList)(recipeChoice, hfUserToken);
-        case 9:
-          ingredientsFetched = _context.sent;
-          _context.next = 12;
-          return updateIngredients(ingredientsFetched, recipeIngredientsHTML, ingredientsImgHTML, spinnerTwoHTML, hfUserToken);
-        case 12:
+          recipeSelect = elements.recipeSelect, recipeImg = elements.recipeImg, ingredientsImg = elements.ingredientsImg, ingredientsHTML = elements.ingredientsHTML, spinnerOne = elements.spinnerOne, spinnerTwo = elements.spinnerTwo, arrow = elements.arrow, customRecipeInput = elements.customRecipeInput;
+          dropDownRecipeChoice = recipeSelect.value;
+          inputRecipeChoice = customRecipeInput.value;
+          recipeChoice = inputRecipeChoice !== "" ? inputRecipeChoice : dropDownRecipeChoice;
+          isVisibleElement(spinnerOne, true);
+          _context.next = 13;
+          return (0,_modules_bfFetchFunctionsUpdate__WEBPACK_IMPORTED_MODULE_0__.fetchBfRecipeImage)(recipeChoice, hfUserToken);
+        case 13:
+          recipeImageUrl = _context.sent;
+          recipeImg.src = recipeImageUrl;
+          recipeImg.classList.add("borderImage");
+          isVisibleElement(spinnerOne, false);
+          isVisibleElement(arrow, true);
+          isVisibleElement(spinnerTwo, true);
+          _context.next = 21;
+          return (0,_modules_bfFetchFunctionsUpdate__WEBPACK_IMPORTED_MODULE_0__.fetchBfIngredientsList)(recipeChoice, oaUserToken);
+        case 21:
+          ingredientsText = _context.sent;
+          ingredientsHTML.innerHTML = ingredientsText;
+          _context.next = 25;
+          return (0,_modules_bfFetchFunctionsUpdate__WEBPACK_IMPORTED_MODULE_0__.fetchBfIngredientsImage)(ingredientsText, hfUserToken);
+        case 25:
+          ingredientsImageUrl = _context.sent;
+          ingredientsImg.src = ingredientsImageUrl;
+          ingredientsImg.classList.add("borderImage");
+          isVisibleElement(spinnerTwo, false);
+        case 29:
         case "end":
           return _context.stop();
       }
     }, _callee);
   }));
-  return _handleBfFetch.apply(this, arguments);
-}
-function getDomElements() {
-  return {
-    recipeChoice: document.getElementById("chosenRecipe"),
-    recipeIngredientsHTML: document.getElementById("recipeIngredients"),
-    ingredientsImgHTML: document.getElementById("ingredientsAI"),
-    recipeImgHTML: document.getElementById("recipeAI"),
-    secondArrow: document.getElementById("secondArrowHTML"),
-    spinnerOneHTML: document.getElementById("spinnerOne"),
-    spinnerTwoHTML: document.getElementById("spinnerTwo")
-  };
-}
-
-//controls icon visibility by condition
-function iconVisibility(element, isVisible) {
-  element.style.visibility = isVisible ? "visible" : "hidden";
-}
-
-//fetches recipe image by user choice, controls icon visibility
-function updateRecipeImage(_x, _x2, _x3, _x4, _x5, _x6) {
-  return _updateRecipeImage.apply(this, arguments);
-} //fetches ingredients list and image
-function _updateRecipeImage() {
-  _updateRecipeImage = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2(recipeChoice, recipeImgHTML, spinnerOneHTML, spinnerTwoHTML, secondArrowHTML, hfUserToken) {
-    var dataRecipeImage;
-    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-      while (1) switch (_context2.prev = _context2.next) {
-        case 0:
-          _context2.next = 2;
-          return (0,_modules_bfRecipeImage__WEBPACK_IMPORTED_MODULE_1__.bfRecipeImage)(recipeChoice, hfUserToken);
-        case 2:
-          dataRecipeImage = _context2.sent;
-          recipeImgHTML.src = dataRecipeImage;
-          recipeImgHTML.classList.add("borderImage");
-          iconVisibility(secondArrowHTML, true);
-          iconVisibility(spinnerOneHTML, false);
-          iconVisibility(spinnerTwoHTML, true);
-        case 8:
-        case "end":
-          return _context2.stop();
-      }
-    }, _callee2);
-  }));
-  return _updateRecipeImage.apply(this, arguments);
-}
-function updateIngredients(_x7, _x8, _x9, _x10, _x11) {
-  return _updateIngredients.apply(this, arguments);
-}
-function _updateIngredients() {
-  _updateIngredients = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee3(ingredientsFetched, recipeIngredientsHTML, ingredientsImgHTML, spinnerTwoHTML, hfUserToken) {
-    var dataIngredientsImage;
-    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
-      while (1) switch (_context3.prev = _context3.next) {
-        case 0:
-          recipeIngredientsHTML.innerHTML = ingredientsFetched;
-          _context3.next = 3;
-          return (0,_modules_bfIngredientsImage__WEBPACK_IMPORTED_MODULE_3__.bfIngredientsImage)(ingredientsFetched, hfUserToken);
-        case 3:
-          dataIngredientsImage = _context3.sent;
-          iconVisibility(spinnerTwoHTML, false);
-          ingredientsImgHTML.src = dataIngredientsImage;
-          ingredientsImgHTML.classList.add("borderImage");
-        case 7:
-        case "end":
-          return _context3.stop();
-      }
-    }, _callee3);
-  }));
-  return _updateIngredients.apply(this, arguments);
+  return _handleBfFetchUpdate.apply(this, arguments);
 }
 
 /***/ }),
 
-/***/ "./src/controllers/handleOaFetch.ts":
-/*!******************************************!*\
-  !*** ./src/controllers/handleOaFetch.ts ***!
-  \******************************************/
+/***/ "./src/controllers/handleOaFetchUpdate.ts":
+/*!************************************************!*\
+  !*** ./src/controllers/handleOaFetchUpdate.ts ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   handleOaFetch: () => (/* binding */ handleOaFetch)
+/* harmony export */   handleOaFetchUpdate: () => (/* binding */ handleOaFetchUpdate)
 /* harmony export */ });
-/* harmony import */ var _modules_oaIngredientsList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/oaIngredientsList */ "./src/modules/oaIngredientsList.ts");
+/* harmony import */ var _modules_oaFetchFunctionsUpdate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/oaFetchFunctionsUpdate */ "./src/modules/oaFetchFunctionsUpdate.ts");
 /* harmony import */ var _modules_oaSaveUser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/oaSaveUser */ "./src/modules/oaSaveUser.ts");
-/* harmony import */ var _modules_oaIngredientsImage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/oaIngredientsImage */ "./src/modules/oaIngredientsImage.ts");
-/* harmony import */ var _modules_oaRecipeImage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../modules/oaRecipeImage */ "./src/modules/oaRecipeImage.ts");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 
 
-
-
-
-//handles fetch request and UI updates
-function handleOaFetch() {
-  return _handleOaFetch.apply(this, arguments);
+function handleOaFetchUpdate() {
+  return _handleOaFetchUpdate.apply(this, arguments);
 }
-//Get DOM elements
-function _handleOaFetch() {
-  _handleOaFetch = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-    var oaUserToken, elements, recipeChoice, recipeIngredientsHTML, ingredientsImgHTML, recipeImgHTML, secondArrow, spinnerOneHTML, spinnerTwoHTML, ingredientsFetched;
+function _handleOaFetchUpdate() {
+  _handleOaFetchUpdate = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+    var elements, recipeSelect, recipeImg, ingredientsImg, ingredientsHTML, spinnerOne, spinnerTwo, arrow, customRecipeInput, dropDownRecipeChoice, inputRecipeChoice, recipeChoice, oaUserToken, recipeImageUrl, ingredientsText, ingredientsImageUrl, getDomElements, isVisibleElement;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          oaUserToken = localStorage.getItem("oaiToken");
+          isVisibleElement = function _isVisibleElement(element, isVisible) {
+            if (isVisible === true) {
+              element.style.visibility = "visible";
+            } else {
+              element.style.visibility = "hidden";
+            }
+          };
+          getDomElements = function _getDomElements() {
+            return {
+              recipeSelect: document.getElementById("chosenRecipe"),
+              recipeImg: document.getElementById("recipeAI"),
+              ingredientsImg: document.getElementById("ingredientsAI"),
+              ingredientsHTML: document.getElementById("recipeIngredients"),
+              spinnerOne: document.getElementById("spinnerOne"),
+              spinnerTwo: document.getElementById("spinnerTwo"),
+              arrow: document.getElementById("secondArrowHTML"),
+              customRecipeInput: document.getElementById("customRecipeInputOa")
+            };
+          };
           elements = getDomElements();
-          recipeChoice = elements.recipeChoice, recipeIngredientsHTML = elements.recipeIngredientsHTML, ingredientsImgHTML = elements.ingredientsImgHTML, recipeImgHTML = elements.recipeImgHTML, secondArrow = elements.secondArrow, spinnerOneHTML = elements.spinnerOneHTML, spinnerTwoHTML = elements.spinnerTwoHTML;
+          recipeSelect = elements.recipeSelect, recipeImg = elements.recipeImg, ingredientsImg = elements.ingredientsImg, ingredientsHTML = elements.ingredientsHTML, spinnerOne = elements.spinnerOne, spinnerTwo = elements.spinnerTwo, arrow = elements.arrow, customRecipeInput = elements.customRecipeInput;
+          dropDownRecipeChoice = recipeSelect.value;
+          inputRecipeChoice = customRecipeInput.value;
+          recipeChoice = inputRecipeChoice !== "" ? inputRecipeChoice : dropDownRecipeChoice;
           (0,_modules_oaSaveUser__WEBPACK_IMPORTED_MODULE_1__.oaSaveUser)();
-          iconVisibility(spinnerOneHTML, true);
-          _context.next = 7;
-          return updateRecipeImage(recipeChoice, recipeImgHTML, spinnerOneHTML, spinnerTwoHTML, secondArrow, oaUserToken);
-        case 7:
-          _context.next = 9;
-          return (0,_modules_oaIngredientsList__WEBPACK_IMPORTED_MODULE_0__.oaIngredientsList)(recipeChoice, oaUserToken);
-        case 9:
-          ingredientsFetched = _context.sent;
+          oaUserToken = localStorage.getItem("oaToken");
+          isVisibleElement(spinnerOne, true);
           _context.next = 12;
-          return updateIngredients(ingredientsFetched, recipeIngredientsHTML, ingredientsImgHTML, spinnerTwoHTML, oaUserToken);
+          return (0,_modules_oaFetchFunctionsUpdate__WEBPACK_IMPORTED_MODULE_0__.fetchOaRecipeImage)(recipeChoice, oaUserToken);
         case 12:
+          recipeImageUrl = _context.sent;
+          recipeImg.src = recipeImageUrl.data[0].url;
+          recipeImg.classList.add("borderImage");
+          isVisibleElement(spinnerOne, false);
+          isVisibleElement(arrow, true);
+          isVisibleElement(spinnerTwo, true);
+          _context.next = 20;
+          return (0,_modules_oaFetchFunctionsUpdate__WEBPACK_IMPORTED_MODULE_0__.fetchOaIngredientsList)(recipeChoice, oaUserToken);
+        case 20:
+          ingredientsText = _context.sent;
+          ingredientsHTML.innerHTML = ingredientsText;
+          _context.next = 24;
+          return (0,_modules_oaFetchFunctionsUpdate__WEBPACK_IMPORTED_MODULE_0__.fetchOaIngredientsImage)(ingredientsText, oaUserToken);
+        case 24:
+          ingredientsImageUrl = _context.sent;
+          ingredientsImg.src = ingredientsImageUrl.data[0].url;
+          ingredientsImg.classList.add("borderImage");
+          isVisibleElement(spinnerTwo, false);
+        case 28:
         case "end":
           return _context.stop();
       }
     }, _callee);
   }));
-  return _handleOaFetch.apply(this, arguments);
-}
-function getDomElements() {
-  return {
-    recipeChoice: document.getElementById("chosenRecipe"),
-    recipeIngredientsHTML: document.getElementById("recipeIngredients"),
-    ingredientsImgHTML: document.getElementById("ingredientsAI"),
-    recipeImgHTML: document.getElementById("recipeAI"),
-    secondArrow: document.getElementById("secondArrowHTML"),
-    spinnerOneHTML: document.getElementById("spinnerOne"),
-    spinnerTwoHTML: document.getElementById("spinnerTwo")
-  };
-}
-//controls icon visibility by condition
-function iconVisibility(element, isVisible) {
-  element.style.visibility = isVisible ? "visible" : "hidden";
-}
-
-//fetches recipe image by user choice, controls icon visibility
-function updateRecipeImage(_x, _x2, _x3, _x4, _x5, _x6) {
-  return _updateRecipeImage.apply(this, arguments);
-} //fetches ingredients list and image
-function _updateRecipeImage() {
-  _updateRecipeImage = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2(recipeChoice, recipeImgHTML, spinnerOneHTML, spinnerTwoHTML, secondArrowHTML, oaUserToken) {
-    var dataRecipeImage;
-    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
-      while (1) switch (_context2.prev = _context2.next) {
-        case 0:
-          _context2.next = 2;
-          return (0,_modules_oaRecipeImage__WEBPACK_IMPORTED_MODULE_3__.oaRecipeImage)(recipeChoice, oaUserToken);
-        case 2:
-          dataRecipeImage = _context2.sent;
-          recipeImgHTML.src = dataRecipeImage.data[0].url;
-          recipeImgHTML.classList.add("borderImage");
-          iconVisibility(secondArrowHTML, true);
-          iconVisibility(spinnerOneHTML, false);
-          iconVisibility(spinnerTwoHTML, true);
-        case 8:
-        case "end":
-          return _context2.stop();
-      }
-    }, _callee2);
-  }));
-  return _updateRecipeImage.apply(this, arguments);
-}
-function updateIngredients(_x7, _x8, _x9, _x10, _x11) {
-  return _updateIngredients.apply(this, arguments);
-}
-function _updateIngredients() {
-  _updateIngredients = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee3(ingredientsFetched, recipeIngredientsHTML, ingredientsImgHTML, spinnerTwoHTML, oaUserToken) {
-    var dataIngredientsImage;
-    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
-      while (1) switch (_context3.prev = _context3.next) {
-        case 0:
-          recipeIngredientsHTML.innerHTML = ingredientsFetched;
-          _context3.next = 3;
-          return (0,_modules_oaIngredientsImage__WEBPACK_IMPORTED_MODULE_2__.oaIngredientsImage)(ingredientsFetched, oaUserToken);
-        case 3:
-          dataIngredientsImage = _context3.sent;
-          iconVisibility(spinnerTwoHTML, false);
-          ingredientsImgHTML.src = dataIngredientsImage.data[0].url;
-          ingredientsImgHTML.classList.add("borderImage");
-        case 7:
-        case "end":
-          return _context3.stop();
-      }
-    }, _callee3);
-  }));
-  return _updateIngredients.apply(this, arguments);
+  return _handleOaFetchUpdate.apply(this, arguments);
 }
 
 /***/ }),
@@ -87326,40 +87227,45 @@ function _authenticationAws() {
 
 /***/ }),
 
-/***/ "./src/modules/bfIngredientsImage.ts":
-/*!*******************************************!*\
-  !*** ./src/modules/bfIngredientsImage.ts ***!
-  \*******************************************/
+/***/ "./src/modules/bfFetchFunctionsUpdate.ts":
+/*!***********************************************!*\
+  !*** ./src/modules/bfFetchFunctionsUpdate.ts ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   bfIngredientsImage: () => (/* binding */ bfIngredientsImage)
+/* harmony export */   fetchBfIngredientsImage: () => (/* binding */ fetchBfIngredientsImage),
+/* harmony export */   fetchBfIngredientsList: () => (/* binding */ fetchBfIngredientsList),
+/* harmony export */   fetchBfRecipeImage: () => (/* binding */ fetchBfRecipeImage)
 /* harmony export */ });
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
-function bfIngredientsImage(_x, _x2) {
-  return _bfIngredientsImage.apply(this, arguments);
+//black forest recipe image fetch
+function fetchBfRecipeImage(_x, _x2) {
+  return _fetchBfRecipeImage.apply(this, arguments);
 }
-function _bfIngredientsImage() {
-  _bfIngredientsImage = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(ingredientsFetched, hfUserToken) {
-    var url, payload, result, blob, dataIngredientsImage;
+
+//i'm having issues with huggingface since they became a paid service so I'm using openAI as of now for the question answering as I have an account
+function _fetchBfRecipeImage() {
+  _fetchBfRecipeImage = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(recipe, token) {
+    var url, payload, result, blob, imageUrl;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           url = "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-dev";
           payload = {
-            inputs: "Create a photorealistic image showing exactly one instance of each of the following items: ".concat(ingredientsFetched, ". Arrange these items in a top-down view against a plain black background. Place them in a horizontal line, spaced evenly and aligned symmetrically across the image. Do not repeat or duplicate any item\u2014ensure only one unique instance of each listed ingredient is visible in the image. The image should contain no text, symbols, numbers, or additional elements. Focus only on the items provided, with realistic textures, colors, and soft, natural lighting. Ensure there are no clusters or overlapping items, and each ingredient should be clearly distinguishable and evenly spaced.")
+            inputs: "Create a photo-realistic image of the following culinary creation: ".concat(recipe, ". The creation should be displayed against a solid black background, with no shadows, reflections, lighting effects, gradients, or any other elements.")
           };
           _context.next = 4;
           return fetch(url, {
             method: "POST",
             body: JSON.stringify(payload),
             headers: {
-              Authorization: "Bearer ".concat(hfUserToken),
+              Authorization: "Bearer ".concat(token),
               "Content-Type": "application/json"
             }
           });
@@ -87369,143 +87275,100 @@ function _bfIngredientsImage() {
           return result.blob();
         case 7:
           blob = _context.sent;
-          dataIngredientsImage = URL.createObjectURL(blob);
-          return _context.abrupt("return", dataIngredientsImage);
+          imageUrl = URL.createObjectURL(blob);
+          return _context.abrupt("return", imageUrl);
         case 10:
         case "end":
           return _context.stop();
       }
     }, _callee);
   }));
-  return _bfIngredientsImage.apply(this, arguments);
+  return _fetchBfRecipeImage.apply(this, arguments);
+}
+function fetchBfIngredientsList(_x3, _x4) {
+  return _fetchBfIngredientsList.apply(this, arguments);
 }
 
-/***/ }),
-
-/***/ "./src/modules/bfIngredientsList.ts":
-/*!******************************************!*\
-  !*** ./src/modules/bfIngredientsList.ts ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   bfIngredientsList: () => (/* binding */ bfIngredientsList)
-/* harmony export */ });
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
-function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
-function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
-function bfIngredientsList(_x, _x2) {
-  return _bfIngredientsList.apply(this, arguments);
-}
-function _bfIngredientsList() {
-  _bfIngredientsList = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(recipeChoice, hfUserToken) {
-    var userRecipe, url, payload, result, data, ingredients;
-    return _regeneratorRuntime().wrap(function _callee$(_context) {
-      while (1) switch (_context.prev = _context.next) {
+//black forest ingredients image fetch
+function _fetchBfIngredientsList() {
+  _fetchBfIngredientsList = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2(recipe, token) {
+    var _data$choices;
+    var url, payload, response, data, ingredients;
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
         case 0:
-          userRecipe = recipeChoice;
-          console.log(userRecipe);
-          url = "https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1/v1/chat/completions";
+          url = "https://api.openai.com/v1/chat/completions";
           payload = {
-            model: "mistralai/Mixtral-8x7B-Instruct-v0.1",
+            model: "gpt-3.5-turbo",
             messages: [{
               role: "user",
-              content: "List only the individual ingredients in ".concat(userRecipe, " by order of importance to the recipe. omit any optional ingredients and description of the ingredients. ")
+              content: "List only the individual ingredients in ".concat(recipe, " by order of importance. Omit optional ingredients and descriptions.")
             }],
-            max_tokens: 500,
-            stream: false
+            temperature: 0.5,
+            max_tokens: 500
           };
-          console.log("payload", payload);
-          _context.next = 7;
+          _context2.next = 4;
           return fetch(url, {
             method: "POST",
-            body: JSON.stringify(payload),
             headers: {
-              Authorization: "Bearer ".concat(hfUserToken),
+              Authorization: "Bearer ".concat(token),
               "Content-Type": "application/json"
-            }
+            },
+            body: JSON.stringify(payload)
           });
+        case 4:
+          response = _context2.sent;
+          _context2.next = 7;
+          return response.json();
         case 7:
-          result = _context.sent;
-          console.log("result", result);
-          console.log(result);
-          _context.next = 12;
-          return result.json();
-        case 12:
-          data = _context.sent;
-          console.log("data", data);
-          ingredients = data.choices[0].message.content;
-          console.log("ingredients", ingredients);
-          return _context.abrupt("return", ingredients);
-        case 17:
+          data = _context2.sent;
+          ingredients = ((_data$choices = data.choices) === null || _data$choices === void 0 || (_data$choices = _data$choices[0]) === null || _data$choices === void 0 || (_data$choices = _data$choices.message) === null || _data$choices === void 0 || (_data$choices = _data$choices.content) === null || _data$choices === void 0 ? void 0 : _data$choices.trim()) || "No ingredients returned.";
+          return _context2.abrupt("return", ingredients);
+        case 10:
         case "end":
-          return _context.stop();
+          return _context2.stop();
       }
-    }, _callee);
+    }, _callee2);
   }));
-  return _bfIngredientsList.apply(this, arguments);
+  return _fetchBfIngredientsList.apply(this, arguments);
 }
-
-/***/ }),
-
-/***/ "./src/modules/bfRecipeImage.ts":
-/*!**************************************!*\
-  !*** ./src/modules/bfRecipeImage.ts ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   bfRecipeImage: () => (/* binding */ bfRecipeImage)
-/* harmony export */ });
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
-function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
-function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
-function bfRecipeImage(_x, _x2) {
-  return _bfRecipeImage.apply(this, arguments);
+function fetchBfIngredientsImage(_x5, _x6) {
+  return _fetchBfIngredientsImage.apply(this, arguments);
 }
-
-/* let payload = { inputs: `Create a photo-realistic image of the following culinary creation: ${userRecipe}. The creation should be displayed against a solid black background, with no shadows, reflections, lighting effects, gradients, or any other elements. The background should be a flat, uniform black with no variations or light sources, blending seamlessly with the page background. There should be no text, numbers, hands, or additional objects—only the culinary creation` }; */
-function _bfRecipeImage() {
-  _bfRecipeImage = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(recipeChoice, hfUserToken) {
-    var userRecipe, url, payload, result, blob, dataRecipeImage;
-    return _regeneratorRuntime().wrap(function _callee$(_context) {
-      while (1) switch (_context.prev = _context.next) {
+function _fetchBfIngredientsImage() {
+  _fetchBfIngredientsImage = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee3(ingredients, token) {
+    var url, payload, result, blob, imageUrl;
+    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+      while (1) switch (_context3.prev = _context3.next) {
         case 0:
-          userRecipe = recipeChoice;
           url = "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-dev";
           payload = {
-            inputs: "Create a photo-realistic image of the following culinary creation: ".concat(userRecipe, ". The creation should be displayed against a solid black background, with no shadows, reflections, lighting effects, gradients, or any other elements. The background should be a flat, uniform black with no variations or light sources, blending seamlessly with the page background.")
+            inputs: "Create a photorealistic image showing one instance of each of the following: ".concat(ingredients, ". Use a plain black background, top-down view, soft lighting, no overlapping items.")
           };
-          _context.next = 5;
+          _context3.next = 4;
           return fetch(url, {
             method: "POST",
             body: JSON.stringify(payload),
             headers: {
-              Authorization: "Bearer ".concat(hfUserToken),
+              Authorization: "Bearer ".concat(token),
               "Content-Type": "application/json"
             }
           });
-        case 5:
-          result = _context.sent;
-          _context.next = 8;
+        case 4:
+          result = _context3.sent;
+          _context3.next = 7;
           return result.blob();
-        case 8:
-          blob = _context.sent;
-          dataRecipeImage = URL.createObjectURL(blob);
-          return _context.abrupt("return", dataRecipeImage);
-        case 11:
+        case 7:
+          blob = _context3.sent;
+          imageUrl = URL.createObjectURL(blob);
+          return _context3.abrupt("return", imageUrl);
+        case 10:
         case "end":
-          return _context.stop();
+          return _context3.stop();
       }
-    }, _callee);
+    }, _callee3);
   }));
-  return _bfRecipeImage.apply(this, arguments);
+  return _fetchBfIngredientsImage.apply(this, arguments);
 }
 
 /***/ }),
@@ -88004,34 +87867,36 @@ function CarouselFluxIcon() {
 
 /***/ }),
 
-/***/ "./src/modules/oaIngredientsImage.ts":
-/*!*******************************************!*\
-  !*** ./src/modules/oaIngredientsImage.ts ***!
-  \*******************************************/
+/***/ "./src/modules/oaFetchFunctionsUpdate.ts":
+/*!***********************************************!*\
+  !*** ./src/modules/oaFetchFunctionsUpdate.ts ***!
+  \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   oaIngredientsImage: () => (/* binding */ oaIngredientsImage)
+/* harmony export */   fetchOaIngredientsImage: () => (/* binding */ fetchOaIngredientsImage),
+/* harmony export */   fetchOaIngredientsList: () => (/* binding */ fetchOaIngredientsList),
+/* harmony export */   fetchOaRecipeImage: () => (/* binding */ fetchOaRecipeImage)
 /* harmony export */ });
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
-function oaIngredientsImage(_x, _x2) {
-  return _oaIngredientsImage.apply(this, arguments);
+function fetchOaRecipeImage(_x, _x2) {
+  return _fetchOaRecipeImage.apply(this, arguments);
 }
-function _oaIngredientsImage() {
-  _oaIngredientsImage = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(ingredientsFetched, oaUserToken) {
-    var url, payload, result, dataIngredientsImage;
+function _fetchOaRecipeImage() {
+  _fetchOaRecipeImage = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(recipeChoice, oaUserToken) {
+    var url, payload, result, imageUrl;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           url = "https://api.openai.com/v1/images/generations";
           payload = {
             model: "dall-e-3",
-            prompt: "Create a photorealistic image showing exactly one instance of each of the following items: ".concat(ingredientsFetched, ". Arrange these items in a top-down view against a plain black background. Place them in a horizontal line, spaced evenly and aligned symmetrically across the image. Do not repeat or duplicate any item\u2014ensure only one unique instance of each listed ingredient is visible in the image. The image should contain no text, symbols, numbers, or additional elements. Focus only on the items provided, with realistic textures, colors, and soft, natural lighting. Ensure there are no clusters or overlapping items, and each ingredient should be clearly distinguishable and evenly spaced."),
+            prompt: "Create a photo-realistic image of the following culinary creation: ".concat(recipeChoice, ". The creation should be displayed against a solid black background, with no shadows, reflections, lighting effects, gradients, or any other elements. The background should be a flat, uniform black with no variations or light sources, blending seamlessly with the page background."),
             n: 1,
             size: "1024x1024"
           };
@@ -88049,53 +87914,34 @@ function _oaIngredientsImage() {
           _context.next = 7;
           return result.json();
         case 7:
-          dataIngredientsImage = _context.sent;
-          return _context.abrupt("return", dataIngredientsImage);
+          imageUrl = _context.sent;
+          return _context.abrupt("return", imageUrl);
         case 9:
         case "end":
           return _context.stop();
       }
     }, _callee);
   }));
-  return _oaIngredientsImage.apply(this, arguments);
+  return _fetchOaRecipeImage.apply(this, arguments);
 }
-
-/***/ }),
-
-/***/ "./src/modules/oaIngredientsList.ts":
-/*!******************************************!*\
-  !*** ./src/modules/oaIngredientsList.ts ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   oaIngredientsList: () => (/* binding */ oaIngredientsList)
-/* harmony export */ });
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
-function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
-function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
-function oaIngredientsList(_x, _x2) {
-  return _oaIngredientsList.apply(this, arguments);
+function fetchOaIngredientsList(_x3, _x4) {
+  return _fetchOaIngredientsList.apply(this, arguments);
 }
-function _oaIngredientsList() {
-  _oaIngredientsList = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(recipeChoice, oaUserToken) {
-    var userRecipe, url, payload, result, data, ingredients;
-    return _regeneratorRuntime().wrap(function _callee$(_context) {
-      while (1) switch (_context.prev = _context.next) {
+function _fetchOaIngredientsList() {
+  _fetchOaIngredientsList = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2(recipeChoice, oaUserToken) {
+    var url, payload, result, data, ingredientsText;
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
         case 0:
-          userRecipe = recipeChoice;
           url = "https://api.openai.com/v1/chat/completions";
           payload = {
             model: "gpt-3.5-turbo",
             messages: [{
               role: "user",
-              content: "List individual ingredients in ".concat(userRecipe, " by order of importance to the recipe")
+              content: "List only the individual ingredients in ".concat(recipeChoice, " by order of importance to the recipe.")
             }]
           };
-          _context.next = 5;
+          _context2.next = 4;
           return fetch(url, {
             method: "POST",
             body: JSON.stringify(payload),
@@ -88104,60 +87950,39 @@ function _oaIngredientsList() {
               "Content-Type": "application/json"
             }
           });
-        case 5:
-          result = _context.sent;
-          _context.next = 8;
+        case 4:
+          result = _context2.sent;
+          _context2.next = 7;
           return result.json();
-        case 8:
-          data = _context.sent;
-          ingredients = data.choices[0].message.content;
-          return _context.abrupt("return", ingredients);
-        case 11:
+        case 7:
+          data = _context2.sent;
+          ingredientsText = data.choices[0].message.content;
+          return _context2.abrupt("return", ingredientsText);
+        case 10:
         case "end":
-          return _context.stop();
+          return _context2.stop();
       }
-    }, _callee);
+    }, _callee2);
   }));
-  return _oaIngredientsList.apply(this, arguments);
+  return _fetchOaIngredientsList.apply(this, arguments);
 }
-
-/***/ }),
-
-/***/ "./src/modules/oaRecipeImage.ts":
-/*!**************************************!*\
-  !*** ./src/modules/oaRecipeImage.ts ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   oaRecipeImage: () => (/* binding */ oaRecipeImage)
-/* harmony export */ });
-function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
-function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
-function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
-function oaRecipeImage(_x, _x2) {
-  return _oaRecipeImage.apply(this, arguments);
+function fetchOaIngredientsImage(_x5, _x6) {
+  return _fetchOaIngredientsImage.apply(this, arguments);
 }
-
-/* Create a photo-realistic image of the following culinary creation: ${userRecipe}. The creation should be displayed against a solid black background, with no shadows, reflections, lighting effects, gradients, or any other elements. The background should be a flat, uniform black with no variations or light sources, blending seamlessly with the page background. */
-function _oaRecipeImage() {
-  _oaRecipeImage = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(recipeChoice, oaUserToken) {
-    var userRecipe, url, payload, result, dataRecipeImage;
-    return _regeneratorRuntime().wrap(function _callee$(_context) {
-      while (1) switch (_context.prev = _context.next) {
+function _fetchOaIngredientsImage() {
+  _fetchOaIngredientsImage = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee3(ingredientsList, oaUserToken) {
+    var url, payload, result, imageUrl;
+    return _regeneratorRuntime().wrap(function _callee3$(_context3) {
+      while (1) switch (_context3.prev = _context3.next) {
         case 0:
-          userRecipe = recipeChoice;
           url = "https://api.openai.com/v1/images/generations";
           payload = {
             model: "dall-e-3",
-            prompt: "Create a photo-realistic image of the following culinary creation: ".concat(userRecipe, ". The creation should be displayed against a solid black background, with no shadows, reflections, lighting effects, gradients, or any other elements. The background should be a flat, uniform black with no variations or light sources, blending seamlessly with the page background."),
+            prompt: "Create a photorealistic image showing exactly one instance of each of the following items: ".concat(ingredientsList, ". Arrange these items in a top-down view against a plain black background. Place them in a horizontal line, spaced evenly and aligned symmetrically across the image. Do not repeat or duplicate any item\u2014ensure only one unique instance of each listed ingredient is visible in the image. The image should contain no text, symbols, numbers, or additional elements. Focus only on the items provided, with realistic textures, colors, and soft, natural lighting. Ensure there are no clusters or overlapping items, and each ingredient should be clearly distinguishable and evenly spaced."),
             n: 1,
             size: "1024x1024"
           };
-          _context.next = 5;
+          _context3.next = 4;
           return fetch(url, {
             method: "POST",
             body: JSON.stringify(payload),
@@ -88166,20 +87991,20 @@ function _oaRecipeImage() {
               "Content-Type": "application/json"
             }
           });
-        case 5:
-          result = _context.sent;
-          _context.next = 8;
+        case 4:
+          result = _context3.sent;
+          _context3.next = 7;
           return result.json();
-        case 8:
-          dataRecipeImage = _context.sent;
-          return _context.abrupt("return", dataRecipeImage);
-        case 10:
+        case 7:
+          imageUrl = _context3.sent;
+          return _context3.abrupt("return", imageUrl);
+        case 9:
         case "end":
-          return _context.stop();
+          return _context3.stop();
       }
-    }, _callee);
+    }, _callee3);
   }));
-  return _oaRecipeImage.apply(this, arguments);
+  return _fetchOaIngredientsImage.apply(this, arguments);
 }
 
 /***/ }),
@@ -88199,24 +88024,24 @@ function oaSaveUser() {
   var _getInputValues = getInputValues(),
     name = _getInputValues.name,
     email = _getInputValues.email,
-    oaiToken = _getInputValues.oaiToken;
-  saveToLocalStorage(name, email, oaiToken);
+    oaToken = _getInputValues.oaToken;
+  saveToLocalStorage(name, email, oaToken);
   updateUI();
 }
 function getInputValues() {
   var inputName = document.getElementById("nameInput");
   var inputEmail = document.getElementById("emailInput");
-  var oaiUserToken = document.getElementById("openAiTokenInput");
+  var oaUserToken = document.getElementById("openAiTokenInput");
   return {
     name: inputName.value,
     email: inputEmail.value,
-    oaiToken: oaiUserToken.value
+    oaToken: oaUserToken.value
   };
 }
-function saveToLocalStorage(name, email, oaiToken) {
+function saveToLocalStorage(name, email, oaToken) {
   localStorage.setItem("userName", name);
   localStorage.setItem("userEmail", email);
-  localStorage.setItem("oaiToken", oaiToken);
+  localStorage.setItem("oaToken", oaToken);
 }
 function updateUI() {
   var userNameHandle = document.getElementById("userNameHTML");

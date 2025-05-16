@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import { handleOaFetch } from "../controllers/handleOaFetch";
+import { handleOaFetch } from "../../archive/handleOaFetch";
 import { ApiDalleIcon, ApiOpenAiIcon } from "../modules/icons";
 import { recipeArray } from "../modules/recipeArray";
 import { useDispatch, useSelector } from "react-redux";
 import { selectOaPageDidMount } from "../redux/stateSelectors";
 import { set } from "../redux/store";
+import { handleOaFetchUpdate } from "../controllers/handleOaFetchUpdate";
 
 export function OaPage() {
   const didMount = useSelector(selectOaPageDidMount);
@@ -86,8 +87,7 @@ export function OaPage() {
             <br />
             <fieldset>
               <legend>Generate ingredients</legend>
-              <div className="input-group" data-bs-theme="dark">
-                {/*   added a recipe array for mapping */}
+              <div className="input-group mb-2" data-bs-theme="dark">
                 <select className="form-select" id="chosenRecipe" style={{ fontSize: ".8rem" }}>
                   <option value="">Select a Recipe...</option>
                   {recipeArray.map((recipe, index) => (
@@ -96,10 +96,25 @@ export function OaPage() {
                     </option>
                   ))}
                 </select>
-                <button className="btn btn-outline-secondary" type="button" id="fetchButton" onClick={handleOaFetch}>
-                  Submit
-                </button>
               </div>
+              <div className="input-group mb-2" data-bs-theme="dark">
+                <input
+                  type="text"
+                  className="form-control"
+                  id="customRecipeInputOa"
+                  placeholder="Or enter a custom recipe..."
+                  style={{ fontSize: ".8rem" }}
+                />
+              </div>
+              <button
+                className="btn btn-outline-secondary"
+                type="button"
+                id="fetchButton"
+                style={{}}
+                onClick={handleOaFetchUpdate}
+              >
+                Submit
+              </button>
             </fieldset>
           </form>
         </div>

@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { ApiFluxIcon } from "../modules/icons";
-import { handleBfFetch } from "../controllers/handleBfFetch";
+import { handleBfFetch } from "../../archive/handleBfFetch";
 import { recipeArray } from "../modules/recipeArray";
 import { UserInfo } from "../modules/bfSaveUser";
 import { useDispatch, useSelector } from "react-redux";
 import { selectBfPageDidMount } from "../redux/stateSelectors";
 import { set } from "../redux/store";
+import { handleBfFetchUpdate } from "../controllers/handleBfFetchUpdate";
 
 export function BfPage() {
   const didMount = useSelector(selectBfPageDidMount);
@@ -57,17 +58,26 @@ export function BfPage() {
                   type="text"
                   className="form-control api-inputs"
                   placeholder="Token"
-                  aria-label="OpenAi Token Input"
+                  aria-label="Hugging Face Token Input"
                   aria-describedby="basic-addon2"
                   id="hfTokenInput"
+                />
+              </div>
+              <div className="input-group mb-2" data-bs-theme="dark">
+                <input
+                  type="text"
+                  className="form-control api-inputs"
+                  placeholder="Token"
+                  aria-label="OpenAi Token Input"
+                  aria-describedby="basic-addon2"
+                  id="oaTokenInput"
                 />
               </div>
             </fieldset>
             <br />
             <fieldset>
               <legend>Generate ingredients</legend>
-              <div className="input-group" data-bs-theme="dark">
-                {/*   added a recipe array for mapping */}
+              <div className="input-group mb-2" data-bs-theme="dark">
                 <select className="form-select" id="chosenRecipe" style={{ fontSize: ".8rem" }}>
                   <option value="">Select a Recipe...</option>
                   {recipeArray.map((recipe, index) => (
@@ -76,10 +86,25 @@ export function BfPage() {
                     </option>
                   ))}
                 </select>
-                <button className="btn btn-outline-secondary" type="button" id="fetchButton" onClick={handleBfFetch}>
-                  Submit
-                </button>
               </div>
+              <div className="input-group mb-2" data-bs-theme="dark">
+                <input
+                  type="text"
+                  className="form-control"
+                  id="customRecipeInputBf"
+                  placeholder="Or enter a custom recipe..."
+                  style={{ fontSize: ".8rem" }}
+                />
+              </div>
+              <button
+                className="btn btn-outline-secondary"
+                type="button"
+                id="fetchButton"
+                style={{}}
+                onClick={handleBfFetchUpdate}
+              >
+                Submit
+              </button>
             </fieldset>
           </form>
         </div>

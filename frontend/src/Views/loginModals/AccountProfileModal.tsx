@@ -15,16 +15,16 @@ export function AccountProfileModal() {
   const phone = localStorage.getItem("userPhone");
 
   const dispatch = useDispatch();
-  useEffect(componentDidMount, []);
+  /*   useEffect(componentDidMount, []);
 
   function componentDidMount() {
     handleOpenModal();
-  }
+  } */
 
-  function handleOpenModal() {
+  /* function handleOpenModal() {
     const showProfileModal = set.accountProfileShowModal(true);
     dispatch(showProfileModal);
-  }
+  } */
   function handleCloseModal() {
     const closeSignInModal = set.accountProfileShowModal(false);
     dispatch(closeSignInModal);
@@ -49,6 +49,16 @@ export function AccountProfileModal() {
     dispatch(closeProfileModal);
     const openSignInModal = set.signInShowModal(true);
     dispatch(openSignInModal);
+    const clearIsSignedIn = set.signInIsSignedIn(false);
+    dispatch(clearIsSignedIn);
+    localStorage.setItem("loggedIn", "false");
+    const clearAuthUserEmail = set.authUserEmail("");
+    dispatch(clearAuthUserEmail);
+    localStorage.setItem("loggedInEmail", "");
+    const clearAuthUserPassword = set.authUserPassword("");
+    dispatch(clearAuthUserPassword);
+    localStorage.setItem("loggedInPassword", "");
+    localStorage.removeItem("LoggedInPassword");
   }
 
   return (
@@ -61,10 +71,6 @@ export function AccountProfileModal() {
         >
           <div className="modal-dialog modal-dialog-centered mx-auto">
             <div className="modal-content mx-auto text-white w-100 mx-auto bg-dark border border-1 rounded-0  p-3">
-              {/*   <div className="modal-header">
-                <h5 className="modal-title ">Personal details</h5>
-              </div> */}
-
               <div className="modal-body w-100 mx-auto">
                 <div className="container mt-3">
                   <div className="card bg-dark text-white ">

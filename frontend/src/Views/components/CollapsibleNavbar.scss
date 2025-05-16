@@ -5,16 +5,14 @@
 
 .navbar-nav {
   border: solid, 1px, rgba(255, 255, 255, 0.259);
-  border-radius: 12px;
+  border-radius: 16px;
   // I had to add !important or the bootstrap style would overwrite the style I wanted.
   .nav-link {
     color: rgb(238, 238, 238, 0.925) !important;
     font-family: "Inter", sans-serif !important;
-    font-weight: 500 !important;
-    letter-spacing: -0.05em !important;
-    padding: 0.5rem 2rem !important; //will be reverted to once final capstone design is implemented
-    /*   padding: 0.5rem 1.4rem !important; */
-    margin: 0.24rem 0.12rem;
+    letter-spacing: -0.04em !important;
+    padding: 0.5rem 1.5rem !important; //will be reverted to once final capstone design is implemented
+    margin: 0.23rem 0.1rem;
   }
   .home-nav-style {
     margin-left: 0.2rem !important;
@@ -25,7 +23,7 @@
   .nav-link:hover {
     color: #ffffffb2 !important;
     background-color: rgba(255, 255, 255, 0.15);
-    border-radius: 12px;
+    border-radius: 16px;
   }
   svg {
     position: relative;
@@ -45,5 +43,5 @@
 .nav-link.active {
   background-color: rgba(255, 255, 255, 0.259);
   color: rgb(255, 255, 255) !important;
-  border-radius: 12px;
+  border-radius: 16px;
 }

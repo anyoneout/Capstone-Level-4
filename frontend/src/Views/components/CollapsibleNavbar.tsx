@@ -32,7 +32,7 @@ export function CollapsibleNavbar() {
             </li>
             <li className="nav-item">
               <NavLink to={`${rootPath}/OaPage`} className="nav-link">
-                <span className="me-2">
+                <span className="me-1">
                   <NavDalleIcon />
                 </span>
                 OpenAI
@@ -43,12 +43,12 @@ export function CollapsibleNavbar() {
                 <i className="bi bi-images me-2"></i>Examples
               </NavLink>
             </li>
-            {/*    <li className="nav-item">
+            <li className="nav-item">
               <NavLink to={`${rootPath}/trivia`} className="nav-link">
                 <i className="bi bi-images me-2"></i>Trivia Api
               </NavLink>
             </li>
-            <li className="nav-item">
+            {/*<li className="nav-item">
               <NavLink to={`${rootPath}/dynamo`} className="nav-link">
                 <i className="bi bi-images me-2"></i>Dynamo Auth
               </NavLink>
@@ -70,7 +70,7 @@ export function CollapsibleNavbar() {
             </li> */}
             <li className="nav-item">
               <NavLink to={`${rootPath}/About`} className="nav-link">
-                <i className="bi-file-person me-2"></i>About
+                <i className="bi-exclamation-circle me-2"></i>About
               </NavLink>
             </li>
             <SignInAreaUpdate />

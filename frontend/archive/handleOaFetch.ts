@@ -1,11 +1,11 @@
-import { bfSaveUser } from "../modules/bfSaveUser";
-import { bfRecipeImage } from "../modules/bfRecipeImage";
-import { bfIngredientsList } from "../modules/bfIngredientsList";
-import { bfIngredientsImage } from "../modules/bfIngredientsImage";
+import { oaIngredientsList } from "./oaIngredientsList";
+import { oaSaveUser } from "../src/modules/oaSaveUser";
+import { oaIngredientsImage } from "./oaIngredientsImage";
+import { oaRecipeImage } from "./oaRecipeImage";
 
 //handles fetch request and UI updates
-export async function handleBfFetch() {
-  const hfUserToken = localStorage.getItem("hfToken");
+export async function handleOaFetch() {
+  const oaUserToken = localStorage.getItem("oaiToken");
 
   const elements = getDomElements();
   const {
@@ -18,17 +18,16 @@ export async function handleBfFetch() {
     spinnerTwoHTML,
   } = elements;
 
-  bfSaveUser();
+  oaSaveUser();
 
   iconVisibility(spinnerOneHTML, true);
 
-  await updateRecipeImage(recipeChoice, recipeImgHTML, spinnerOneHTML, spinnerTwoHTML, secondArrow, hfUserToken);
+  await updateRecipeImage(recipeChoice, recipeImgHTML, spinnerOneHTML, spinnerTwoHTML, secondArrow, oaUserToken);
 
-  const ingredientsFetched = await bfIngredientsList(recipeChoice, hfUserToken);
+  const ingredientsFetched = await oaIngredientsList(recipeChoice, oaUserToken);
 
-  await updateIngredients(ingredientsFetched, recipeIngredientsHTML, ingredientsImgHTML, spinnerTwoHTML, hfUserToken);
+  await updateIngredients(ingredientsFetched, recipeIngredientsHTML, ingredientsImgHTML, spinnerTwoHTML, oaUserToken);
 }
-
 //Get DOM elements
 function getDomElements() {
   return {
@@ -41,7 +40,6 @@ function getDomElements() {
     spinnerTwoHTML: document.getElementById("spinnerTwo") as any,
   };
 }
-
 //controls icon visibility by condition
 function iconVisibility(element: any, isVisible: boolean) {
   element.style.visibility = isVisible ? "visible" : "hidden";
@@ -54,10 +52,10 @@ async function updateRecipeImage(
   spinnerOneHTML: any,
   spinnerTwoHTML: any,
   secondArrowHTML: any,
-  hfUserToken: string
+  oaUserToken: string
 ) {
-  const dataRecipeImage = await bfRecipeImage(recipeChoice, hfUserToken);
-  recipeImgHTML.src = dataRecipeImage;
+  const dataRecipeImage = await oaRecipeImage(recipeChoice, oaUserToken);
+  recipeImgHTML.src = dataRecipeImage.data[0].url;
   recipeImgHTML.classList.add("borderImage");
   iconVisibility(secondArrowHTML, true);
   iconVisibility(spinnerOneHTML, false);
@@ -66,17 +64,17 @@ async function updateRecipeImage(
 
 //fetches ingredients list and image
 async function updateIngredients(
-  ingredientsFetched: string,
+  ingredientsFetched: any,
   recipeIngredientsHTML: any,
   ingredientsImgHTML: any,
   spinnerTwoHTML: any,
-  hfUserToken: string
+  oaUserToken: string
 ) {
   recipeIngredientsHTML.innerHTML = ingredientsFetched;
 
-  const dataIngredientsImage = await bfIngredientsImage(ingredientsFetched, hfUserToken);
+  const dataIngredientsImage = await oaIngredientsImage(ingredientsFetched, oaUserToken);
 
   iconVisibility(spinnerTwoHTML, false);
-  ingredientsImgHTML.src = dataIngredientsImage;
+  ingredientsImgHTML.src = dataIngredientsImage.data[0].url;
   ingredientsImgHTML.classList.add("borderImage");
 }

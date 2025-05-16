@@ -75,8 +75,14 @@ export default function SignInAreaUpdate() {
     const action = set.signInShowModal(true);
     dispatch(action);
   }
+  //shows profileModal
+  function handleAccountOpen(): void {
+    const action = set.accountProfileShowModal(true);
+    dispatch(action);
+  }
 
-  //clears authorized user email and signs out
+  //clears authorized redux and local storage and signs out
+
   function handleSignOut(): void {
     const clearIsSignedIn = set.signInIsSignedIn(false);
     dispatch(clearIsSignedIn);
@@ -89,97 +95,10 @@ export default function SignInAreaUpdate() {
     localStorage.setItem("loggedInPassword", "");
     localStorage.setItem("timeElapsedInMins", "");
     localStorage.setItem("credentials", "");
-  }
-  const label = isSignedIn ? "Sign Out" : "Sign In";
-  const handler = isSignedIn ? handleSignOut : handleSignIn;
-  const buttonStyle = isSignedIn ? "sign-out-btn" : "sign-in-btn";
-
-  return (
-    <>
-      <li className="nav-item">
-        <button className={buttonStyle} style={{ width: "120px", textAlign: "center" }} onClick={handler}>
-          {label}
-        </button>
-      </li>
-      {showLoginModal && <LoginModal />}
-      {showCreateModal && <CreateAccountModal />}
-      {showUpdateModal && <UpdateAccountModal />}
-      {showAccountModal && <AccountProfileModal />}
-    </>
-  );
-}
-
-/* 
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  selectCreateShowModal,
-  selectProfileShowModal,
-  selectSignInDidMount,
-  selectSignInIsSignedIn,
-  selectSignInShowModal,
-  selectUpdateShowModal,
-} from "../../redux/stateSelectors";
-import { set } from "../../redux/store";
-import { LoginModal } from "../loginModals/LoginModal";
-import { CreateAccountModal } from "../loginModals/CreateAccountModal";
-import { UpdateAccountModal } from "../loginModals/UpdateAccountModal";
-import { AccountProfileModal } from "../loginModals/AccountProfileModal";
-import "./CollapsibleNavbar.scss";
-import "./SignInArea.scss";
-
-export default function SignInAreaUpdate() {
-  const isSignedIn = useSelector(selectSignInIsSignedIn);
-  const showLoginModal = useSelector(selectSignInShowModal);
-  const showCreateModal = useSelector(selectCreateShowModal);
-  const showUpdateModal = useSelector(selectUpdateShowModal);
-  const showAccountModal = useSelector(selectProfileShowModal);
-  const didMount = useSelector(selectSignInDidMount);
-  const dispatch = useDispatch();
-
-  useEffect(componentDidMount, []);
-
-  function componentDidMount(): void {
-    const isLoggedIn = localStorage.getItem("loggedIn") === "true";
-    const email = localStorage.getItem("loggedInEmail") || "";
-    const password = localStorage.getItem("loggedInPassword") || "";
-
-    if (isLoggedIn) {
-      const isSignedIn = set.signInIsSignedIn(true);
-      dispatch(isSignedIn);
-      const authEmail = set.authUserEmail(email);
-      dispatch(authEmail);
-      const authPassword = set.authUserPassword(password);
-      dispatch(authPassword);
-    }
-    const signInAreaDidMount = set.signInDidMount(true);
-    dispatch(signInAreaDidMount);
-  }
-
-  // opens login modal
-  function handleSignIn(): void {
-    const action = set.signInShowModal(true);
-    dispatch(action);
-  }
-
-  // opens profile modal (for account settings)
-  function handleAccount(): void {
-    const action = set.profileShowModal(true);
-    dispatch(action);
-  }
-
-  // clears user login and localStorage
-  function handleSignOut(): void {
-    const clearIsSignedIn = set.signInIsSignedIn(false);
-    dispatch(clearIsSignedIn);
-    localStorage.setItem("loggedIn", "false");
-    const clearAuthUserEmail = set.authUserEmail("");
-    dispatch(clearAuthUserEmail);
-    localStorage.setItem("loggedInEmail", "");
-    const clearAuthUserPassword = set.authUserPassword("");
-    dispatch(clearAuthUserPassword);
-    localStorage.setItem("loggedInPassword", "");
-    localStorage.removeItem("LoggedInPassword");
+    localStorage.setItem("oaToken", "");
+    localStorage.setItem("userEmail", "");
+    localStorage.setItem("userName", "");
+    localStorage.setItem("hfToken", "");
   }
 
   return (
@@ -188,23 +107,22 @@ export default function SignInAreaUpdate() {
         {isSignedIn ? (
           <div className="dropdown">
             <button
-              className="btn btn-secondary dropdown-toggle"
+              className="btn  dropdown-toggle mt-1 me-1 account-button"
               type="button"
               id="accountMenu"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-              style={{ width: "120px", textAlign: "center" }}
             >
-              Account
+              <i className="bi-file-person"></i> Account
             </button>
-            <ul className="dropdown-menu" aria-labelledby="accountMenu">
+            <ul className="dropdown-menu" data-bs-theme="dark" aria-labelledby="accountMenu">
               <li>
-                <button className="dropdown-item" onClick={handleAccount}>
-                  Account Settings
+                <button className="dropdown-item" onClick={handleAccountOpen}>
+                  Account
                 </button>
               </li>
               <li>
-                <button className="dropdown-item" onClick={handleSignOut}>
+                <button className="dropdown-item" style={{ color: "yellow" }} onClick={handleSignOut}>
                   Log Out
                 </button>
               </li>
@@ -223,5 +141,4 @@ export default function SignInAreaUpdate() {
       {showAccountModal && <AccountProfileModal />}
     </>
   );
-} 
- */
+}

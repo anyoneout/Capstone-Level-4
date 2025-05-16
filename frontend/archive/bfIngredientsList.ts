@@ -1,11 +1,7 @@
-export async function bfIngredientsList(
-  recipeChoice: string,
-  hfUserToken: string
-) {
+export async function bfIngredientsList(recipeChoice: string, hfUserToken: string) {
   const userRecipe = recipeChoice;
   console.log(userRecipe);
-  const url =
-    "https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1/v1/chat/completions";
+  const url = "https://api-inference.huggingface.co/models/mistralai/Mixtral-8x7B-Instruct-v0.1/v1/chat/completions";
   const payload = {
     model: "mistralai/Mixtral-8x7B-Instruct-v0.1",
     messages: [
@@ -17,7 +13,7 @@ export async function bfIngredientsList(
     max_tokens: 500,
     stream: false,
   };
-  console.log("payload", payload);
+
   const result = await fetch(url, {
     method: "POST",
     body: JSON.stringify(payload),
@@ -26,12 +22,10 @@ export async function bfIngredientsList(
       "Content-Type": "application/json",
     },
   });
-  console.log("result", result);
-  console.log(result);
 
   const data = await result.json();
-  console.log("data", data);
+
   const ingredients = data.choices[0].message.content;
-  console.log("ingredients", ingredients);
+
   return ingredients;
 }
