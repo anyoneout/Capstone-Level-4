@@ -41,8 +41,6 @@ export function CreateAccountModal() {
     dispatch(clearError);
     const closeUpdateModal = set.createShowModal(false);
     dispatch(closeUpdateModal);
-    const showProfileModal = set.accountProfileShowModal(true);
-    dispatch(showProfileModal);
   }
 
   //run locally or remotely

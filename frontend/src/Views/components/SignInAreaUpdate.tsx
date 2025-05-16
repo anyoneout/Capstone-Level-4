@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { set } from "../../redux/store";
 import {
   selectCreateShowModal,
   selectProfileShowModal,
@@ -8,15 +9,15 @@ import {
   selectSignInShowModal,
   selectUpdateShowModal,
 } from "../../redux/stateSelectors";
-import { set } from "../../redux/store";
 import { LoginModal } from "../loginModals/LoginModal";
 import { CreateAccountModal } from "../loginModals/CreateAccountModal";
 import { UpdateAccountModal } from "../loginModals/UpdateAccountModal";
-import "./CollapsibleNavbar.scss";
-import "./SignInArea.scss";
 import { AccountProfileModal } from "../loginModals/AccountProfileModal";
 import { readAccount } from "../../modules/crud/readAccount";
 import { Credentials } from "../../types/Credentials";
+import "./CollapsibleNavbar.scss";
+import "./SignInArea.scss";
+import { handleClearLocalStorage } from "../../controllers/handleClearLocalStorage";
 
 export default function SignInAreaUpdate() {
   const isSignedIn = useSelector(selectSignInIsSignedIn);
@@ -81,24 +82,16 @@ export default function SignInAreaUpdate() {
     dispatch(action);
   }
 
-  //clears authorized redux and local storage and signs out
+  //clears authorized redux, local storage and signs out
 
   function handleSignOut(): void {
     const clearIsSignedIn = set.signInIsSignedIn(false);
     dispatch(clearIsSignedIn);
-    localStorage.setItem("loggedIn", "false");
     const clearAuthUserEmail = set.authUserEmail("");
     dispatch(clearAuthUserEmail);
-    localStorage.setItem("loggedInEmail", "");
     const clearAuthUserPassword = set.authUserPassword("");
     dispatch(clearAuthUserPassword);
-    localStorage.setItem("loggedInPassword", "");
-    localStorage.setItem("timeElapsedInMins", "");
-    localStorage.setItem("credentials", "");
-    localStorage.setItem("oaToken", "");
-    localStorage.setItem("userEmail", "");
-    localStorage.setItem("userName", "");
-    localStorage.setItem("hfToken", "");
+    handleClearLocalStorage();
   }
 
   return (

@@ -1,8 +1,6 @@
 import { fetchBfIngredientsImage, fetchBfIngredientsList, fetchBfRecipeImage } from "../modules/bfFetchFunctionsUpdate";
-import { bfSaveUser } from "../../archive/bfSaveUser";
 
 export async function handleBfFetchUpdate() {
-  /*  bfSaveUser(); */
   const hfUserToken = localStorage.getItem("hfToken");
   const oaUserToken = localStorage.getItem("oaToken");
   const elements = getDomElements();

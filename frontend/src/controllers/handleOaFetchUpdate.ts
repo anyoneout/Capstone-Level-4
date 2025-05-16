@@ -9,7 +9,6 @@ export async function handleOaFetchUpdate() {
   const inputRecipeChoice = customRecipeInput.value;
   const recipeChoice = inputRecipeChoice !== "" ? inputRecipeChoice : dropDownRecipeChoice;
 
-  /*  oaSaveUser(); */
   const oaUserToken = localStorage.getItem("oaToken");
 
   isVisibleElement(spinnerOne, true);

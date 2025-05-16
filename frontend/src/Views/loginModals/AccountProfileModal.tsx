@@ -72,11 +72,11 @@ export function AccountProfileModal() {
     <>
       {showProfileModal && (
         <div
-          className="modal fade show"
+          className="modal fade show w-100"
           id="profileModal"
           style={{ display: "block", backgroundColor: "rgba(0,0,0,0.7)" }}
         >
-          <div className="modal-dialog modal-dialog-centered mx-auto">
+          <div className="modal-dialog modal-dialog-centered mx-auto w-100">
             <div className="modal-content mx-auto text-white w-100 mx-auto bg-dark border border-1 rounded-0  p-3">
               <div className="modal-body w-100 mx-auto">
                 <div className="container mt-3">
