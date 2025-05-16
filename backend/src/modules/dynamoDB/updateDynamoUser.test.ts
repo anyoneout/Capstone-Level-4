@@ -9,6 +9,8 @@ describe("readDynamoUser", () => {
     password: "testPassword",
     name: "testName",
     phone: "1234567",
+    hfToken: "",
+    oaToken: "",
   };
 
   it("returns a status code of 200 when when given a valid user and password to update the name", async () => {
@@ -18,12 +20,16 @@ describe("readDynamoUser", () => {
       password: "testPassword",
       name: "testName",
       phone: "1234567",
+      hfToken: "",
+      oaToken: "",
     };
     const updatedUser: Account = {
       email: "testUser@gmail.com",
       password: "testPassword",
       name: "newName",
       phone: "1234567",
+      hfToken: "",
+      oaToken: "",
     };
     await createDynamoUser(testUser);
 
@@ -42,6 +48,8 @@ describe("readDynamoUser", () => {
       password: "testPassword",
       name: "testName",
       phone: "1234567",
+      hfToken: "",
+      oaToken: "",
     };
 
     //ACT
@@ -58,6 +66,8 @@ describe("readDynamoUser", () => {
       password: "",
       name: "testName",
       phone: "1234567",
+      hfToken: "",
+      oaToken: "",
     };
 
     //ACT
@@ -74,6 +84,8 @@ describe("readDynamoUser", () => {
       password: "testPassword",
       name: "testName",
       phone: "1234567",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await updateDynamoUser(testUser);
@@ -88,6 +100,8 @@ describe("readDynamoUser", () => {
       password: "passwordNotInDatabase",
       name: "testName",
       phone: "1234567",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await updateDynamoUser(testUser);

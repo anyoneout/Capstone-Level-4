@@ -84,6 +84,14 @@ export const stateSetters = {
     const newValue = action.payload;
     state.createAccountState.phone = newValue;
   },
+  createHfToken: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.createAccountState.hfToken = newValue;
+  },
+  createOaToken: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.createAccountState.oaToken = newValue;
+  },
   createResponseMessage: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
     state.createAccountState.responseMessage = newValue;
@@ -136,6 +144,14 @@ export const stateSetters = {
     const newValue = action.payload;
     state.updateAccountState.phone = newValue;
   },
+  updateHfToken: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.updateAccountState.hfToken = newValue;
+  },
+  updateOaToken: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.updateAccountState.oaToken = newValue;
+  },
   updateResponseMessage: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
     state.updateAccountState.responseMessage = newValue;
@@ -155,7 +171,7 @@ export const stateSetters = {
   },
   accountProfilePassword: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
-    state.updateAccountState.password = newValue;
+    state.accountProfileState.password = newValue;
   },
   accountProfileName: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
@@ -163,7 +179,15 @@ export const stateSetters = {
   },
   accountProfilePhone: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
-    state.updateAccountState.phone = newValue;
+    state.accountProfileState.phone = newValue;
+  },
+  accountProfileHfToken: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.accountProfileState.hfToken = newValue;
+  },
+  accountProfileOaToken: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.accountProfileState.oaToken = newValue;
   },
   accountProfileResponseMessage: function (state: StateVariables, action: Action) {
     const newValue = action.payload;

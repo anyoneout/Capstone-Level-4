@@ -55,6 +55,7 @@ export function TriviaApiResponsePage() {
   async function getApiResponse() {
     try {
       const response = await axios.get(`${baseUrl}/triviaRoute`);
+      console.log(response);
       const stringified = JSON.stringify(response.data);
       const action = set.triviaApiTrivia(stringified);
       dispatch(action);

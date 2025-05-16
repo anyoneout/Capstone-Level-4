@@ -25,7 +25,7 @@ export async function readAccount(account: Account): Promise<{ status: number } 
   }
 
   const readUrl = `${baseUrl}/readUser`;
-  const readUser = await axios.post(readUrl, { email, password, name: "", phone: "" });
+  const readUser = await axios.post(readUrl, { email, password, name: "", phone: "", hfToken: "", oaToken: "" });
 
   const userResponse = readUser.data;
 

@@ -2,8 +2,10 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectCreateEmail,
+  selectCreateHfToken,
   selectCreateIsSignedIn,
   selectCreateName,
+  selectCreateOaToken,
   selectCreatePassword,
   selectCreatePhone,
   selectCreateResponseMessage,
@@ -11,6 +13,7 @@ import {
 } from "../../redux/stateSelectors";
 import { set } from "../../redux/store";
 import { createAccount } from "../../modules/crud/createAccount";
+import { savePersistentLogin } from "../../modules/savePersistentLogin";
 
 export function CreateAccountModal() {
   const isSignedIn = useSelector(selectCreateIsSignedIn);
@@ -20,6 +23,8 @@ export function CreateAccountModal() {
   const password = useSelector(selectCreatePassword);
   const name = useSelector(selectCreateName);
   const phone = useSelector(selectCreatePhone);
+  const hfToken = useSelector(selectCreateHfToken);
+  const oaToken = useSelector(selectCreateOaToken);
 
   const dispatch = useDispatch();
 
@@ -56,7 +61,7 @@ export function CreateAccountModal() {
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    const account = { email, password, name, phone };
+    const account = { email, password, name, phone, hfToken, oaToken };
 
     if (!email || !password || !name || !phone) {
       const setErrorResponse = set.createResponseMessage("All fields must be filled out");
@@ -79,20 +84,25 @@ export function CreateAccountModal() {
       const action = set.createResponseMessage(`User created successfully!`);
       const loggedIn = set.authIsLoggedIn(true);
       dispatch(loggedIn);
-      const saveEmail = set.authUserEmail(email);
-      dispatch(saveEmail);
-      const savePassword = set.authUserPassword(password);
-      dispatch(savePassword);
       const currentLoginState = set.signInIsSignedIn(true);
       dispatch(currentLoginState);
+      const savePassword = set.authUserPassword(password);
+      dispatch(savePassword);
       const userEmail = set.authUserEmail(email);
       dispatch(userEmail);
       const closeModal = set.createShowModal(false);
       dispatch(closeModal);
-
+      const hfUserToken = set.createHfToken(hfToken);
+      dispatch(hfUserToken);
+      const oaUserToken = set.createOaToken(oaToken);
+      dispatch(oaUserToken);
+      savePersistentLogin(email, password);
       localStorage.setItem("loggedIn", "true");
       localStorage.setItem("loggedInEmail", email);
       localStorage.setItem("loggedInPassword", password);
+      localStorage.setItem("hfToken", hfToken);
+      localStorage.setItem("oaToken", oaToken);
+
       return dispatch(action);
     } else {
       const action = set.createResponseMessage(`User wasn't created`);
@@ -162,6 +172,28 @@ export function CreateAccountModal() {
                       aria-label="create user phone"
                       value={phone}
                       onChange={(e) => dispatch(set.createPhone(e.target.value))}
+                      style={{ width: "95%" }}
+                    />
+                  </div>
+                  <div className="d-flex justify-content-center">
+                    <input
+                      type="text"
+                      className="form-control mb-1"
+                      placeholder="Hugging Face token"
+                      aria-label="create Hugging Face token"
+                      value={hfToken}
+                      onChange={(e) => dispatch(set.createHfToken(e.target.value))}
+                      style={{ width: "95%" }}
+                    />
+                  </div>
+                  <div className="d-flex justify-content-center">
+                    <input
+                      type="text"
+                      className="form-control mb-1"
+                      placeholder="OpenAI token"
+                      aria-label="create OpenAI token"
+                      value={oaToken}
+                      onChange={(e) => dispatch(set.createOaToken(e.target.value))}
                       style={{ width: "95%" }}
                     />
                   </div>

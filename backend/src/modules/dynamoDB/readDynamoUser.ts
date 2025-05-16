@@ -2,8 +2,8 @@ import { Account } from "../../types/Account";
 import { getDynamoNiceClient } from "./getDynamoNiceClient";
 
 //DynamoDB user authentication with AWS credentials
-export async function readDynamoUser(readUser: Account): Promise<Account | undefined> {
-  const { email, password, name, phone } = readUser;
+export async function readDynamoUser(account: Account): Promise<Account | undefined> {
+  const { email, password, name, phone, hfToken, oaToken } = account;
 
   if (typeof email === "object") return undefined;
   if (!email || !password) return undefined;
@@ -11,7 +11,7 @@ export async function readDynamoUser(readUser: Account): Promise<Account | undef
   const niceClient = getDynamoNiceClient();
 
   const request = {
-    TableName: "login",
+    TableName: "userAccount",
     Key: { email },
   };
 

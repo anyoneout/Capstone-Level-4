@@ -14,10 +14,10 @@ export async function createAccount(account: Account): Promise<{ status: number 
     baseUrl = lambdaUrl;
   }
 
-  const { email, password, name, phone } = account;
+  const { email, password, name, phone, hfToken, oaToken } = account;
 
   //checks if fields are all filled in
-  if (!email || !password || !name || !phone) {
+  if (!email || !password || !name || !phone || !hfToken || !oaToken) {
     return { status: 400 };
   }
 

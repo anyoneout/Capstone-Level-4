@@ -3,7 +3,9 @@ import { updateAccount } from "../../modules/crud/updateAccount";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectUpdateEmail,
+  selectUpdateHfToken,
   selectUpdateName,
+  selectUpdateOaToken,
   selectUpdatePassword,
   selectUpdatePhone,
   selectUpdateResponseMessage,
@@ -15,6 +17,8 @@ export function UpdateAccountForm() {
   const password = useSelector(selectUpdatePassword);
   const name = useSelector(selectUpdateName);
   const phone = useSelector(selectUpdatePhone);
+  const hfToken = useSelector(selectUpdateHfToken);
+  const oaToken = useSelector(selectUpdateOaToken);
   const responseMessage = useSelector(selectUpdateResponseMessage);
 
   const dispatch = useDispatch();
@@ -22,7 +26,7 @@ export function UpdateAccountForm() {
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    const response = await updateAccount({ email, password, name, phone });
+    const response = await updateAccount({ email, password, name, phone, oaToken, hfToken });
     console.log("update account form response", response);
     if (response.status === 200) {
       const action = set.updateResponseMessage(`user (${email}) updated successfully`);
@@ -79,6 +83,28 @@ export function UpdateAccountForm() {
                   aria-label="update user phone"
                   value={phone}
                   onChange={(e) => dispatch(set.updatePhone(e.target.value))}
+                />
+              </div>
+
+              <div className="input-group" data-bs-theme="dark">
+                <input
+                  type="text"
+                  className="form-control api-inputs"
+                  placeholder="Hugging Face token"
+                  aria-label="update Hugging Face token"
+                  value={hfToken}
+                  onChange={(e) => dispatch(set.updateHfToken(e.target.value))}
+                />
+              </div>
+
+              <div className="input-group" data-bs-theme="dark">
+                <input
+                  type="text"
+                  className="form-control api-inputs"
+                  placeholder="OpenAi token"
+                  aria-label="update OpenAI token"
+                  value={oaToken}
+                  onChange={(e) => dispatch(set.updateOaToken(e.target.value))}
                 />
               </div>
             </fieldset>

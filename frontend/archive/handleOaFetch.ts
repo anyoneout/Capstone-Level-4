@@ -1,5 +1,5 @@
 import { oaIngredientsList } from "./oaIngredientsList";
-import { oaSaveUser } from "../src/modules/oaSaveUser";
+import { oaSaveUser } from "./oaSaveUser";
 import { oaIngredientsImage } from "./oaIngredientsImage";
 import { oaRecipeImage } from "./oaRecipeImage";
 

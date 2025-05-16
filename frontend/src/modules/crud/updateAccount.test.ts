@@ -12,6 +12,8 @@ describe("updateAccount", () => {
       password: "testPassword",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await updateAccount(testUser);
@@ -26,6 +28,8 @@ describe("updateAccount", () => {
       password: "",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await updateAccount(testUser);
@@ -40,6 +44,8 @@ describe("updateAccount", () => {
       password: "testPassword",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await updateAccount(invalidUser);
@@ -57,6 +63,8 @@ describe("updateAccount", () => {
       password: randomPassword,
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await updateAccount(validUser);
@@ -72,6 +80,8 @@ describe("updateAccount", () => {
       password: "P@$$w0rd!",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await updateAccount(validUser);

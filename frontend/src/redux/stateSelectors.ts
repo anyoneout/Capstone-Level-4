@@ -66,6 +66,12 @@ export function selectCreateName(state: StateVariables) {
 export function selectCreatePhone(state: StateVariables) {
   return state.createAccountState.phone;
 }
+export function selectCreateHfToken(state: StateVariables) {
+  return state.createAccountState.hfToken;
+}
+export function selectCreateOaToken(state: StateVariables) {
+  return state.createAccountState.oaToken;
+}
 export function selectCreateResponseMessage(state: StateVariables) {
   return state.createAccountState.responseMessage;
 }
@@ -107,6 +113,12 @@ export function selectUpdateName(state: StateVariables) {
 export function selectUpdatePhone(state: StateVariables) {
   return state.updateAccountState.phone;
 }
+export function selectUpdateHfToken(state: StateVariables) {
+  return state.updateAccountState.hfToken;
+}
+export function selectUpdateOaToken(state: StateVariables) {
+  return state.updateAccountState.oaToken;
+}
 export function selectUpdateResponseMessage(state: StateVariables) {
   return state.updateAccountState.responseMessage;
 }
@@ -129,6 +141,12 @@ export function selectProfileName(state: StateVariables) {
 }
 export function selectProfilePhone(state: StateVariables) {
   return state.accountProfileState.phone;
+}
+export function selectProfileHfToken(state: StateVariables) {
+  return state.accountProfileState.hfToken;
+}
+export function selectProfileOaToken(state: StateVariables) {
+  return state.accountProfileState.oaToken;
 }
 export function selectProfileResponseMessage(state: StateVariables) {
   return state.accountProfileState.responseMessage;

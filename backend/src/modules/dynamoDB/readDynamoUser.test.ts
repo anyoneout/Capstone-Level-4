@@ -9,6 +9,8 @@ describe("readDynamoUser", () => {
       password: "aaa",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await readDynamoUser(readUser);
@@ -26,6 +28,8 @@ describe("readDynamoUser", () => {
       password: "aaa",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await readDynamoUser(readUser);
@@ -39,6 +43,8 @@ describe("readDynamoUser", () => {
       password: "",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await readDynamoUser(readUser);
@@ -52,6 +58,8 @@ describe("readDynamoUser", () => {
       password: "",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await readDynamoUser(readUser);
@@ -65,6 +73,8 @@ describe("readDynamoUser", () => {
       password: "bbb",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await readDynamoUser(readUser);

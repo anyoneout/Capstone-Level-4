@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { handleOaFetch } from "../../archive/handleOaFetch";
 import { ApiDalleIcon, ApiOpenAiIcon } from "../modules/icons";
 import { recipeArray } from "../modules/recipeArray";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,28 +15,8 @@ export function OaPage() {
   useEffect(componentDidUnmount, []);
 
   return (
-    <div className="container api-container navbar-width mt-3">
-      <div
-        className="row text-end "
-        style={{
-          fontSize: "11px",
-          minHeight: "20px",
-          color: "#fff78a",
-        }}
-      >
-        <div id="userNameHTML"></div>
-      </div>
-      <div
-        className="row mb-5 text-end"
-        style={{
-          fontSize: "11px",
-          minHeight: "20px",
-          color: "#fff78a",
-        }}
-      >
-        <div id="userEmailHTML"></div>
-      </div>
-      <div className="row">
+    <div className="container api-container navbar-width mt-5 mb-5">
+      <div className="row mt-5 mb-5">
         <div className="col-md-6 mb-5">
           <div
             className="d-flex justify-content-start align-items-center"
@@ -49,44 +28,11 @@ export function OaPage() {
             <ApiDalleIcon />
           </div>
         </div>
-        <div className="col-md-6">
+
+        <div className="col-md-6 mt-2 mb-4">
           <form className="api-form">
             <fieldset>
-              <legend>User login/ OpenAI token</legend>
-              <div className="input-group mb-2" data-bs-theme="dark">
-                <input
-                  type="text"
-                  className="form-control api-inputs"
-                  placeholder="Name"
-                  aria-label="User Name"
-                  aria-describedby="basic-addon1"
-                  id="nameInput"
-                />
-              </div>
-              <div className="input-group mb-2" data-bs-theme="dark">
-                <input
-                  type="text"
-                  className="form-control api-inputs"
-                  placeholder="Email"
-                  aria-label="User email"
-                  aria-describedby="basic-addon2"
-                  id="emailInput"
-                />
-              </div>
-              <div className="input-group mb-2" data-bs-theme="dark">
-                <input
-                  type="text"
-                  className="form-control api-inputs"
-                  placeholder="Token"
-                  aria-label="OpenAi Token Input"
-                  aria-describedby="basic-addon2"
-                  id="openAiTokenInput"
-                />
-              </div>
-            </fieldset>
-            <br />
-            <fieldset>
-              <legend>Generate ingredients</legend>
+              <legend>Select or enter a recipe</legend>
               <div className="input-group mb-2" data-bs-theme="dark">
                 <select className="form-select" id="chosenRecipe" style={{ fontSize: ".8rem" }}>
                   <option value="">Select a Recipe...</option>
@@ -105,51 +51,39 @@ export function OaPage() {
                   placeholder="Or enter a custom recipe..."
                   style={{ fontSize: ".8rem" }}
                 />
+                <button
+                  className="btn btn-sm btn-outline-secondary"
+                  type="button"
+                  id="fetchButton"
+                  onClick={handleOaFetchUpdate}
+                >
+                  Submit
+                </button>
               </div>
-              <button
-                className="btn btn-outline-secondary"
-                type="button"
-                id="fetchButton"
-                style={{}}
-                onClick={handleOaFetchUpdate}
-              >
-                Submit
-              </button>
             </fieldset>
           </form>
         </div>
       </div>
 
-      <div className="row mt-5">
-        <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
-          <div className="spinner-border text-info" role="status" style={{ visibility: "hidden" }} id="spinnerOne">
+      <div className="row mt-2">
+        <div className="col-12 col-md-5 d-flex align-items-center justify-content-center">
+          <div
+            className="spinner-border text-info position-absolute top-60 start-25"
+            role="status"
+            id="spinnerOne"
+            style={{ visibility: "hidden" }}
+          >
             <span className="visually-hidden"></span>
           </div>
           <img id="recipeAI" className="rounded-circle" style={{ maxWidth: "100%" }} />
         </div>
-
-        <div className="col-12  d-none d-flex align-items-center justify-content-center">
-          <i
-            className="bi bi-arrow-right"
-            id="secondArrowHTML"
-            style={{
-              fontSize: "3rem",
-              color: "#f1ffb0",
-              visibility: "hidden",
-            }}
-          ></i>
-        </div>
-
-        <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
-          <div className="spinner-border text-info" role="status" style={{ visibility: "hidden" }} id="spinnerTwo">
+        <div className="col-12 col-md-5 d-flex align-items-center justify-content-center">
+          <div className="spinner-border text-info" role="status" id="spinnerTwo" style={{ visibility: "hidden" }}>
             <span className="visually-hidden"></span>
           </div>
           <img id="ingredientsAI" style={{ maxWidth: "100%" }} />
         </div>
-      </div>
-
-      <div className="row mt-5 d-flex justify-content-center">
-        <div className="col-10 col-md-8">
+        <div className="col-10 col-md-2 d-flex align-items-center">
           <div id="recipeIngredients"></div>
         </div>
       </div>
@@ -157,9 +91,7 @@ export function OaPage() {
   );
 
   function componentDidMount(): void {
-    const action = set.oaPageDidMount(true);
-    dispatch(action);
-    console.log("The OaPage page component has mounted");
+    dispatch(set.oaPageDidMount(true));
     document.title = "Recipe Deconstructor - Open AI Dall-E-3";
   }
 

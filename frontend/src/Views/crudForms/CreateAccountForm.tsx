@@ -3,7 +3,9 @@ import { createAccount } from "../../modules/crud/createAccount";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectCreateEmail,
+  selectCreateHfToken,
   selectCreateName,
+  selectCreateOaToken,
   selectCreatePassword,
   selectCreatePhone,
   selectCreateResponseMessage,
@@ -17,6 +19,8 @@ export function CreateAccountForm() {
   const responseMessage = useSelector(selectCreateResponseMessage);
   const name = useSelector(selectCreateName);
   const phone = useSelector(selectCreatePhone);
+  const hfToken = useSelector(selectCreateHfToken);
+  const oaToken = useSelector(selectCreateOaToken);
 
   const dispatch = useDispatch();
 
@@ -36,7 +40,7 @@ export function CreateAccountForm() {
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    const account = { email, password, name, phone };
+    const account = { email, password, name, phone, hfToken, oaToken };
 
     const result = await createAccount(account);
     console.log("create account form response", result);
@@ -106,6 +110,26 @@ export function CreateAccountForm() {
                   aria-label="create user phone"
                   value={phone}
                   onChange={(e) => dispatch(set.createPhone(e.target.value))}
+                />
+              </div>
+              <div className="input-group" data-bs-theme="dark">
+                <input
+                  type="text"
+                  className="form-control api-inputs"
+                  placeholder="Hugging Face token"
+                  aria-label="create hugging face token"
+                  value={hfToken}
+                  onChange={(e) => dispatch(set.createHfToken(e.target.value))}
+                />
+              </div>
+              <div className="input-group" data-bs-theme="dark">
+                <input
+                  type="text"
+                  className="form-control api-inputs"
+                  placeholder="OpenAI token"
+                  aria-label="create OpenAI token"
+                  value={oaToken}
+                  onChange={(e) => dispatch(set.createOaToken(e.target.value))}
                 />
               </div>
             </fieldset>

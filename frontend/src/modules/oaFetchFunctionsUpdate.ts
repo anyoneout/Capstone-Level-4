@@ -28,7 +28,7 @@ export async function fetchOaIngredientsList(recipeChoice: string, oaUserToken: 
     messages: [
       {
         role: "user",
-        content: `List only the individual ingredients in ${recipeChoice} by order of importance to the recipe.`,
+        content: `List only the individual ingredients in ${recipeChoice} by order of importance. Omit optional ingredients and descriptions. Return the  list with each ingredient separated by a comma.`,
       },
     ],
   };

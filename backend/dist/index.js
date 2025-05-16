@@ -58519,54 +58519,53 @@ function createDynamoUser(_x) {
   return _createDynamoUser.apply(this, arguments);
 }
 function _createDynamoUser() {
-  _createDynamoUser = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(newUser) {
-    var email, password, name, phone, niceClient, newLogin, existingUserCheck, existingUserResponse, response;
+  _createDynamoUser = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(account) {
+    var email, password, name, phone, hfToken, oaToken, niceClient, existingUserCheck, existingUserResponse, newLogin, response;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          email = newUser.email, password = newUser.password, name = newUser.name, phone = newUser.phone;
-          if (!(!email || !password || !name || !phone)) {
+          email = account.email, password = account.password, name = account.name, phone = account.phone, hfToken = account.hfToken, oaToken = account.oaToken;
+          if (!(!email || !password || !name || !phone || !hfToken || !oaToken)) {
             _context.next = 3;
             break;
           }
           return _context.abrupt("return", undefined);
         case 3:
-          niceClient = (0,_getDynamoNiceClient__WEBPACK_IMPORTED_MODULE_0__.getDynamoNiceClient)(); //fetch request user parameters
-          newLogin = {
-            TableName: "login",
-            Item: {
-              email: email,
-              password: password,
-              name: name,
-              phone: phone
-            }
-          }; //get request to check if user already exists so as to not overwrite password on accidental create user attempt
+          niceClient = (0,_getDynamoNiceClient__WEBPACK_IMPORTED_MODULE_0__.getDynamoNiceClient)(); //get request to check if user already exists so as to not overwrite password on accidental create user attempt
           existingUserCheck = {
-            TableName: "login",
+            TableName: "userAccount",
             Key: {
               email: email
             }
           };
-          _context.next = 8;
+          _context.next = 7;
           return niceClient.get(existingUserCheck);
-        case 8:
+        case 7:
           existingUserResponse = _context.sent;
           if (!existingUserResponse.Item) {
-            _context.next = 11;
+            _context.next = 10;
             break;
           }
           return _context.abrupt("return", undefined);
-        case 11:
+        case 10:
+          //fetch request user parameters
+          newLogin = {
+            TableName: "userAccount",
+            Item: {
+              email: email,
+              password: password,
+              name: name,
+              phone: phone,
+              hfToken: hfToken,
+              oaToken: oaToken
+            }
+          }; // todo check status if it's 200 then return account
+          //create user
           _context.next = 13;
           return niceClient.put(newLogin);
         case 13:
           response = _context.sent;
-          return _context.abrupt("return", {
-            email: email,
-            password: password,
-            name: name,
-            phone: phone
-          });
+          return _context.abrupt("return", account);
         case 15:
         case "end":
           return _context.stop();
@@ -58601,13 +58600,13 @@ function deleteDynamoUser(_x) {
   return _deleteDynamoUser.apply(this, arguments);
 }
 function _deleteDynamoUser() {
-  _deleteDynamoUser = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(deleteUser) {
+  _deleteDynamoUser = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(account) {
     var _response$$metadata;
-    var email, password, name, phone, niceClient, request, response, statusCode;
+    var email, password, name, phone, hfToken, oaToken, niceClient, request, response, statusCode;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          email = deleteUser.email, password = deleteUser.password, name = deleteUser.name, phone = deleteUser.phone;
+          email = account.email, password = account.password, name = account.name, phone = account.phone, hfToken = account.hfToken, oaToken = account.oaToken;
           if (!(_typeof(email) === "object")) {
             _context.next = 3;
             break;
@@ -58622,7 +58621,7 @@ function _deleteDynamoUser() {
         case 5:
           niceClient = (0,_getDynamoNiceClient__WEBPACK_IMPORTED_MODULE_0__.getDynamoNiceClient)();
           request = {
-            TableName: "login",
+            TableName: "userAccount",
             Key: {
               email: email
             },
@@ -58710,12 +58709,12 @@ function readDynamoUser(_x) {
   return _readDynamoUser.apply(this, arguments);
 }
 function _readDynamoUser() {
-  _readDynamoUser = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(readUser) {
-    var email, password, name, phone, niceClient, request, response, readResponse;
+  _readDynamoUser = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(account) {
+    var email, password, name, phone, hfToken, oaToken, niceClient, request, response, readResponse;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          email = readUser.email, password = readUser.password, name = readUser.name, phone = readUser.phone;
+          email = account.email, password = account.password, name = account.name, phone = account.phone, hfToken = account.hfToken, oaToken = account.oaToken;
           if (!(_typeof(email) === "object")) {
             _context.next = 3;
             break;
@@ -58730,7 +58729,7 @@ function _readDynamoUser() {
         case 5:
           niceClient = (0,_getDynamoNiceClient__WEBPACK_IMPORTED_MODULE_0__.getDynamoNiceClient)();
           request = {
-            TableName: "login",
+            TableName: "userAccount",
             Key: {
               email: email
             }
@@ -58785,11 +58784,11 @@ function updateDynamoUser(_x) {
 function _updateDynamoUser() {
   _updateDynamoUser = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(account) {
     var _response$$metadata;
-    var email, password, name, phone, existingUser, niceClient, request, response, statusCode;
+    var email, password, name, phone, hfToken, oaToken, existingUser, niceClient, request, response, statusCode;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          email = account.email, password = account.password, name = account.name, phone = account.phone;
+          email = account.email, password = account.password, name = account.name, phone = account.phone, hfToken = account.hfToken, oaToken = account.oaToken;
           if (!(!email || !password)) {
             _context.next = 3;
             break;
@@ -58801,7 +58800,9 @@ function _updateDynamoUser() {
             email: email,
             password: password,
             name: "",
-            phone: ""
+            phone: "",
+            hfToken: "",
+            oaToken: ""
           });
         case 5:
           existingUser = _context.sent;
@@ -58813,7 +58814,7 @@ function _updateDynamoUser() {
         case 8:
           niceClient = (0,_getDynamoNiceClient__WEBPACK_IMPORTED_MODULE_0__.getDynamoNiceClient)();
           request = {
-            TableName: "login",
+            TableName: "userAccount",
             Key: {
               email: email
             },
@@ -58826,6 +58827,12 @@ function _updateDynamoUser() {
               },
               phone: {
                 Value: phone
+              },
+              hfToken: {
+                Value: hfToken
+              },
+              oaToken: {
+                Value: oaToken
               }
             }
           }; //fetch request
@@ -59182,13 +59189,13 @@ function createUserRoute(_x, _x2) {
 }
 function _createUserRoute() {
   _createUserRoute = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(request, response) {
-    var createUser, result;
+    var account, result;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          createUser = request.body;
+          account = request.body;
           _context.next = 3;
-          return (0,_modules_dynamoDB_createDynamoUser__WEBPACK_IMPORTED_MODULE_0__.createDynamoUser)(createUser);
+          return (0,_modules_dynamoDB_createDynamoUser__WEBPACK_IMPORTED_MODULE_0__.createDynamoUser)(account);
         case 3:
           result = _context.sent;
           response.send(result);

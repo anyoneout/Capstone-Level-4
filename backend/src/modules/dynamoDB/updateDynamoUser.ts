@@ -4,19 +4,19 @@ import { readDynamoUser } from "./readDynamoUser";
 
 //DynamoDB user authentication with AWS credentials
 export async function updateDynamoUser(account: Account): Promise<number | undefined> {
-  const { email, password, name, phone } = account;
+  const { email, password, name, phone, hfToken, oaToken } = account;
   if (!email || !password) {
     return undefined;
   }
 
   //to check if the email already exists
-  const existingUser = await readDynamoUser({ email, password, name: "", phone: "" });
+  const existingUser = await readDynamoUser({ email, password, name: "", phone: "", hfToken: "", oaToken: "" });
   if (!existingUser || existingUser.password !== password) return undefined;
 
   const niceClient = getDynamoNiceClient();
 
   const request = {
-    TableName: "login",
+    TableName: "userAccount",
     Key: {
       email: email,
     },
@@ -29,6 +29,12 @@ export async function updateDynamoUser(account: Account): Promise<number | undef
       },
       phone: {
         Value: phone,
+      },
+      hfToken: {
+        Value: hfToken,
+      },
+      oaToken: {
+        Value: oaToken,
       },
     },
   };

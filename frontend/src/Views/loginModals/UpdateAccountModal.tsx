@@ -3,19 +3,21 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   selectAuthUserEmail,
   selectAuthUserPassword,
-  selectCreateIsSignedIn,
+  selectUpdateHfToken,
   selectUpdateName,
+  selectUpdateOaToken,
   selectUpdatePassword,
   selectUpdatePhone,
   selectUpdateResponseMessage,
   selectUpdateShowModal,
+  selectSignInIsSignedIn,
 } from "../../redux/stateSelectors";
 import { set } from "../../redux/store";
 import { updateAccount } from "../../modules/crud/updateAccount";
 
 export function UpdateAccountModal() {
   const authUserEmail = useSelector(selectAuthUserEmail);
-  const isSignedIn = useSelector(selectCreateIsSignedIn);
+  const isSignedIn = useSelector(selectSignInIsSignedIn);
   const showModal = useSelector(selectUpdateShowModal);
   const responseMessage = useSelector(selectUpdateResponseMessage);
 
@@ -23,6 +25,8 @@ export function UpdateAccountModal() {
   const password = useSelector(selectUpdatePassword);
   const name = useSelector(selectUpdateName);
   const phone = useSelector(selectUpdatePhone);
+  const hfToken = useSelector(selectUpdateHfToken);
+  const oaToken = useSelector(selectUpdateOaToken);
 
   const dispatch = useDispatch();
   /*  useEffect(componentDidMount, []);
@@ -58,7 +62,7 @@ export function UpdateAccountModal() {
   async function handleUpdateSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    const account = { email: authUserEmail, password: authUserPassword, name, phone };
+    const account = { email: authUserEmail, password: authUserPassword, name, phone, hfToken, oaToken };
     const response = await updateAccount(account);
     console.log("update account form response", response);
 
@@ -123,7 +127,7 @@ export function UpdateAccountModal() {
                     type="text"
                     className="form-control mb-2"
                     placeholder="Name"
-                    aria-label="create user name"
+                    aria-label="update user name"
                     value={name}
                     onChange={(e) => dispatch(set.updateName(e.target.value))}
                   />
@@ -131,8 +135,24 @@ export function UpdateAccountModal() {
                     type="text"
                     className="form-control mb-2"
                     placeholder="Phone"
-                    aria-label="create user phone"
+                    aria-label="update user phone"
                     value={phone}
+                    onChange={(e) => dispatch(set.updatePhone(e.target.value))}
+                  />
+                  <input
+                    type="text"
+                    className="form-control mb-2"
+                    placeholder="Hugging Face token"
+                    aria-label="update Hugging Face token"
+                    value={hfToken}
+                    onChange={(e) => dispatch(set.updatePhone(e.target.value))}
+                  />
+                  <input
+                    type="text"
+                    className="form-control mb-2"
+                    placeholder="Open AI token"
+                    aria-label="update OpenAI token"
+                    value={oaToken}
                     onChange={(e) => dispatch(set.updatePhone(e.target.value))}
                   />
                   <div style={{ minHeight: "1.35rem", fontSize: ".85rem" }} className="mx-auto text-danger">

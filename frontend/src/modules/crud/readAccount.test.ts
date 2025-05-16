@@ -11,6 +11,8 @@ describe("readAccount", () => {
       password: "",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
 
     //ACT
@@ -31,6 +33,8 @@ describe("readAccount", () => {
       password: "test",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
 
     //ACT
@@ -51,6 +55,8 @@ describe("readAccount", () => {
       password: "testPassword",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
 
     //ACT
@@ -70,6 +76,8 @@ describe("readAccount", () => {
       password: "",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
 
     //ACT
@@ -90,6 +98,8 @@ describe("readAccount", () => {
       password: "",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
 
     // ACT

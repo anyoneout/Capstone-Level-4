@@ -10,6 +10,8 @@ describe("deleteDynamoUser", () => {
       password: "testPassword",
       name: "testUserName",
       phone: "1234567",
+      hfToken: "",
+      oaToken: "",
     };
 
     await createDynamoUser(testingUser);
@@ -26,6 +28,8 @@ describe("deleteDynamoUser", () => {
       password: "aaa",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await deleteDynamoUser(testingUser);
@@ -40,6 +44,8 @@ describe("deleteDynamoUser", () => {
       password: "",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await deleteDynamoUser(testingUser);
@@ -54,6 +60,8 @@ describe("deleteDynamoUser", () => {
       password: "aaa",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await deleteDynamoUser(testingUser);
@@ -68,6 +76,8 @@ describe("deleteDynamoUser", () => {
       password: "wrongPassword",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await deleteDynamoUser(testingUser);

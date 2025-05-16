@@ -1,12 +1,12 @@
 import { fetchBfIngredientsImage, fetchBfIngredientsList, fetchBfRecipeImage } from "../modules/bfFetchFunctionsUpdate";
-import { bfSaveUser } from "../modules/bfSaveUser";
+import { bfSaveUser } from "../../archive/bfSaveUser";
 
 export async function handleBfFetchUpdate() {
-  bfSaveUser();
+  /*  bfSaveUser(); */
   const hfUserToken = localStorage.getItem("hfToken");
   const oaUserToken = localStorage.getItem("oaToken");
   const elements = getDomElements();
-  const { recipeSelect, recipeImg, ingredientsImg, ingredientsHTML, spinnerOne, spinnerTwo, arrow, customRecipeInput } =
+  const { recipeSelect, recipeImg, ingredientsImg, ingredientsHTML, spinnerOne, spinnerTwo, customRecipeInput } =
     elements;
 
   const dropDownRecipeChoice = recipeSelect.value;
@@ -20,11 +20,11 @@ export async function handleBfFetchUpdate() {
   recipeImg.classList.add("borderImage");
 
   isVisibleElement(spinnerOne, false);
-  isVisibleElement(arrow, true);
   isVisibleElement(spinnerTwo, true);
 
   const ingredientsText = await fetchBfIngredientsList(recipeChoice, oaUserToken);
-  ingredientsHTML.innerHTML = ingredientsText;
+
+  ingredientsHTML.innerHTML = ingredientsText.replace(/,/g, "<br />");
 
   const ingredientsImageUrl = await fetchBfIngredientsImage(ingredientsText, hfUserToken);
   ingredientsImg.src = ingredientsImageUrl;
@@ -40,7 +40,6 @@ export async function handleBfFetchUpdate() {
       ingredientsHTML: document.getElementById("recipeIngredients") as HTMLElement,
       spinnerOne: document.getElementById("spinnerOne") as HTMLElement,
       spinnerTwo: document.getElementById("spinnerTwo") as HTMLElement,
-      arrow: document.getElementById("secondArrowHTML") as HTMLElement,
       customRecipeInput: document.getElementById("customRecipeInputBf") as HTMLInputElement,
     };
   }

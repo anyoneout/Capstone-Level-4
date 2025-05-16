@@ -3,8 +3,8 @@ import { getDynamoNiceClient } from "./getDynamoNiceClient";
 
 //DynamoDB user authentication with AWS credentials
 export async function createDynamoUser(account: Account): Promise<Account | undefined> {
-  const { email, password, name, phone } = account;
-  if (!email || !password || !name || !phone) {
+  const { email, password, name, phone, hfToken, oaToken } = account;
+  if (!email || !password || !name || !phone || !hfToken || !oaToken) {
     return undefined;
   }
 
@@ -12,7 +12,7 @@ export async function createDynamoUser(account: Account): Promise<Account | unde
 
   //get request to check if user already exists so as to not overwrite password on accidental create user attempt
   const existingUserCheck = {
-    TableName: "login",
+    TableName: "userAccount",
     Key: { email },
   };
 
@@ -24,12 +24,14 @@ export async function createDynamoUser(account: Account): Promise<Account | unde
 
   //fetch request user parameters
   const newLogin = {
-    TableName: "login",
+    TableName: "userAccount",
     Item: {
       email: email,
       password: password,
       name: name,
       phone: phone,
+      hfToken: hfToken,
+      oaToken: oaToken,
     },
   };
   // todo check status if it's 200 then return account

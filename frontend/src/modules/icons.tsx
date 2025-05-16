@@ -1,9 +1,7 @@
 import React from "react";
 import { Flux } from "@lobehub/icons";
-import { Dalle } from '@lobehub/icons';
+import { Dalle } from "@lobehub/icons";
 import { OpenAI } from "@lobehub/icons";
-
-
 
 export function HomeDalleIcon() {
   return <Dalle.Combine size={50} />;
@@ -14,15 +12,15 @@ export function HomeFluxIcon() {
 }
 
 export function ApiOpenAiIcon() {
-  return <OpenAI.Text size={40} />;
+  return <OpenAI.Text size={50} />;
 }
 
 export function ApiDalleIcon() {
-  return <Dalle.Combine size={40} />;
+  return <Dalle.Combine size={70} />;
 }
 
 export function ApiFluxIcon() {
-  return <Flux.Combine size={40} />;
+  return <Flux.Combine size={60} />;
 }
 
 export function NavDalleIcon() {

@@ -12,6 +12,8 @@ describe("deleteAccount", () => {
       password: "validPassword",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await deleteAccount(noEmailUser);
@@ -26,6 +28,8 @@ describe("deleteAccount", () => {
       password: "validPassword",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await deleteAccount(invalidEmailUser);
@@ -40,6 +44,8 @@ describe("deleteAccount", () => {
       password: "validPassword",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await deleteAccount(doesNotExistUser);
@@ -55,12 +61,16 @@ describe("deleteAccount", () => {
       password: "tempPassword",
       name: "tempName",
       phone: "1231231234",
+      hfToken: "",
+      oaToken: "",
     };
     const deletedUser: Account = {
       email: "userToDelete@email.com",
       password: "tempPassword",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     await createAccount(userCreated);
@@ -76,6 +86,8 @@ describe("deleteAccount", () => {
       password: "",
       name: "",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await deleteAccount(testUser);

@@ -9,6 +9,8 @@ describe("createDynamoUser", () => {
       password: "test",
       name: "test",
       phone: "test",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await createDynamoUser(userTest);
@@ -23,6 +25,8 @@ describe("createDynamoUser", () => {
       password: "",
       name: "test",
       phone: "test",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await createDynamoUser(userTest);
@@ -37,6 +41,8 @@ describe("createDynamoUser", () => {
       password: "test",
       name: "",
       phone: "test",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await createDynamoUser(userTest);
@@ -51,6 +57,8 @@ describe("createDynamoUser", () => {
       password: "test",
       name: "test",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await createDynamoUser(userTest);
@@ -65,6 +73,8 @@ describe("createDynamoUser", () => {
       password: "test",
       name: "test",
       phone: "test",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await createDynamoUser(userTest);

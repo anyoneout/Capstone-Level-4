@@ -14,7 +14,7 @@ export function DeleteAccountForm() {
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    const response = await deleteAccount({ email, password, name: "", phone: "" });
+    const response = await deleteAccount({ email, password, name: "", phone: "", hfToken: "", oaToken: "" });
     console.log("delete account form response", response);
     if (response.status === 401) {
       return dispatch(set.deleteResponseMessage(`Invalid password entered`));

@@ -1,16 +1,15 @@
 import { fetchOaIngredientsImage, fetchOaIngredientsList, fetchOaRecipeImage } from "../modules/oaFetchFunctionsUpdate";
-import { oaSaveUser } from "../modules/oaSaveUser";
 
 export async function handleOaFetchUpdate() {
   const elements = getDomElements();
-  const { recipeSelect, recipeImg, ingredientsImg, ingredientsHTML, spinnerOne, spinnerTwo, arrow, customRecipeInput } =
+  const { recipeSelect, recipeImg, ingredientsImg, ingredientsHTML, spinnerOne, spinnerTwo, customRecipeInput } =
     elements;
 
   const dropDownRecipeChoice = recipeSelect.value;
   const inputRecipeChoice = customRecipeInput.value;
   const recipeChoice = inputRecipeChoice !== "" ? inputRecipeChoice : dropDownRecipeChoice;
 
-  oaSaveUser();
+  /*  oaSaveUser(); */
   const oaUserToken = localStorage.getItem("oaToken");
 
   isVisibleElement(spinnerOne, true);
@@ -20,11 +19,10 @@ export async function handleOaFetchUpdate() {
   recipeImg.classList.add("borderImage");
 
   isVisibleElement(spinnerOne, false);
-  isVisibleElement(arrow, true);
   isVisibleElement(spinnerTwo, true);
 
   const ingredientsText = await fetchOaIngredientsList(recipeChoice, oaUserToken);
-  ingredientsHTML.innerHTML = ingredientsText;
+  ingredientsHTML.innerHTML = ingredientsText.replace(/,/g, "<br />");
 
   const ingredientsImageUrl = await fetchOaIngredientsImage(ingredientsText, oaUserToken);
   ingredientsImg.src = ingredientsImageUrl.data[0].url;
@@ -40,7 +38,6 @@ export async function handleOaFetchUpdate() {
       ingredientsHTML: document.getElementById("recipeIngredients") as HTMLElement,
       spinnerOne: document.getElementById("spinnerOne") as HTMLElement,
       spinnerTwo: document.getElementById("spinnerTwo") as HTMLElement,
-      arrow: document.getElementById("secondArrowHTML") as HTMLElement,
       customRecipeInput: document.getElementById("customRecipeInputOa") as HTMLInputElement,
     };
   }

@@ -49,7 +49,7 @@ export default function SignInAreaUpdate() {
         localStorage.setItem("timeElapsedInMins", timeElapsedString);
         if (isExpired) localStorage.setItem("credentials", "");
         else {
-          const account = await readAccount({ email, password, name: "", phone: "" });
+          const account = await readAccount({ email, password, name: "", phone: "", hfToken: "", oaToken: "" });
           if (account) {
             const action = set.globalAccount(account);
             dispatch(action);
@@ -122,7 +122,7 @@ export default function SignInAreaUpdate() {
                 </button>
               </li>
               <li>
-                <button className="dropdown-item" style={{ color: "yellow" }} onClick={handleSignOut}>
+                <button className="dropdown-item" style={{ color: "#fff78a" }} onClick={handleSignOut}>
                   Log Out
                 </button>
               </li>

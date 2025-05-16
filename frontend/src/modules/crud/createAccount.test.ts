@@ -11,6 +11,8 @@ describe("createAccount", () => {
       password: "testPassword",
       name: "testName",
       phone: "1231231234",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await createAccount(testUser);
@@ -25,6 +27,8 @@ describe("createAccount", () => {
       password: "",
       name: "testName",
       phone: "1231231234",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await createAccount(testUser);
@@ -39,6 +43,8 @@ describe("createAccount", () => {
       password: "testPassword",
       name: "",
       phone: "1231231234",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await createAccount(testUser);
@@ -53,6 +59,8 @@ describe("createAccount", () => {
       password: "testPassword",
       name: "testName",
       phone: "",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await createAccount(testUser);
@@ -67,6 +75,8 @@ describe("createAccount", () => {
       password: "testPassword",
       name: "testName",
       phone: "1231231234",
+      hfToken: "",
+      oaToken: "",
     };
     //ACT
     const result = await createAccount(validUser);

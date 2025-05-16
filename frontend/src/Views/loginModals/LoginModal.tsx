@@ -55,7 +55,7 @@ export function LoginModal() {
     }
 
     //read request to check if user exists via status code
-    const result = await readAccount({ email, password, name: "", phone: "" });
+    const result = await readAccount({ email, password, name: "", phone: "", hfToken: "", oaToken: "" });
 
     //I needed a way to check whether a status code or an Account were being returned and this seemed to be the most simple way to do it
     if ("status" in result) {
@@ -78,6 +78,14 @@ export function LoginModal() {
       const savePassword = set.authUserPassword(password);
       dispatch(savePassword);
       localStorage.setItem("loggedInPassword", password);
+      const hfToken = result.hfToken;
+      const saveHfToken = set.accountProfileHfToken(hfToken);
+      dispatch(saveHfToken);
+      localStorage.setItem("hfToken", hfToken);
+      const oaToken = result.oaToken;
+      const saveOaToken = set.accountProfileOaToken(oaToken);
+      dispatch(saveOaToken);
+      localStorage.setItem("oaToken", oaToken);
 
       savePersistentLogin(email, password);
 

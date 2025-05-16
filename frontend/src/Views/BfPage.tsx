@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { ApiFluxIcon } from "../modules/icons";
-import { handleBfFetch } from "../../archive/handleBfFetch";
 import { recipeArray } from "../modules/recipeArray";
-import { UserInfo } from "../modules/bfSaveUser";
 import { useDispatch, useSelector } from "react-redux";
 import { selectBfPageDidMount } from "../redux/stateSelectors";
 import { set } from "../redux/store";
@@ -17,66 +15,21 @@ export function BfPage() {
   useEffect(componentDidUnmount, []);
 
   return (
-    <div className="container api-container navbar-width mt-3">
-      <UserInfo />
-      <div className="row">
-        <div className="col-md-6 mb-5">
+    <div className="container api-container navbar-width mt-5 mb-5 h-100">
+      <div className="row mt-5 mb-5">
+        <div className="col-md-6">
           <div className="d-flex black-forest-font justify-content-start">black forest labs.</div>
           <div className="d-flex justify-content-start mb-3">
             <ApiFluxIcon />
           </div>
-          <div style={{ color: "red", fontSize: ".7rem", width: "230px" }}>
+          <div style={{ color: "rgba(220, 53, 69, 0.8)", fontSize: ".7rem", width: "230px" }}>
             *This model may timeout on the first attempt, if not currently warm on huggingface.co
           </div>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 mt-2">
           <form className="api-form">
             <fieldset>
-              <legend>User login/ Huggingface token</legend>
-              <div className="input-group mb-2" data-bs-theme="dark">
-                <input
-                  type="text"
-                  className="form-control api-inputs"
-                  placeholder="Name"
-                  aria-label="User Name"
-                  aria-describedby="basic-addon1"
-                  id="nameInput"
-                />
-              </div>
-              <div className="input-group mb-2" data-bs-theme="dark">
-                <input
-                  type="text"
-                  className="form-control api-inputs"
-                  placeholder="Email"
-                  aria-label="User email"
-                  aria-describedby="basic-addon2"
-                  id="emailInput"
-                />
-              </div>
-              <div className="input-group mb-2" data-bs-theme="dark">
-                <input
-                  type="text"
-                  className="form-control api-inputs"
-                  placeholder="Token"
-                  aria-label="Hugging Face Token Input"
-                  aria-describedby="basic-addon2"
-                  id="hfTokenInput"
-                />
-              </div>
-              <div className="input-group mb-2" data-bs-theme="dark">
-                <input
-                  type="text"
-                  className="form-control api-inputs"
-                  placeholder="Token"
-                  aria-label="OpenAi Token Input"
-                  aria-describedby="basic-addon2"
-                  id="oaTokenInput"
-                />
-              </div>
-            </fieldset>
-            <br />
-            <fieldset>
-              <legend>Generate ingredients</legend>
+              <legend>Select or enter a recipe</legend>
               <div className="input-group mb-2" data-bs-theme="dark">
                 <select className="form-select" id="chosenRecipe" style={{ fontSize: ".8rem" }}>
                   <option value="">Select a Recipe...</option>
@@ -95,51 +48,38 @@ export function BfPage() {
                   placeholder="Or enter a custom recipe..."
                   style={{ fontSize: ".8rem" }}
                 />
+                <button
+                  className="btn btn-sm btn-outline-secondary"
+                  type="button"
+                  id="fetchButton"
+                  onClick={handleBfFetchUpdate}
+                >
+                  Submit
+                </button>
               </div>
-              <button
-                className="btn btn-outline-secondary"
-                type="button"
-                id="fetchButton"
-                style={{}}
-                onClick={handleBfFetchUpdate}
-              >
-                Submit
-              </button>
             </fieldset>
           </form>
         </div>
       </div>
-
-      <div className="row mt-5">
-        <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
-          <div className="spinner-border text-info" role="status" style={{ visibility: "hidden" }} id="spinnerOne">
+      <div className="row">
+        <div className="col-12 col-md-5 d-flex align-items-center justify-content-center">
+          <div
+            className="spinner-border text-info position-absolute top-60 start-25"
+            role="status"
+            id="spinnerOne"
+            style={{ visibility: "hidden" }}
+          >
             <span className="visually-hidden"></span>
           </div>
           <img id="recipeAI" className="rounded-circle" style={{ maxWidth: "100%" }} />
         </div>
-
-        <div className="col-12  d-none d-flex align-items-center justify-content-center">
-          <i
-            className="bi bi-arrow-right"
-            id="secondArrowHTML"
-            style={{
-              fontSize: "3rem",
-              color: "#f1ffb0",
-              visibility: "hidden",
-            }}
-          ></i>
-        </div>
-
-        <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
-          <div className="spinner-border text-info" role="status" style={{ visibility: "hidden" }} id="spinnerTwo">
+        <div className="col-12 col-md-5 d-flex align-items-center justify-content-center">
+          <div className="spinner-border text-info" role="status" id="spinnerTwo" style={{ visibility: "hidden" }}>
             <span className="visually-hidden"></span>
           </div>
           <img id="ingredientsAI" style={{ maxWidth: "100%" }} />
         </div>
-      </div>
-
-      <div className="row mt-5 d-flex justify-content-center">
-        <div className="col-10 col-md-8">
+        <div className="col-10 col-md-2">
           <div id="recipeIngredients"></div>
         </div>
       </div>
@@ -147,10 +87,9 @@ export function BfPage() {
   );
 
   function componentDidMount(): void {
-    const action = set.bfPageDidMount(true);
-    dispatch(action);
-    console.log("The Black Forest page component has mounted");
+    dispatch(set.bfPageDidMount(true));
     document.title = "Recipe Deconstructor - Black Forest Flux";
+    console.log("The Black Forest page component has mounted");
   }
 
   function componentDidUpdate(): void {
@@ -160,7 +99,7 @@ export function BfPage() {
   }
 
   function componentDidUnmount(): () => void {
-    return function delayedUnmount(): void {
+    return () => {
       console.log("component has unmounted");
     };
   }

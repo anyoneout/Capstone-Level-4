@@ -1,6 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectProfileShowModal, selectUpdateShowModal } from "../../redux/stateSelectors";
+import {
+  selectProfileHfToken,
+  selectProfileOaToken,
+  selectProfileShowModal,
+  selectUpdateShowModal,
+} from "../../redux/stateSelectors";
 import { set } from "../../redux/store";
 import { updateAccount } from "../../modules/crud/updateAccount";
 import { UpdateAccountModal } from "./UpdateAccountModal";
@@ -13,6 +18,8 @@ export function AccountProfileModal() {
   const password = localStorage.getItem("userPassword");
   const name = localStorage.getItem("userName");
   const phone = localStorage.getItem("userPhone");
+  const hfToken = localStorage.getItem("hfToken");
+  const oaToken = localStorage.getItem("oaToken");
 
   const dispatch = useDispatch();
   /*   useEffect(componentDidMount, []);

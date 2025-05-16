@@ -1,4 +1,4 @@
-import { bfSaveUser } from "../src/modules/bfSaveUser";
+import { bfSaveUser } from "./bfSaveUser";
 import { bfRecipeImage } from "./bfRecipeImage";
 import { bfIngredientsList } from "./bfIngredientsList";
 import { bfIngredientsImage } from "./bfIngredientsImage";
