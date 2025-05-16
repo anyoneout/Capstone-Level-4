@@ -37672,8 +37672,8 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.navbar {
   font-family: "Inter", sans-serif !important;
   font-weight: 500 !important;
   letter-spacing: -0.05em !important;
-  /*   padding: 0.5rem 2rem !important; */
-  padding: 0.5rem 1.4rem !important;
+  padding: 0.5rem 2rem !important;
+  /*   padding: 0.5rem 1.4rem !important; */
   margin: 0.24rem 0.12rem;
 }
 .navbar-nav .home-nav-style {
@@ -37705,7 +37705,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.navbar {
   background-color: rgba(255, 255, 255, 0.259);
   color: rgb(255, 255, 255) !important;
   border-radius: 12px;
-}`, "",{"version":3,"sources":["webpack://./src/Views/components/CollapsibleNavbar.scss"],"names":[],"mappings":"AAAA;EACE,yCAAA;EACA,mBAAA;AACF;;AAEA;EACE,8CAAA;EACA,mBAAA;AACF;AACE;EACE,4CAAA;EACA,2CAAA;EACA,2BAAA;EACA,kCAAA;EACA,uCAAA;EACA,iCAAA;EACA,uBAAA;AACJ;AACE;EACE,8BAAA;AACJ;AACE;EACE,YAAA;AACJ;AACE;EACE,mDAAA;EACA,2CAAA;EACA,mBAAA;AACJ;AACE;EACE,kBAAA;EACA,SAAA;AACJ;;AAGA;EACE,oBAAA;AAAF;;AAGA;EACE,uBAAA;EACA,yBAAA;AAAF;;AAGA;EACE,4CAAA;EACA,oCAAA;EACA,mBAAA;AAAF","sourcesContent":[".navbar {\n  background-color: rgba(0, 0, 0) !important;\n  white-space: nowrap;\n}\n\n.navbar-nav {\n  border: solid, 1px, rgba(255, 255, 255, 0.259);\n  border-radius: 12px;\n  // I had to add !important or the bootstrap style would overwrite the style I wanted.\n  .nav-link {\n    color: rgb(238, 238, 238, 0.925) !important;\n    font-family: \"Inter\", sans-serif !important;\n    font-weight: 500 !important;\n    letter-spacing: -0.05em !important;\n    /*   padding: 0.5rem 2rem !important; */ //will be reverted to once final capstone design is implemented\n    padding: 0.5rem 1.4rem !important;\n    margin: 0.24rem 0.12rem;\n  }\n  .home-nav-style {\n    margin-left: 0.2rem !important;\n  }\n  .nav-link i {\n    border: none;\n  }\n  .nav-link:hover {\n    color: #ffffffb2 !important;\n    background-color: rgba(255, 255, 255, 0.15);\n    border-radius: 12px;\n  }\n  svg {\n    position: relative;\n    top: -2px;\n  }\n}\n\n.navbar-toggler-icon {\n  filter: invert(100%);\n}\n\n.navbar-toggler {\n  background-color: black;\n  border: 2px solid #0dcaf0;\n}\n\n.nav-link.active {\n  background-color: rgba(255, 255, 255, 0.259);\n  color: rgb(255, 255, 255) !important;\n  border-radius: 12px;\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/Views/components/CollapsibleNavbar.scss"],"names":[],"mappings":"AAAA;EACE,yCAAA;EACA,mBAAA;AACF;;AAEA;EACE,8CAAA;EACA,mBAAA;AACF;AACE;EACE,4CAAA;EACA,2CAAA;EACA,2BAAA;EACA,kCAAA;EACA,+BAAA;EACA,yCAAA;EACA,uBAAA;AACJ;AACE;EACE,8BAAA;AACJ;AACE;EACE,YAAA;AACJ;AACE;EACE,mDAAA;EACA,2CAAA;EACA,mBAAA;AACJ;AACE;EACE,kBAAA;EACA,SAAA;AACJ;;AAGA;EACE,oBAAA;AAAF;;AAGA;EACE,uBAAA;EACA,yBAAA;AAAF;;AAGA;EACE,4CAAA;EACA,oCAAA;EACA,mBAAA;AAAF","sourcesContent":[".navbar {\n  background-color: rgba(0, 0, 0) !important;\n  white-space: nowrap;\n}\n\n.navbar-nav {\n  border: solid, 1px, rgba(255, 255, 255, 0.259);\n  border-radius: 12px;\n  // I had to add !important or the bootstrap style would overwrite the style I wanted.\n  .nav-link {\n    color: rgb(238, 238, 238, 0.925) !important;\n    font-family: \"Inter\", sans-serif !important;\n    font-weight: 500 !important;\n    letter-spacing: -0.05em !important;\n    padding: 0.5rem 2rem !important; //will be reverted to once final capstone design is implemented\n    /*   padding: 0.5rem 1.4rem !important; */\n    margin: 0.24rem 0.12rem;\n  }\n  .home-nav-style {\n    margin-left: 0.2rem !important;\n  }\n  .nav-link i {\n    border: none;\n  }\n  .nav-link:hover {\n    color: #ffffffb2 !important;\n    background-color: rgba(255, 255, 255, 0.15);\n    border-radius: 12px;\n  }\n  svg {\n    position: relative;\n    top: -2px;\n  }\n}\n\n.navbar-toggler-icon {\n  filter: invert(100%);\n}\n\n.navbar-toggler {\n  background-color: black;\n  border: 2px solid #0dcaf0;\n}\n\n.nav-link.active {\n  background-color: rgba(255, 255, 255, 0.259);\n  color: rgb(255, 255, 255) !important;\n  border-radius: 12px;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -84614,41 +84614,6 @@ function CollapsibleNavbar() {
   }), "Examples")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "nav-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
-    to: "".concat(rootPath, "/trivia"),
-    className: "nav-link"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-    className: "bi bi-images me-2"
-  }), "Trivia Api")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-    className: "nav-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
-    to: "".concat(rootPath, "/dynamo"),
-    className: "nav-link"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-    className: "bi bi-images me-2"
-  }), "Dynamo Auth")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-    className: "nav-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
-    to: "".concat(rootPath, "/aws"),
-    className: "nav-link"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-    className: "bi bi-images me-2"
-  }), "AWS")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-    className: "nav-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
-    to: "".concat(rootPath, "/backendTest"),
-    className: "nav-link"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-    className: "bi bi-images me-2"
-  }), "Test Backend")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-    className: "nav-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
-    to: "".concat(rootPath, "/ai"),
-    className: "nav-link"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-    className: "bi bi-images me-2"
-  }), "AI")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-    className: "nav-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
     to: "".concat(rootPath, "/About"),
     className: "nav-link"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
@@ -85005,6 +84970,123 @@ function SignInAreaUpdate() {
     onClick: handler
   }, label)), showLoginModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_LoginModal__WEBPACK_IMPORTED_MODULE_3__.LoginModal, null), showCreateModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_CreateAccountModal__WEBPACK_IMPORTED_MODULE_4__.CreateAccountModal, null), showUpdateModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_UpdateAccountModal__WEBPACK_IMPORTED_MODULE_5__.UpdateAccountModal, null), showAccountModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_AccountProfileModal__WEBPACK_IMPORTED_MODULE_8__.AccountProfileModal, null));
 }
+
+/* 
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  selectCreateShowModal,
+  selectProfileShowModal,
+  selectSignInDidMount,
+  selectSignInIsSignedIn,
+  selectSignInShowModal,
+  selectUpdateShowModal,
+} from "../../redux/stateSelectors";
+import { set } from "../../redux/store";
+import { LoginModal } from "../loginModals/LoginModal";
+import { CreateAccountModal } from "../loginModals/CreateAccountModal";
+import { UpdateAccountModal } from "../loginModals/UpdateAccountModal";
+import { AccountProfileModal } from "../loginModals/AccountProfileModal";
+import "./CollapsibleNavbar.scss";
+import "./SignInArea.scss";
+
+export default function SignInAreaUpdate() {
+  const isSignedIn = useSelector(selectSignInIsSignedIn);
+  const showLoginModal = useSelector(selectSignInShowModal);
+  const showCreateModal = useSelector(selectCreateShowModal);
+  const showUpdateModal = useSelector(selectUpdateShowModal);
+  const showAccountModal = useSelector(selectProfileShowModal);
+  const didMount = useSelector(selectSignInDidMount);
+  const dispatch = useDispatch();
+
+  useEffect(componentDidMount, []);
+
+  function componentDidMount(): void {
+    const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+    const email = localStorage.getItem("loggedInEmail") || "";
+    const password = localStorage.getItem("loggedInPassword") || "";
+
+    if (isLoggedIn) {
+      const isSignedIn = set.signInIsSignedIn(true);
+      dispatch(isSignedIn);
+      const authEmail = set.authUserEmail(email);
+      dispatch(authEmail);
+      const authPassword = set.authUserPassword(password);
+      dispatch(authPassword);
+    }
+    const signInAreaDidMount = set.signInDidMount(true);
+    dispatch(signInAreaDidMount);
+  }
+
+  // opens login modal
+  function handleSignIn(): void {
+    const action = set.signInShowModal(true);
+    dispatch(action);
+  }
+
+  // opens profile modal (for account settings)
+  function handleAccount(): void {
+    const action = set.profileShowModal(true);
+    dispatch(action);
+  }
+
+  // clears user login and localStorage
+  function handleSignOut(): void {
+    const clearIsSignedIn = set.signInIsSignedIn(false);
+    dispatch(clearIsSignedIn);
+    localStorage.setItem("loggedIn", "false");
+    const clearAuthUserEmail = set.authUserEmail("");
+    dispatch(clearAuthUserEmail);
+    localStorage.setItem("loggedInEmail", "");
+    const clearAuthUserPassword = set.authUserPassword("");
+    dispatch(clearAuthUserPassword);
+    localStorage.setItem("loggedInPassword", "");
+    localStorage.removeItem("LoggedInPassword");
+  }
+
+  return (
+    <>
+      <li className="nav-item">
+        {isSignedIn ? (
+          <div className="dropdown">
+            <button
+              className="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="accountMenu"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style={{ width: "120px", textAlign: "center" }}
+            >
+              Account
+            </button>
+            <ul className="dropdown-menu" aria-labelledby="accountMenu">
+              <li>
+                <button className="dropdown-item" onClick={handleAccount}>
+                  Account Settings
+                </button>
+              </li>
+              <li>
+                <button className="dropdown-item" onClick={handleSignOut}>
+                  Log Out
+                </button>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <button className="sign-in-btn" style={{ width: "120px", textAlign: "center" }} onClick={handleSignIn}>
+            Sign In
+          </button>
+        )}
+      </li>
+
+      {showLoginModal && <LoginModal />}
+      {showCreateModal && <CreateAccountModal />}
+      {showUpdateModal && <UpdateAccountModal />}
+      {showAccountModal && <AccountProfileModal />}
+    </>
+  );
+} 
+ */
 
 /***/ }),
 
@@ -86041,7 +86123,7 @@ function CreateAccountModal() {
   }
   function _handleSubmit() {
     _handleSubmit = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
-      var account, setErrorResponse, result, action, _action, _action2, loggedIn, userEmail, closeModal, _action3;
+      var account, setErrorResponse, result, action, _action, _action2, loggedIn, saveEmail, savePassword, currentLoginState, userEmail, closeModal, _action3;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -86079,23 +86161,30 @@ function CreateAccountModal() {
             return _context.abrupt("return", dispatch(_action));
           case 15:
             if (!(result.status === 200)) {
-              _context.next = 28;
+              _context.next = 35;
               break;
             }
             _action2 = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createResponseMessage("User created successfully!");
             loggedIn = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authIsLoggedIn(true);
-            console.log("loggedIn", loggedIn);
             dispatch(loggedIn);
+            saveEmail = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserEmail(email);
+            dispatch(saveEmail);
+            savePassword = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserPassword(password);
+            dispatch(savePassword);
+            currentLoginState = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInIsSignedIn(true);
+            dispatch(currentLoginState);
             userEmail = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserEmail(email);
-            console.log("userEmail", userEmail);
             dispatch(userEmail);
             closeModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createShowModal(false);
             dispatch(closeModal);
+            localStorage.setItem("loggedIn", "true");
+            localStorage.setItem("loggedInEmail", email);
+            localStorage.setItem("loggedInPassword", password);
             return _context.abrupt("return", dispatch(_action2));
-          case 28:
+          case 35:
             _action3 = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createResponseMessage("User wasn't created");
             return _context.abrupt("return", dispatch(_action3));
-          case 30:
+          case 37:
           case "end":
             return _context.stop();
         }

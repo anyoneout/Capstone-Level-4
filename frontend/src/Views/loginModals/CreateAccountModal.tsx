@@ -80,19 +80,27 @@ export function CreateAccountModal() {
     if (result.status === 200) {
       const action = set.createResponseMessage(`User created successfully!`);
       const loggedIn = set.authIsLoggedIn(true);
-      console.log("loggedIn", loggedIn);
       dispatch(loggedIn);
+      const saveEmail = set.authUserEmail(email);
+      dispatch(saveEmail);
+      const savePassword = set.authUserPassword(password);
+      dispatch(savePassword);
+      const currentLoginState = set.signInIsSignedIn(true);
+      dispatch(currentLoginState);
       const userEmail = set.authUserEmail(email);
-      console.log("userEmail", userEmail);
       dispatch(userEmail);
       const closeModal = set.createShowModal(false);
       dispatch(closeModal);
+      localStorage.setItem("loggedIn", "true");
+      localStorage.setItem("loggedInEmail", email);
+      localStorage.setItem("loggedInPassword", password);
       return dispatch(action);
     } else {
       const action = set.createResponseMessage(`User wasn't created`);
       return dispatch(action);
     }
   }
+
   if (isSignedIn) {
     return <></>;
   }
