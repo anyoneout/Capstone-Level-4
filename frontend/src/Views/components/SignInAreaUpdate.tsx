@@ -15,6 +15,8 @@ import { UpdateAccountModal } from "../loginModals/UpdateAccountModal";
 import "./CollapsibleNavbar.scss";
 import "./SignInArea.scss";
 import { AccountProfileModal } from "../loginModals/AccountProfileModal";
+import { readAccount } from "../../modules/crud/readAccount";
+import { Credentials } from "../../types/Credentials";
 
 export default function SignInAreaUpdate() {
   const isSignedIn = useSelector(selectSignInIsSignedIn);
@@ -27,10 +29,34 @@ export default function SignInAreaUpdate() {
 
   useEffect(componentDidMount, []);
 
-  function componentDidMount() {
+  function componentDidMount(): void {
     const isLoggedIn = localStorage.getItem("loggedIn") === "true";
     const email = localStorage.getItem("loggedInEmail") || "";
     const password = localStorage.getItem("loggedInPassword") || "";
+
+    getPersistentLogin();
+
+    async function getPersistentLogin() {
+      const login = localStorage.getItem("credentials");
+      if (login) {
+        const credentials: Credentials = JSON.parse(login);
+        const { email, password, timestamp } = credentials;
+        const currentTimestamp = Date.now();
+        const elapsedTime = currentTimestamp - timestamp;
+        const isExpired = elapsedTime > 86400000;
+        const elapsedInMins = elapsedTime / 1000 / 60;
+        const timeElapsedString = elapsedInMins.toString();
+        localStorage.setItem("timeElapsedInMins", timeElapsedString);
+        if (isExpired) localStorage.setItem("credentials", "");
+        else {
+          const account = await readAccount({ email, password, name: "", phone: "" });
+          if (account) {
+            const action = set.globalAccount(account);
+            dispatch(action);
+          } else localStorage.setItem("credentials", "");
+        }
+      }
+    }
 
     if (isLoggedIn) {
       const isSignedIn = set.signInIsSignedIn(true);
@@ -61,7 +87,8 @@ export default function SignInAreaUpdate() {
     const clearAuthUserPassword = set.authUserPassword("");
     dispatch(clearAuthUserPassword);
     localStorage.setItem("loggedInPassword", "");
-    localStorage.removeItem("LoggedInPassword");
+    localStorage.setItem("timeElapsedInMins", "");
+    localStorage.setItem("credentials", "");
   }
   const label = isSignedIn ? "Sign Out" : "Sign In";
   const handler = isSignedIn ? handleSignOut : handleSignIn;

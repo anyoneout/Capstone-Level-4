@@ -113,6 +113,10 @@ export const stateVariables = {
     password: "",
     response: "",
   },
+
+  globalAccountState: {
+    account: null,
+  },
 };
 
 export type StateVariables = typeof stateVariables;

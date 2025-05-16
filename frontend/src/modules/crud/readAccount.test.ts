@@ -17,7 +17,11 @@ describe("readAccount", () => {
     const result = await readAccount(withoutEmailUser);
 
     //ASSERT
-    expect(result.status).toBe(400);
+    if ("status" in result) {
+      expect(result.status).toBe(400);
+    } else {
+      fail("expected status 400 but received an object");
+    }
   });
 
   it("returns 404 if the user does not exist", async () => {
@@ -33,7 +37,11 @@ describe("readAccount", () => {
     const result = await readAccount(userThatDoesNotExist);
 
     //ASSERT
-    expect(result.status).toBe(404);
+    if ("status" in result) {
+      expect(result.status).toBe(404);
+    } else {
+      fail("expected status 404 but received an object");
+    }
   });
 
   it("returns 200 if the email exists", async () => {
@@ -49,7 +57,11 @@ describe("readAccount", () => {
     const result = await readAccount(existingUser);
 
     //ASSERT
-    expect(result.status).toBe(200);
+    if ("status" in result) {
+      fail("expected an object but received a status code");
+    } else {
+      expect(result.email).toBe("test@email.com");
+    }
   });
 
   it("returns 400 for an invalid email format", async () => {
@@ -64,7 +76,11 @@ describe("readAccount", () => {
     const result = await readAccount(invalidEmailFormatUser);
 
     //ASSERT
-    expect(result.status).toBe(400);
+    if ("status" in result) {
+      expect(result.status).toBe(400);
+    } else {
+      fail("expected status 400 but received an object");
+    }
   });
 
   it("returns 400 if the email is only blank spaces", async () => {
@@ -80,6 +96,10 @@ describe("readAccount", () => {
     const result = await readAccount(blankSpacesEmailUser);
 
     // ASSERT
-    expect(result.status).toBe(400);
+    if ("status" in result) {
+      expect(result.status).toBe(400);
+    } else {
+      fail("expected status 400 but received an object");
+    }
   });
 });

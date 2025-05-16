@@ -190,3 +190,8 @@ export function selectAuthUserEmail(state: StateVariables) {
 export function selectAuthUserPassword(state: StateVariables) {
   return state.authStateVar.userPassword;
 }
+
+//global account
+export function selectGlobalAccount(state: StateVariables) {
+  return state.globalAccountState.account;
+}

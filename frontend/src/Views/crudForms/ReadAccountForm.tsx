@@ -16,14 +16,15 @@ export function ReadAccountForm() {
 
     const response = await readAccount({ email, password, name: "", phone: "" });
     console.log("read account form response", response);
-    if (response.status === 200) {
-      const action = set.readResponseMessage(`User (${email}) was found`);
+    if ("status" in response) {
+      const action = set.readResponseMessage(`user missing`);
       return dispatch(action);
     } else {
-      const action = set.readResponseMessage(`user missing`);
+      const action = set.readResponseMessage(`User (${email}) was found`);
       return dispatch(action);
     }
   }
+
   return (
     <div className="container mb-2">
       <div className="row crud-forms d-flex align-items-center p-4">

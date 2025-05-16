@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectCreateEmail,
@@ -10,9 +10,7 @@ import {
   selectCreateShowModal,
 } from "../../redux/stateSelectors";
 import { set } from "../../redux/store";
-/* import { readAccount } from "../../modules/crud/readAccount"; */
 import { createAccount } from "../../modules/crud/createAccount";
-/* import { AccountProfileModal } from "./AccountProfileModal"; */
 
 export function CreateAccountModal() {
   const isSignedIn = useSelector(selectCreateIsSignedIn);
@@ -91,6 +89,7 @@ export function CreateAccountModal() {
       dispatch(userEmail);
       const closeModal = set.createShowModal(false);
       dispatch(closeModal);
+
       localStorage.setItem("loggedIn", "true");
       localStorage.setItem("loggedInEmail", email);
       localStorage.setItem("loggedInPassword", password);

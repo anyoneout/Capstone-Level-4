@@ -239,6 +239,12 @@ export const stateSetters = {
     const newValue = action.payload;
     state.authStateVar.userPassword = newValue;
   },
+
+  //global account
+  globalAccount: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.globalAccountState.account = newValue;
+  },
 };
 
 type Action = {

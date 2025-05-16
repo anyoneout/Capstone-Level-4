@@ -3,13 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { set } from "../../redux/store";
 import { readAccount } from "../../modules/crud/readAccount";
 import {
-  selectSignInDidMount,
   selectSignInEmail,
   selectSignInError,
   selectSignInIsSignedIn,
   selectSignInPassword,
   selectSignInShowModal,
 } from "../../redux/stateSelectors";
+import { savePersistentLogin } from "../../modules/savePersistentLogin";
 
 export function LoginModal() {
   //declares Redux
@@ -56,7 +56,6 @@ export function LoginModal() {
 
     //read request to check if user exists via status code
     const result = await readAccount({ email, password, name: "", phone: "" });
-    console.log(result);
 
     //I needed a way to check whether a status code or an Account were being returned and this seemed to be the most simple way to do it
     if ("status" in result) {
@@ -79,6 +78,9 @@ export function LoginModal() {
       const savePassword = set.authUserPassword(password);
       dispatch(savePassword);
       localStorage.setItem("loggedInPassword", password);
+
+      savePersistentLogin(email, password);
+
       const closeModal = set.signInShowModal(false);
       dispatch(closeModal);
       const showUpdateAccountModal = set.updateShowModal(true);
