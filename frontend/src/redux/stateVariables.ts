@@ -45,7 +45,6 @@ export const stateVariables = {
   handleRefreshState: {
     didMount: false,
   },
-
   createAccountState: {
     email: "",
     userName: "",
@@ -108,12 +107,6 @@ export const stateVariables = {
     error: "",
   },
 
-  authStateVar: {
-    isLoggedIn: false,
-    userEmail: "",
-    userPassword: "",
-  },
-
   signUpState: {
     email: "",
     password: "",
@@ -122,6 +115,19 @@ export const stateVariables = {
 
   globalAccountState: {
     account: null,
+  },
+
+  authUserState: {
+    email: "",
+    userName: "",
+    password: "",
+    name: "",
+    phone: "",
+    hfToken: "",
+    oaToken: "",
+    responseMessage: "",
+    readResponse: "",
+    isSignedIn: false,
   },
 };
 

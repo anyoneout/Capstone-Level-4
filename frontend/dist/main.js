@@ -84549,41 +84549,6 @@ function CollapsibleNavbar() {
   }), "Examples")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "nav-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
-    to: "".concat(rootPath, "/trivia"),
-    className: "nav-link"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-    className: "bi bi-images me-2"
-  }), "Trivia Api")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-    className: "nav-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
-    to: "".concat(rootPath, "/dynamo"),
-    className: "nav-link"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-    className: "bi bi-images me-2"
-  }), "Dynamo Auth")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-    className: "nav-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
-    to: "".concat(rootPath, "/aws"),
-    className: "nav-link"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-    className: "bi bi-images me-2"
-  }), "AWS")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-    className: "nav-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
-    to: "".concat(rootPath, "/backendTest"),
-    className: "nav-link"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-    className: "bi bi-images me-2"
-  }), "Test Backend")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-    className: "nav-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
-    to: "".concat(rootPath, "/ai"),
-    className: "nav-link"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-    className: "bi bi-images me-2"
-  }), "AI")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-    className: "nav-item"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
     to: "".concat(rootPath, "/About"),
     className: "nav-link"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
@@ -84863,7 +84828,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-redux */ "./node_modules/.pnpm/react-redux@9.2.0_@types+re_09dfa075fee95aeaf90c5002f190b9a3/node_modules/react-redux/dist/react-redux.mjs");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-redux */ "./node_modules/.pnpm/react-redux@9.2.0_@types+re_09dfa075fee95aeaf90c5002f190b9a3/node_modules/react-redux/dist/react-redux.mjs");
 /* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../redux/store */ "./src/redux/store.ts");
 /* harmony import */ var _redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../redux/stateSelectors */ "./src/redux/stateSelectors.ts");
 /* harmony import */ var _loginModals_LoginModal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../loginModals/LoginModal */ "./src/Views/loginModals/LoginModal.tsx");
@@ -84874,6 +84839,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CollapsibleNavbar_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./CollapsibleNavbar.scss */ "./src/Views/components/CollapsibleNavbar.scss");
 /* harmony import */ var _SignInArea_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./SignInArea.scss */ "./src/Views/components/SignInArea.scss");
 /* harmony import */ var _controllers_handleClearLocalStorage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../controllers/handleClearLocalStorage */ "./src/controllers/handleClearLocalStorage.ts");
+/* harmony import */ var _modules_crud_deleteAccount__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../modules/crud/deleteAccount */ "./src/modules/crud/deleteAccount.ts");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
@@ -84890,14 +84856,15 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 
+
 function SignInAreaUpdate() {
-  var isSignedIn = (0,react_redux__WEBPACK_IMPORTED_MODULE_11__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectSignInIsSignedIn);
-  var showLoginModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_11__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectSignInShowModal);
-  var showCreateModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_11__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectCreateShowModal);
-  var showUpdateModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_11__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectUpdateShowModal);
-  var showAccountModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_11__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectProfileShowModal);
-  var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_11__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectSignInDidMount);
-  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_11__.useDispatch)();
+  var isSignedIn = (0,react_redux__WEBPACK_IMPORTED_MODULE_12__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectSignInIsSignedIn);
+  var showLoginModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_12__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectSignInShowModal);
+  var showCreateModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_12__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectCreateShowModal);
+  var showUpdateModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_12__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectUpdateShowModal);
+  var showProfileModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_12__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectProfileShowModal);
+  var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_12__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectSignInDidMount);
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_12__.useDispatch)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
   function componentDidMount() {
     var isLoggedIn = localStorage.getItem("loggedIn") === "true";
@@ -84975,13 +84942,48 @@ function SignInAreaUpdate() {
     dispatch(action);
   }
   //shows profileModal
-  function handleAccountOpen() {
+  function handleProfile() {
     var action = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.accountProfileShowModal(true);
     dispatch(action);
   }
-
-  //clears authorized redux, local storage and signs out
-
+  //shows updateModal
+  function handleUpdate() {
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.updateShowModal(true);
+    dispatch(action);
+  }
+  //delete user
+  function handleDelete() {
+    return _handleDelete.apply(this, arguments);
+  } //clears authorized redux, local storage and signs out
+  function _handleDelete() {
+    _handleDelete = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+      var email, password, clearIsSignedIn;
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
+          case 0:
+            email = localStorage.getItem("email");
+            password = localStorage.getItem("password");
+            _context2.next = 4;
+            return (0,_modules_crud_deleteAccount__WEBPACK_IMPORTED_MODULE_11__.deleteAccount)({
+              email: email,
+              password: password,
+              name: "",
+              phone: "",
+              hfToken: "",
+              oaToken: ""
+            });
+          case 4:
+            clearIsSignedIn = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInIsSignedIn(false);
+            dispatch(clearIsSignedIn);
+            (0,_controllers_handleClearLocalStorage__WEBPACK_IMPORTED_MODULE_10__.handleClearLocalStorage)();
+          case 7:
+          case "end":
+            return _context2.stop();
+        }
+      }, _callee2);
+    }));
+    return _handleDelete.apply(this, arguments);
+  }
   function handleSignOut() {
     var clearIsSignedIn = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInIsSignedIn(false);
     dispatch(clearIsSignedIn);
@@ -85009,21 +85011,33 @@ function SignInAreaUpdate() {
     "aria-labelledby": "accountMenu"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "dropdown-item",
-    onClick: handleAccountOpen
-  }, "Account")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    style: {
+      color: "#fff78a"
+    },
+    onClick: handleProfile
+  }, "Profile")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "dropdown-item",
     style: {
       color: "#fff78a"
     },
+    onClick: handleUpdate
+  }, "Update")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "dropdown-item",
+    style: {
+      color: "#fff78a"
+    },
+    onClick: handleDelete
+  }, "Delete")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "dropdown-item",
     onClick: handleSignOut
-  }, "Log Out")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  }, "Sign out")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "sign-in-btn",
     style: {
       width: "120px",
       textAlign: "center"
     },
     onClick: handleSignIn
-  }, "Sign In")), showLoginModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_LoginModal__WEBPACK_IMPORTED_MODULE_3__.LoginModal, null), showCreateModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_CreateAccountModal__WEBPACK_IMPORTED_MODULE_4__.CreateAccountModal, null), showUpdateModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_UpdateAccountModal__WEBPACK_IMPORTED_MODULE_5__.UpdateAccountModal, null), showAccountModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_AccountProfileModal__WEBPACK_IMPORTED_MODULE_6__.AccountProfileModal, null));
+  }, "Sign In")), showLoginModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_LoginModal__WEBPACK_IMPORTED_MODULE_3__.LoginModal, null), showCreateModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_CreateAccountModal__WEBPACK_IMPORTED_MODULE_4__.CreateAccountModal, null), showProfileModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_AccountProfileModal__WEBPACK_IMPORTED_MODULE_6__.AccountProfileModal, null), showUpdateModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_loginModals_UpdateAccountModal__WEBPACK_IMPORTED_MODULE_5__.UpdateAccountModal, null));
 }
 
 /***/ }),
@@ -85925,9 +85939,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/.pnpm/react-redux@9.2.0_@types+re_09dfa075fee95aeaf90c5002f190b9a3/node_modules/react-redux/dist/react-redux.mjs");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/.pnpm/react-redux@9.2.0_@types+re_09dfa075fee95aeaf90c5002f190b9a3/node_modules/react-redux/dist/react-redux.mjs");
 /* harmony import */ var _redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../redux/stateSelectors */ "./src/redux/stateSelectors.ts");
 /* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../redux/store */ "./src/redux/store.ts");
+/* harmony import */ var _modules_crud_readAccount__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../modules/crud/readAccount */ "./src/modules/crud/readAccount.ts");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
@@ -85936,35 +85951,103 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 
-function AccountProfileModal() {
-  var showUpdateModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_3__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectUpdateShowModal);
-  var showProfileModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_3__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectProfileShowModal);
-  var isSignedIn = localStorage.getItem("isSignedIn");
-  var authUserEmail = localStorage.getItem("userEmail");
-  var password = localStorage.getItem("userPassword");
-  var name = localStorage.getItem("userName");
-  var phone = localStorage.getItem("userPhone");
-  var hfToken = localStorage.getItem("hfToken");
-  var oaToken = localStorage.getItem("oaToken");
-  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_3__.useDispatch)();
-  /*   useEffect(componentDidMount, []);
-    function componentDidMount() {
-    handleOpenModal();
-  } */
 
-  /* function handleOpenModal() {
-    const showProfileModal = set.accountProfileShowModal(true);
-    dispatch(showProfileModal);
-  } */
+function AccountProfileModal() {
+  var showUpdateModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectUpdateShowModal);
+  var showProfileModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectProfileShowModal);
+  var authEmail = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserEmail);
+  var authPassword = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserPassword);
+  var authName = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserName);
+  var authPhone = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserPhone);
+  var authHfToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserHfToken);
+  var authOaToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserOaToken);
+  var authEmailLs = localStorage.getItem("email");
+  var authPasswordLs = localStorage.getItem("password");
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useDispatch)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
+  //sets modal visibility to true upon page load via componentDidMount
+  function componentDidMount() {
+    handleOpenModal();
+  }
+  function handleOpenModal() {
+    return _handleOpenModal.apply(this, arguments);
+  }
+  function _handleOpenModal() {
+    _handleOpenModal = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var hideSignInModal, didMount, showCreateModal, result, setErrorResponse, _setErrorResponse, saveEmail, savePassword, saveName, savePhone, saveHfToken, saveOaToken;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            hideSignInModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInShowModal(false);
+            dispatch(hideSignInModal);
+            didMount = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileDidMount(true);
+            dispatch(didMount);
+            showCreateModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileShowModal(true);
+            dispatch(showCreateModal);
+            _context.next = 8;
+            return (0,_modules_crud_readAccount__WEBPACK_IMPORTED_MODULE_3__.readAccount)({
+              email: authEmailLs,
+              password: authPasswordLs,
+              name: "",
+              phone: "",
+              hfToken: "",
+              oaToken: ""
+            });
+          case 8:
+            result = _context.sent;
+            if (!("status" in result)) {
+              _context.next = 18;
+              break;
+            }
+            if (!(result.status === 400)) {
+              _context.next = 13;
+              break;
+            }
+            setErrorResponse = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInError("Input format is invalid.");
+            return _context.abrupt("return", dispatch(setErrorResponse));
+          case 13:
+            if (!(result.status === 404)) {
+              _context.next = 16;
+              break;
+            }
+            _setErrorResponse = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInError("User not found");
+            return _context.abrupt("return", dispatch(_setErrorResponse));
+          case 16:
+            _context.next = 37;
+            break;
+          case 18:
+            //if user exists, signs in, saves authorized user email, password, sets localstorage, and closes login modal
+
+            localStorage.setItem("loggedIn", "true");
+            saveEmail = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserEmail(result.email);
+            dispatch(saveEmail);
+            localStorage.setItem("email", result.email);
+            savePassword = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserPassword(result.password);
+            dispatch(savePassword);
+            localStorage.setItem("password", result.password);
+            saveName = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserName(result.name);
+            dispatch(saveName);
+            localStorage.setItem("name", result.name);
+            savePhone = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserPhone(result.phone);
+            dispatch(savePhone);
+            localStorage.setItem("phone", result.phone);
+            saveHfToken = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserHfToken(result.hfToken);
+            dispatch(saveHfToken);
+            localStorage.setItem("hfToken", result.hfToken);
+            saveOaToken = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserOaToken(result.oaToken);
+            dispatch(saveOaToken);
+            localStorage.setItem("oaToken", result.oaToken);
+          case 37:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee);
+    }));
+    return _handleOpenModal.apply(this, arguments);
+  }
   function handleCloseModal() {
-    var closeSignInModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileShowModal(false);
-    dispatch(closeSignInModal);
-    var clearName = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileName("");
-    dispatch(clearName);
-    var clearPhone = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfilePhone("");
-    dispatch(clearPhone);
-    var clearError = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileResponseMessage("");
-    dispatch(clearError);
+    var closeProfileModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileShowModal(false);
+    dispatch(closeProfileModal);
   }
   function handleUpdateModal() {
     var hideProfileModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileShowModal(false);
@@ -85976,31 +86059,25 @@ function AccountProfileModal() {
     return _handleLogOut.apply(this, arguments);
   }
   function _handleLogOut() {
-    _handleLogOut = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-      var closeProfileModal, openSignInModal, clearIsSignedIn, clearAuthUserEmail, clearAuthUserPassword;
-      return _regeneratorRuntime().wrap(function _callee$(_context) {
-        while (1) switch (_context.prev = _context.next) {
+    _handleLogOut = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+      var closeProfileModal, clearIsSignedIn, clearAuthUserEmail, clearAuthUserPassword;
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
           case 0:
             localStorage.clear();
             closeProfileModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileShowModal(false);
             dispatch(closeProfileModal);
-            openSignInModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInShowModal(true);
-            dispatch(openSignInModal);
             clearIsSignedIn = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInIsSignedIn(false);
             dispatch(clearIsSignedIn);
-            localStorage.setItem("loggedIn", "false");
             clearAuthUserEmail = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserEmail("");
             dispatch(clearAuthUserEmail);
-            localStorage.setItem("loggedInEmail", "");
             clearAuthUserPassword = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserPassword("");
             dispatch(clearAuthUserPassword);
-            localStorage.setItem("loggedInPassword", "");
-            localStorage.removeItem("LoggedInPassword");
-          case 15:
+          case 9:
           case "end":
-            return _context.stop();
+            return _context2.stop();
         }
-      }, _callee);
+      }, _callee2);
     }));
     return _handleLogOut.apply(this, arguments);
   }
@@ -86012,9 +86089,12 @@ function AccountProfileModal() {
       backgroundColor: "rgba(0,0,0,0.7)"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "modal-dialog modal-dialog-centered mx-auto w-100"
+    className: "modal-dialog modal-dialog-centered mx-auto w-100",
+    style: {
+      width: "340px"
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "modal-content mx-auto text-white w-100 mx-auto bg-dark border border-1 rounded-0  p-3"
+    className: "modal-content mx-auto bg-dark text-white border rounded-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "modal-body w-100 mx-auto"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -86026,28 +86106,40 @@ function AccountProfileModal() {
   }, "Personal details"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "row mb-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-4 fw-bold"
+    className: "col-sm-5 fw-bold"
   }, "Full name:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-8"
-  }, name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "col-sm-7"
+  }, authName)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "row mb-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-4 fw-bold"
+    className: "col-sm-5 fw-bold"
   }, "Password:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-8"
-  }, password)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "col-sm-7"
+  }, authPassword)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "row mb-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-4 fw-bold"
+    className: "col-sm-5 fw-bold"
   }, "Phone Number:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-8"
-  }, phone)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "row"
+    className: "col-sm-7"
+  }, authPhone)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "row mb-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-4 fw-bold"
+    className: "col-sm-5 fw-bold"
   }, "Email:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-8"
-  }, authUserEmail)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "col-sm-7"
+  }, authEmail)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "row mb-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "col-sm-5 fw-bold"
+  }, "Hugging Face token:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "col-sm-7"
+  }, authHfToken.slice(0, 12))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "row mb-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "col-sm-5 fw-bold"
+  }, "Open AI token:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "col-sm-7"
+  }, authOaToken.slice(0, 12))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: handleUpdateModal,
     type: "button",
     className: "mx-auto mt-5 pt-1 btn btn-warning btn-sm w-100"
@@ -86093,51 +86185,44 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 function CreateAccountModal() {
-  var isSignedIn = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectCreateIsSignedIn);
+  var isSignedIn = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserIsSignedIn);
   var showModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectCreateShowModal);
   var responseMessage = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectCreateResponseMessage);
-  var email = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectCreateEmail);
-  var password = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectCreatePassword);
-  var name = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectCreateName);
-  var phone = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectCreatePhone);
-  var hfToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectCreateHfToken);
-  var oaToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectCreateOaToken);
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useDispatch)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
+  //sets modal visibility to true upon page load via componentDidMount
+  function componentDidMount() {
+    handleOpenModal();
+  }
+  function handleOpenModal() {
+    var didMount = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createDidMount(true);
+    dispatch(didMount);
+    var hideSignInModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInShowModal(false);
+    dispatch(hideSignInModal);
+    var showCreateModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createShowModal(true);
+    dispatch(showCreateModal);
+  }
   function handleCloseModal() {
-    var clearEmail = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createEmail("");
-    dispatch(clearEmail);
-    var clearPassword = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createPassword("");
-    dispatch(clearPassword);
-    var clearName = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createName("");
-    dispatch(clearName);
-    var clearPhone = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createPhone("");
-    dispatch(clearPhone);
-    var clearError = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createResponseMessage("");
-    dispatch(clearError);
     var closeUpdateModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createShowModal(false);
     dispatch(closeUpdateModal);
-  }
-
-  //run locally or remotely
-  var localPath = window.location.hostname;
-  var lambdaLocalPort = "http://localhost:3001";
-  var lambdaUrl = "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws";
-  var baseUrl;
-  if (localPath === "localhost") {
-    baseUrl = lambdaLocalPort;
-  } else {
-    baseUrl = lambdaUrl;
   }
   function handleSubmit(_x) {
     return _handleSubmit.apply(this, arguments);
   }
   function _handleSubmit() {
     _handleSubmit = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
-      var account, setErrorResponse, result, action, _action, _action2, loggedIn, currentLoginState, savePassword, userEmail, closeModal, hfUserToken, oaUserToken, _action3;
+      var form, email, password, name, phone, hfToken, oaToken, account, setErrorResponse, result, action, _action, _action2, loggedIn, currentLoginState, userEmail, savePassword, userName, userPhone, hfUserToken, oaUserToken, _action3;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
             event.preventDefault();
+            form = event.target;
+            email = form[0].value;
+            password = form[1].value;
+            name = form[2].value;
+            phone = form[3].value;
+            hfToken = form[4].value;
+            oaToken = form[5].value;
             account = {
               email: email,
               password: password,
@@ -86147,61 +86232,60 @@ function CreateAccountModal() {
               oaToken: oaToken
             };
             if (!(!email || !password || !name || !phone)) {
-              _context.next = 5;
+              _context.next = 12;
               break;
             }
             setErrorResponse = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createResponseMessage("All fields must be filled out");
             return _context.abrupt("return", dispatch(setErrorResponse));
-          case 5:
-            _context.next = 7;
+          case 12:
+            _context.next = 14;
             return (0,_modules_crud_createAccount__WEBPACK_IMPORTED_MODULE_3__.createAccount)(account);
-          case 7:
+          case 14:
             result = _context.sent;
             console.log("create account form response", result);
             if (!(result.status === 400)) {
-              _context.next = 12;
+              _context.next = 19;
               break;
             }
             action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createResponseMessage("Please fill out all fields before submitting.");
             return _context.abrupt("return", dispatch(action));
-          case 12:
+          case 19:
             if (!(result.status === 409)) {
-              _context.next = 15;
+              _context.next = 22;
               break;
             }
             _action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createResponseMessage("User already exists.");
             return _context.abrupt("return", dispatch(_action));
-          case 15:
+          case 22:
             if (!(result.status === 200)) {
-              _context.next = 40;
+              _context.next = 46;
               break;
             }
             _action2 = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createResponseMessage("User created successfully!");
-            loggedIn = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authIsLoggedIn(true);
+            loggedIn = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserIsSignedIn(true);
             dispatch(loggedIn);
             currentLoginState = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInIsSignedIn(true);
             dispatch(currentLoginState);
-            savePassword = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserPassword(password);
-            dispatch(savePassword);
             userEmail = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserEmail(email);
             dispatch(userEmail);
-            closeModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createShowModal(false);
-            dispatch(closeModal);
-            hfUserToken = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createHfToken(hfToken);
+            savePassword = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserPassword(password);
+            dispatch(savePassword);
+            userName = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserName(name);
+            dispatch(userName);
+            userPhone = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserPhone(phone);
+            dispatch(userPhone);
+            hfUserToken = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserHfToken(hfToken);
             dispatch(hfUserToken);
-            oaUserToken = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createOaToken(oaToken);
+            oaUserToken = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserOaToken(oaToken);
             dispatch(oaUserToken);
             (0,_modules_savePersistentLogin__WEBPACK_IMPORTED_MODULE_4__.savePersistentLogin)(email, password);
             localStorage.setItem("loggedIn", "true");
             localStorage.setItem("loggedInEmail", email);
-            localStorage.setItem("loggedInPassword", password);
-            localStorage.setItem("hfToken", hfToken);
-            localStorage.setItem("oaToken", oaToken);
             return _context.abrupt("return", dispatch(_action2));
-          case 40:
+          case 46:
             _action3 = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createResponseMessage("User wasn't created");
             return _context.abrupt("return", dispatch(_action3));
-          case 42:
+          case 48:
           case "end":
             return _context.stop();
         }
@@ -86222,7 +86306,7 @@ function CreateAccountModal() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "modal-dialog modal-dialog-centered mx-auto",
     style: {
-      width: "350px"
+      width: "340px"
     },
     "data-bs-theme": "dark"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -86242,27 +86326,19 @@ function CreateAccountModal() {
     className: "d-flex justify-content-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "email",
-    className: "form-control mb-1",
+    className: "form-control my-1",
     placeholder: "Email",
-    "aria-label": "create user email ",
-    value: email,
-    onChange: function onChange(e) {
-      return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createEmail(e.target.value));
-    },
+    name: "email",
     style: {
       width: "95%"
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "d-flex justify-content-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-    type: "text",
+    type: "password",
+    className: "form-control mb-1",
     placeholder: "Password",
-    className: "form-control mb-1",
-    "aria-label": "create user password",
-    value: password,
-    onChange: function onChange(e) {
-      return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createPassword(e.target.value));
-    },
+    name: "password",
     style: {
       width: "95%"
     }
@@ -86270,27 +86346,19 @@ function CreateAccountModal() {
     className: "d-flex justify-content-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "text",
-    className: "form-control mb-1",
+    className: "form-control my-1",
     placeholder: "Name",
-    "aria-label": "create user name",
-    value: name,
-    onChange: function onChange(e) {
-      return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createName(e.target.value));
-    },
+    name: "name",
     style: {
       width: "95%"
     }
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "d-flex justify-content-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-    type: "text",
+    type: "tel",
     className: "form-control mb-1",
     placeholder: "Phone",
-    "aria-label": "create user phone",
-    value: phone,
-    onChange: function onChange(e) {
-      return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createPhone(e.target.value));
-    },
+    name: "phone",
     style: {
       width: "95%"
     }
@@ -86298,13 +86366,9 @@ function CreateAccountModal() {
     className: "d-flex justify-content-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "text",
-    className: "form-control mb-1",
+    className: "form-control my-1",
     placeholder: "Hugging Face token",
-    "aria-label": "create Hugging Face token",
-    value: hfToken,
-    onChange: function onChange(e) {
-      return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createHfToken(e.target.value));
-    },
+    name: "hfToken",
     style: {
       width: "95%"
     }
@@ -86313,12 +86377,8 @@ function CreateAccountModal() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "text",
     className: "form-control mb-1",
-    placeholder: "OpenAI token",
-    "aria-label": "create OpenAI token",
-    value: oaToken,
-    onChange: function onChange(e) {
-      return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createOaToken(e.target.value));
-    },
+    placeholder: "Open AI token",
+    name: "oaToken",
     style: {
       width: "95%"
     }
@@ -86379,10 +86439,10 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 function LoginModal() {
   //declares Redux
-  var isSignedIn = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectSignInIsSignedIn);
+  var isSignedIn = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectAuthUserIsSignedIn);
   var signInModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectSignInShowModal);
-  var email = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectSignInEmail);
-  var password = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectSignInPassword);
+  var authEmail = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectAuthUserEmail);
+  var authPassword = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectAuthUserPassword);
   var errorResponse = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectSignInError);
 
   //invokes useDispatch
@@ -86402,33 +86462,28 @@ function LoginModal() {
   function handleCloseModal() {
     var closeSignInModal = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInShowModal(false);
     dispatch(closeSignInModal);
-    var clearEmail = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInEmail("");
-    dispatch(clearEmail);
-    var clearPassword = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInPassword("");
-    dispatch(clearPassword);
-    var clearError = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInError("");
-    dispatch(clearError);
   }
   function handleSubmit(_x) {
     return _handleSubmit.apply(this, arguments);
   }
   function _handleSubmit() {
     _handleSubmit = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
-      var setErrorResponse, result, _setErrorResponse, _setErrorResponse2, currentLoginState, saveEmail, savePassword, hfToken, saveHfToken, oaToken, saveOaToken, closeModal, _showUpdateAccountModal;
+      var form, email, password, setErrorResponse, result, _setErrorResponse, _setErrorResponse2, currentLoginState, authUserLoginState, saveEmail, savePassword, saveName, savePhone, saveHfToken, saveOaToken, unmount, closeModal;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
             event.preventDefault();
-
-            //condition to make sure fields are filled out
+            form = event.target;
+            email = form[0].value;
+            password = form[1].value; //condition to make sure fields are filled out
             if (!(!email || !password)) {
-              _context.next = 4;
+              _context.next = 7;
               break;
             }
             setErrorResponse = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInError("Email and password must be filled out");
             return _context.abrupt("return", dispatch(setErrorResponse));
-          case 4:
-            _context.next = 6;
+          case 7:
+            _context.next = 9;
             return (0,_modules_crud_readAccount__WEBPACK_IMPORTED_MODULE_2__.readAccount)({
               email: email,
               password: password,
@@ -86437,53 +86492,59 @@ function LoginModal() {
               hfToken: "",
               oaToken: ""
             });
-          case 6:
+          case 9:
             result = _context.sent;
             if (!("status" in result)) {
-              _context.next = 16;
+              _context.next = 19;
               break;
             }
             if (!(result.status === 400)) {
-              _context.next = 11;
+              _context.next = 14;
               break;
             }
             _setErrorResponse = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInError("Input format is invalid.");
             return _context.abrupt("return", dispatch(_setErrorResponse));
-          case 11:
+          case 14:
             if (!(result.status === 404)) {
-              _context.next = 14;
+              _context.next = 17;
               break;
             }
             _setErrorResponse2 = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInError("User not found");
             return _context.abrupt("return", dispatch(_setErrorResponse2));
-          case 14:
-            _context.next = 38;
+          case 17:
+            _context.next = 47;
             break;
-          case 16:
+          case 19:
             //if user exists, signs in, saves authorized user email, password, sets localstorage, and closes login modal
             currentLoginState = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInIsSignedIn(true);
             dispatch(currentLoginState);
+            authUserLoginState = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserIsSignedIn(true);
+            dispatch(authUserLoginState);
             localStorage.setItem("loggedIn", "true");
-            saveEmail = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserEmail(email);
+            saveEmail = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserEmail(result.email);
             dispatch(saveEmail);
-            localStorage.setItem("loggedInEmail", email);
-            savePassword = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserPassword(password);
+            localStorage.setItem("email", result.email);
+            savePassword = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserPassword(result.password);
             dispatch(savePassword);
-            localStorage.setItem("loggedInPassword", password);
-            hfToken = result.hfToken;
-            saveHfToken = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.accountProfileHfToken(hfToken);
+            localStorage.setItem("password", result.password);
+            saveName = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserName(result.name);
+            dispatch(saveName);
+            localStorage.setItem("name", result.name);
+            savePhone = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserPhone(result.phone);
+            dispatch(savePhone);
+            localStorage.setItem("phone", result.phone);
+            saveHfToken = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserHfToken(result.hfToken);
             dispatch(saveHfToken);
-            localStorage.setItem("hfToken", hfToken);
-            oaToken = result.oaToken;
-            saveOaToken = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.accountProfileOaToken(oaToken);
+            localStorage.setItem("hfToken", result.hfToken);
+            saveOaToken = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserOaToken(result.oaToken);
             dispatch(saveOaToken);
-            localStorage.setItem("oaToken", oaToken);
+            localStorage.setItem("oaToken", result.oaToken);
             (0,_modules_savePersistentLogin__WEBPACK_IMPORTED_MODULE_4__.savePersistentLogin)(email, password);
+            unmount = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInDidMount(false);
+            dispatch(unmount);
             closeModal = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInShowModal(false);
             dispatch(closeModal);
-            _showUpdateAccountModal = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.updateShowModal(true);
-            dispatch(_showUpdateAccountModal);
-          case 38:
+          case 47:
           case "end":
             return _context.stop();
         }
@@ -86515,7 +86576,7 @@ function LoginModal() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "modal-dialog \r modal-dialog-centered mx-auto",
     style: {
-      width: "350px"
+      width: "340px"
     },
     "data-bs-theme": "dark"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -86536,19 +86597,15 @@ function LoginModal() {
   }, "Please enter your details", " "), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, " Welcome Back"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
     onSubmit: handleSubmit
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "modal-body"
+    className: "modal-body",
+    "data-bs-theme": "dark"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "d-flex justify-content-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "email",
     className: "form-control my-1",
-    "data-bs-theme": "dark",
     placeholder: "Email",
-    value: email,
-    onChange: function onChange(e) {
-      var action = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInEmail(e.target.value);
-      dispatch(action);
-    },
+    name: "email",
     style: {
       width: "95%"
     }
@@ -86558,11 +86615,7 @@ function LoginModal() {
     type: "password",
     className: "form-control mb-1",
     placeholder: "Password",
-    value: password,
-    onChange: function onChange(e) {
-      var action = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInPassword(e.target.value);
-      dispatch(action);
-    },
+    name: "password",
     style: {
       width: "95%"
     }
@@ -86631,10 +86684,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/.pnpm/react-redux@9.2.0_@types+re_09dfa075fee95aeaf90c5002f190b9a3/node_modules/react-redux/dist/react-redux.mjs");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ "./node_modules/.pnpm/react-redux@9.2.0_@types+re_09dfa075fee95aeaf90c5002f190b9a3/node_modules/react-redux/dist/react-redux.mjs");
 /* harmony import */ var _redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../redux/stateSelectors */ "./src/redux/stateSelectors.ts");
 /* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../redux/store */ "./src/redux/store.ts");
 /* harmony import */ var _modules_crud_updateAccount__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../modules/crud/updateAccount */ "./src/modules/crud/updateAccount.ts");
+/* harmony import */ var _modules_crud_readAccount__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../modules/crud/readAccount */ "./src/modules/crud/readAccount.ts");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
@@ -86644,107 +86698,177 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 
+
 function UpdateAccountModal() {
-  var authUserEmail = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserEmail);
-  var isSignedIn = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectSignInIsSignedIn);
-  var showModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectUpdateShowModal);
-  var responseMessage = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectUpdateResponseMessage);
-  var authUserPassword = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserPassword);
-  var password = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectUpdatePassword);
-  var name = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectUpdateName);
-  var phone = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectUpdatePhone);
-  var hfToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectUpdateHfToken);
-  var oaToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectUpdateOaToken);
-  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useDispatch)();
-  /*  useEffect(componentDidMount, []);
-    function componentDidMount() {
+  var isSignedIn = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectSignInIsSignedIn);
+  var showUpdateModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectUpdateShowModal);
+  var responseMessage = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectUpdateResponseMessage);
+  var password = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserPassword);
+  var name = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserName);
+  var phone = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserPhone);
+  var hfToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserHfToken);
+  var oaToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserOaToken);
+  var authEmail = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserEmail);
+  var authPassword = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserPassword);
+  var authEmailLs = localStorage.getItem("email");
+  var authPasswordLs = localStorage.getItem("password");
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useDispatch)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
+  //sets modal visibility to true upon page load via componentDidMount
+  function componentDidMount() {
     handleOpenModal();
   }
-  */
   function handleOpenModal() {
-    var showSignInModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateShowModal(true);
-    dispatch(showSignInModal);
+    return _handleOpenModal.apply(this, arguments);
   }
-  function handleCloseModal() {
-    var closeUpdateModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateShowModal(false);
-    dispatch(closeUpdateModal);
-    /*    const showProfileModal = set.accountProfileShowModal(true);
-    dispatch(showProfileModal); */
-  }
-
-  //run locally or remotely
-  var localPath = window.location.hostname;
-  var lambdaLocalPort = "http://localhost:3001";
-  var lambdaUrl = "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws";
-  var baseUrl;
-  if (localPath === "localhost") {
-    baseUrl = lambdaLocalPort;
-  } else {
-    baseUrl = lambdaUrl;
-  }
-  function handleUpdateSubmit(_x) {
-    return _handleUpdateSubmit.apply(this, arguments);
-  }
-  function _handleUpdateSubmit() {
-    _handleUpdateSubmit = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
-      var account, response, setErrorResponse, action, closeUpdateModal, _action, _action2;
+  function _handleOpenModal() {
+    _handleOpenModal = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var didMount, hideSignInModal, showUpdateModal, result, setErrorResponse, _setErrorResponse, saveEmail, savePassword, saveName, savePhone, saveHfToken, saveOaToken;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            event.preventDefault();
-            account = {
-              email: authUserEmail,
-              password: authUserPassword,
-              name: name,
-              phone: phone,
-              hfToken: hfToken,
-              oaToken: oaToken
-            };
-            _context.next = 4;
-            return (0,_modules_crud_updateAccount__WEBPACK_IMPORTED_MODULE_3__.updateAccount)(account);
-          case 4:
-            response = _context.sent;
-            console.log("update account form response", response);
-            if (!(!name || !phone)) {
-              _context.next = 9;
+            didMount = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateDidMount(true);
+            dispatch(didMount);
+            hideSignInModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInShowModal(false);
+            dispatch(hideSignInModal);
+            showUpdateModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateShowModal(true);
+            dispatch(showUpdateModal);
+            _context.next = 8;
+            return (0,_modules_crud_readAccount__WEBPACK_IMPORTED_MODULE_4__.readAccount)({
+              email: authEmailLs,
+              password: authPasswordLs,
+              name: "",
+              phone: "",
+              hfToken: "",
+              oaToken: ""
+            });
+          case 8:
+            result = _context.sent;
+            if (!("status" in result)) {
+              _context.next = 18;
               break;
             }
-            setErrorResponse = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateResponseMessage("All fields must be filled out");
-            return _context.abrupt("return", dispatch(setErrorResponse));
-          case 9:
-            if (!(response.status === 400)) {
+            if (!(result.status === 400)) {
               _context.next = 13;
               break;
             }
-            action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateResponseMessage("Please fill out all fields");
-            debugger;
-            return _context.abrupt("return", dispatch(action));
+            setErrorResponse = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInError("Input format is invalid.");
+            return _context.abrupt("return", dispatch(setErrorResponse));
           case 13:
-            if (!(response.status === 200)) {
-              _context.next = 20;
+            if (!(result.status === 404)) {
+              _context.next = 16;
               break;
             }
-            closeUpdateModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateShowModal(false);
-            dispatch(closeUpdateModal);
-            /*     const showProfileModal = set.accountProfileShowModal(true);
-            dispatch(showProfileModal); */
-            _action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateResponseMessage("Successfully updated!");
-            return _context.abrupt("return", dispatch(_action));
-          case 20:
-            _action2 = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateResponseMessage("User wasn't updated");
-            return _context.abrupt("return", dispatch(_action2));
-          case 22:
+            _setErrorResponse = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInError("User not found");
+            return _context.abrupt("return", dispatch(_setErrorResponse));
+          case 16:
+            _context.next = 37;
+            break;
+          case 18:
+            //if user exists, signs in, saves authorized user email, password, sets localstorage, and closes login modal
+
+            localStorage.setItem("loggedIn", "true");
+            saveEmail = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserEmail(result.email);
+            dispatch(saveEmail);
+            localStorage.setItem("email", result.email);
+            savePassword = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserPassword(result.password);
+            dispatch(savePassword);
+            localStorage.setItem("password", result.password);
+            saveName = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserName(result.name);
+            dispatch(saveName);
+            localStorage.setItem("name", result.name);
+            savePhone = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserPhone(result.phone);
+            dispatch(savePhone);
+            localStorage.setItem("phone", result.phone);
+            saveHfToken = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserHfToken(result.hfToken);
+            dispatch(saveHfToken);
+            localStorage.setItem("hfToken", result.hfToken);
+            saveOaToken = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserOaToken(result.oaToken);
+            dispatch(saveOaToken);
+            localStorage.setItem("oaToken", result.oaToken);
+          case 37:
           case "end":
             return _context.stop();
         }
       }, _callee);
     }));
+    return _handleOpenModal.apply(this, arguments);
+  }
+  function handleCloseModal() {
+    var closeUpdateModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateShowModal(false);
+    dispatch(closeUpdateModal);
+  }
+  function handleUpdateSubmit(_x) {
     return _handleUpdateSubmit.apply(this, arguments);
   }
-  if (isSignedIn) {
+  /*   if (isSignedIn) {
     return null;
+  } */
+  function _handleUpdateSubmit() {
+    _handleUpdateSubmit = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2(event) {
+      var form, updateEmail, updatePassword, updateName, updatePhone, updateHfToken, updateOaToken, account, response, setErrorResponse, action, _action, closeUpdateModal, openUpdateModal, _action2;
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
+          case 0:
+            event.preventDefault();
+            form = event.target;
+            updateEmail = form[0].value;
+            updatePassword = form[1].value;
+            updateName = form[2].value;
+            updatePhone = form[3].value;
+            updateHfToken = form[4].value;
+            updateOaToken = form[5].value;
+            account = {
+              email: updateEmail,
+              password: updatePassword,
+              name: updateName,
+              phone: updatePhone,
+              hfToken: updateHfToken,
+              oaToken: updateOaToken
+            };
+            _context2.next = 11;
+            return (0,_modules_crud_updateAccount__WEBPACK_IMPORTED_MODULE_3__.updateAccount)(account);
+          case 11:
+            response = _context2.sent;
+            console.log("update account form response", response);
+            if (!(!name || !phone)) {
+              _context2.next = 16;
+              break;
+            }
+            setErrorResponse = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateResponseMessage("All fields must be filled out");
+            return _context2.abrupt("return", dispatch(setErrorResponse));
+          case 16:
+            if (!(response.status === 400)) {
+              _context2.next = 19;
+              break;
+            }
+            action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateResponseMessage("Please fill out all fields");
+            return _context2.abrupt("return", dispatch(action));
+          case 19:
+            if (!(response.status === 200)) {
+              _context2.next = 28;
+              break;
+            }
+            _action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateResponseMessage("Successfully updated!");
+            dispatch(_action);
+            closeUpdateModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateShowModal(false);
+            dispatch(closeUpdateModal);
+            openUpdateModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateShowModal(true);
+            dispatch(openUpdateModal);
+            _context2.next = 30;
+            break;
+          case 28:
+            _action2 = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateResponseMessage("User wasn't updated");
+            return _context2.abrupt("return", dispatch(_action2));
+          case 30:
+          case "end":
+            return _context2.stop();
+        }
+      }, _callee2);
+    }));
+    return _handleUpdateSubmit.apply(this, arguments);
   }
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, showModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, showUpdateModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "modal fade show",
     id: "updateModal",
     style: {
@@ -86754,76 +86878,96 @@ function UpdateAccountModal() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "modal-dialog modal-dialog-centered mx-auto",
     style: {
-      width: "350px"
-    },
-    "data-bs-theme": "dark"
+      width: "340px"
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "modal-content mx-auto bg-dark text-white border rounded-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "modal-header"
+    className: "modal-header d-flex justify-contents-center text-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
-    className: "modal-title"
+    className: "modal-title text-center"
   }, "Edit Account")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
     onSubmit: handleUpdateSubmit
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "modal-body"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "col-5"
+  }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+    className: "list-unstyled"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Email:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Password:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Name:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Phone:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("u", null, "Tokens")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Hugging Face:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Open AI:"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "col-7"
+  }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+    className: "list-unstyled"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, authEmail), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, authPassword), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, phone), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, hfToken.slice(0, 12)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, oaToken.slice(0, 12)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+    className: "mb-2"
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "input-group mb-1 mt-4"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "input-group-text"
+  }, "Email:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "email",
-    className: "form-control mb-2",
+    className: "form-control",
     placeholder: "Email",
-    "aria-label": " user email",
-    defaultValue: authUserEmail,
+    "aria-label": "user email",
+    defaultValue: authEmail,
     readOnly: true
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "input-group mb-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "input-group-text"
+  }, "Password:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "text",
-    className: "form-control mb-2",
-    "aria-label": "confirm password",
+    className: "form-control",
+    "aria-label": "password",
     placeholder: "password",
-    defaultValue: authUserPassword,
+    defaultValue: authPassword,
     readOnly: true
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "input-group mb-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "input-group-text"
+  }, "Name:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "text",
-    className: "form-control mb-2",
-    placeholder: "Name",
-    "aria-label": "update user name",
-    value: name,
-    onChange: function onChange(e) {
-      return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateName(e.target.value));
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    className: "form-control",
+    name: "updateName",
+    placeholder: "........",
+    "aria-label": "update user name"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "input-group mb-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "input-group-text"
+  }, "Phone:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    type: "tel",
+    className: "form-control",
+    name: "updatePhone",
+    "aria-label": "update user phone"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "input-group mb-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "input-group-text"
+  }, "Hugging Face:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "text",
-    className: "form-control mb-2",
-    placeholder: "Phone",
-    "aria-label": "update user phone",
-    value: phone,
-    onChange: function onChange(e) {
-      return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updatePhone(e.target.value));
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    className: "form-control",
+    name: "updateHfToken",
+    "aria-label": "update Hugging Face token"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "input-group mb-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
+    className: "input-group-text"
+  }, "Open AI:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "text",
-    className: "form-control mb-2",
-    placeholder: "Hugging Face token",
-    "aria-label": "update Hugging Face token",
-    value: hfToken,
-    onChange: function onChange(e) {
-      return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updatePhone(e.target.value));
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-    type: "text",
-    className: "form-control mb-2",
-    placeholder: "Open AI token",
-    "aria-label": "update OpenAI token",
-    value: oaToken,
-    onChange: function onChange(e) {
-      return dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updatePhone(e.target.value));
-    }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "form-control",
+    name: "updateOaToken",
+    "aria-label": "update OpenAI token"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     style: {
       minHeight: "1.35rem",
       fontSize: ".85rem"
     },
     className: "mx-auto text-danger"
-  }, " ", responseMessage), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  }, responseMessage), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     type: "submit",
     className: "mx-auto btn btn-warning btn-sm w-100"
   }, "Update")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
@@ -86931,12 +87075,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function handleClearLocalStorage() {
   localStorage.setItem("loggedIn", "false");
-  localStorage.setItem("loggedInEmail", "");
-  localStorage.setItem("loggedInPassword", "");
+  localStorage.setItem("email", "");
+  localStorage.setItem("password", "");
   localStorage.setItem("timeElapsedInMins", "");
   localStorage.setItem("credentials", "");
   localStorage.setItem("oaToken", "");
   localStorage.setItem("hfToken", "");
+  localStorage.setItem("name", "");
+  localStorage.setItem("phone", "");
 }
 
 /***/ }),
@@ -88032,7 +88178,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   selectAboutDidMount: () => (/* binding */ selectAboutDidMount),
 /* harmony export */   selectAiPageDidMount: () => (/* binding */ selectAiPageDidMount),
 /* harmony export */   selectAuthUserEmail: () => (/* binding */ selectAuthUserEmail),
+/* harmony export */   selectAuthUserHfToken: () => (/* binding */ selectAuthUserHfToken),
+/* harmony export */   selectAuthUserIsSignedIn: () => (/* binding */ selectAuthUserIsSignedIn),
+/* harmony export */   selectAuthUserName: () => (/* binding */ selectAuthUserName),
+/* harmony export */   selectAuthUserOaToken: () => (/* binding */ selectAuthUserOaToken),
 /* harmony export */   selectAuthUserPassword: () => (/* binding */ selectAuthUserPassword),
+/* harmony export */   selectAuthUserPhone: () => (/* binding */ selectAuthUserPhone),
+/* harmony export */   selectAuthUserReadMessage: () => (/* binding */ selectAuthUserReadMessage),
+/* harmony export */   selectAuthUserResponseMessage: () => (/* binding */ selectAuthUserResponseMessage),
+/* harmony export */   selectAuthUserUserName: () => (/* binding */ selectAuthUserUserName),
 /* harmony export */   selectAwsFormsDidMount: () => (/* binding */ selectAwsFormsDidMount),
 /* harmony export */   selectBfPageDidMount: () => (/* binding */ selectBfPageDidMount),
 /* harmony export */   selectCreateDidMount: () => (/* binding */ selectCreateDidMount),
@@ -88056,7 +88210,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   selectGlobalAccount: () => (/* binding */ selectGlobalAccount),
 /* harmony export */   selectHandleRefreshDidMount: () => (/* binding */ selectHandleRefreshDidMount),
 /* harmony export */   selectHomeDidMount: () => (/* binding */ selectHomeDidMount),
-/* harmony export */   selectIsLoggedIn: () => (/* binding */ selectIsLoggedIn),
 /* harmony export */   selectOaPageDidMount: () => (/* binding */ selectOaPageDidMount),
 /* harmony export */   selectProfileDidMount: () => (/* binding */ selectProfileDidMount),
 /* harmony export */   selectProfileEmail: () => (/* binding */ selectProfileEmail),
@@ -88289,21 +88442,41 @@ function selectSignInError(state) {
   return state.isSignedInState.error;
 }
 
-//sign-up modal
-
-function selectIsLoggedIn(state) {
-  return state.authStateVar.isLoggedIn;
-}
-function selectAuthUserEmail(state) {
-  return state.authStateVar.userEmail;
-}
-function selectAuthUserPassword(state) {
-  return state.authStateVar.userPassword;
-}
-
 //global account
 function selectGlobalAccount(state) {
   return state.globalAccountState.account;
+}
+
+//authUser
+function selectAuthUserEmail(state) {
+  return state.authUserState.email;
+}
+function selectAuthUserUserName(state) {
+  return state.authUserState.userName;
+}
+function selectAuthUserPassword(state) {
+  return state.authUserState.password;
+}
+function selectAuthUserName(state) {
+  return state.authUserState.name;
+}
+function selectAuthUserPhone(state) {
+  return state.authUserState.phone;
+}
+function selectAuthUserHfToken(state) {
+  return state.authUserState.hfToken;
+}
+function selectAuthUserOaToken(state) {
+  return state.authUserState.oaToken;
+}
+function selectAuthUserResponseMessage(state) {
+  return state.authUserState.responseMessage;
+}
+function selectAuthUserReadMessage(state) {
+  return state.authUserState.readResponse;
+}
+function selectAuthUserIsSignedIn(state) {
+  return state.authUserState.isSignedIn;
 }
 
 /***/ }),
@@ -88528,6 +88701,47 @@ var stateSetters = {
     var newValue = action.payload;
     state.deleteAccountState.responseMessage = newValue;
   },
+  //authUser
+  authUserEmail: function authUserEmail(state, action) {
+    var newValue = action.payload;
+    state.authUserState.email = newValue;
+  },
+  authUserUserName: function authUserUserName(state, action) {
+    var newValue = action.payload;
+    state.authUserState.userName = newValue;
+  },
+  authUserPassword: function authUserPassword(state, action) {
+    var newValue = action.payload;
+    state.authUserState.password = newValue;
+  },
+  authUserName: function authUserName(state, action) {
+    var newValue = action.payload;
+    state.authUserState.name = newValue;
+  },
+  authUserPhone: function authUserPhone(state, action) {
+    var newValue = action.payload;
+    state.authUserState.phone = newValue;
+  },
+  authUserHfToken: function authUserHfToken(state, action) {
+    var newValue = action.payload;
+    state.authUserState.hfToken = newValue;
+  },
+  authUserOaToken: function authUserOaToken(state, action) {
+    var newValue = action.payload;
+    state.authUserState.oaToken = newValue;
+  },
+  authUserResponseMessage: function authUserResponseMessage(state, action) {
+    var newValue = action.payload;
+    state.authUserState.responseMessage = newValue;
+  },
+  authUserReadResponse: function authUserReadResponse(state, action) {
+    var newValue = action.payload;
+    state.authUserState.readResponse = newValue;
+  },
+  authUserIsSignedIn: function authUserIsSignedIn(state, action) {
+    var newValue = action.payload;
+    state.authUserState.isSignedIn = newValue;
+  },
   //sign in area
   signInDidMount: function signInDidMount(state, action) {
     var newValue = action.payload;
@@ -88560,19 +88774,6 @@ var stateSetters = {
   signInError: function signInError(state, action) {
     var newValue = action.payload;
     state.isSignedInState.error = newValue;
-  },
-  //sign-up modal
-  authIsLoggedIn: function authIsLoggedIn(state, action) {
-    var newValue = action.payload;
-    state.authStateVar.isLoggedIn = newValue;
-  },
-  authUserEmail: function authUserEmail(state, action) {
-    var newValue = action.payload;
-    state.authStateVar.userEmail = newValue;
-  },
-  authUserPassword: function authUserPassword(state, action) {
-    var newValue = action.payload;
-    state.authStateVar.userPassword = newValue;
   },
   //global account
   globalAccount: function globalAccount(state, action) {
@@ -88687,11 +88888,6 @@ var stateVariables = {
     password: "",
     error: ""
   },
-  authStateVar: {
-    isLoggedIn: false,
-    userEmail: "",
-    userPassword: ""
-  },
   signUpState: {
     email: "",
     password: "",
@@ -88699,6 +88895,18 @@ var stateVariables = {
   },
   globalAccountState: {
     account: null
+  },
+  authUserState: {
+    email: "",
+    userName: "",
+    password: "",
+    name: "",
+    phone: "",
+    hfToken: "",
+    oaToken: "",
+    responseMessage: "",
+    readResponse: "",
+    isSignedIn: false
   }
 };
 

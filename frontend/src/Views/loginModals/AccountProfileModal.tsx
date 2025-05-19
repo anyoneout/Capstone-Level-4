@@ -1,46 +1,92 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  selectProfileHfToken,
-  selectProfileOaToken,
+  selectAuthUserEmail,
+  selectAuthUserHfToken,
+  selectAuthUserName,
+  selectAuthUserOaToken,
+  selectAuthUserPassword,
+  selectAuthUserPhone,
   selectProfileShowModal,
   selectUpdateShowModal,
 } from "../../redux/stateSelectors";
 import { set } from "../../redux/store";
-import { updateAccount } from "../../modules/crud/updateAccount";
-import { UpdateAccountModal } from "./UpdateAccountModal";
+import { readAccount } from "../../modules/crud/readAccount";
 
 export function AccountProfileModal() {
   const showUpdateModal = useSelector(selectUpdateShowModal);
   const showProfileModal = useSelector(selectProfileShowModal);
-  const isSignedIn = localStorage.getItem("isSignedIn");
-  const authUserEmail = localStorage.getItem("userEmail");
-  const password = localStorage.getItem("userPassword");
-  const name = localStorage.getItem("userName");
-  const phone = localStorage.getItem("userPhone");
-  const hfToken = localStorage.getItem("hfToken");
-  const oaToken = localStorage.getItem("oaToken");
+  const authEmail = useSelector(selectAuthUserEmail);
+  const authPassword = useSelector(selectAuthUserPassword);
+  const authName = useSelector(selectAuthUserName);
+  const authPhone = useSelector(selectAuthUserPhone);
+  const authHfToken = useSelector(selectAuthUserHfToken);
+  const authOaToken = useSelector(selectAuthUserOaToken);
+  const authEmailLs = localStorage.getItem("email");
+  const authPasswordLs = localStorage.getItem("password");
 
   const dispatch = useDispatch();
-  /*   useEffect(componentDidMount, []);
 
-  function componentDidMount() {
+  useEffect(componentDidMount, []);
+  //sets modal visibility to true upon page load via componentDidMount
+  function componentDidMount(): void {
     handleOpenModal();
-  } */
+  }
 
-  /* function handleOpenModal() {
-    const showProfileModal = set.accountProfileShowModal(true);
-    dispatch(showProfileModal);
-  } */
+  async function handleOpenModal() {
+    const hideSignInModal = set.signInShowModal(false);
+    dispatch(hideSignInModal);
+    const didMount = set.accountProfileDidMount(true);
+    dispatch(didMount);
+    const showCreateModal = set.accountProfileShowModal(true);
+    dispatch(showCreateModal);
+
+    const result = await readAccount({
+      email: authEmailLs,
+      password: authPasswordLs,
+      name: "",
+      phone: "",
+      hfToken: "",
+      oaToken: "",
+    });
+    //I needed a way to check whether a status code or an Account were being returned and this seemed to be the most simple way to do it
+    if ("status" in result) {
+      if (result.status === 400) {
+        const setErrorResponse = set.signInError("Input format is invalid.");
+        return dispatch(setErrorResponse);
+      }
+      if (result.status === 404) {
+        const setErrorResponse = set.signInError("User not found");
+        return dispatch(setErrorResponse);
+      }
+    } else {
+      //if user exists, signs in, saves authorized user email, password, sets localstorage, and closes login modal
+
+      localStorage.setItem("loggedIn", "true");
+      const saveEmail = set.authUserEmail(result.email);
+      dispatch(saveEmail);
+      localStorage.setItem("email", result.email);
+      const savePassword = set.authUserPassword(result.password);
+      dispatch(savePassword);
+      localStorage.setItem("password", result.password);
+      const saveName = set.authUserName(result.name);
+      dispatch(saveName);
+      localStorage.setItem("name", result.name);
+      const savePhone = set.authUserPhone(result.phone);
+      dispatch(savePhone);
+      localStorage.setItem("phone", result.phone);
+      const saveHfToken = set.authUserHfToken(result.hfToken);
+      dispatch(saveHfToken);
+      localStorage.setItem("hfToken", result.hfToken);
+      const saveOaToken = set.authUserOaToken(result.oaToken);
+      dispatch(saveOaToken);
+      localStorage.setItem("oaToken", result.oaToken);
+    }
+  }
+
   function handleCloseModal() {
-    const closeSignInModal = set.accountProfileShowModal(false);
-    dispatch(closeSignInModal);
-    const clearName = set.accountProfileName("");
-    dispatch(clearName);
-    const clearPhone = set.accountProfilePhone("");
-    dispatch(clearPhone);
-    const clearError = set.accountProfileResponseMessage("");
-    dispatch(clearError);
+    const closeProfileModal = set.accountProfileShowModal(false);
+    dispatch(closeProfileModal);
   }
 
   function handleUpdateModal() {
@@ -54,18 +100,12 @@ export function AccountProfileModal() {
     localStorage.clear();
     const closeProfileModal = set.accountProfileShowModal(false);
     dispatch(closeProfileModal);
-    const openSignInModal = set.signInShowModal(true);
-    dispatch(openSignInModal);
     const clearIsSignedIn = set.signInIsSignedIn(false);
     dispatch(clearIsSignedIn);
-    localStorage.setItem("loggedIn", "false");
     const clearAuthUserEmail = set.authUserEmail("");
     dispatch(clearAuthUserEmail);
-    localStorage.setItem("loggedInEmail", "");
     const clearAuthUserPassword = set.authUserPassword("");
     dispatch(clearAuthUserPassword);
-    localStorage.setItem("loggedInPassword", "");
-    localStorage.removeItem("LoggedInPassword");
   }
 
   return (
@@ -76,31 +116,41 @@ export function AccountProfileModal() {
           id="profileModal"
           style={{ display: "block", backgroundColor: "rgba(0,0,0,0.7)" }}
         >
-          <div className="modal-dialog modal-dialog-centered mx-auto w-100">
-            <div className="modal-content mx-auto text-white w-100 mx-auto bg-dark border border-1 rounded-0  p-3">
+          <div className="modal-dialog modal-dialog-centered mx-auto w-100" style={{ width: "340px" }}>
+            <div className="modal-content mx-auto bg-dark text-white border rounded-0">
               <div className="modal-body w-100 mx-auto">
                 <div className="container mt-3">
                   <div className="card bg-dark text-white ">
                     <h5 className="mb-3 border-bottom pb-2">Personal details</h5>
 
                     <div className="row mb-2">
-                      <div className="col-sm-4 fw-bold">Full name:</div>
-                      <div className="col-sm-8">{name}</div>
+                      <div className="col-sm-5 fw-bold">Full name:</div>
+                      <div className="col-sm-7">{authName}</div>
                     </div>
 
                     <div className="row mb-2">
-                      <div className="col-sm-4 fw-bold">Password:</div>
-                      <div className="col-sm-8">{password}</div>
+                      <div className="col-sm-5 fw-bold">Password:</div>
+                      <div className="col-sm-7">{authPassword}</div>
                     </div>
 
                     <div className="row mb-2">
-                      <div className="col-sm-4 fw-bold">Phone Number:</div>
-                      <div className="col-sm-8">{phone}</div>
+                      <div className="col-sm-5 fw-bold">Phone Number:</div>
+                      <div className="col-sm-7">{authPhone}</div>
                     </div>
 
-                    <div className="row">
-                      <div className="col-sm-4 fw-bold">Email:</div>
-                      <div className="col-sm-8">{authUserEmail}</div>
+                    <div className="row mb-2">
+                      <div className="col-sm-5 fw-bold">Email:</div>
+                      <div className="col-sm-7">{authEmail}</div>
+                    </div>
+
+                    <br />
+                    <div className="row mb-2">
+                      <div className="col-sm-5 fw-bold">Hugging Face token:</div>
+                      <div className="col-sm-7">{authHfToken.slice(0, 12)}</div>
+                    </div>
+                    <div className="row mb-2">
+                      <div className="col-sm-5 fw-bold">Open AI token:</div>
+                      <div className="col-sm-7">{authOaToken.slice(0, 12)}</div>
                     </div>
                   </div>
                 </div>

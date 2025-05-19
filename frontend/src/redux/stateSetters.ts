@@ -62,7 +62,6 @@ export const stateSetters = {
     const newValue = action.payload;
     state.dynamoAuthStateVar.authResponse = newValue;
   },
-
   //create account
   createEmail: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
@@ -216,6 +215,48 @@ export const stateSetters = {
     state.deleteAccountState.responseMessage = newValue;
   },
 
+  //authUser
+  authUserEmail: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.authUserState.email = newValue;
+  },
+  authUserUserName: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.authUserState.userName = newValue;
+  },
+  authUserPassword: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.authUserState.password = newValue;
+  },
+  authUserName: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.authUserState.name = newValue;
+  },
+  authUserPhone: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.authUserState.phone = newValue;
+  },
+  authUserHfToken: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.authUserState.hfToken = newValue;
+  },
+  authUserOaToken: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.authUserState.oaToken = newValue;
+  },
+  authUserResponseMessage: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.authUserState.responseMessage = newValue;
+  },
+  authUserReadResponse: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.authUserState.readResponse = newValue;
+  },
+  authUserIsSignedIn: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.authUserState.isSignedIn = newValue;
+  },
+
   //sign in area
   signInDidMount: function (state: StateVariables, action: ActionBoolean) {
     const newValue = action.payload;
@@ -248,20 +289,6 @@ export const stateSetters = {
   signInError: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
     state.isSignedInState.error = newValue;
-  },
-
-  //sign-up modal
-  authIsLoggedIn: function (state: StateVariables, action: ActionBoolean) {
-    const newValue = action.payload;
-    state.authStateVar.isLoggedIn = newValue;
-  },
-  authUserEmail: function (state: StateVariables, action: Action) {
-    const newValue = action.payload;
-    state.authStateVar.userEmail = newValue;
-  },
-  authUserPassword: function (state: StateVariables, action: Action) {
-    const newValue = action.payload;
-    state.authStateVar.userPassword = newValue;
   },
 
   //global account

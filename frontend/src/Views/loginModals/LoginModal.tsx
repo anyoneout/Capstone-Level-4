@@ -3,20 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { set } from "../../redux/store";
 import { readAccount } from "../../modules/crud/readAccount";
 import {
-  selectSignInEmail,
   selectSignInError,
-  selectSignInIsSignedIn,
-  selectSignInPassword,
   selectSignInShowModal,
+  selectAuthUserEmail,
+  selectAuthUserPassword,
+  selectAuthUserIsSignedIn,
 } from "../../redux/stateSelectors";
 import { savePersistentLogin } from "../../modules/savePersistentLogin";
 
 export function LoginModal() {
   //declares Redux
-  const isSignedIn = useSelector(selectSignInIsSignedIn);
+  const isSignedIn = useSelector(selectAuthUserIsSignedIn);
   const signInModal = useSelector(selectSignInShowModal);
-  const email = useSelector(selectSignInEmail);
-  const password = useSelector(selectSignInPassword);
+  const authEmail = useSelector(selectAuthUserEmail);
+  const authPassword = useSelector(selectAuthUserPassword);
   const errorResponse = useSelector(selectSignInError);
 
   //invokes useDispatch
@@ -37,17 +37,13 @@ export function LoginModal() {
   function handleCloseModal() {
     const closeSignInModal = set.signInShowModal(false);
     dispatch(closeSignInModal);
-    const clearEmail = set.signInEmail("");
-    dispatch(clearEmail);
-    const clearPassword = set.signInPassword("");
-    dispatch(clearPassword);
-    const clearError = set.signInError("");
-    dispatch(clearError);
   }
 
-  async function handleSubmit(event: React.FormEvent) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-
+    const form = event.target;
+    const email = form[0].value;
+    const password = form[1].value;
     //condition to make sure fields are filled out
     if (!email || !password) {
       const setErrorResponse = set.signInError("Email and password must be filled out");
@@ -56,7 +52,6 @@ export function LoginModal() {
 
     //read request to check if user exists via status code
     const result = await readAccount({ email, password, name: "", phone: "", hfToken: "", oaToken: "" });
-
     //I needed a way to check whether a status code or an Account were being returned and this seemed to be the most simple way to do it
     if ("status" in result) {
       if (result.status === 400) {
@@ -71,28 +66,33 @@ export function LoginModal() {
       //if user exists, signs in, saves authorized user email, password, sets localstorage, and closes login modal
       const currentLoginState = set.signInIsSignedIn(true);
       dispatch(currentLoginState);
+      const authUserLoginState = set.authUserIsSignedIn(true);
+      dispatch(authUserLoginState);
       localStorage.setItem("loggedIn", "true");
-      const saveEmail = set.authUserEmail(email);
+      const saveEmail = set.authUserEmail(result.email);
       dispatch(saveEmail);
-      localStorage.setItem("loggedInEmail", email);
-      const savePassword = set.authUserPassword(password);
+      localStorage.setItem("email", result.email);
+      const savePassword = set.authUserPassword(result.password);
       dispatch(savePassword);
-      localStorage.setItem("loggedInPassword", password);
-      const hfToken = result.hfToken;
-      const saveHfToken = set.accountProfileHfToken(hfToken);
+      localStorage.setItem("password", result.password);
+      const saveName = set.authUserName(result.name);
+      dispatch(saveName);
+      localStorage.setItem("name", result.name);
+      const savePhone = set.authUserPhone(result.phone);
+      dispatch(savePhone);
+      localStorage.setItem("phone", result.phone);
+      const saveHfToken = set.authUserHfToken(result.hfToken);
       dispatch(saveHfToken);
-      localStorage.setItem("hfToken", hfToken);
-      const oaToken = result.oaToken;
-      const saveOaToken = set.accountProfileOaToken(oaToken);
+      localStorage.setItem("hfToken", result.hfToken);
+      const saveOaToken = set.authUserOaToken(result.oaToken);
       dispatch(saveOaToken);
-      localStorage.setItem("oaToken", oaToken);
+      localStorage.setItem("oaToken", result.oaToken);
 
       savePersistentLogin(email, password);
-
+      const unmount = set.signInDidMount(false);
+      dispatch(unmount);
       const closeModal = set.signInShowModal(false);
       dispatch(closeModal);
-      const showUpdateAccountModal = set.updateShowModal(true);
-      dispatch(showUpdateAccountModal);
     }
   }
 
@@ -122,7 +122,7 @@ export function LoginModal() {
           <div
             className="modal-dialog 
            modal-dialog-centered mx-auto"
-            style={{ width: "350px" }}
+            style={{ width: "340px" }}
             data-bs-theme="dark"
           >
             <div className="modal-content mx-auto bg-dark text-white border rounded-0">
@@ -135,18 +135,13 @@ export function LoginModal() {
                 </div>
               </div>
               <form onSubmit={handleSubmit}>
-                <div className="modal-body">
+                <div className="modal-body" data-bs-theme="dark">
                   <div className="d-flex justify-content-center">
                     <input
                       type="email"
                       className="form-control my-1"
-                      data-bs-theme="dark"
                       placeholder="Email"
-                      value={email}
-                      onChange={(e) => {
-                        const action = set.signInEmail(e.target.value);
-                        dispatch(action);
-                      }}
+                      name="email"
                       style={{ width: "95%" }}
                     />
                   </div>
@@ -155,11 +150,7 @@ export function LoginModal() {
                       type="password"
                       className="form-control mb-1"
                       placeholder="Password"
-                      value={password}
-                      onChange={(e) => {
-                        const action = set.signInPassword(e.target.value);
-                        dispatch(action);
-                      }}
+                      name="password"
                       style={{ width: "95%" }}
                     />
                   </div>

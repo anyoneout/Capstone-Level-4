@@ -18,13 +18,14 @@ import { Credentials } from "../../types/Credentials";
 import "./CollapsibleNavbar.scss";
 import "./SignInArea.scss";
 import { handleClearLocalStorage } from "../../controllers/handleClearLocalStorage";
+import { deleteAccount } from "../../modules/crud/deleteAccount";
 
 export default function SignInAreaUpdate() {
   const isSignedIn = useSelector(selectSignInIsSignedIn);
   const showLoginModal = useSelector(selectSignInShowModal);
   const showCreateModal = useSelector(selectCreateShowModal);
   const showUpdateModal = useSelector(selectUpdateShowModal);
-  const showAccountModal = useSelector(selectProfileShowModal);
+  const showProfileModal = useSelector(selectProfileShowModal);
   const didMount = useSelector(selectSignInDidMount);
   const dispatch = useDispatch();
 
@@ -77,9 +78,23 @@ export default function SignInAreaUpdate() {
     dispatch(action);
   }
   //shows profileModal
-  function handleAccountOpen(): void {
+  function handleProfile(): void {
     const action = set.accountProfileShowModal(true);
     dispatch(action);
+  }
+  //shows updateModal
+  function handleUpdate(): void {
+    const action = set.updateShowModal(true);
+    dispatch(action);
+  }
+  //delete user
+  async function handleDelete() {
+    const email = localStorage.getItem("email");
+    const password = localStorage.getItem("password");
+    await deleteAccount({ email, password, name: "", phone: "", hfToken: "", oaToken: "" });
+    const clearIsSignedIn = set.signInIsSignedIn(false);
+    dispatch(clearIsSignedIn);
+    handleClearLocalStorage();
   }
 
   //clears authorized redux, local storage and signs out
@@ -110,13 +125,23 @@ export default function SignInAreaUpdate() {
             </button>
             <ul className="dropdown-menu" data-bs-theme="dark" aria-labelledby="accountMenu">
               <li>
-                <button className="dropdown-item" onClick={handleAccountOpen}>
-                  Account
+                <button className="dropdown-item" style={{ color: "#fff78a" }} onClick={handleProfile}>
+                  Profile
                 </button>
               </li>
               <li>
-                <button className="dropdown-item" style={{ color: "#fff78a" }} onClick={handleSignOut}>
-                  Log Out
+                <button className="dropdown-item" style={{ color: "#fff78a" }} onClick={handleUpdate}>
+                  Update
+                </button>
+              </li>
+              <li>
+                <button className="dropdown-item" style={{ color: "#fff78a" }} onClick={handleDelete}>
+                  Delete
+                </button>
+              </li>
+              <li>
+                <button className="dropdown-item" onClick={handleSignOut}>
+                  Sign out
                 </button>
               </li>
             </ul>
@@ -127,11 +152,11 @@ export default function SignInAreaUpdate() {
           </button>
         )}
       </li>
-
       {showLoginModal && <LoginModal />}
       {showCreateModal && <CreateAccountModal />}
+      {showProfileModal && <AccountProfileModal />}
+
       {showUpdateModal && <UpdateAccountModal />}
-      {showAccountModal && <AccountProfileModal />}
     </>
   );
 }

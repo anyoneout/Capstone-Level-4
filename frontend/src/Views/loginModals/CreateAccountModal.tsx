@@ -1,13 +1,7 @@
-import React from "react";
+import React, { FormEvent, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  selectCreateEmail,
-  selectCreateHfToken,
-  selectCreateIsSignedIn,
-  selectCreateName,
-  selectCreateOaToken,
-  selectCreatePassword,
-  selectCreatePhone,
+  selectAuthUserIsSignedIn,
   selectCreateResponseMessage,
   selectCreateShowModal,
 } from "../../redux/stateSelectors";
@@ -16,48 +10,41 @@ import { createAccount } from "../../modules/crud/createAccount";
 import { savePersistentLogin } from "../../modules/savePersistentLogin";
 
 export function CreateAccountModal() {
-  const isSignedIn = useSelector(selectCreateIsSignedIn);
+  const isSignedIn = useSelector(selectAuthUserIsSignedIn);
   const showModal = useSelector(selectCreateShowModal);
   const responseMessage = useSelector(selectCreateResponseMessage);
-  const email = useSelector(selectCreateEmail);
-  const password = useSelector(selectCreatePassword);
-  const name = useSelector(selectCreateName);
-  const phone = useSelector(selectCreatePhone);
-  const hfToken = useSelector(selectCreateHfToken);
-  const oaToken = useSelector(selectCreateOaToken);
 
   const dispatch = useDispatch();
 
+  useEffect(componentDidMount, []);
+  //sets modal visibility to true upon page load via componentDidMount
+  function componentDidMount(): void {
+    handleOpenModal();
+  }
+
+  function handleOpenModal() {
+    const didMount = set.createDidMount(true);
+    dispatch(didMount);
+    const hideSignInModal = set.signInShowModal(false);
+    dispatch(hideSignInModal);
+    const showCreateModal = set.createShowModal(true);
+    dispatch(showCreateModal);
+  }
+
   function handleCloseModal() {
-    const clearEmail = set.createEmail("");
-    dispatch(clearEmail);
-    const clearPassword = set.createPassword("");
-    dispatch(clearPassword);
-    const clearName = set.createName("");
-    dispatch(clearName);
-    const clearPhone = set.createPhone("");
-    dispatch(clearPhone);
-    const clearError = set.createResponseMessage("");
-    dispatch(clearError);
     const closeUpdateModal = set.createShowModal(false);
     dispatch(closeUpdateModal);
   }
 
-  //run locally or remotely
-  const localPath = window.location.hostname;
-  const lambdaLocalPort = "http://localhost:3001";
-  const lambdaUrl = process.env.REACT_APP_LAMBDA_URL;
-
-  let baseUrl: string;
-
-  if (localPath === "localhost") {
-    baseUrl = lambdaLocalPort;
-  } else {
-    baseUrl = lambdaUrl;
-  }
-
-  async function handleSubmit(event: React.FormEvent) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const form = event.target;
+    const email = form[0].value;
+    const password = form[1].value;
+    const name = form[2].value;
+    const phone = form[3].value;
+    const hfToken = form[4].value;
+    const oaToken = form[5].value;
 
     const account = { email, password, name, phone, hfToken, oaToken };
 
@@ -80,26 +67,25 @@ export function CreateAccountModal() {
 
     if (result.status === 200) {
       const action = set.createResponseMessage(`User created successfully!`);
-      const loggedIn = set.authIsLoggedIn(true);
+      const loggedIn = set.authUserIsSignedIn(true);
       dispatch(loggedIn);
       const currentLoginState = set.signInIsSignedIn(true);
       dispatch(currentLoginState);
-      const savePassword = set.authUserPassword(password);
-      dispatch(savePassword);
       const userEmail = set.authUserEmail(email);
       dispatch(userEmail);
-      const closeModal = set.createShowModal(false);
-      dispatch(closeModal);
-      const hfUserToken = set.createHfToken(hfToken);
+      const savePassword = set.authUserPassword(password);
+      dispatch(savePassword);
+      const userName = set.authUserName(name);
+      dispatch(userName);
+      const userPhone = set.authUserPhone(phone);
+      dispatch(userPhone);
+      const hfUserToken = set.authUserHfToken(hfToken);
       dispatch(hfUserToken);
-      const oaUserToken = set.createOaToken(oaToken);
+      const oaUserToken = set.authUserOaToken(oaToken);
       dispatch(oaUserToken);
       savePersistentLogin(email, password);
       localStorage.setItem("loggedIn", "true");
       localStorage.setItem("loggedInEmail", email);
-      localStorage.setItem("loggedInPassword", password);
-      localStorage.setItem("hfToken", hfToken);
-      localStorage.setItem("oaToken", oaToken);
 
       return dispatch(action);
     } else {
@@ -120,7 +106,7 @@ export function CreateAccountModal() {
           id="createAccountModal"
           style={{ display: "block", backgroundColor: "rgba(0,0,0,0.7)" }}
         >
-          <div className="modal-dialog modal-dialog-centered mx-auto" style={{ width: "350px" }} data-bs-theme="dark">
+          <div className="modal-dialog modal-dialog-centered mx-auto" style={{ width: "340px" }} data-bs-theme="dark">
             <div className="modal-content mx-auto bg-dark text-white border rounded-0">
               <div className="modal-header d-flex justify-content-center">
                 <h2 className="modal-title mb-3 mt-2" style={{ width: "95%" }}>
@@ -132,55 +118,45 @@ export function CreateAccountModal() {
                   <div className="d-flex justify-content-center">
                     <input
                       type="email"
-                      className="form-control mb-1"
+                      className="form-control my-1"
                       placeholder="Email"
-                      aria-label="create user email "
-                      value={email}
-                      onChange={(e) => dispatch(set.createEmail(e.target.value))}
+                      name="email"
                       style={{ width: "95%" }}
                     />
                   </div>
                   <div className="d-flex justify-content-center">
                     <input
-                      type="text"
+                      type="password"
+                      className="form-control mb-1"
                       placeholder="Password"
-                      className="form-control mb-1"
-                      aria-label="create user password"
-                      value={password}
-                      onChange={(e) => dispatch(set.createPassword(e.target.value))}
+                      name="password"
                       style={{ width: "95%" }}
                     />
                   </div>
                   <div className="d-flex justify-content-center">
                     <input
                       type="text"
-                      className="form-control mb-1"
+                      className="form-control my-1"
                       placeholder="Name"
-                      aria-label="create user name"
-                      value={name}
-                      onChange={(e) => dispatch(set.createName(e.target.value))}
+                      name="name"
                       style={{ width: "95%" }}
                     />
                   </div>
                   <div className="d-flex justify-content-center">
                     <input
-                      type="text"
+                      type="tel"
                       className="form-control mb-1"
                       placeholder="Phone"
-                      aria-label="create user phone"
-                      value={phone}
-                      onChange={(e) => dispatch(set.createPhone(e.target.value))}
+                      name="phone"
                       style={{ width: "95%" }}
                     />
                   </div>
                   <div className="d-flex justify-content-center">
                     <input
                       type="text"
-                      className="form-control mb-1"
+                      className="form-control my-1"
                       placeholder="Hugging Face token"
-                      aria-label="create Hugging Face token"
-                      value={hfToken}
-                      onChange={(e) => dispatch(set.createHfToken(e.target.value))}
+                      name="hfToken"
                       style={{ width: "95%" }}
                     />
                   </div>
@@ -188,10 +164,8 @@ export function CreateAccountModal() {
                     <input
                       type="text"
                       className="form-control mb-1"
-                      placeholder="OpenAI token"
-                      aria-label="create OpenAI token"
-                      value={oaToken}
-                      onChange={(e) => dispatch(set.createOaToken(e.target.value))}
+                      placeholder="Open AI token"
+                      name="oaToken"
                       style={{ width: "95%" }}
                     />
                   </div>

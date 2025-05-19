@@ -197,19 +197,39 @@ export function selectSignInError(state: StateVariables) {
   return state.isSignedInState.error;
 }
 
-//sign-up modal
-
-export function selectIsLoggedIn(state: StateVariables) {
-  return state.authStateVar.isLoggedIn;
-}
-export function selectAuthUserEmail(state: StateVariables) {
-  return state.authStateVar.userEmail;
-}
-export function selectAuthUserPassword(state: StateVariables) {
-  return state.authStateVar.userPassword;
-}
-
 //global account
 export function selectGlobalAccount(state: StateVariables) {
   return state.globalAccountState.account;
+}
+
+//authUser
+export function selectAuthUserEmail(state: StateVariables) {
+  return state.authUserState.email;
+}
+export function selectAuthUserUserName(state: StateVariables) {
+  return state.authUserState.userName;
+}
+export function selectAuthUserPassword(state: StateVariables) {
+  return state.authUserState.password;
+}
+export function selectAuthUserName(state: StateVariables) {
+  return state.authUserState.name;
+}
+export function selectAuthUserPhone(state: StateVariables) {
+  return state.authUserState.phone;
+}
+export function selectAuthUserHfToken(state: StateVariables) {
+  return state.authUserState.hfToken;
+}
+export function selectAuthUserOaToken(state: StateVariables) {
+  return state.authUserState.oaToken;
+}
+export function selectAuthUserResponseMessage(state: StateVariables) {
+  return state.authUserState.responseMessage;
+}
+export function selectAuthUserReadMessage(state: StateVariables) {
+  return state.authUserState.readResponse;
+}
+export function selectAuthUserIsSignedIn(state: StateVariables) {
+  return state.authUserState.isSignedIn;
 }
