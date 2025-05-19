@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { getAnswer } from "../modules/appEngine/getAnswer";
 import { useDispatch, useSelector } from "react-redux";
-import { selectAiPageDidMount } from "../redux/stateSelectors";
+import { selectAiPageAnswer, selectAiPageDidMount } from "../redux/stateSelectors";
 import { set } from "../redux/store";
 
 export function AiPage() {
-  const [answer, setAnswer] = useState("");
   const didMount = useSelector(selectAiPageDidMount);
+  const answer = useSelector(selectAiPageAnswer);
   const dispatch = useDispatch();
 
   useEffect(componentDidMount, []);
@@ -37,8 +37,10 @@ export function AiPage() {
     const userContext = form.context.value;
 
     let response = await getAnswer(userQuestion, userContext);
+    debugger;
     console.log("Submitting:", userQuestion, userContext);
-    setAnswer(response);
+    const answer = set.aiPageAnswer(response);
+    dispatch(answer);
   }
 
   function componentDidMount(): void {

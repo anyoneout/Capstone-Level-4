@@ -38,7 +38,11 @@ export const stateSetters = {
     const newValue = action.payload;
     state.testBackendStateVar.didMount = newValue;
   },
-
+  //ai page
+  aiPageAnswer: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.aiPageStateVar.answer = newValue;
+  },
   // trivia api
   triviaApiDidMount: function (state: StateVariables, action: ActionBoolean) {
     const newValue = action.payload;

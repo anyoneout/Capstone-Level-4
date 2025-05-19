@@ -57,7 +57,7 @@ export function CollapsibleNavbar() {
               <NavLink to={`${rootPath}/aws`} className="nav-link">
                 <i className="bi bi-images me-2"></i>AWS
               </NavLink>
-            </li>
+            </li>*/}
             <li className="nav-item">
               <NavLink to={`${rootPath}/backendTest`} className="nav-link">
                 <i className="bi bi-images me-2"></i>Test Backend
@@ -67,7 +67,7 @@ export function CollapsibleNavbar() {
               <NavLink to={`${rootPath}/ai`} className="nav-link">
                 <i className="bi bi-images me-2"></i>AI
               </NavLink>
-            </li> */}
+            </li>
             <li className="nav-item">
               <NavLink to={`${rootPath}/About`} className="nav-link">
                 <i className="bi-exclamation-circle me-2"></i>About

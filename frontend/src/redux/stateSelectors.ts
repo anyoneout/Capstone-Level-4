@@ -31,6 +31,10 @@ export function selectTestBackendDidMount(state: StateVariables) {
   return state.testBackendStateVar.didMount;
 }
 
+//ai page
+export function selectAiPageAnswer(state: StateVariables) {
+  return state.aiPageStateVar.answer;
+}
 //trivia api
 export function selectTriviaApiDidMount(state: StateVariables) {
   return state.triviaApiStateVar.didMount;

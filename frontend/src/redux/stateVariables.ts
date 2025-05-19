@@ -21,6 +21,7 @@ export const stateVariables = {
 
   aiPageStateVar: {
     didMount: false,
+    answer: "",
   },
 
   testBackendStateVar: {
