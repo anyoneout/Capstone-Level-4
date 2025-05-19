@@ -37,7 +37,6 @@ export function AiPage() {
     const userContext = form.context.value;
 
     let response = await getAnswer(userQuestion, userContext);
-    debugger;
     console.log("Submitting:", userQuestion, userContext);
     const answer = set.aiPageAnswer(response);
     dispatch(answer);
