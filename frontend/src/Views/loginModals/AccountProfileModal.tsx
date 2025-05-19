@@ -116,7 +116,11 @@ export function AccountProfileModal() {
           id="profileModal"
           style={{ display: "block", backgroundColor: "rgba(0,0,0,0.7)" }}
         >
-          <div className="modal-dialog modal-dialog-centered mx-auto w-100" style={{ width: "340px" }}>
+          <div
+            className="modal-dialog modal-dialog-centered mx-auto w-100"
+            data-bs-theme="dark"
+            style={{ width: "340px" }}
+          >
             <div className="modal-content mx-auto bg-dark text-white border rounded-0">
               <div className="modal-body w-100 mx-auto">
                 <div className="container mt-3">
@@ -124,33 +128,33 @@ export function AccountProfileModal() {
                     <h5 className="mb-3 border-bottom pb-2">Personal details</h5>
 
                     <div className="row mb-2">
-                      <div className="col-sm-5 fw-bold">Full name:</div>
-                      <div className="col-sm-7">{authName}</div>
+                      <div className="col-md-6 fw-bold">Full name:</div>
+                      <div className="col-md-6">{authName}</div>
                     </div>
 
                     <div className="row mb-2">
-                      <div className="col-sm-5 fw-bold">Password:</div>
-                      <div className="col-sm-7">{authPassword}</div>
+                      <div className="col-md-6 fw-bold">Password:</div>
+                      <div className="col-md-6">{authPassword}</div>
                     </div>
 
                     <div className="row mb-2">
-                      <div className="col-sm-5 fw-bold">Phone Number:</div>
-                      <div className="col-sm-7">{authPhone}</div>
+                      <div className="col-md-6 fw-bold">Phone Number:</div>
+                      <div className="col-md-6">{authPhone}</div>
                     </div>
 
                     <div className="row mb-2">
-                      <div className="col-sm-5 fw-bold">Email:</div>
-                      <div className="col-sm-7">{authEmail}</div>
+                      <div className="col-md-6 fw-bold">Email:</div>
+                      <div className="col-md-6">{authEmail}</div>
                     </div>
 
                     <br />
                     <div className="row mb-2">
-                      <div className="col-sm-5 fw-bold">Hugging Face token:</div>
-                      <div className="col-sm-7">{authHfToken.slice(0, 12)}</div>
+                      <div className="col-md-6 fw-bold">Hugging Face token:</div>
+                      <div className="col-md-6">{authHfToken.slice(0, 12)}</div>
                     </div>
                     <div className="row mb-2">
-                      <div className="col-sm-5 fw-bold">Open AI token:</div>
-                      <div className="col-sm-7">{authOaToken.slice(0, 12)}</div>
+                      <div className="col-md-6 fw-bold">Open AI token:</div>
+                      <div className="col-md-6">{authOaToken.slice(0, 12)}</div>
                     </div>
                   </div>
                 </div>

@@ -123,9 +123,14 @@ export default function SignInAreaUpdate() {
             >
               <i className="bi-file-person"></i> Account
             </button>
-            <ul className="dropdown-menu" data-bs-theme="dark" aria-labelledby="accountMenu">
+            <ul
+              className="dropdown-menu"
+              data-bs-theme="dark"
+              style={{ backgroundColor: "black" }}
+              aria-labelledby="accountMenu"
+            >
               <li>
-                <button className="dropdown-item" style={{ color: "#fff78a" }} onClick={handleProfile}>
+                <button className="dropdown-item" style={{ color: "#079ab8" }} onClick={handleProfile}>
                   Profile
                 </button>
               </li>
@@ -135,12 +140,12 @@ export default function SignInAreaUpdate() {
                 </button>
               </li>
               <li>
-                <button className="dropdown-item" style={{ color: "#fff78a" }} onClick={handleDelete}>
+                <button className="dropdown-item text-danger" onClick={handleDelete}>
                   Delete
                 </button>
               </li>
               <li>
-                <button className="dropdown-item" onClick={handleSignOut}>
+                <button className="dropdown-item text-white" onClick={handleSignOut}>
                   Sign out
                 </button>
               </li>
@@ -155,7 +160,6 @@ export default function SignInAreaUpdate() {
       {showLoginModal && <LoginModal />}
       {showCreateModal && <CreateAccountModal />}
       {showProfileModal && <AccountProfileModal />}
-
       {showUpdateModal && <UpdateAccountModal />}
     </>
   );

@@ -149,7 +149,7 @@ export function UpdateAccountModal() {
           id="updateModal"
           style={{ display: "block", backgroundColor: "rgba(0,0,0,0.7)" }}
         >
-          <div className="modal-dialog modal-dialog-centered mx-auto" style={{ width: "340px" }}>
+          <div className="modal-dialog modal-dialog-centered mx-auto" data-bs-theme="dark" style={{ width: "340px" }}>
             <div className="modal-content mx-auto bg-dark text-white border rounded-0">
               <div className="modal-header d-flex justify-contents-center text-center">
                 <h3 className="modal-title text-center">Edit Account</h3>
@@ -165,12 +165,9 @@ export function UpdateAccountModal() {
                         <li>Name:</li>
                         <li>Phone:</li>
                         <br />
-                        <li>
+                        <li className="mb-1">
                           <u>Tokens</u>
                         </li>
-                        <br />
-                        <li>Hugging Face:</li>
-                        <li>Open AI:</li>
                       </ul>
                     </div>
                     <div className="col-7">
@@ -180,10 +177,20 @@ export function UpdateAccountModal() {
                         <li>{authPassword}</li>
                         <li>{name}</li>
                         <li>{phone}</li>
-                        <br />
-                        <br />
-                        <br />
-
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="col-5">
+                      {" "}
+                      <ul className="list-unstyled">
+                        <li>Hugging Face:</li>
+                        <li>Open AI:</li>
+                      </ul>
+                    </div>
+                    <div className="col-7">
+                      {" "}
+                      <ul className="list-unstyled">
                         <li>{hfToken.slice(0, 12)}</li>
                         <li>{oaToken.slice(0, 12)}</li>
                         <li className="mb-2"></li>
@@ -195,7 +202,6 @@ export function UpdateAccountModal() {
                     <input
                       type="email"
                       className="form-control"
-                      placeholder="Email"
                       aria-label="user email"
                       defaultValue={authEmail}
                       readOnly
@@ -207,20 +213,13 @@ export function UpdateAccountModal() {
                       type="text"
                       className="form-control"
                       aria-label="password"
-                      placeholder="password"
                       defaultValue={authPassword}
                       readOnly
                     />
                   </div>
                   <div className="input-group mb-1">
                     <span className="input-group-text">Name:</span>
-                    <input
-                      type="text"
-                      className="form-control"
-                      name="updateName"
-                      placeholder="........"
-                      aria-label="update user name"
-                    />
+                    <input type="text" className="form-control" name="updateName" aria-label="update user name" />
                   </div>
                   <div className="input-group mb-1">
                     <span className="input-group-text">Phone:</span>

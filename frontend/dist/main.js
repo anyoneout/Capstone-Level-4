@@ -37989,7 +37989,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `body {
 }
 
 .navbar-width {
-  max-width: 820px;
+  max-width: 920px;
   width: 100%;
 }
 
@@ -38103,7 +38103,7 @@ legend {
 
 .modal-button-style:hover {
   background-color: rgba(47, 178, 204, 0.7);
-}`, "",{"version":3,"sources":["webpack://./src/index.scss"],"names":[],"mappings":"AAAA;EACE,uBAAA;EACA,YAAA;EACA,2CAAA;AACF;;AAEA;EACE,gBAAA;EACA,wBAAA;EACA,yBAAA;EACA,gCAAA;AACF;;AAEA;EACE,yBAAA;EACA,mBAAA;EACA,WAAA;EACA,gBAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,YAAA;EACA,gBAAA;AACF;AAAE;EAEE,yBAAA;EACA,6BAAA;EACA,2BAAA;EACA,eAAA;EACA,UAAA;EACA,SAAA;EACA,gBAAA;AACJ;AAAI;EACE,WAAA;EACA,YAAA;EACA,iBAAA;EACA,cAAA;AAEN;;AAGA;EACE,gBAAA;EACA,WAAA;AAAF;;AAGA;EACE,uDAAA;EACA,0DAAA;AAAF;;AAGA;EACE,cAAA;EACA,WAAA;EACA,gBAAA;EACA,cAAA;AAAF;;AAGA;EACE,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;AAAF;;AAGA;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;AAAF;;AAGA;EACE,6CAAA;EACA,mDAAA;EACA,iBAAA;AAAF;;AAGA;EACE,8BAAA;EACA,eAAA;EACA,cAAA;AAAF;;AAGA;EACE,uBAAA;EACA,+DAAA;AAAF;AAGA;EACE,kBAAA;AADF;;AAIA;EACE,iBAAA;EACA,iBAAA;EACA,YAAA;EACA,mBAAA;AADF;;AAIA;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;AADF;;AAIA;EACE,aAAA;EACA,YAAA;EACA,iBAAA;EACA,iBAAA;EACA,cAAA;EACA,qBAAA;AADF;;AAIA;EACE,+BAAA;EACA,eAAA;AADF;;AAIA;EACE,4CAAA;EACA,yBAAA;EACA,2CAAA;EACA,mBAAA;EACA,6CAAA;EACA,YAAA;EACA,kBAAA;EACA,YAAA;EACA,gBAAA;EACA,eAAA;EACA,eAAA;AADF;;AAIA;EACE,mDAAA;EACA,mBAAA;AADF;;AAGA;;GAAA;AAIA;EACE,6BAAA;AADF;;AAIA;EACE,+BAAA;EACA,kBAAA;AADF;;AAIA;EACE,yCAAA;EACA,iCAAA;AADF;;AAIA;EACE,yCAAA;AADF","sourcesContent":["body {\n  background-color: black;\n  color: white;\n  font-family: \"Inter\", sans-serif !important;\n}\n\n.custom-tooltip {\n  max-width: 120px;\n  --bs-tooltip-bg: #fff78a;\n  --bs-tooltip-color: black;\n  --bs-tooltip-border-radius: 20px;\n}\n\n.image-border {\n  border: 2px solid #079ab8;\n  border-radius: 10px;\n  width: 100%;\n  max-width: 400px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 0px;\n  overflow: hidden;\n  .card {\n    // added !important to avoid a bootstrap conflict with how the border was surrounding the card image. Without forcing the styling there was a space that I couldn't get rid of.\n    display: block !important;\n    width: fit-content !important;\n    min-width: unset !important;\n    max-width: 100%;\n    padding: 0;\n    margin: 0;\n    overflow: hidden;\n    img {\n      width: 100%;\n      height: auto;\n      object-fit: cover;\n      display: block;\n    }\n  }\n}\n\n.navbar-width {\n  max-width: 820px;\n  width: 100%;\n}\n\n.carousel-item {\n  border-top: 2px solid #ffffff42;\n  border-bottom: 2px solid #ffffff42;\n}\n\n.carousel-images {\n  display: block;\n  width: 45vw;\n  max-width: 350px;\n  margin: 0 auto;\n}\n\n.carousel-icons {\n  color: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.carousel-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.api-inputs {\n  background-color: #00000042;\n  border: solid 1px #ffffff69;\n  font-size: 0.8rem;\n}\n\n.black-forest-font {\n  font-family: \"Playfair\", serif;\n  font-size: 40px;\n  color: #fff78a;\n}\n\n@font-face {\n  font-family: \"Playfair\";\n  src: url(\"/assets/fonts/PlayfairDisplay-Regular.otf\") format(\"opentype\");\n}\n\nhtml {\n  overflow-y: scroll;\n}\n\nlegend {\n  font-weight: bold;\n  font-size: 0.9rem;\n  color: white;\n  padding-bottom: 4px;\n}\n\n.api-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.video-small {\n  height: 250px;\n  width: 600px;\n  max-height: 200px;\n  object-fit: cover;\n  display: block;\n  border-radius: 1000px;\n}\n\n.try-here {\n  color: rgba(226, 72, 72, 0.925);\n  font-size: 1rem;\n}\n\n.try-buttons {\n  color: rgba(255, 255, 255, 0.925) !important;\n  border: 2px solid #079ab8;\n  font-family: \"Inter\", sans-serif !important;\n  border-radius: 25px;\n  transition: background-color 0.2s ease-in-out;\n  width: 120px;\n  text-align: center;\n  padding: 2px;\n  margin-left: 5px;\n  min-width: 60px;\n  max-width: 80px;\n}\n\n.crud-forms {\n  border: solid 1px #ffffff69;\n  border-radius: 25px;\n}\n/* * {\n  border: solid 1px yellow;\n} */\n\n.form-control:focus {\n  background-color: transparent;\n}\n\n.create-user-style {\n  background-color: \"transparent\";\n  box-shadow: \"none\";\n}\n\n.modal-button-style {\n  background-color: rgba(47, 178, 204, 0.8);\n  color: rgba(255, 255, 255, 0.925);\n}\n\n.modal-button-style:hover {\n  background-color: rgba(47, 178, 204, 0.7);\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/index.scss"],"names":[],"mappings":"AAAA;EACE,uBAAA;EACA,YAAA;EACA,2CAAA;AACF;;AAEA;EACE,gBAAA;EACA,wBAAA;EACA,yBAAA;EACA,gCAAA;AACF;;AAEA;EACE,yBAAA;EACA,mBAAA;EACA,WAAA;EACA,gBAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,YAAA;EACA,gBAAA;AACF;AAAE;EAEE,yBAAA;EACA,6BAAA;EACA,2BAAA;EACA,eAAA;EACA,UAAA;EACA,SAAA;EACA,gBAAA;AACJ;AAAI;EACE,WAAA;EACA,YAAA;EACA,iBAAA;EACA,cAAA;AAEN;;AAGA;EACE,gBAAA;EACA,WAAA;AAAF;;AAGA;EACE,uDAAA;EACA,0DAAA;AAAF;;AAGA;EACE,cAAA;EACA,WAAA;EACA,gBAAA;EACA,cAAA;AAAF;;AAGA;EACE,YAAA;EACA,aAAA;EACA,uBAAA;EACA,mBAAA;AAAF;;AAGA;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;AAAF;;AAGA;EACE,6CAAA;EACA,mDAAA;EACA,iBAAA;AAAF;;AAGA;EACE,8BAAA;EACA,eAAA;EACA,cAAA;AAAF;;AAGA;EACE,uBAAA;EACA,+DAAA;AAAF;AAGA;EACE,kBAAA;AADF;;AAIA;EACE,iBAAA;EACA,iBAAA;EACA,YAAA;EACA,mBAAA;AADF;;AAIA;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;AADF;;AAIA;EACE,aAAA;EACA,YAAA;EACA,iBAAA;EACA,iBAAA;EACA,cAAA;EACA,qBAAA;AADF;;AAIA;EACE,+BAAA;EACA,eAAA;AADF;;AAIA;EACE,4CAAA;EACA,yBAAA;EACA,2CAAA;EACA,mBAAA;EACA,6CAAA;EACA,YAAA;EACA,kBAAA;EACA,YAAA;EACA,gBAAA;EACA,eAAA;EACA,eAAA;AADF;;AAIA;EACE,mDAAA;EACA,mBAAA;AADF;;AAGA;;GAAA;AAIA;EACE,6BAAA;AADF;;AAIA;EACE,+BAAA;EACA,kBAAA;AADF;;AAIA;EACE,yCAAA;EACA,iCAAA;AADF;;AAIA;EACE,yCAAA;AADF","sourcesContent":["body {\n  background-color: black;\n  color: white;\n  font-family: \"Inter\", sans-serif !important;\n}\n\n.custom-tooltip {\n  max-width: 120px;\n  --bs-tooltip-bg: #fff78a;\n  --bs-tooltip-color: black;\n  --bs-tooltip-border-radius: 20px;\n}\n\n.image-border {\n  border: 2px solid #079ab8;\n  border-radius: 10px;\n  width: 100%;\n  max-width: 400px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 0px;\n  overflow: hidden;\n  .card {\n    // added !important to avoid a bootstrap conflict with how the border was surrounding the card image. Without forcing the styling there was a space that I couldn't get rid of.\n    display: block !important;\n    width: fit-content !important;\n    min-width: unset !important;\n    max-width: 100%;\n    padding: 0;\n    margin: 0;\n    overflow: hidden;\n    img {\n      width: 100%;\n      height: auto;\n      object-fit: cover;\n      display: block;\n    }\n  }\n}\n\n.navbar-width {\n  max-width: 920px;\n  width: 100%;\n}\n\n.carousel-item {\n  border-top: 2px solid #ffffff42;\n  border-bottom: 2px solid #ffffff42;\n}\n\n.carousel-images {\n  display: block;\n  width: 45vw;\n  max-width: 350px;\n  margin: 0 auto;\n}\n\n.carousel-icons {\n  color: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.carousel-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.api-inputs {\n  background-color: #00000042;\n  border: solid 1px #ffffff69;\n  font-size: 0.8rem;\n}\n\n.black-forest-font {\n  font-family: \"Playfair\", serif;\n  font-size: 40px;\n  color: #fff78a;\n}\n\n@font-face {\n  font-family: \"Playfair\";\n  src: url(\"/assets/fonts/PlayfairDisplay-Regular.otf\") format(\"opentype\");\n}\n\nhtml {\n  overflow-y: scroll;\n}\n\nlegend {\n  font-weight: bold;\n  font-size: 0.9rem;\n  color: white;\n  padding-bottom: 4px;\n}\n\n.api-container {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n\n.video-small {\n  height: 250px;\n  width: 600px;\n  max-height: 200px;\n  object-fit: cover;\n  display: block;\n  border-radius: 1000px;\n}\n\n.try-here {\n  color: rgba(226, 72, 72, 0.925);\n  font-size: 1rem;\n}\n\n.try-buttons {\n  color: rgba(255, 255, 255, 0.925) !important;\n  border: 2px solid #079ab8;\n  font-family: \"Inter\", sans-serif !important;\n  border-radius: 25px;\n  transition: background-color 0.2s ease-in-out;\n  width: 120px;\n  text-align: center;\n  padding: 2px;\n  margin-left: 5px;\n  min-width: 60px;\n  max-width: 80px;\n}\n\n.crud-forms {\n  border: solid 1px #ffffff69;\n  border-radius: 25px;\n}\n/* * {\n  border: solid 1px yellow;\n} */\n\n.form-control:focus {\n  background-color: transparent;\n}\n\n.create-user-style {\n  background-color: \"transparent\";\n  box-shadow: \"none\";\n}\n\n.modal-button-style {\n  background-color: rgba(47, 178, 204, 0.8);\n  color: rgba(255, 255, 255, 0.925);\n}\n\n.modal-button-style:hover {\n  background-color: rgba(47, 178, 204, 0.7);\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -85014,11 +85014,14 @@ function SignInAreaUpdate() {
   }), " Account"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
     className: "dropdown-menu",
     "data-bs-theme": "dark",
+    style: {
+      backgroundColor: "black"
+    },
     "aria-labelledby": "accountMenu"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "dropdown-item",
     style: {
-      color: "#fff78a"
+      color: "#079ab8"
     },
     onClick: handleProfile
   }, "Profile")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
@@ -85028,13 +85031,10 @@ function SignInAreaUpdate() {
     },
     onClick: handleUpdate
   }, "Update")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    className: "dropdown-item",
-    style: {
-      color: "#fff78a"
-    },
+    className: "dropdown-item text-danger",
     onClick: handleDelete
   }, "Delete")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-    className: "dropdown-item",
+    className: "dropdown-item text-white",
     onClick: handleSignOut
   }, "Sign out")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "sign-in-btn",
@@ -86096,6 +86096,7 @@ function AccountProfileModal() {
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "modal-dialog modal-dialog-centered mx-auto w-100",
+    "data-bs-theme": "dark",
     style: {
       width: "340px"
     }
@@ -86112,39 +86113,39 @@ function AccountProfileModal() {
   }, "Personal details"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "row mb-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-5 fw-bold"
+    className: "col-md-6 fw-bold"
   }, "Full name:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-7"
+    className: "col-md-6"
   }, authName)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "row mb-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-5 fw-bold"
+    className: "col-md-6 fw-bold"
   }, "Password:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-7"
+    className: "col-md-6"
   }, authPassword)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "row mb-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-5 fw-bold"
+    className: "col-md-6 fw-bold"
   }, "Phone Number:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-7"
+    className: "col-md-6"
   }, authPhone)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "row mb-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-5 fw-bold"
+    className: "col-md-6 fw-bold"
   }, "Email:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-7"
+    className: "col-md-6"
   }, authEmail)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "row mb-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-5 fw-bold"
+    className: "col-md-6 fw-bold"
   }, "Hugging Face token:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-7"
+    className: "col-md-6"
   }, authHfToken.slice(0, 12))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "row mb-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-5 fw-bold"
+    className: "col-md-6 fw-bold"
   }, "Open AI token:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "col-sm-7"
+    className: "col-md-6"
   }, authOaToken.slice(0, 12))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: handleUpdateModal,
     type: "button",
@@ -86883,6 +86884,7 @@ function UpdateAccountModal() {
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "modal-dialog modal-dialog-centered mx-auto",
+    "data-bs-theme": "dark",
     style: {
       width: "340px"
     }
@@ -86902,11 +86904,23 @@ function UpdateAccountModal() {
     className: "col-5"
   }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
     className: "list-unstyled"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Email:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Password:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Name:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Phone:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("u", null, "Tokens")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Hugging Face:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Open AI:"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Email:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Password:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Name:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Phone:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+    className: "mb-1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("u", null, "Tokens")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-7"
   }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
     className: "list-unstyled"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, authEmail), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, authPassword), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, phone), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, hfToken.slice(0, 12)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, oaToken.slice(0, 12)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, authEmail), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, authPassword), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, phone)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "col-5"
+  }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+    className: "list-unstyled"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Hugging Face:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, "Open AI:"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "col-7"
+  }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+    className: "list-unstyled"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, hfToken.slice(0, 12)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, oaToken.slice(0, 12)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "mb-2"
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "input-group mb-1 mt-4"
@@ -86915,7 +86929,6 @@ function UpdateAccountModal() {
   }, "Email:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
     type: "email",
     className: "form-control",
-    placeholder: "Email",
     "aria-label": "user email",
     defaultValue: authEmail,
     readOnly: true
@@ -86927,7 +86940,6 @@ function UpdateAccountModal() {
     type: "text",
     className: "form-control",
     "aria-label": "password",
-    placeholder: "password",
     defaultValue: authPassword,
     readOnly: true
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -86938,7 +86950,6 @@ function UpdateAccountModal() {
     type: "text",
     className: "form-control",
     name: "updateName",
-    placeholder: "........",
     "aria-label": "update user name"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "input-group mb-1"
