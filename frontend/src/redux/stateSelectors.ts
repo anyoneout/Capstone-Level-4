@@ -24,17 +24,30 @@ export function selectHandleRefreshDidMount(state: StateVariables) {
     return state.handleRefreshState.didMount;
   }
 }
-export function selectAiPageDidMount(state: StateVariables) {
-  return state.aiPageStateVar.didMount;
-}
 export function selectTestBackendDidMount(state: StateVariables) {
   return state.testBackendStateVar.didMount;
 }
-
 //ai page
+export function selectAiPageDidMount(state: StateVariables) {
+  return state.aiPageStateVar.didMount;
+}
 export function selectAiPageAnswer(state: StateVariables) {
   return state.aiPageStateVar.answer;
 }
+//recipe api
+export function selectRecipeApiDidMount(state: StateVariables) {
+  return state.recipeApiStateVar.didMount;
+}
+export function selectRecipeApiRecipe(state: StateVariables) {
+  return state.recipeApiStateVar.apiRecipe;
+}
+export function selectRecipeApiStatus(state: StateVariables) {
+  return state.recipeApiStateVar.apiStatus;
+}
+export function selectRecipeApiIngredients(state: StateVariables) {
+  return state.recipeApiStateVar.apiIngredients;
+}
+
 //trivia api
 export function selectTriviaApiDidMount(state: StateVariables) {
   return state.triviaApiStateVar.didMount;
@@ -174,38 +187,6 @@ export function selectDeleteResponseMessage(state: StateVariables) {
   return state.deleteAccountState.responseMessage;
 }
 
-//sign in area
-
-export function selectSignInIsSignedIn(state: StateVariables) {
-  return state.isSignedInState.isSignedIn;
-}
-export function selectSignInDidMount(state: StateVariables) {
-  return state.isSignedInState.didMount;
-}
-export function selectSignInButtonText(state: StateVariables) {
-  return state.isSignedInState.buttonText;
-}
-export function selectSignInButtonClass(state: StateVariables) {
-  return state.isSignedInState.buttonClass;
-}
-export function selectSignInShowModal(state: StateVariables) {
-  return state.isSignedInState.showModal;
-}
-export function selectSignInEmail(state: StateVariables) {
-  return state.isSignedInState.email;
-}
-export function selectSignInPassword(state: StateVariables) {
-  return state.isSignedInState.password;
-}
-export function selectSignInError(state: StateVariables) {
-  return state.isSignedInState.error;
-}
-
-//global account
-export function selectGlobalAccount(state: StateVariables) {
-  return state.globalAccountState.account;
-}
-
 //authUser
 export function selectAuthUserEmail(state: StateVariables) {
   return state.authUserState.email;
@@ -236,4 +217,36 @@ export function selectAuthUserReadMessage(state: StateVariables) {
 }
 export function selectAuthUserIsSignedIn(state: StateVariables) {
   return state.authUserState.isSignedIn;
+}
+
+//sign in area
+
+export function selectSignInIsSignedIn(state: StateVariables) {
+  return state.isSignedInState.isSignedIn;
+}
+export function selectSignInDidMount(state: StateVariables) {
+  return state.isSignedInState.didMount;
+}
+export function selectSignInButtonText(state: StateVariables) {
+  return state.isSignedInState.buttonText;
+}
+export function selectSignInButtonClass(state: StateVariables) {
+  return state.isSignedInState.buttonClass;
+}
+export function selectSignInShowModal(state: StateVariables) {
+  return state.isSignedInState.showModal;
+}
+export function selectSignInEmail(state: StateVariables) {
+  return state.isSignedInState.email;
+}
+export function selectSignInPassword(state: StateVariables) {
+  return state.isSignedInState.password;
+}
+export function selectSignInError(state: StateVariables) {
+  return state.isSignedInState.error;
+}
+
+//global account
+export function selectGlobalAccount(state: StateVariables) {
+  return state.globalAccountState.account;
 }

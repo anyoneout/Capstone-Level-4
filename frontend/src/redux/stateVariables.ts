@@ -19,18 +19,32 @@ export const stateVariables = {
     didMount: false,
   },
 
+  testBackendStateVar: {
+    didMount: false,
+  },
+
   aiPageStateVar: {
     didMount: false,
     answer: "",
   },
 
-  testBackendStateVar: {
-    didMount: false,
-  },
-
+  //dynamo
   dynamoAuthStateVar: {
     didMount: false,
     authResponse: false,
+  },
+
+  authUserState: {
+    email: "",
+    userName: "",
+    password: "",
+    name: "",
+    phone: "",
+    hfToken: "",
+    oaToken: "",
+    responseMessage: "",
+    readResponse: "",
+    isSignedIn: false,
   },
 
   triviaApiStateVar: {
@@ -46,6 +60,7 @@ export const stateVariables = {
   handleRefreshState: {
     didMount: false,
   },
+
   createAccountState: {
     email: "",
     userName: "",
@@ -114,21 +129,15 @@ export const stateVariables = {
     response: "",
   },
 
-  globalAccountState: {
-    account: null,
+  recipeApiStateVar: {
+    didMount: false,
+    apiRecipe: "",
+    apiStatus: "active",
+    apiIngredients: "",
   },
 
-  authUserState: {
-    email: "",
-    userName: "",
-    password: "",
-    name: "",
-    phone: "",
-    hfToken: "",
-    oaToken: "",
-    responseMessage: "",
-    readResponse: "",
-    isSignedIn: false,
+  globalAccountState: {
+    account: null,
   },
 };
 

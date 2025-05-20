@@ -15,6 +15,7 @@ import serverless from "serverless-http";
 import dotenv from "dotenv";
 import { triviaApiRoute } from "./routes/triviaApiRoute";
 import { dynamoAuthRoute } from "./routes/dynamoAuthRoute";
+import { recipesSimple } from "./routes/recipeSimple";
 
 dotenv.config();
 
@@ -37,6 +38,7 @@ app.post("/createUser", createUserRoute);
 app.post("/readUser", readUserRoute);
 app.post("/deleteUser", deleteUserRoute);
 app.post("/updateUser", updateUserRoute);
+app.get("/recipesSimple", recipesSimple);
 
 const mode = process.env.mode;
 const isRunningLocally = mode === "development";

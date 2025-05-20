@@ -16,7 +16,7 @@ app.use(json()); //Allows data to be received from Axios through JSON parameters
 app.use(cors());
 app.get("/", root); // The handler runs when the path is visited in the URL.
 app.get("/api", api);
-app.get("/aiPost", aiPost);
+app.post("/aiPost", aiPost);
 app.listen(port, hostname, handleListen); // The server listens at the specified hostname and port.
 
 function handleListen() {

@@ -32,7 +32,7 @@ export function OaPage() {
         <div className="col-md-6 mt-2 mb-4">
           <form className="api-form">
             <fieldset>
-              <legend>Select or enter a recipe</legend>
+              <legend>Select a recipe or enter a recipe</legend>
               <div className="input-group mb-2" data-bs-theme="dark">
                 <select className="form-select" id="chosenRecipe" style={{ fontSize: ".8rem" }}>
                   <option value="">Select a Recipe...</option>
@@ -43,7 +43,8 @@ export function OaPage() {
                   ))}
                 </select>
               </div>
-              <div className="input-group mb-2" data-bs-theme="dark">
+
+              <div className="input-group mt-2" data-bs-theme="dark">
                 <input
                   type="text"
                   className="form-control"
@@ -54,7 +55,7 @@ export function OaPage() {
                 <button
                   className="btn btn-sm btn-outline-secondary"
                   type="button"
-                  id="fetchButton"
+                  id="oaFetchButton"
                   onClick={handleOaFetchUpdate}
                 >
                   Submit

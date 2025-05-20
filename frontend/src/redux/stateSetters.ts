@@ -30,19 +30,21 @@ export const stateSetters = {
     const newValue = action.payload;
     state.handleRefreshState.didMount = newValue;
   },
-  aiPageDidMount: function (state: StateVariables, action: ActionBoolean) {
-    const newValue = action.payload;
-    state.aiPageStateVar.didMount = newValue;
-  },
   testBackendDidMount: function (state: StateVariables, action: ActionBoolean) {
     const newValue = action.payload;
     state.testBackendStateVar.didMount = newValue;
   },
+
   //ai page
+  aiPageDidMount: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.aiPageStateVar.didMount = newValue;
+  },
   aiPageAnswer: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
     state.aiPageStateVar.answer = newValue;
   },
+
   // trivia api
   triviaApiDidMount: function (state: StateVariables, action: ActionBoolean) {
     const newValue = action.payload;
@@ -57,6 +59,24 @@ export const stateSetters = {
     state.triviaApiStateVar.apiStatus = newValue;
   },
 
+  // recipe api
+  recipeApiDidMount: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.recipeApiStateVar.didMount = newValue;
+  },
+  recipeApiRecipe: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+
+    state.recipeApiStateVar.apiRecipe = newValue;
+  },
+  recipeApiStatus: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.recipeApiStateVar.apiStatus = newValue;
+  },
+  recipeApiIngredients: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.recipeApiStateVar.apiIngredients = newValue;
+  },
   //dynamo auth
   dynamoAuthDidMount: function (state: StateVariables, action: ActionBoolean) {
     const newValue = action.payload;
@@ -66,6 +86,7 @@ export const stateSetters = {
     const newValue = action.payload;
     state.dynamoAuthStateVar.authResponse = newValue;
   },
+
   //create account
   createEmail: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
@@ -219,6 +240,40 @@ export const stateSetters = {
     state.deleteAccountState.responseMessage = newValue;
   },
 
+  //sign in area
+  signInDidMount: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.isSignedInState.didMount = newValue;
+  },
+  signInIsSignedIn: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.isSignedInState.isSignedIn = newValue;
+  },
+  signInButtonText: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.isSignedInState.buttonText = newValue;
+  },
+  signInButtonClass: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.isSignedInState.buttonClass = newValue;
+  },
+  signInShowModal: function (state: StateVariables, action: ActionBoolean) {
+    const newValue = action.payload;
+    state.isSignedInState.showModal = newValue;
+  },
+  signInEmail: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.isSignedInState.email = newValue;
+  },
+  signInPassword: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.isSignedInState.password = newValue;
+  },
+  signInError: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.isSignedInState.error = newValue;
+  },
+
   //authUser
   authUserEmail: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
@@ -252,6 +307,7 @@ export const stateSetters = {
     const newValue = action.payload;
     state.authUserState.responseMessage = newValue;
   },
+
   authUserReadResponse: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
     state.authUserState.readResponse = newValue;
@@ -259,40 +315,6 @@ export const stateSetters = {
   authUserIsSignedIn: function (state: StateVariables, action: ActionBoolean) {
     const newValue = action.payload;
     state.authUserState.isSignedIn = newValue;
-  },
-
-  //sign in area
-  signInDidMount: function (state: StateVariables, action: ActionBoolean) {
-    const newValue = action.payload;
-    state.isSignedInState.didMount = newValue;
-  },
-  signInIsSignedIn: function (state: StateVariables, action: ActionBoolean) {
-    const newValue = action.payload;
-    state.isSignedInState.isSignedIn = newValue;
-  },
-  signInButtonText: function (state: StateVariables, action: Action) {
-    const newValue = action.payload;
-    state.isSignedInState.buttonText = newValue;
-  },
-  signInButtonClass: function (state: StateVariables, action: Action) {
-    const newValue = action.payload;
-    state.isSignedInState.buttonClass = newValue;
-  },
-  signInShowModal: function (state: StateVariables, action: ActionBoolean) {
-    const newValue = action.payload;
-    state.isSignedInState.showModal = newValue;
-  },
-  signInEmail: function (state: StateVariables, action: Action) {
-    const newValue = action.payload;
-    state.isSignedInState.email = newValue;
-  },
-  signInPassword: function (state: StateVariables, action: Action) {
-    const newValue = action.payload;
-    state.isSignedInState.password = newValue;
-  },
-  signInError: function (state: StateVariables, action: Action) {
-    const newValue = action.payload;
-    state.isSignedInState.error = newValue;
   },
 
   //global account
