@@ -99,8 +99,12 @@ export function RecipeApiResponsePage() {
 
   function componentDidUnmount(): () => void {
     function delayedUnmount(): void {
-      const action = set.recipeApiDidMount(false);
-      dispatch(action);
+      const didMount = set.recipeApiDidMount(false);
+      dispatch(didMount);
+      const recipe = set.recipeApiRecipe("");
+      dispatch(recipe);
+      const ingredients = set.recipeApiIngredients("");
+      dispatch(ingredients);
       console.log("component has unmounted");
     }
     return delayedUnmount;

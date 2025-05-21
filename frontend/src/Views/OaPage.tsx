@@ -2,15 +2,15 @@ import React, { useEffect } from "react";
 import { ApiDalleIcon, ApiOpenAiIcon } from "../modules/icons";
 import { recipeArray } from "../modules/recipeArray";
 import { useDispatch, useSelector } from "react-redux";
-import { selectGlobalAccount, selectOaPageDidMount } from "../redux/stateSelectors";
+import { selectOaPageDidMount } from "../redux/stateSelectors";
 import { set } from "../redux/store";
 import { handleOaFetchUpdate } from "../controllers/handleOaFetchUpdate";
 
 export function OaPage() {
   const didMount = useSelector(selectOaPageDidMount);
   const dispatch = useDispatch();
-  const account = useSelector(selectGlobalAccount);
-  const hfToken = account.hfToken;
+  /*   const account = useSelector(selectGlobalAccount); */
+  const hfToken = localStorage.getItem("hfToken");
 
   useEffect(componentDidMount, []);
   useEffect(componentDidUpdate, [didMount]);

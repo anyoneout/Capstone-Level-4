@@ -8,13 +8,12 @@ import {
   selectAuthUserPassword,
   selectAuthUserPhone,
   selectProfileShowModal,
-  selectUpdateShowModal,
 } from "../../redux/stateSelectors";
 import { set } from "../../redux/store";
 import { readAccount } from "../../modules/crud/readAccount";
+import { handleClearLocalStorage } from "../../controllers/handleClearLocalStorage";
 
 export function AccountProfileModal() {
-  const showUpdateModal = useSelector(selectUpdateShowModal);
   const showProfileModal = useSelector(selectProfileShowModal);
   const authEmail = useSelector(selectAuthUserEmail);
   const authPassword = useSelector(selectAuthUserPassword);
@@ -34,10 +33,10 @@ export function AccountProfileModal() {
   }
 
   async function handleOpenModal() {
-    const hideSignInModal = set.signInShowModal(false);
-    dispatch(hideSignInModal);
     const didMount = set.accountProfileDidMount(true);
     dispatch(didMount);
+    const hideSignInModal = set.signInShowModal(false);
+    dispatch(hideSignInModal);
     const showCreateModal = set.accountProfileShowModal(true);
     dispatch(showCreateModal);
 
@@ -60,8 +59,6 @@ export function AccountProfileModal() {
         return dispatch(setErrorResponse);
       }
     } else {
-      //if user exists, signs in, saves authorized user email, password, sets localstorage, and closes login modal
-
       localStorage.setItem("loggedIn", "true");
       const saveEmail = set.authUserEmail(result.email);
       dispatch(saveEmail);
@@ -85,11 +82,15 @@ export function AccountProfileModal() {
   }
 
   function handleCloseModal() {
+    const didUnMount = set.accountProfileDidMount(false);
+    dispatch(didUnMount);
     const closeProfileModal = set.accountProfileShowModal(false);
     dispatch(closeProfileModal);
   }
 
   function handleUpdateModal() {
+    const didUnMount = set.accountProfileDidMount(true);
+    dispatch(didUnMount);
     const hideProfileModal = set.accountProfileShowModal(false);
     dispatch(hideProfileModal);
     const showUpdateModal = set.updateShowModal(true);
@@ -97,7 +98,9 @@ export function AccountProfileModal() {
   }
 
   async function handleLogOut() {
-    localStorage.clear();
+    handleClearLocalStorage();
+    const didUnMount = set.accountProfileDidMount(false);
+    dispatch(didUnMount);
     const closeProfileModal = set.accountProfileShowModal(false);
     dispatch(closeProfileModal);
     const clearIsSignedIn = set.signInIsSignedIn(false);
@@ -106,6 +109,8 @@ export function AccountProfileModal() {
     dispatch(clearAuthUserEmail);
     const clearAuthUserPassword = set.authUserPassword("");
     dispatch(clearAuthUserPassword);
+    /*  const action = set.globalAccount("");
+    dispatch(action); */
   }
 
   return (

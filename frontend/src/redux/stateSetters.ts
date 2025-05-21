@@ -1,3 +1,4 @@
+import { Account } from "../types/Account";
 import { StateVariables } from "./stateVariables";
 
 //didMount
@@ -8,7 +9,7 @@ export const stateSetters = {
   },
   bfPageDidMount: function (state: StateVariables, action: ActionBoolean) {
     const newValue = action.payload;
-    state.aboutStateVar.didMount = newValue;
+    state.bfPageStateVar.didMount = newValue;
   },
   examplesDidMount: function (state: StateVariables, action: ActionBoolean) {
     const newValue = action.payload;
@@ -318,10 +319,10 @@ export const stateSetters = {
   },
 
   //global account
-  globalAccount: function (state: StateVariables, action: Action) {
+  /*   globalAccount: function (state: StateVariables, action) {
     const newValue = action.payload;
     state.globalAccountState.account = newValue;
-  },
+  }, */
 };
 
 type Action = {
@@ -333,3 +334,8 @@ type ActionBoolean = {
   payload: boolean;
   type: string;
 };
+
+/* type ActionAccount = {
+  payload: Account;
+  type: string;
+}; */

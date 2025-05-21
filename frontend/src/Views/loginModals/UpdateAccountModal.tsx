@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  selectSignInIsSignedIn,
   selectAuthUserEmail,
   selectAuthUserPassword,
   selectAuthUserName,
@@ -16,7 +15,6 @@ import { updateAccount } from "../../modules/crud/updateAccount";
 import { readAccount } from "../../modules/crud/readAccount";
 
 export function UpdateAccountModal() {
-  const isSignedIn = useSelector(selectSignInIsSignedIn);
   const showUpdateModal = useSelector(selectUpdateShowModal);
   const responseMessage = useSelector(selectUpdateResponseMessage);
 
@@ -35,6 +33,8 @@ export function UpdateAccountModal() {
   useEffect(componentDidMount, []);
   //sets modal visibility to true upon page load via componentDidMount
   function componentDidMount(): void {
+    const didMount = set.updateDidMount(true);
+    dispatch(didMount);
     handleOpenModal();
   }
 
@@ -92,6 +92,10 @@ export function UpdateAccountModal() {
   function handleCloseModal() {
     const closeUpdateModal = set.updateShowModal(false);
     dispatch(closeUpdateModal);
+    const didUnMount = set.updateDidMount(false);
+    dispatch(didUnMount);
+    const isSignedOut = set.signInIsSignedIn(false);
+    dispatch(isSignedOut);
   }
 
   async function handleUpdateSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -128,10 +132,6 @@ export function UpdateAccountModal() {
     if (response.status === 200) {
       const action = set.updateResponseMessage(`Successfully updated!`);
       dispatch(action);
-      const closeUpdateModal = set.updateShowModal(false);
-      dispatch(closeUpdateModal);
-      const openUpdateModal = set.updateShowModal(true);
-      dispatch(openUpdateModal);
     } else {
       const action = set.updateResponseMessage("User wasn't updated");
       return dispatch(action);

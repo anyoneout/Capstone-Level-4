@@ -2,21 +2,13 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { set } from "../../redux/store";
 import { readAccount } from "../../modules/crud/readAccount";
-import {
-  selectSignInError,
-  selectSignInShowModal,
-  selectAuthUserEmail,
-  selectAuthUserPassword,
-  selectAuthUserIsSignedIn,
-} from "../../redux/stateSelectors";
+import { selectSignInDidMount, selectSignInError, selectSignInShowModal } from "../../redux/stateSelectors";
 import { savePersistentLogin } from "../../modules/savePersistentLogin";
 
 export function LoginModal() {
   //declares Redux
-  const isSignedIn = useSelector(selectAuthUserIsSignedIn);
-  const signInModal = useSelector(selectSignInShowModal);
-  const authEmail = useSelector(selectAuthUserEmail);
-  const authPassword = useSelector(selectAuthUserPassword);
+  const didMount = useSelector(selectSignInDidMount);
+  const showSignInModal = useSelector(selectSignInShowModal);
   const errorResponse = useSelector(selectSignInError);
 
   //invokes useDispatch
@@ -37,6 +29,8 @@ export function LoginModal() {
   function handleCloseModal() {
     const closeSignInModal = set.signInShowModal(false);
     dispatch(closeSignInModal);
+    const didUnMount = set.signInDidMount(false);
+    dispatch(didUnMount);
   }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -63,6 +57,7 @@ export function LoginModal() {
         return dispatch(setErrorResponse);
       }
     } else {
+      console.log(result);
       //if user exists, signs in, saves authorized user email, password, sets localstorage, and closes login modal
       const currentLoginState = set.signInIsSignedIn(true);
       dispatch(currentLoginState);
@@ -71,28 +66,15 @@ export function LoginModal() {
       const authUserLoginState = set.authUserIsSignedIn(true);
       dispatch(authUserLoginState);
       localStorage.setItem("loggedIn", "true");
-      const saveEmail = set.authUserEmail(result.email);
-      dispatch(saveEmail);
       localStorage.setItem("email", result.email);
-      const savePassword = set.authUserPassword(result.password);
-      dispatch(savePassword);
       localStorage.setItem("password", result.password);
-      const saveName = set.authUserName(result.name);
-      dispatch(saveName);
       localStorage.setItem("name", result.name);
-      const savePhone = set.authUserPhone(result.phone);
-      dispatch(savePhone);
       localStorage.setItem("phone", result.phone);
-      const saveHfToken = set.authUserHfToken(result.hfToken);
-      dispatch(saveHfToken);
       localStorage.setItem("hfToken", result.hfToken);
-      const saveOaToken = set.authUserOaToken(result.oaToken);
-      dispatch(saveOaToken);
       localStorage.setItem("oaToken", result.oaToken);
-
       savePersistentLogin(email, password);
-      const unmount = set.signInDidMount(false);
-      dispatch(unmount);
+      const didUnMount = set.signInDidMount(false);
+      dispatch(didUnMount);
       const closeModal = set.signInShowModal(false);
       dispatch(closeModal);
     }
@@ -102,20 +84,22 @@ export function LoginModal() {
     event.preventDefault();
     const hideLoginModal = set.signInShowModal(false);
     dispatch(hideLoginModal);
+    const didUnMount = set.signInDidMount(false);
+    dispatch(didUnMount);
     const showCreateAccountModal = set.createShowModal(true);
     dispatch(showCreateAccountModal);
   }
-  function showUpdateAccountModal(event: React.FormEvent) {
+  /*   function showUpdateAccountModal(event: React.FormEvent) {
     event.preventDefault();
     const hideLoginModal = set.signInShowModal(false);
     dispatch(hideLoginModal);
     const showUpdateAccountModal = set.updateShowModal(true);
     dispatch(showUpdateAccountModal);
-  }
+  } */
 
   return (
     <>
-      {signInModal && (
+      {showSignInModal && (
         <div
           className="modal fade show"
           id="loginModal"
@@ -183,12 +167,12 @@ export function LoginModal() {
                       Sign Up
                     </a>{" "}
                   </div>
-                  <div className="mx-auto" style={{ fontSize: "13px", color: "rgba(156, 156, 156, 0.7)" }}>
+                  {/*    <div className="mx-auto" style={{ fontSize: "13px", color: "rgba(156, 156, 156, 0.7)" }}>
                     Need to make changes?{" "}
                     <a href="#" className="text-decoration-none" onClick={showUpdateAccountModal}>
                       Update Account
                     </a>{" "}
-                  </div>
+                  </div> */}
                 </div>
               </form>
             </div>

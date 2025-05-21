@@ -83426,9 +83426,8 @@ __webpack_require__.r(__webpack_exports__);
 function BfPage() {
   var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectBfPageDidMount);
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useDispatch)();
-  var account = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectGlobalAccount);
-  var hfToken = account.hfToken;
-  var oaToken = account.oaToken;
+  var hfToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectAuthUserHfToken);
+  var oaToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectAuthUserOaToken);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUpdate, [didMount]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUnmount, []);
@@ -83967,8 +83966,8 @@ __webpack_require__.r(__webpack_exports__);
 function OaPage() {
   var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectOaPageDidMount);
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useDispatch)();
-  var account = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectGlobalAccount);
-  var hfToken = account.hfToken;
+  /*   const account = useSelector(selectGlobalAccount); */
+  var hfToken = localStorage.getItem("hfToken");
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUpdate, [didMount]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUnmount, []);
@@ -84211,8 +84210,12 @@ function RecipeApiResponsePage() {
   }
   function componentDidUnmount() {
     function delayedUnmount() {
-      var action = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.recipeApiDidMount(false);
-      dispatch(action);
+      var didMount = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.recipeApiDidMount(false);
+      dispatch(didMount);
+      var recipe = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.recipeApiRecipe("");
+      dispatch(recipe);
+      var ingredients = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.recipeApiIngredients("");
+      dispatch(ingredients);
       console.log("component has unmounted");
     }
     return delayedUnmount;
@@ -85195,15 +85198,15 @@ function SignInAreaUpdate() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
   function componentDidMount() {
     var isLoggedIn = localStorage.getItem("loggedIn") === "true";
-    var email = localStorage.getItem("loggedInEmail") || "";
-    var password = localStorage.getItem("loggedInPassword") || "";
+    var email = localStorage.getItem("email") || "";
+    var password = localStorage.getItem("password") || "";
     getPersistentLogin();
     function getPersistentLogin() {
       return _getPersistentLogin.apply(this, arguments);
     }
     function _getPersistentLogin() {
       _getPersistentLogin = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-        var login, credentials, _email, _password, timestamp, currentTimestamp, elapsedTime, isExpired, elapsedInMins, timeElapsedString, account, action;
+        var login, credentials, _email, _password, timestamp, currentTimestamp, elapsedTime, isExpired, elapsedInMins, timeElapsedString, account;
         return _regeneratorRuntime().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
@@ -85240,8 +85243,8 @@ function SignInAreaUpdate() {
             case 16:
               account = _context.sent;
               if (account) {
-                action = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.globalAccount(account);
-                dispatch(action);
+                /*        const action = set.globalAccount(account);
+                dispatch(action); */
               } else localStorage.setItem("credentials", "");
             case 18:
             case "end":
@@ -85267,6 +85270,8 @@ function SignInAreaUpdate() {
   function handleSignIn() {
     var action = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInShowModal(true);
     dispatch(action);
+    var didMount = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInDidMount(true);
+    dispatch(didMount);
   }
   //shows profileModal
   function handleProfile() {
@@ -85284,7 +85289,7 @@ function SignInAreaUpdate() {
   } //clears authorized redux, local storage and signs out
   function _handleDelete() {
     _handleDelete = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-      var email, password, clearIsSignedIn, clearAuthUserEmail, clearAuthUserPassword, clearAuthUserName, clearAuthUserPhone, clearAuthUserHfToken, clearAuthUserOaToken;
+      var email, password, clearIsSignedIn, clearAuthUserEmail, clearAuthUserPassword, clearAuthUserName, clearAuthUserPhone, clearAuthUserHfToken, clearAuthUserOaToken, action;
       return _regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
@@ -85315,7 +85320,9 @@ function SignInAreaUpdate() {
             clearAuthUserOaToken = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserOaToken("");
             dispatch(clearAuthUserOaToken);
             (0,_controllers_handleClearLocalStorage__WEBPACK_IMPORTED_MODULE_10__.handleClearLocalStorage)();
-          case 19:
+            action = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.globalAccount("");
+            dispatch(action);
+          case 21:
           case "end":
             return _context2.stop();
         }
@@ -85339,6 +85346,8 @@ function SignInAreaUpdate() {
     var clearAuthUserOaToken = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserOaToken("");
     dispatch(clearAuthUserOaToken);
     (0,_controllers_handleClearLocalStorage__WEBPACK_IMPORTED_MODULE_10__.handleClearLocalStorage)();
+    /*     const action = set.globalAccount("");
+    dispatch(action); */
   }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "nav-item"
@@ -86286,10 +86295,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/.pnpm/react-redux@9.2.0_@types+re_09dfa075fee95aeaf90c5002f190b9a3/node_modules/react-redux/dist/react-redux.mjs");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ "./node_modules/.pnpm/react-redux@9.2.0_@types+re_09dfa075fee95aeaf90c5002f190b9a3/node_modules/react-redux/dist/react-redux.mjs");
 /* harmony import */ var _redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../redux/stateSelectors */ "./src/redux/stateSelectors.ts");
 /* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../redux/store */ "./src/redux/store.ts");
 /* harmony import */ var _modules_crud_readAccount__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../modules/crud/readAccount */ "./src/modules/crud/readAccount.ts");
+/* harmony import */ var _controllers_handleClearLocalStorage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../controllers/handleClearLocalStorage */ "./src/controllers/handleClearLocalStorage.ts");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
@@ -86299,18 +86309,18 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 
+
 function AccountProfileModal() {
-  var showUpdateModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectUpdateShowModal);
-  var showProfileModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectProfileShowModal);
-  var authEmail = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserEmail);
-  var authPassword = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserPassword);
-  var authName = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserName);
-  var authPhone = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserPhone);
-  var authHfToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserHfToken);
-  var authOaToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserOaToken);
+  var showProfileModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectProfileShowModal);
+  var authEmail = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserEmail);
+  var authPassword = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserPassword);
+  var authName = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserName);
+  var authPhone = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserPhone);
+  var authHfToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserHfToken);
+  var authOaToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserOaToken);
   var authEmailLs = localStorage.getItem("email");
   var authPasswordLs = localStorage.getItem("password");
-  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useDispatch)();
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useDispatch)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
   //sets modal visibility to true upon page load via componentDidMount
   function componentDidMount() {
@@ -86321,14 +86331,14 @@ function AccountProfileModal() {
   }
   function _handleOpenModal() {
     _handleOpenModal = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-      var hideSignInModal, didMount, showCreateModal, result, setErrorResponse, _setErrorResponse, saveEmail, savePassword, saveName, savePhone, saveHfToken, saveOaToken;
+      var didMount, hideSignInModal, showCreateModal, result, setErrorResponse, _setErrorResponse, saveEmail, savePassword, saveName, savePhone, saveHfToken, saveOaToken;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            hideSignInModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInShowModal(false);
-            dispatch(hideSignInModal);
             didMount = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileDidMount(true);
             dispatch(didMount);
+            hideSignInModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInShowModal(false);
+            dispatch(hideSignInModal);
             showCreateModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileShowModal(true);
             dispatch(showCreateModal);
             _context.next = 8;
@@ -86363,8 +86373,6 @@ function AccountProfileModal() {
             _context.next = 37;
             break;
           case 18:
-            //if user exists, signs in, saves authorized user email, password, sets localstorage, and closes login modal
-
             localStorage.setItem("loggedIn", "true");
             saveEmail = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserEmail(result.email);
             dispatch(saveEmail);
@@ -86393,10 +86401,14 @@ function AccountProfileModal() {
     return _handleOpenModal.apply(this, arguments);
   }
   function handleCloseModal() {
+    var didUnMount = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileDidMount(false);
+    dispatch(didUnMount);
     var closeProfileModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileShowModal(false);
     dispatch(closeProfileModal);
   }
   function handleUpdateModal() {
+    var didUnMount = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileDidMount(true);
+    dispatch(didUnMount);
     var hideProfileModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileShowModal(false);
     dispatch(hideProfileModal);
     var showUpdateModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateShowModal(true);
@@ -86407,11 +86419,13 @@ function AccountProfileModal() {
   }
   function _handleLogOut() {
     _handleLogOut = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-      var closeProfileModal, clearIsSignedIn, clearAuthUserEmail, clearAuthUserPassword;
+      var didUnMount, closeProfileModal, clearIsSignedIn, clearAuthUserEmail, clearAuthUserPassword;
       return _regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
-            localStorage.clear();
+            (0,_controllers_handleClearLocalStorage__WEBPACK_IMPORTED_MODULE_4__.handleClearLocalStorage)();
+            didUnMount = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileDidMount(false);
+            dispatch(didUnMount);
             closeProfileModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.accountProfileShowModal(false);
             dispatch(closeProfileModal);
             clearIsSignedIn = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInIsSignedIn(false);
@@ -86420,7 +86434,9 @@ function AccountProfileModal() {
             dispatch(clearAuthUserEmail);
             clearAuthUserPassword = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserPassword("");
             dispatch(clearAuthUserPassword);
-          case 9:
+            /*  const action = set.globalAccount("");
+            dispatch(action); */
+          case 11:
           case "end":
             return _context2.stop();
         }
@@ -86534,7 +86550,7 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 function CreateAccountModal() {
   var isSignedIn = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserIsSignedIn);
-  var showModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectCreateShowModal);
+  var showCreateModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectCreateShowModal);
   var responseMessage = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectCreateResponseMessage);
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useDispatch)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
@@ -86551,6 +86567,8 @@ function CreateAccountModal() {
     dispatch(showCreateModal);
   }
   function handleCloseModal() {
+    var didUnMount = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createDidMount(false);
+    dispatch(didUnMount);
     var closeUpdateModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createShowModal(false);
     dispatch(closeUpdateModal);
   }
@@ -86559,7 +86577,7 @@ function CreateAccountModal() {
   }
   function _handleSubmit() {
     _handleSubmit = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
-      var form, email, password, name, phone, hfToken, oaToken, account, setErrorResponse, result, action, _action, _action2, loggedIn, currentLoginState, userEmail, savePassword, userName, userPhone, hfUserToken, oaUserToken, _action3;
+      var form, email, password, name, phone, hfToken, oaToken, account, setErrorResponse, result, action, _action, _action2, loggedIn, currentLoginState, didMount, _action3;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -86606,7 +86624,7 @@ function CreateAccountModal() {
             return _context.abrupt("return", dispatch(_action));
           case 22:
             if (!(result.status === 200)) {
-              _context.next = 46;
+              _context.next = 41;
               break;
             }
             _action2 = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createResponseMessage("User created successfully!");
@@ -86614,26 +86632,21 @@ function CreateAccountModal() {
             dispatch(loggedIn);
             currentLoginState = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInIsSignedIn(true);
             dispatch(currentLoginState);
-            userEmail = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserEmail(email);
-            dispatch(userEmail);
-            savePassword = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserPassword(password);
-            dispatch(savePassword);
-            userName = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserName(name);
-            dispatch(userName);
-            userPhone = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserPhone(phone);
-            dispatch(userPhone);
-            hfUserToken = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserHfToken(hfToken);
-            dispatch(hfUserToken);
-            oaUserToken = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserOaToken(oaToken);
-            dispatch(oaUserToken);
             (0,_modules_savePersistentLogin__WEBPACK_IMPORTED_MODULE_4__.savePersistentLogin)(email, password);
             localStorage.setItem("loggedIn", "true");
-            localStorage.setItem("loggedInEmail", email);
+            localStorage.setItem("email", email);
+            localStorage.setItem("hfToken", hfToken);
+            localStorage.setItem("oaToken", oaToken);
+            localStorage.setItem("name", name);
+            localStorage.setItem("password", password);
+            localStorage.setItem("phone", phone);
+            didMount = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createDidMount(false);
+            dispatch(didMount);
             return _context.abrupt("return", dispatch(_action2));
-          case 46:
+          case 41:
             _action3 = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createResponseMessage("User wasn't created");
             return _context.abrupt("return", dispatch(_action3));
-          case 48:
+          case 43:
           case "end":
             return _context.stop();
         }
@@ -86644,7 +86657,7 @@ function CreateAccountModal() {
   if (isSignedIn) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null);
   }
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, showModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, showCreateModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "modal fade show",
     id: "createAccountModal",
     style: {
@@ -86787,10 +86800,8 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 function LoginModal() {
   //declares Redux
-  var isSignedIn = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectAuthUserIsSignedIn);
-  var signInModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectSignInShowModal);
-  var authEmail = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectAuthUserEmail);
-  var authPassword = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectAuthUserPassword);
+  var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectSignInDidMount);
+  var showSignInModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectSignInShowModal);
   var errorResponse = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectSignInError);
 
   //invokes useDispatch
@@ -86810,13 +86821,15 @@ function LoginModal() {
   function handleCloseModal() {
     var closeSignInModal = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInShowModal(false);
     dispatch(closeSignInModal);
+    var didUnMount = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInDidMount(false);
+    dispatch(didUnMount);
   }
   function handleSubmit(_x) {
     return _handleSubmit.apply(this, arguments);
   }
   function _handleSubmit() {
     _handleSubmit = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
-      var form, email, password, setErrorResponse, result, _setErrorResponse, _setErrorResponse2, currentLoginState, currentLoginError, authUserLoginState, saveEmail, savePassword, saveName, savePhone, saveHfToken, saveOaToken, unmount, closeModal;
+      var form, email, password, setErrorResponse, result, _setErrorResponse, _setErrorResponse2, currentLoginState, currentLoginError, authUserLoginState, didUnMount, closeModal;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -86860,9 +86873,10 @@ function LoginModal() {
             _setErrorResponse2 = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInError("User not found");
             return _context.abrupt("return", dispatch(_setErrorResponse2));
           case 17:
-            _context.next = 49;
+            _context.next = 38;
             break;
           case 19:
+            console.log(result);
             //if user exists, signs in, saves authorized user email, password, sets localstorage, and closes login modal
             currentLoginState = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInIsSignedIn(true);
             dispatch(currentLoginState);
@@ -86871,30 +86885,18 @@ function LoginModal() {
             authUserLoginState = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserIsSignedIn(true);
             dispatch(authUserLoginState);
             localStorage.setItem("loggedIn", "true");
-            saveEmail = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserEmail(result.email);
-            dispatch(saveEmail);
             localStorage.setItem("email", result.email);
-            savePassword = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserPassword(result.password);
-            dispatch(savePassword);
             localStorage.setItem("password", result.password);
-            saveName = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserName(result.name);
-            dispatch(saveName);
             localStorage.setItem("name", result.name);
-            savePhone = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserPhone(result.phone);
-            dispatch(savePhone);
             localStorage.setItem("phone", result.phone);
-            saveHfToken = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserHfToken(result.hfToken);
-            dispatch(saveHfToken);
             localStorage.setItem("hfToken", result.hfToken);
-            saveOaToken = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserOaToken(result.oaToken);
-            dispatch(saveOaToken);
             localStorage.setItem("oaToken", result.oaToken);
             (0,_modules_savePersistentLogin__WEBPACK_IMPORTED_MODULE_4__.savePersistentLogin)(email, password);
-            unmount = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInDidMount(false);
-            dispatch(unmount);
+            didUnMount = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInDidMount(false);
+            dispatch(didUnMount);
             closeModal = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInShowModal(false);
             dispatch(closeModal);
-          case 49:
+          case 38:
           case "end":
             return _context.stop();
         }
@@ -86906,17 +86908,20 @@ function LoginModal() {
     event.preventDefault();
     var hideLoginModal = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInShowModal(false);
     dispatch(hideLoginModal);
+    var didUnMount = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInDidMount(false);
+    dispatch(didUnMount);
     var showCreateAccountModal = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.createShowModal(true);
     dispatch(showCreateAccountModal);
   }
-  function showUpdateAccountModal(event) {
+  /*   function showUpdateAccountModal(event: React.FormEvent) {
     event.preventDefault();
-    var hideLoginModal = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInShowModal(false);
+    const hideLoginModal = set.signInShowModal(false);
     dispatch(hideLoginModal);
-    var showUpdateAccountModal = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.updateShowModal(true);
+    const showUpdateAccountModal = set.updateShowModal(true);
     dispatch(showUpdateAccountModal);
-  }
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, signInModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  } */
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, showSignInModal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "modal fade show",
     id: "loginModal",
     style: {
@@ -87006,17 +87011,7 @@ function LoginModal() {
     href: "#",
     className: "text-decoration-none",
     onClick: showCreateAccountModal
-  }, "Sign Up"), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "mx-auto",
-    style: {
-      fontSize: "13px",
-      color: "rgba(156, 156, 156, 0.7)"
-    }
-  }, "Need to make changes?", " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-    href: "#",
-    className: "text-decoration-none",
-    onClick: showUpdateAccountModal
-  }, "Update Account"), " ")))))));
+  }, "Sign Up"), " ")))))));
 }
 
 /***/ }),
@@ -87050,7 +87045,6 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 
 
 function UpdateAccountModal() {
-  var isSignedIn = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectSignInIsSignedIn);
   var showUpdateModal = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectUpdateShowModal);
   var responseMessage = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectUpdateResponseMessage);
   var password = (0,react_redux__WEBPACK_IMPORTED_MODULE_5__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_1__.selectAuthUserPassword);
@@ -87066,6 +87060,8 @@ function UpdateAccountModal() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
   //sets modal visibility to true upon page load via componentDidMount
   function componentDidMount() {
+    var didMount = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateDidMount(true);
+    dispatch(didMount);
     handleOpenModal();
   }
   function handleOpenModal() {
@@ -87147,6 +87143,10 @@ function UpdateAccountModal() {
   function handleCloseModal() {
     var closeUpdateModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateShowModal(false);
     dispatch(closeUpdateModal);
+    var didUnMount = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateDidMount(false);
+    dispatch(didUnMount);
+    var isSignedOut = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInIsSignedIn(false);
+    dispatch(isSignedOut);
   }
   function handleUpdateSubmit(_x) {
     return _handleUpdateSubmit.apply(this, arguments);
@@ -87156,7 +87156,7 @@ function UpdateAccountModal() {
   } */
   function _handleUpdateSubmit() {
     _handleUpdateSubmit = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2(event) {
-      var form, updateEmail, updatePassword, updateName, updatePhone, updateHfToken, updateOaToken, account, response, setErrorResponse, action, _action, closeUpdateModal, openUpdateModal, _action2;
+      var form, updateEmail, updatePassword, updateName, updatePhone, updateHfToken, updateOaToken, account, response, setErrorResponse, action, _action, _action2;
       return _regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
@@ -87196,21 +87196,17 @@ function UpdateAccountModal() {
             return _context2.abrupt("return", dispatch(action));
           case 19:
             if (!(response.status === 200)) {
-              _context2.next = 28;
+              _context2.next = 24;
               break;
             }
             _action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateResponseMessage("Successfully updated!");
             dispatch(_action);
-            closeUpdateModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateShowModal(false);
-            dispatch(closeUpdateModal);
-            openUpdateModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateShowModal(true);
-            dispatch(openUpdateModal);
-            _context2.next = 30;
+            _context2.next = 26;
             break;
-          case 28:
+          case 24:
             _action2 = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateResponseMessage("User wasn't updated");
             return _context2.abrupt("return", dispatch(_action2));
-          case 30:
+          case 26:
           case "end":
             return _context2.stop();
         }
@@ -87805,7 +87801,7 @@ function fetchBfRecipeImage(_x, _x2) {
   return _fetchBfRecipeImage.apply(this, arguments);
 }
 
-//i'm having issues with huggingface since they became a paid service so I'm using openAI as of now for the question answering as I have an account
+//i'm having issues with Hugging Face since they became a paid service so I'm using openAI as of now for the question answering as I have an account
 function _fetchBfRecipeImage() {
   _fetchBfRecipeImage = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(recipe, token) {
     var url, payload, result, blob, imageUrl;
@@ -88882,7 +88878,7 @@ var stateSetters = {
   },
   bfPageDidMount: function bfPageDidMount(state, action) {
     var newValue = action.payload;
-    state.aboutStateVar.didMount = newValue;
+    state.bfPageStateVar.didMount = newValue;
   },
   examplesDidMount: function examplesDidMount(state, action) {
     var newValue = action.payload;
@@ -89178,13 +89174,19 @@ var stateSetters = {
   authUserIsSignedIn: function authUserIsSignedIn(state, action) {
     var newValue = action.payload;
     state.authUserState.isSignedIn = newValue;
-  },
-  //global account
-  globalAccount: function globalAccount(state, action) {
-    var newValue = action.payload;
-    state.globalAccountState.account = newValue;
   }
+
+  //global account
+  /*   globalAccount: function (state: StateVariables, action) {
+    const newValue = action.payload;
+    state.globalAccountState.account = newValue;
+  }, */
 };
+
+/* type ActionAccount = {
+  payload: Account;
+  type: string;
+}; */
 
 /***/ }),
 
@@ -89316,17 +89318,18 @@ var stateVariables = {
     apiRecipe: "",
     apiStatus: "",
     apiIngredients: ""
-  },
-  globalAccountState: {
+  }
+
+  /*   globalAccountState: {
     account: {
       email: "",
       oaToken: "",
       hfToken: "",
       name: "",
       phone: "",
-      password: ""
-    }
-  }
+      password: "",
+    },
+  }, */
 };
 
 /***/ }),

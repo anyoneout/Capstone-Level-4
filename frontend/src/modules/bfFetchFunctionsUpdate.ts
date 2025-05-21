@@ -19,7 +19,7 @@ export async function fetchBfRecipeImage(recipe: string, token: string): Promise
   return imageUrl;
 }
 
-//i'm having issues with huggingface since they became a paid service so I'm using openAI as of now for the question answering as I have an account
+//i'm having issues with Hugging Face since they became a paid service so I'm using openAI as of now for the question answering as I have an account
 export async function fetchBfIngredientsList(recipe: string, token: string): Promise<string> {
   const url = "https://api.openai.com/v1/chat/completions";
 

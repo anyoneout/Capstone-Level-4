@@ -2,16 +2,15 @@ import React, { useEffect } from "react";
 import { ApiFluxIcon } from "../modules/icons";
 import { recipeArray } from "../modules/recipeArray";
 import { useDispatch, useSelector } from "react-redux";
-import { selectBfPageDidMount, selectGlobalAccount } from "../redux/stateSelectors";
+import { selectAuthUserHfToken, selectAuthUserOaToken, selectBfPageDidMount } from "../redux/stateSelectors";
 import { set } from "../redux/store";
 import { handleBfFetchUpdate } from "../controllers/handleBfFetchUpdate";
 
 export function BfPage() {
   const didMount = useSelector(selectBfPageDidMount);
   const dispatch = useDispatch();
-  const account = useSelector(selectGlobalAccount);
-  const hfToken = account.hfToken;
-  const oaToken = account.oaToken;
+  const hfToken = useSelector(selectAuthUserHfToken);
+  const oaToken = useSelector(selectAuthUserOaToken);
   useEffect(componentDidMount, []);
   useEffect(componentDidUpdate, [didMount]);
   useEffect(componentDidUnmount, []);

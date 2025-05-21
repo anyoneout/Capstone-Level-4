@@ -136,7 +136,7 @@ export const stateVariables = {
     apiIngredients: "",
   },
 
-  globalAccountState: {
+  /*   globalAccountState: {
     account: {
       email: "",
       oaToken: "",
@@ -145,7 +145,7 @@ export const stateVariables = {
       phone: "",
       password: "",
     },
-  },
+  }, */
 };
 
 export type StateVariables = typeof stateVariables;

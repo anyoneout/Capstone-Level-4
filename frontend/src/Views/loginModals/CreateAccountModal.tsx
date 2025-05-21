@@ -11,7 +11,7 @@ import { savePersistentLogin } from "../../modules/savePersistentLogin";
 
 export function CreateAccountModal() {
   const isSignedIn = useSelector(selectAuthUserIsSignedIn);
-  const showModal = useSelector(selectCreateShowModal);
+  const showCreateModal = useSelector(selectCreateShowModal);
   const responseMessage = useSelector(selectCreateResponseMessage);
 
   const dispatch = useDispatch();
@@ -32,6 +32,8 @@ export function CreateAccountModal() {
   }
 
   function handleCloseModal() {
+    const didUnMount = set.createDidMount(false);
+    dispatch(didUnMount);
     const closeUpdateModal = set.createShowModal(false);
     dispatch(closeUpdateModal);
   }
@@ -71,21 +73,16 @@ export function CreateAccountModal() {
       dispatch(loggedIn);
       const currentLoginState = set.signInIsSignedIn(true);
       dispatch(currentLoginState);
-      const userEmail = set.authUserEmail(email);
-      dispatch(userEmail);
-      const savePassword = set.authUserPassword(password);
-      dispatch(savePassword);
-      const userName = set.authUserName(name);
-      dispatch(userName);
-      const userPhone = set.authUserPhone(phone);
-      dispatch(userPhone);
-      const hfUserToken = set.authUserHfToken(hfToken);
-      dispatch(hfUserToken);
-      const oaUserToken = set.authUserOaToken(oaToken);
-      dispatch(oaUserToken);
       savePersistentLogin(email, password);
       localStorage.setItem("loggedIn", "true");
-      localStorage.setItem("loggedInEmail", email);
+      localStorage.setItem("email", email);
+      localStorage.setItem("hfToken", hfToken);
+      localStorage.setItem("oaToken", oaToken);
+      localStorage.setItem("name", name);
+      localStorage.setItem("password", password);
+      localStorage.setItem("phone", phone);
+      const didMount = set.createDidMount(false);
+      dispatch(didMount);
 
       return dispatch(action);
     } else {
@@ -100,7 +97,7 @@ export function CreateAccountModal() {
 
   return (
     <>
-      {showModal && (
+      {showCreateModal && (
         <div
           className="modal fade show"
           id="createAccountModal"

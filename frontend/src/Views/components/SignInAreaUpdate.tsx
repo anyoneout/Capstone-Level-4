@@ -33,8 +33,8 @@ export default function SignInAreaUpdate() {
 
   function componentDidMount(): void {
     const isLoggedIn = localStorage.getItem("loggedIn") === "true";
-    const email = localStorage.getItem("loggedInEmail") || "";
-    const password = localStorage.getItem("loggedInPassword") || "";
+    const email = localStorage.getItem("email") || "";
+    const password = localStorage.getItem("password") || "";
 
     getPersistentLogin();
 
@@ -53,8 +53,8 @@ export default function SignInAreaUpdate() {
         else {
           const account = await readAccount({ email, password, name: "", phone: "", hfToken: "", oaToken: "" });
           if (account) {
-            const action = set.globalAccount(account);
-            dispatch(action);
+            /*        const action = set.globalAccount(account);
+            dispatch(action); */
           } else localStorage.setItem("credentials", "");
         }
       }
@@ -76,6 +76,8 @@ export default function SignInAreaUpdate() {
   function handleSignIn(): void {
     const action = set.signInShowModal(true);
     dispatch(action);
+    const didMount = set.signInDidMount(true);
+    dispatch(didMount);
   }
   //shows profileModal
   function handleProfile(): void {
@@ -107,6 +109,8 @@ export default function SignInAreaUpdate() {
     const clearAuthUserOaToken = set.authUserOaToken("");
     dispatch(clearAuthUserOaToken);
     handleClearLocalStorage();
+    const action = set.globalAccount("");
+    dispatch(action);
   }
 
   //clears authorized redux, local storage and signs out
@@ -127,6 +131,8 @@ export default function SignInAreaUpdate() {
     const clearAuthUserOaToken = set.authUserOaToken("");
     dispatch(clearAuthUserOaToken);
     handleClearLocalStorage();
+    /*     const action = set.globalAccount("");
+    dispatch(action); */
   }
 
   return (
