@@ -22,16 +22,22 @@ import { store } from "./redux/store";
 import { BackendTest } from "./Views/BackendTest";
 import { AiPage } from "./Views/AiPage";
 import { RecipeApiResponsePage } from "./Views/RecipeApiResponsePage";
+import { GitHubNavbar } from "./Views/components/GithubNavbar";
 
 const bodyTag = document.getElementById("bodyTag");
 const root = createRoot(bodyTag);
 const domain = window.location.hostname;
 let rootPath = "";
-if (domain === "anyoneout.github.io") rootPath = "/Capstone-Level-4";
+//specific navbar being rended for class assignments
+let Navbar = CollapsibleNavbar;
+if (domain === "anyoneout.github.io") {
+  rootPath = "/Capstone-Level-4";
+  Navbar = GitHubNavbar;
+}
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-      <CollapsibleNavbar />
+      <Navbar />
       <HandleRefresh>
         <Routes>
           <Route path={`${rootPath}/`} element={<Home />} />
