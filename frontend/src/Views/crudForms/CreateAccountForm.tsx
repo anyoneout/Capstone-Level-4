@@ -11,6 +11,7 @@ import {
   selectCreateResponseMessage,
 } from "../../redux/stateSelectors";
 import { set } from "../../redux/store";
+import { Account } from "../../types/Account";
 
 export function CreateAccountForm() {
   //redux
@@ -40,7 +41,7 @@ export function CreateAccountForm() {
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    const account = { email, password, name, phone, hfToken, oaToken };
+    const account: Account = { email, password, name, phone, hfToken, oaToken };
 
     const result = await createAccount(account);
     console.log("create account form response", result);

@@ -78,6 +78,8 @@ export function DynamoAuthPage() {
 
   function componentDidUnmount(): () => void {
     function delayedUnmount(): void {
+      const action = set.dynamoAuthDidMount(false);
+      dispatch(action);
       console.log("component has unmounted");
     }
     return delayedUnmount;

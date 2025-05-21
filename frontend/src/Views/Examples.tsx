@@ -49,6 +49,8 @@ export default function Examples() {
 
   function componentDidUnmount(): () => void {
     function delayedUnmount(): void {
+      const action = set.examplesDidMount(false);
+      dispatch(action);
       console.log("component has unmounted");
     }
     return delayedUnmount;

@@ -100,6 +100,7 @@ export function BfPage() {
 
   function componentDidUnmount(): () => void {
     return () => {
+      dispatch(set.bfPageDidMount(false));
       console.log("component has unmounted");
     };
   }

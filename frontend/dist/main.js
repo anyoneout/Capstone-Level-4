@@ -83210,6 +83210,8 @@ function AiPage() {
   }
   function componentDidUnmount() {
     return function delayedUnmount() {
+      var action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.aiPageDidMount(false);
+      dispatch(action);
       console.log("component has unmounted");
     };
   }
@@ -83271,6 +83273,8 @@ function AwsForms() {
   }
   function componentDidUnmount() {
     function delayedUnmount() {
+      var action = _redux_store__WEBPACK_IMPORTED_MODULE_6__.set.awsFormsDidMount(false);
+      dispatch(action);
       console.log("component has unmounted");
     }
     return delayedUnmount;
@@ -83529,6 +83533,7 @@ function BfPage() {
   }
   function componentDidUnmount() {
     return function () {
+      dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_4__.set.bfPageDidMount(false));
       console.log("component has unmounted");
     };
   }
@@ -83641,6 +83646,8 @@ function DynamoAuthPage() {
   }
   function componentDidUnmount() {
     function delayedUnmount() {
+      var action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.dynamoAuthDidMount(false);
+      dispatch(action);
       console.log("component has unmounted");
     }
     return delayedUnmount;
@@ -83709,6 +83716,8 @@ function Examples() {
   }
   function componentDidUnmount() {
     function delayedUnmount() {
+      var action = _redux_store__WEBPACK_IMPORTED_MODULE_5__.set.examplesDidMount(false);
+      dispatch(action);
       console.log("component has unmounted");
     }
     return delayedUnmount;
@@ -84050,6 +84059,7 @@ function OaPage() {
   }
   function componentDidUnmount() {
     return function delayedUnmount() {
+      dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_4__.set.oaPageDidMount(false));
       console.log("component has unmounted");
     };
   }
@@ -84090,9 +84100,12 @@ function RecipeApiResponsePage() {
   var foundRecipes = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectRecipeApiRecipe);
   var chosenIngredients = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectRecipeApiIngredients);
   var recipeStatus = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectRecipeApiStatus);
-  var recipeDidMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectRecipeApiDidMount);
+  var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectRecipeApiDidMount);
   var localPath = window.location.hostname;
   var baseUrl = localPath === "localhost" ? "http://localhost:3001" : "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws";
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUpdate, [didMount]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUnmount, []);
   function handleSearch(_x) {
     return _handleSearch.apply(this, arguments);
   }
@@ -84168,6 +84181,23 @@ function RecipeApiResponsePage() {
     type: "submit",
     className: "btn btn-primary btn-sm mt-2 mb-3"
   }, "Search"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_AiPage__WEBPACK_IMPORTED_MODULE_3__.AiPage, null)));
+  function componentDidMount() {
+    var action = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.recipeApiDidMount(true);
+    dispatch(action);
+    console.log("The Recipe Api page component has mounted");
+    document.title = "Recipe Deconstructor - Recipe Api Page";
+  }
+  function componentDidUpdate() {
+    if (didMount) console.log("component had updated");
+  }
+  function componentDidUnmount() {
+    function delayedUnmount() {
+      var action = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.recipeApiDidMount(false);
+      dispatch(action);
+      console.log("component has unmounted");
+    }
+    return delayedUnmount;
+  }
 }
 
 /***/ }),
@@ -84273,6 +84303,8 @@ function TriviaApiResponsePage() {
   }
   function componentDidUnmount() {
     function delayedUnmount() {
+      var action = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.triviaApiDidMount(false);
+      dispatch(action);
       console.log("component has unmounted");
     }
     return delayedUnmount;

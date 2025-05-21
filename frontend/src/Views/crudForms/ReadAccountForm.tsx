@@ -3,6 +3,7 @@ import { readAccount } from "../../modules/crud/readAccount";
 import { selectReadEmail, selectReadPassword, selectReadResponseMessage } from "../../redux/stateSelectors";
 import { useDispatch, useSelector } from "react-redux";
 import { set } from "../../redux/store";
+import { Account } from "../../types/Account";
 
 export function ReadAccountForm() {
   const email = useSelector(selectReadEmail);
@@ -14,7 +15,7 @@ export function ReadAccountForm() {
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    const response = await readAccount({ email, password, name: "", phone: "", hfToken: "", oaToken: "" });
+    const response = await readAccount({ email, password, name: "", phone: "", hfToken: "", oaToken: "" } as Account);
     console.log("read account form response", response);
     if ("status" in response) {
       const action = set.readResponseMessage(`user missing`);

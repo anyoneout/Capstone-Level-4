@@ -3,6 +3,7 @@ import { deleteAccount } from "../../modules/crud/deleteAccount";
 import { selectDeleteEmail, selectDeletePassword, selectDeleteResponseMessage } from "../../redux/stateSelectors";
 import { useDispatch, useSelector } from "react-redux";
 import { set } from "../../redux/store";
+import { Account } from "../../types/Account";
 
 export function DeleteAccountForm() {
   const email = useSelector(selectDeleteEmail);
@@ -14,7 +15,7 @@ export function DeleteAccountForm() {
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    const response = await deleteAccount({ email, password, name: "", phone: "", hfToken: "", oaToken: "" });
+    const response = await deleteAccount({ email, password, name: "", phone: "", hfToken: "", oaToken: "" } as Account);
     console.log("delete account form response", response);
     if (response.status === 401) {
       return dispatch(set.deleteResponseMessage(`Invalid password entered`));

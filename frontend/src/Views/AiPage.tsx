@@ -78,6 +78,8 @@ export function AiPage() {
 
   function componentDidUnmount(): () => void {
     return function delayedUnmount(): void {
+      const action = set.aiPageDidMount(false);
+      dispatch(action);
       console.log("component has unmounted");
     };
   }

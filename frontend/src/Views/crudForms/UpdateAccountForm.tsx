@@ -11,6 +11,7 @@ import {
   selectUpdateResponseMessage,
 } from "../../redux/stateSelectors";
 import { set } from "../../redux/store";
+import { Account } from "../../types/Account";
 
 export function UpdateAccountForm() {
   const email = useSelector(selectUpdateEmail);
@@ -26,7 +27,7 @@ export function UpdateAccountForm() {
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
 
-    const response = await updateAccount({ email, password, name, phone, oaToken, hfToken });
+    const response = await updateAccount({ email, password, name, phone, oaToken, hfToken } as Account);
     console.log("update account form response", response);
     if (response.status === 200) {
       const action = set.updateResponseMessage(`user (${email}) updated successfully`);

@@ -102,6 +102,7 @@ export function OaPage() {
 
   function componentDidUnmount(): () => void {
     return function delayedUnmount(): void {
+      dispatch(set.oaPageDidMount(false));
       console.log("component has unmounted");
     };
   }

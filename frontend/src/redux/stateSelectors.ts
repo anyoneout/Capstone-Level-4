@@ -1,186 +1,187 @@
+import { Account } from "../types/Account";
 import { StateVariables } from "./stateVariables";
 
 //didMount
-export function selectAboutDidMount(state: StateVariables) {
+export function selectAboutDidMount(state: StateVariables): boolean {
   return state.aboutStateVar.didMount;
 }
-export function selectBfPageDidMount(state: StateVariables) {
+export function selectBfPageDidMount(state: StateVariables): boolean {
   return state.bfPageStateVar.didMount;
 }
-export function selectExampleDidMount(state: StateVariables) {
+export function selectExampleDidMount(state: StateVariables): boolean {
   return state.examplesStateVar.didMount;
 }
-export function selectHomeDidMount(state: StateVariables) {
+export function selectHomeDidMount(state: StateVariables): boolean {
   return state.homeStateVar.didMount;
 }
-export function selectOaPageDidMount(state: StateVariables) {
+export function selectOaPageDidMount(state: StateVariables): boolean {
   return state.oaPageStateVar.didMount;
 }
-export function selectAwsFormsDidMount(state: StateVariables) {
+export function selectAwsFormsDidMount(state: StateVariables): boolean {
   return state.awsFormsStateVar.didMount;
 }
-export function selectHandleRefreshDidMount(state: StateVariables) {
+export function selectHandleRefreshDidMount(state: StateVariables): boolean {
   {
     return state.handleRefreshState.didMount;
   }
 }
-export function selectTestBackendDidMount(state: StateVariables) {
+export function selectTestBackendDidMount(state: StateVariables): boolean {
   return state.testBackendStateVar.didMount;
 }
 //ai page
-export function selectAiPageDidMount(state: StateVariables) {
+export function selectAiPageDidMount(state: StateVariables): boolean {
   return state.aiPageStateVar.didMount;
 }
-export function selectAiPageAnswer(state: StateVariables) {
+export function selectAiPageAnswer(state: StateVariables): string {
   return state.aiPageStateVar.answer;
 }
 //recipe api
-export function selectRecipeApiDidMount(state: StateVariables) {
+export function selectRecipeApiDidMount(state: StateVariables): boolean {
   return state.recipeApiStateVar.didMount;
 }
-export function selectRecipeApiRecipe(state: StateVariables) {
+export function selectRecipeApiRecipe(state: StateVariables): string {
   return state.recipeApiStateVar.apiRecipe;
 }
-export function selectRecipeApiStatus(state: StateVariables) {
+export function selectRecipeApiStatus(state: StateVariables): string {
   return state.recipeApiStateVar.apiStatus;
 }
-export function selectRecipeApiIngredients(state: StateVariables) {
+export function selectRecipeApiIngredients(state: StateVariables): string {
   return state.recipeApiStateVar.apiIngredients;
 }
 
 //trivia api
-export function selectTriviaApiDidMount(state: StateVariables) {
+export function selectTriviaApiDidMount(state: StateVariables): boolean {
   return state.triviaApiStateVar.didMount;
 }
-export function selectTriviaApiTrivia(state: StateVariables) {
+export function selectTriviaApiTrivia(state: StateVariables): string {
   return state.triviaApiStateVar.apiTrivia;
 }
-export function selectTriviaApiStatus(state: StateVariables) {
+export function selectTriviaApiStatus(state: StateVariables): string {
   return state.triviaApiStateVar.apiStatus;
 }
 
 //dynamo auth
-export function selectDynamoAuthDidMount(state: StateVariables) {
+export function selectDynamoAuthDidMount(state: StateVariables): boolean {
   return state.dynamoAuthStateVar.didMount;
 }
-export function selectDynamoAuthResponse(state: StateVariables) {
+export function selectDynamoAuthResponse(state: StateVariables): boolean {
   return state.dynamoAuthStateVar.authResponse;
 }
 
 //create account
-export function selectCreateEmail(state: StateVariables) {
+export function selectCreateEmail(state: StateVariables): string {
   return state.createAccountState.email;
 }
-export function selectCreateUserName(state: StateVariables) {
+export function selectCreateUserName(state: StateVariables): string {
   return state.createAccountState.userName;
 }
-export function selectCreatePassword(state: StateVariables) {
+export function selectCreatePassword(state: StateVariables): string {
   return state.createAccountState.password;
 }
-export function selectCreateName(state: StateVariables) {
+export function selectCreateName(state: StateVariables): string {
   return state.createAccountState.name;
 }
-export function selectCreatePhone(state: StateVariables) {
+export function selectCreatePhone(state: StateVariables): string {
   return state.createAccountState.phone;
 }
-export function selectCreateHfToken(state: StateVariables) {
+export function selectCreateHfToken(state: StateVariables): string {
   return state.createAccountState.hfToken;
 }
-export function selectCreateOaToken(state: StateVariables) {
+export function selectCreateOaToken(state: StateVariables): string {
   return state.createAccountState.oaToken;
 }
-export function selectCreateResponseMessage(state: StateVariables) {
+export function selectCreateResponseMessage(state: StateVariables): string {
   return state.createAccountState.responseMessage;
 }
-export function selectCreateReadMessage(state: StateVariables) {
+export function selectCreateReadMessage(state: StateVariables): string {
   return state.createAccountState.readResponse;
 }
-export function selectCreateShowModal(state: StateVariables) {
+export function selectCreateShowModal(state: StateVariables): boolean {
   return state.createAccountState.showModal;
 }
-export function selectCreateIsSignedIn(state: StateVariables) {
+export function selectCreateIsSignedIn(state: StateVariables): boolean {
   return state.createAccountState.isSignedIn;
 }
-export function selectCreateDidMount(state: StateVariables) {
+export function selectCreateDidMount(state: StateVariables): boolean {
   return state.createAccountState.didMount;
 }
 
 //read account
 
-export function selectReadEmail(state: StateVariables) {
+export function selectReadEmail(state: StateVariables): string {
   return state.readAccountState.email;
 }
-export function selectReadPassword(state: StateVariables) {
+export function selectReadPassword(state: StateVariables): string {
   return state.readAccountState.password;
 }
-export function selectReadResponseMessage(state: StateVariables) {
+export function selectReadResponseMessage(state: StateVariables): string {
   return state.readAccountState.responseMessage;
 }
 
 //update account
-export function selectUpdateEmail(state: StateVariables) {
+export function selectUpdateEmail(state: StateVariables): string {
   return state.updateAccountState.email;
 }
-export function selectUpdatePassword(state: StateVariables) {
+export function selectUpdatePassword(state: StateVariables): string {
   return state.updateAccountState.password;
 }
-export function selectUpdateName(state: StateVariables) {
+export function selectUpdateName(state: StateVariables): string {
   return state.updateAccountState.name;
 }
-export function selectUpdatePhone(state: StateVariables) {
+export function selectUpdatePhone(state: StateVariables): string {
   return state.updateAccountState.phone;
 }
-export function selectUpdateHfToken(state: StateVariables) {
+export function selectUpdateHfToken(state: StateVariables): string {
   return state.updateAccountState.hfToken;
 }
-export function selectUpdateOaToken(state: StateVariables) {
+export function selectUpdateOaToken(state: StateVariables): string {
   return state.updateAccountState.oaToken;
 }
-export function selectUpdateResponseMessage(state: StateVariables) {
+export function selectUpdateResponseMessage(state: StateVariables): string {
   return state.updateAccountState.responseMessage;
 }
-export function selectUpdateShowModal(state: StateVariables) {
+export function selectUpdateShowModal(state: StateVariables): boolean {
   return state.updateAccountState.showModal;
 }
-export function selectUpdateDidMount(state: StateVariables) {
+export function selectUpdateDidMount(state: StateVariables): boolean {
   return state.updateAccountState.didMount;
 }
 
 //account profile
-export function selectProfileEmail(state: StateVariables) {
+export function selectProfileEmail(state: StateVariables): string {
   return state.accountProfileState.email;
 }
-export function selectProfilePassword(state: StateVariables) {
+export function selectProfilePassword(state: StateVariables): string {
   return state.accountProfileState.password;
 }
-export function selectProfileName(state: StateVariables) {
+export function selectProfileName(state: StateVariables): string {
   return state.accountProfileState.name;
 }
-export function selectProfilePhone(state: StateVariables) {
+export function selectProfilePhone(state: StateVariables): string {
   return state.accountProfileState.phone;
 }
-export function selectProfileHfToken(state: StateVariables) {
+export function selectProfileHfToken(state: StateVariables): string {
   return state.accountProfileState.hfToken;
 }
-export function selectProfileOaToken(state: StateVariables) {
+export function selectProfileOaToken(state: StateVariables): string {
   return state.accountProfileState.oaToken;
 }
-export function selectProfileResponseMessage(state: StateVariables) {
+export function selectProfileResponseMessage(state: StateVariables): string {
   return state.accountProfileState.responseMessage;
 }
-export function selectProfileShowModal(state: StateVariables) {
+export function selectProfileShowModal(state: StateVariables): boolean {
   return state.accountProfileState.showModal;
 }
-export function selectProfileDidMount(state: StateVariables) {
+export function selectProfileDidMount(state: StateVariables): boolean {
   return state.accountProfileState.didMount;
 }
 
 //delete account
 
-export function selectDeleteEmail(state: StateVariables) {
+export function selectDeleteEmail(state: StateVariables): string {
   return state.deleteAccountState.email;
 }
-export function selectDeletePassword(state: StateVariables) {
+export function selectDeletePassword(state: StateVariables): string {
   return state.deleteAccountState.password;
 }
 export function selectDeleteResponseMessage(state: StateVariables) {
@@ -188,65 +189,65 @@ export function selectDeleteResponseMessage(state: StateVariables) {
 }
 
 //authUser
-export function selectAuthUserEmail(state: StateVariables) {
+export function selectAuthUserEmail(state: StateVariables): string {
   return state.authUserState.email;
 }
-export function selectAuthUserUserName(state: StateVariables) {
+export function selectAuthUserUserName(state: StateVariables): string {
   return state.authUserState.userName;
 }
-export function selectAuthUserPassword(state: StateVariables) {
+export function selectAuthUserPassword(state: StateVariables): string {
   return state.authUserState.password;
 }
-export function selectAuthUserName(state: StateVariables) {
+export function selectAuthUserName(state: StateVariables): string {
   return state.authUserState.name;
 }
-export function selectAuthUserPhone(state: StateVariables) {
+export function selectAuthUserPhone(state: StateVariables): string {
   return state.authUserState.phone;
 }
-export function selectAuthUserHfToken(state: StateVariables) {
+export function selectAuthUserHfToken(state: StateVariables): string {
   return state.authUserState.hfToken;
 }
-export function selectAuthUserOaToken(state: StateVariables) {
+export function selectAuthUserOaToken(state: StateVariables): string {
   return state.authUserState.oaToken;
 }
-export function selectAuthUserResponseMessage(state: StateVariables) {
+export function selectAuthUserResponseMessage(state: StateVariables): string {
   return state.authUserState.responseMessage;
 }
-export function selectAuthUserReadMessage(state: StateVariables) {
+export function selectAuthUserReadMessage(state: StateVariables): string {
   return state.authUserState.readResponse;
 }
-export function selectAuthUserIsSignedIn(state: StateVariables) {
+export function selectAuthUserIsSignedIn(state: StateVariables): boolean {
   return state.authUserState.isSignedIn;
 }
 
 //sign in area
 
-export function selectSignInIsSignedIn(state: StateVariables) {
+export function selectSignInIsSignedIn(state: StateVariables): boolean {
   return state.isSignedInState.isSignedIn;
 }
-export function selectSignInDidMount(state: StateVariables) {
+export function selectSignInDidMount(state: StateVariables): boolean {
   return state.isSignedInState.didMount;
 }
-export function selectSignInButtonText(state: StateVariables) {
+export function selectSignInButtonText(state: StateVariables): string {
   return state.isSignedInState.buttonText;
 }
-export function selectSignInButtonClass(state: StateVariables) {
+export function selectSignInButtonClass(state: StateVariables): string {
   return state.isSignedInState.buttonClass;
 }
-export function selectSignInShowModal(state: StateVariables) {
+export function selectSignInShowModal(state: StateVariables): boolean {
   return state.isSignedInState.showModal;
 }
-export function selectSignInEmail(state: StateVariables) {
+export function selectSignInEmail(state: StateVariables): string {
   return state.isSignedInState.email;
 }
-export function selectSignInPassword(state: StateVariables) {
+export function selectSignInPassword(state: StateVariables): string {
   return state.isSignedInState.password;
 }
-export function selectSignInError(state: StateVariables) {
+export function selectSignInError(state: StateVariables): string {
   return state.isSignedInState.error;
 }
 
 //global account
-export function selectGlobalAccount(state: StateVariables) {
+export function selectGlobalAccount(state: StateVariables): Account {
   return state.globalAccountState.account;
 }

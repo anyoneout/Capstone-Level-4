@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { set } from "../redux/store";
@@ -15,10 +15,14 @@ export function RecipeApiResponsePage() {
   const foundRecipes = useSelector(selectRecipeApiRecipe);
   const chosenIngredients = useSelector(selectRecipeApiIngredients);
   const recipeStatus = useSelector(selectRecipeApiStatus);
-  const recipeDidMount = useSelector(selectRecipeApiDidMount);
+  const didMount = useSelector(selectRecipeApiDidMount);
 
   const localPath = window.location.hostname;
   const baseUrl = localPath === "localhost" ? "http://localhost:3001" : process.env.REACT_APP_LAMBDA_URL;
+
+  useEffect(componentDidMount, []);
+  useEffect(componentDidUpdate, [didMount]);
+  useEffect(componentDidUnmount, []);
 
   async function handleSearch(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -82,4 +86,23 @@ export function RecipeApiResponsePage() {
       </div>
     </main>
   );
+  function componentDidMount(): void {
+    const action = set.recipeApiDidMount(true);
+    dispatch(action);
+    console.log("The Recipe Api page component has mounted");
+    document.title = "Recipe Deconstructor - Recipe Api Page";
+  }
+
+  function componentDidUpdate(): void {
+    if (didMount) console.log("component had updated");
+  }
+
+  function componentDidUnmount(): () => void {
+    function delayedUnmount(): void {
+      const action = set.recipeApiDidMount(false);
+      dispatch(action);
+      console.log("component has unmounted");
+    }
+    return delayedUnmount;
+  }
 }

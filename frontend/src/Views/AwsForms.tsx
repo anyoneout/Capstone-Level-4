@@ -46,6 +46,8 @@ export default function AwsForms() {
 
   function componentDidUnmount(): () => void {
     function delayedUnmount(): void {
+      const action = set.awsFormsDidMount(false);
+      dispatch(action);
       console.log("component has unmounted");
     }
     return delayedUnmount;
