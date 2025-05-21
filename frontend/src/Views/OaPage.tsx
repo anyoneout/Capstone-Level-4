@@ -9,7 +9,6 @@ import { handleOaFetchUpdate } from "../controllers/handleOaFetchUpdate";
 export function OaPage() {
   const didMount = useSelector(selectOaPageDidMount);
   const dispatch = useDispatch();
-  /*   const account = useSelector(selectGlobalAccount); */
   const hfToken = localStorage.getItem("hfToken");
 
   useEffect(componentDidMount, []);
@@ -95,7 +94,7 @@ export function OaPage() {
 
   function handleClick() {
     if (!hfToken) {
-      alert("A Hugging Face token is required!");
+      alert("An Open AI token is required!");
       return;
     }
     handleOaFetchUpdate();

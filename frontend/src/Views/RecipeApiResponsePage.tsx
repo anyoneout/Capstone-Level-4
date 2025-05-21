@@ -7,6 +7,7 @@ import {
   selectRecipeApiIngredients,
   selectRecipeApiRecipe,
   selectRecipeApiStatus,
+  selectValidIngredients,
 } from "../redux/stateSelectors";
 import { AiPage } from "./AiPage";
 
@@ -15,6 +16,7 @@ export function RecipeApiResponsePage() {
   const foundRecipes = useSelector(selectRecipeApiRecipe);
   const chosenIngredients = useSelector(selectRecipeApiIngredients);
   const recipeStatus = useSelector(selectRecipeApiStatus);
+  const validIngredients = useSelector(selectValidIngredients);
   const didMount = useSelector(selectRecipeApiDidMount);
 
   const localPath = window.location.hostname;
@@ -32,6 +34,7 @@ export function RecipeApiResponsePage() {
     const ingredient3 = form[2].value;
 
     const searchIngredients = [ingredient1, ingredient2, ingredient3];
+
     const ingredientsString = set.recipeApiIngredients(searchIngredients);
     dispatch(ingredientsString);
 

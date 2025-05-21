@@ -162,12 +162,12 @@ export default function SignInAreaUpdate() {
               </li>
               <li>
                 <button className="dropdown-item" style={{ color: "#fff78a" }} onClick={handleUpdate}>
-                  Update
+                  Update user
                 </button>
               </li>
               <li>
                 <button className="dropdown-item text-danger" onClick={handleDelete}>
-                  Delete
+                  Delete user
                 </button>
               </li>
               <li>

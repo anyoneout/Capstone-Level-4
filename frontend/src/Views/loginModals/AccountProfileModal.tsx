@@ -126,10 +126,10 @@ export function AccountProfileModal() {
             data-bs-theme="dark"
             style={{ width: "340px" }}
           >
-            <div className="modal-content mx-auto bg-dark text-white border rounded-0">
+            <div className="modal-content mx-auto border rounded-0">
               <div className="modal-body w-100 mx-auto">
                 <div className="container mt-3">
-                  <div className="card bg-dark text-white ">
+                  <div className="card">
                     <h5 className="mb-3 border-bottom pb-2">Personal details</h5>
 
                     <div className="row mb-2">
@@ -155,11 +155,11 @@ export function AccountProfileModal() {
                     <br />
                     <div className="row mb-2">
                       <div className="col-md-6 fw-bold">Hugging Face token:</div>
-                      <div className="col-md-6">{authHfToken.slice(0, 12)}</div>
+                      <div className="col-md-6">{authHfToken.slice(0, 20)}</div>
                     </div>
                     <div className="row mb-2">
                       <div className="col-md-6 fw-bold">Open AI token:</div>
-                      <div className="col-md-6">{authOaToken.slice(0, 12)}</div>
+                      <div className="col-md-6">{authOaToken.slice(0, 20)}</div>
                     </div>
                   </div>
                 </div>

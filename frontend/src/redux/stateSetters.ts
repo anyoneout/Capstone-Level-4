@@ -78,6 +78,11 @@ export const stateSetters = {
     const newValue = action.payload;
     state.recipeApiStateVar.apiIngredients = newValue;
   },
+  recipeValidIngredients: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.recipeApiStateVar.validIngredients = newValue;
+  },
+
   //dynamo auth
   dynamoAuthDidMount: function (state: StateVariables, action: ActionBoolean) {
     const newValue = action.payload;

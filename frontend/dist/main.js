@@ -83525,7 +83525,7 @@ function BfPage() {
   }))));
   function handleClick() {
     if (!oaToken || !hfToken) {
-      alert("Both an OpenAI token and Hugging Face token is required!");
+      alert("Both an OpenAI token and Hugging Face token are required!");
       return;
     }
     (0,_controllers_handleBfFetchUpdate__WEBPACK_IMPORTED_MODULE_5__.handleBfFetchUpdate)();
@@ -83966,7 +83966,6 @@ __webpack_require__.r(__webpack_exports__);
 function OaPage() {
   var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectOaPageDidMount);
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useDispatch)();
-  /*   const account = useSelector(selectGlobalAccount); */
   var hfToken = localStorage.getItem("hfToken");
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUpdate, [didMount]);
@@ -84063,7 +84062,7 @@ function OaPage() {
   }))));
   function handleClick() {
     if (!hfToken) {
-      alert("A Hugging Face token is required!");
+      alert("An Open AI token is required!");
       return;
     }
     (0,_controllers_handleOaFetchUpdate__WEBPACK_IMPORTED_MODULE_5__.handleOaFetchUpdate)();
@@ -84118,6 +84117,7 @@ function RecipeApiResponsePage() {
   var foundRecipes = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectRecipeApiRecipe);
   var chosenIngredients = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectRecipeApiIngredients);
   var recipeStatus = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectRecipeApiStatus);
+  var validIngredients = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectValidIngredients);
   var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_2__.selectRecipeApiDidMount);
   var localPath = window.location.hostname;
   var baseUrl = localPath === "localhost" ? "http://localhost:3001" : "https://xfmkpte65aklcazfch4vyxfuzy0qdczd.lambda-url.us-east-1.on.aws";
@@ -85380,10 +85380,10 @@ function SignInAreaUpdate() {
       color: "#fff78a"
     },
     onClick: handleUpdate
-  }, "Update")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  }, "Update user")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "dropdown-item text-danger",
     onClick: handleDelete
-  }, "Delete")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  }, "Delete user")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     className: "dropdown-item text-white",
     onClick: handleSignOut
   }, "Sign out")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
@@ -86458,13 +86458,13 @@ function AccountProfileModal() {
       width: "340px"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "modal-content mx-auto bg-dark text-white border rounded-0"
+    className: "modal-content mx-auto border rounded-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "modal-body w-100 mx-auto"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "container mt-3"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "card bg-dark text-white "
+    className: "card"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h5", {
     className: "mb-3 border-bottom pb-2"
   }, "Personal details"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -86497,13 +86497,13 @@ function AccountProfileModal() {
     className: "col-md-6 fw-bold"
   }, "Hugging Face token:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-md-6"
-  }, authHfToken.slice(0, 12))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, authHfToken.slice(0, 20))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "row mb-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-md-6 fw-bold"
   }, "Open AI token:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-md-6"
-  }, authOaToken.slice(0, 12))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  }, authOaToken.slice(0, 20))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: handleUpdateModal,
     type: "button",
     className: "mx-auto mt-5 pt-1 btn btn-warning btn-sm w-100"
@@ -88564,7 +88564,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   selectDynamoAuthDidMount: () => (/* binding */ selectDynamoAuthDidMount),
 /* harmony export */   selectDynamoAuthResponse: () => (/* binding */ selectDynamoAuthResponse),
 /* harmony export */   selectExampleDidMount: () => (/* binding */ selectExampleDidMount),
-/* harmony export */   selectGlobalAccount: () => (/* binding */ selectGlobalAccount),
 /* harmony export */   selectHandleRefreshDidMount: () => (/* binding */ selectHandleRefreshDidMount),
 /* harmony export */   selectHomeDidMount: () => (/* binding */ selectHomeDidMount),
 /* harmony export */   selectOaPageDidMount: () => (/* binding */ selectOaPageDidMount),
@@ -88604,7 +88603,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   selectUpdatePassword: () => (/* binding */ selectUpdatePassword),
 /* harmony export */   selectUpdatePhone: () => (/* binding */ selectUpdatePhone),
 /* harmony export */   selectUpdateResponseMessage: () => (/* binding */ selectUpdateResponseMessage),
-/* harmony export */   selectUpdateShowModal: () => (/* binding */ selectUpdateShowModal)
+/* harmony export */   selectUpdateShowModal: () => (/* binding */ selectUpdateShowModal),
+/* harmony export */   selectValidIngredients: () => (/* binding */ selectValidIngredients)
 /* harmony export */ });
 //didMount
 function selectAboutDidMount(state) {
@@ -88652,6 +88652,9 @@ function selectRecipeApiStatus(state) {
 }
 function selectRecipeApiIngredients(state) {
   return state.recipeApiStateVar.apiIngredients;
+}
+function selectValidIngredients(state) {
+  return state.recipeApiStateVar.validIngredients;
 }
 
 //trivia api
@@ -88853,9 +88856,9 @@ function selectSignInError(state) {
 }
 
 //global account
-function selectGlobalAccount(state) {
+/* export function selectGlobalAccount(state: StateVariables): Account {
   return state.globalAccountState.account;
-}
+} */
 
 /***/ }),
 
@@ -88942,6 +88945,10 @@ var stateSetters = {
   recipeApiIngredients: function recipeApiIngredients(state, action) {
     var newValue = action.payload;
     state.recipeApiStateVar.apiIngredients = newValue;
+  },
+  recipeValidIngredients: function recipeValidIngredients(state, action) {
+    var newValue = action.payload;
+    state.recipeApiStateVar.validIngredients = newValue;
   },
   //dynamo auth
   dynamoAuthDidMount: function dynamoAuthDidMount(state, action) {
@@ -89317,19 +89324,9 @@ var stateVariables = {
     didMount: false,
     apiRecipe: "",
     apiStatus: "",
-    apiIngredients: ""
+    apiIngredients: "",
+    validIngredients: ""
   }
-
-  /*   globalAccountState: {
-    account: {
-      email: "",
-      oaToken: "",
-      hfToken: "",
-      name: "",
-      phone: "",
-      password: "",
-    },
-  }, */
 };
 
 /***/ }),

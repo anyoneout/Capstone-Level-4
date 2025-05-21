@@ -48,6 +48,9 @@ export function selectRecipeApiStatus(state: StateVariables): string {
 export function selectRecipeApiIngredients(state: StateVariables): string {
   return state.recipeApiStateVar.apiIngredients;
 }
+export function selectValidIngredients(state: StateVariables): string {
+  return state.recipeApiStateVar.validIngredients;
+}
 
 //trivia api
 export function selectTriviaApiDidMount(state: StateVariables): boolean {
@@ -248,6 +251,6 @@ export function selectSignInError(state: StateVariables): string {
 }
 
 //global account
-export function selectGlobalAccount(state: StateVariables): Account {
+/* export function selectGlobalAccount(state: StateVariables): Account {
   return state.globalAccountState.account;
-}
+} */

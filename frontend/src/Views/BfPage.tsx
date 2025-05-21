@@ -89,7 +89,7 @@ export function BfPage() {
 
   function handleClick() {
     if (!oaToken || !hfToken) {
-      alert("Both an OpenAI token and Hugging Face token is required!");
+      alert("Both an OpenAI token and Hugging Face token are required!");
       return;
     }
     handleBfFetchUpdate();
