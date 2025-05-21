@@ -2,13 +2,15 @@ import React, { useEffect } from "react";
 import { ApiDalleIcon, ApiOpenAiIcon } from "../modules/icons";
 import { recipeArray } from "../modules/recipeArray";
 import { useDispatch, useSelector } from "react-redux";
-import { selectOaPageDidMount } from "../redux/stateSelectors";
+import { selectGlobalAccount, selectOaPageDidMount } from "../redux/stateSelectors";
 import { set } from "../redux/store";
 import { handleOaFetchUpdate } from "../controllers/handleOaFetchUpdate";
 
 export function OaPage() {
   const didMount = useSelector(selectOaPageDidMount);
   const dispatch = useDispatch();
+  const account = useSelector(selectGlobalAccount);
+  const hfToken = account.hfToken;
 
   useEffect(componentDidMount, []);
   useEffect(componentDidUpdate, [didMount]);
@@ -56,7 +58,7 @@ export function OaPage() {
                   className="btn btn-sm btn-outline-secondary"
                   type="button"
                   id="oaFetchButton"
-                  onClick={handleOaFetchUpdate}
+                  onClick={handleClick}
                 >
                   Submit
                 </button>
@@ -90,6 +92,14 @@ export function OaPage() {
       </div>
     </div>
   );
+
+  function handleClick() {
+    if (!hfToken) {
+      alert("A Hugging Face token is required!");
+      return;
+    }
+    handleOaFetchUpdate();
+  }
 
   function componentDidMount(): void {
     dispatch(set.oaPageDidMount(true));

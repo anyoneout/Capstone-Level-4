@@ -83426,6 +83426,9 @@ __webpack_require__.r(__webpack_exports__);
 function BfPage() {
   var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectBfPageDidMount);
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useDispatch)();
+  var account = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectGlobalAccount);
+  var hfToken = account.hfToken;
+  var oaToken = account.oaToken;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUpdate, [didMount]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUnmount, []);
@@ -83480,7 +83483,7 @@ function BfPage() {
     className: "btn btn-sm btn-outline-secondary",
     type: "button",
     id: "bfFetchButton",
-    onClick: _controllers_handleBfFetchUpdate__WEBPACK_IMPORTED_MODULE_5__.handleBfFetchUpdate
+    onClick: handleClick
   }, "Submit")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -83521,6 +83524,13 @@ function BfPage() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "recipeIngredients"
   }))));
+  function handleClick() {
+    if (!oaToken || !hfToken) {
+      alert("Both an OpenAI token and Hugging Face token is required!");
+      return;
+    }
+    (0,_controllers_handleBfFetchUpdate__WEBPACK_IMPORTED_MODULE_5__.handleBfFetchUpdate)();
+  }
   function componentDidMount() {
     dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_4__.set.bfPageDidMount(true));
     document.title = "Recipe Deconstructor - Black Forest Flux";
@@ -83957,6 +83967,8 @@ __webpack_require__.r(__webpack_exports__);
 function OaPage() {
   var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectOaPageDidMount);
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useDispatch)();
+  var account = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectGlobalAccount);
+  var hfToken = account.hfToken;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUpdate, [didMount]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUnmount, []);
@@ -84009,7 +84021,7 @@ function OaPage() {
     className: "btn btn-sm btn-outline-secondary",
     type: "button",
     id: "oaFetchButton",
-    onClick: _controllers_handleOaFetchUpdate__WEBPACK_IMPORTED_MODULE_5__.handleOaFetchUpdate
+    onClick: handleClick
   }, "Submit")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "row mt-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -84050,6 +84062,13 @@ function OaPage() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     id: "recipeIngredients"
   }))));
+  function handleClick() {
+    if (!hfToken) {
+      alert("A Hugging Face token is required!");
+      return;
+    }
+    (0,_controllers_handleOaFetchUpdate__WEBPACK_IMPORTED_MODULE_5__.handleOaFetchUpdate)();
+  }
   function componentDidMount() {
     dispatch(_redux_store__WEBPACK_IMPORTED_MODULE_4__.set.oaPageDidMount(true));
     document.title = "Recipe Deconstructor - Open AI Dall-E-3";
@@ -89126,7 +89145,7 @@ var stateVariables = {
   triviaApiStateVar: {
     didMount: false,
     apiTrivia: "",
-    apiStatus: "active"
+    apiStatus: ""
   },
   awsFormsStateVar: {
     didMount: false
@@ -89198,11 +89217,18 @@ var stateVariables = {
   recipeApiStateVar: {
     didMount: false,
     apiRecipe: "",
-    apiStatus: "active",
+    apiStatus: "",
     apiIngredients: ""
   },
   globalAccountState: {
-    account: null
+    account: {
+      email: "",
+      oaToken: "",
+      hfToken: "",
+      name: "",
+      phone: "",
+      password: ""
+    }
   }
 };
 

@@ -2,14 +2,16 @@ import React, { useEffect } from "react";
 import { ApiFluxIcon } from "../modules/icons";
 import { recipeArray } from "../modules/recipeArray";
 import { useDispatch, useSelector } from "react-redux";
-import { selectBfPageDidMount } from "../redux/stateSelectors";
+import { selectBfPageDidMount, selectGlobalAccount } from "../redux/stateSelectors";
 import { set } from "../redux/store";
 import { handleBfFetchUpdate } from "../controllers/handleBfFetchUpdate";
 
 export function BfPage() {
   const didMount = useSelector(selectBfPageDidMount);
   const dispatch = useDispatch();
-
+  const account = useSelector(selectGlobalAccount);
+  const hfToken = account.hfToken;
+  const oaToken = account.oaToken;
   useEffect(componentDidMount, []);
   useEffect(componentDidUpdate, [didMount]);
   useEffect(componentDidUnmount, []);
@@ -52,7 +54,7 @@ export function BfPage() {
                   className="btn btn-sm btn-outline-secondary"
                   type="button"
                   id="bfFetchButton"
-                  onClick={handleBfFetchUpdate}
+                  onClick={handleClick}
                 >
                   Submit
                 </button>
@@ -85,6 +87,14 @@ export function BfPage() {
       </div>
     </div>
   );
+
+  function handleClick() {
+    if (!oaToken || !hfToken) {
+      alert("Both an OpenAI token and Hugging Face token is required!");
+      return;
+    }
+    handleBfFetchUpdate();
+  }
 
   function componentDidMount(): void {
     dispatch(set.bfPageDidMount(true));

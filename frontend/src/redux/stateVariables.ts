@@ -50,7 +50,7 @@ export const stateVariables = {
   triviaApiStateVar: {
     didMount: false,
     apiTrivia: "",
-    apiStatus: "active",
+    apiStatus: "",
   },
 
   awsFormsStateVar: {
@@ -132,12 +132,19 @@ export const stateVariables = {
   recipeApiStateVar: {
     didMount: false,
     apiRecipe: "",
-    apiStatus: "active",
+    apiStatus: "",
     apiIngredients: "",
   },
 
   globalAccountState: {
-    account: null,
+    account: {
+      email: "",
+      oaToken: "",
+      hfToken: "",
+      name: "",
+      phone: "",
+      password: "",
+    },
   },
 };
 
