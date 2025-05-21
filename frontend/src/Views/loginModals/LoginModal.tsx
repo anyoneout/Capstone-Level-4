@@ -66,6 +66,8 @@ export function LoginModal() {
       //if user exists, signs in, saves authorized user email, password, sets localstorage, and closes login modal
       const currentLoginState = set.signInIsSignedIn(true);
       dispatch(currentLoginState);
+      const currentLoginError = set.signInError("");
+      dispatch(currentLoginError);
       const authUserLoginState = set.authUserIsSignedIn(true);
       dispatch(authUserLoginState);
       localStorage.setItem("loggedIn", "true");

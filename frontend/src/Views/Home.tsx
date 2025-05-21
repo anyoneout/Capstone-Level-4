@@ -151,6 +151,8 @@ export function Home() {
   //component unmounts
   function componentDidUnmount() {
     function delayedUnmount() {
+      const action = set.homeDidMount(false);
+      dispatch(action);
       console.log("The component has unmounted");
     }
     return delayedUnmount;

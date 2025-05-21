@@ -83091,6 +83091,8 @@ function About() {
   }
   function componentDidUnmount() {
     function delayedUnmount() {
+      var action = _redux_store__WEBPACK_IMPORTED_MODULE_3__.set.aboutDidMount(false);
+      dispatch(action);
       console.log("component has unmounted");
     }
     return delayedUnmount;
@@ -83382,6 +83384,8 @@ function BackendTest() {
   }
   function componentDidUnmount() {
     return function delayedUnmount() {
+      var action = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.testBackendDidMount(false);
+      dispatch(action);
       console.log("component has unmounted");
     };
   }
@@ -83905,6 +83909,8 @@ function Home() {
   //component unmounts
   function componentDidUnmount() {
     function delayedUnmount() {
+      var action = _redux_store__WEBPACK_IMPORTED_MODULE_12__.set.homeDidMount(false);
+      dispatch(action);
       console.log("The component has unmounted");
     }
     return delayedUnmount;
@@ -84680,11 +84686,39 @@ function CollapsibleNavbar() {
   }), "Examples")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "nav-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
+    to: "".concat(rootPath, "/trivia"),
+    className: "nav-link"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "bi bi-images me-2"
+  }), "Trivia Api")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+    className: "nav-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
+    to: "".concat(rootPath, "/dynamo"),
+    className: "nav-link"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "bi bi-images me-2"
+  }), "Dynamo Auth")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+    className: "nav-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
+    to: "".concat(rootPath, "/aws"),
+    className: "nav-link"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "bi bi-images me-2"
+  }), "AWS")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+    className: "nav-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
     to: "".concat(rootPath, "/backendTest"),
     className: "nav-link"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
     className: "bi bi-images me-2"
   }), "Test Backend")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+    className: "nav-item"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
+    to: "".concat(rootPath, "/ai"),
+    className: "nav-link"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
+    className: "bi bi-images me-2"
+  }), "AI")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
     className: "nav-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.NavLink, {
     to: "".concat(rootPath, "/recipe"),
@@ -85102,7 +85136,7 @@ function SignInAreaUpdate() {
   } //clears authorized redux, local storage and signs out
   function _handleDelete() {
     _handleDelete = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-      var email, password, clearIsSignedIn;
+      var email, password, clearIsSignedIn, clearAuthUserEmail, clearAuthUserPassword, clearAuthUserName, clearAuthUserPhone, clearAuthUserHfToken, clearAuthUserOaToken;
       return _regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
@@ -85120,8 +85154,20 @@ function SignInAreaUpdate() {
           case 4:
             clearIsSignedIn = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInIsSignedIn(false);
             dispatch(clearIsSignedIn);
+            clearAuthUserEmail = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserEmail("");
+            dispatch(clearAuthUserEmail);
+            clearAuthUserPassword = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserPassword("");
+            dispatch(clearAuthUserPassword);
+            clearAuthUserName = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserName("");
+            dispatch(clearAuthUserName);
+            clearAuthUserPhone = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserPhone("");
+            dispatch(clearAuthUserPhone);
+            clearAuthUserHfToken = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserHfToken("");
+            dispatch(clearAuthUserHfToken);
+            clearAuthUserOaToken = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserOaToken("");
+            dispatch(clearAuthUserOaToken);
             (0,_controllers_handleClearLocalStorage__WEBPACK_IMPORTED_MODULE_10__.handleClearLocalStorage)();
-          case 7:
+          case 19:
           case "end":
             return _context2.stop();
         }
@@ -85136,6 +85182,14 @@ function SignInAreaUpdate() {
     dispatch(clearAuthUserEmail);
     var clearAuthUserPassword = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserPassword("");
     dispatch(clearAuthUserPassword);
+    var clearAuthUserName = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserName("");
+    dispatch(clearAuthUserName);
+    var clearAuthUserPhone = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserPhone("");
+    dispatch(clearAuthUserPhone);
+    var clearAuthUserHfToken = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserHfToken("");
+    dispatch(clearAuthUserHfToken);
+    var clearAuthUserOaToken = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserOaToken("");
+    dispatch(clearAuthUserOaToken);
     (0,_controllers_handleClearLocalStorage__WEBPACK_IMPORTED_MODULE_10__.handleClearLocalStorage)();
   }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
@@ -86614,7 +86668,7 @@ function LoginModal() {
   }
   function _handleSubmit() {
     _handleSubmit = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
-      var form, email, password, setErrorResponse, result, _setErrorResponse, _setErrorResponse2, currentLoginState, authUserLoginState, saveEmail, savePassword, saveName, savePhone, saveHfToken, saveOaToken, unmount, closeModal;
+      var form, email, password, setErrorResponse, result, _setErrorResponse, _setErrorResponse2, currentLoginState, currentLoginError, authUserLoginState, saveEmail, savePassword, saveName, savePhone, saveHfToken, saveOaToken, unmount, closeModal;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -86658,12 +86712,14 @@ function LoginModal() {
             _setErrorResponse2 = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInError("User not found");
             return _context.abrupt("return", dispatch(_setErrorResponse2));
           case 17:
-            _context.next = 47;
+            _context.next = 49;
             break;
           case 19:
             //if user exists, signs in, saves authorized user email, password, sets localstorage, and closes login modal
             currentLoginState = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInIsSignedIn(true);
             dispatch(currentLoginState);
+            currentLoginError = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInError("");
+            dispatch(currentLoginError);
             authUserLoginState = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserIsSignedIn(true);
             dispatch(authUserLoginState);
             localStorage.setItem("loggedIn", "true");
@@ -86690,7 +86746,7 @@ function LoginModal() {
             dispatch(unmount);
             closeModal = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInShowModal(false);
             dispatch(closeModal);
-          case 47:
+          case 49:
           case "end":
             return _context.stop();
         }

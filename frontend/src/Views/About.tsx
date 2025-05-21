@@ -51,6 +51,8 @@ export function About() {
 
   function componentDidUnmount(): () => void {
     function delayedUnmount(): void {
+      const action = set.aboutDidMount(false);
+      dispatch(action);
       console.log("component has unmounted");
     }
     return delayedUnmount;

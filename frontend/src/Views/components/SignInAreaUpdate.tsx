@@ -94,6 +94,18 @@ export default function SignInAreaUpdate() {
     await deleteAccount({ email, password, name: "", phone: "", hfToken: "", oaToken: "" });
     const clearIsSignedIn = set.signInIsSignedIn(false);
     dispatch(clearIsSignedIn);
+    const clearAuthUserEmail = set.authUserEmail("");
+    dispatch(clearAuthUserEmail);
+    const clearAuthUserPassword = set.authUserPassword("");
+    dispatch(clearAuthUserPassword);
+    const clearAuthUserName = set.authUserName("");
+    dispatch(clearAuthUserName);
+    const clearAuthUserPhone = set.authUserPhone("");
+    dispatch(clearAuthUserPhone);
+    const clearAuthUserHfToken = set.authUserHfToken("");
+    dispatch(clearAuthUserHfToken);
+    const clearAuthUserOaToken = set.authUserOaToken("");
+    dispatch(clearAuthUserOaToken);
     handleClearLocalStorage();
   }
 
@@ -106,6 +118,14 @@ export default function SignInAreaUpdate() {
     dispatch(clearAuthUserEmail);
     const clearAuthUserPassword = set.authUserPassword("");
     dispatch(clearAuthUserPassword);
+    const clearAuthUserName = set.authUserName("");
+    dispatch(clearAuthUserName);
+    const clearAuthUserPhone = set.authUserPhone("");
+    dispatch(clearAuthUserPhone);
+    const clearAuthUserHfToken = set.authUserHfToken("");
+    dispatch(clearAuthUserHfToken);
+    const clearAuthUserOaToken = set.authUserOaToken("");
+    dispatch(clearAuthUserOaToken);
     handleClearLocalStorage();
   }
 
