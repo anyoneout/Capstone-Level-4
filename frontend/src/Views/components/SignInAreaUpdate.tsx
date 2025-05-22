@@ -118,6 +118,8 @@ export default function SignInAreaUpdate() {
   function handleSignOut(): void {
     const clearIsSignedIn = set.signInIsSignedIn(false);
     dispatch(clearIsSignedIn);
+    const authUserIsSignedIn = set.authUserIsSignedIn(false);
+    dispatch(authUserIsSignedIn);
     const clearAuthUserEmail = set.authUserEmail("");
     dispatch(clearAuthUserEmail);
     const clearAuthUserPassword = set.authUserPassword("");
@@ -128,9 +130,12 @@ export default function SignInAreaUpdate() {
     dispatch(clearAuthUserPhone);
     const clearAuthUserHfToken = set.authUserHfToken("");
     dispatch(clearAuthUserHfToken);
-    const clearAuthUserOaToken = set.authUserOaToken("");
-    dispatch(clearAuthUserOaToken);
+    const clearCreateShowModal = set.createShowModal(false);
+    dispatch(clearCreateShowModal);
+    const clearResponseMessage = set.createShowModal("");
+    dispatch(clearResponseMessage);
     handleClearLocalStorage();
+    window.location.reload();
     /*     const action = set.globalAccount("");
     dispatch(action); */
   }

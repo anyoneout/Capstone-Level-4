@@ -109,6 +109,7 @@ export function AccountProfileModal() {
     dispatch(clearAuthUserEmail);
     const clearAuthUserPassword = set.authUserPassword("");
     dispatch(clearAuthUserPassword);
+    window.location.reload();
     /*  const action = set.globalAccount("");
     dispatch(action); */
   }

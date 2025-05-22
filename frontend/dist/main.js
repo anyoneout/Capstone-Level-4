@@ -85348,6 +85348,8 @@ function SignInAreaUpdate() {
   function handleSignOut() {
     var clearIsSignedIn = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInIsSignedIn(false);
     dispatch(clearIsSignedIn);
+    var authUserIsSignedIn = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserIsSignedIn(false);
+    dispatch(authUserIsSignedIn);
     var clearAuthUserEmail = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserEmail("");
     dispatch(clearAuthUserEmail);
     var clearAuthUserPassword = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserPassword("");
@@ -85358,9 +85360,12 @@ function SignInAreaUpdate() {
     dispatch(clearAuthUserPhone);
     var clearAuthUserHfToken = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserHfToken("");
     dispatch(clearAuthUserHfToken);
-    var clearAuthUserOaToken = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserOaToken("");
-    dispatch(clearAuthUserOaToken);
+    var clearCreateShowModal = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.createShowModal(false);
+    dispatch(clearCreateShowModal);
+    var clearResponseMessage = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.createShowModal("");
+    dispatch(clearResponseMessage);
     (0,_controllers_handleClearLocalStorage__WEBPACK_IMPORTED_MODULE_10__.handleClearLocalStorage)();
+    window.location.reload();
     /*     const action = set.globalAccount("");
     dispatch(action); */
   }
@@ -86449,9 +86454,10 @@ function AccountProfileModal() {
             dispatch(clearAuthUserEmail);
             clearAuthUserPassword = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserPassword("");
             dispatch(clearAuthUserPassword);
+            window.location.reload();
             /*  const action = set.globalAccount("");
             dispatch(action); */
-          case 11:
+          case 12:
           case "end":
             return _context2.stop();
         }
@@ -86888,7 +86894,7 @@ function LoginModal() {
             _setErrorResponse2 = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInError("User not found");
             return _context.abrupt("return", dispatch(_setErrorResponse2));
           case 17:
-            _context.next = 38;
+            _context.next = 39;
             break;
           case 19:
             console.log(result);
@@ -86911,7 +86917,8 @@ function LoginModal() {
             dispatch(didUnMount);
             closeModal = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInShowModal(false);
             dispatch(closeModal);
-          case 38:
+            window.location.reload();
+          case 39:
           case "end":
             return _context.stop();
         }

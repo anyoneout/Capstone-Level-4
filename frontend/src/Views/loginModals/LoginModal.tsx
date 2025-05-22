@@ -77,6 +77,7 @@ export function LoginModal() {
       dispatch(didUnMount);
       const closeModal = set.signInShowModal(false);
       dispatch(closeModal);
+      window.location.reload();
     }
   }
 
