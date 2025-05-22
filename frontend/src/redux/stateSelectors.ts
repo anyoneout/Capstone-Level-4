@@ -28,6 +28,7 @@ export function selectHandleRefreshDidMount(state: StateVariables): boolean {
 export function selectTestBackendDidMount(state: StateVariables): boolean {
   return state.testBackendStateVar.didMount;
 }
+
 //ai page
 export function selectAiPageDidMount(state: StateVariables): boolean {
   return state.aiPageStateVar.didMount;

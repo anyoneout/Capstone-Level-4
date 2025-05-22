@@ -22,7 +22,7 @@ import { store } from "./redux/store";
 import { BackendTest } from "./Views/BackendTest";
 import { AiPage } from "./Views/AiPage";
 import { RecipeApiResponsePage } from "./Views/RecipeApiResponsePage";
-import { GitHubNavbar } from "./Views/components/GithubNavbar";
+import { GitHubNavbar } from "./Views/components/GitHubNavbar";
 
 const bodyTag = document.getElementById("bodyTag");
 const root = createRoot(bodyTag);

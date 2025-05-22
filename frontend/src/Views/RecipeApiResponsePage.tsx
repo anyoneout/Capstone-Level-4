@@ -49,40 +49,51 @@ export function RecipeApiResponsePage() {
 
   return (
     <main>
-      <div className="container mt-5">
+      <div
+        className="container mt-5 d-flex flex-column align-items-center"
+        style={{ width: "50%", minWidth: 300, margin: "0 auto" }}
+      >
         <h2>Recipe Finder</h2>
-        <form onSubmit={handleSearch}>
-          <label>Enter three ingredients for find a recipe</label>
-          <div className="d-flex justify-content-center" data-bs-theme="dark" style={{ fontSize: ".8rem" }}>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Ingredient 1"
-              name="ingredientOne"
-              style={{ fontSize: ".8rem" }}
-              required
-            />
-            <input
-              type="text"
-              className="form-control mx-2"
-              placeholder="Ingredient 2"
-              name="ingredientTwo"
-              style={{ fontSize: ".8rem" }}
-              required
-            />
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Ingredient 3"
-              name="ingredientThree"
-              style={{ fontSize: ".8rem" }}
-              required
-            />
-          </div>
-          <button type="submit" className="btn btn-primary btn-sm mt-2 mb-3">
-            Search
-          </button>
-        </form>
+        <div>
+          <form onSubmit={handleSearch}>
+            <label className="mt-5">Enter three ingredients for find a recipe</label>
+            <div
+              className="d-flex justify-content-center"
+              data-bs-theme="dark"
+              style={{ width: "100%", fontSize: ".8rem" }}
+            >
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Ingredient 1"
+                name="ingredientOne"
+                style={{ fontSize: ".8rem" }}
+                required
+              />
+              <input
+                type="text"
+                className="form-control mx-2"
+                placeholder="Ingredient 2"
+                name="ingredientTwo"
+                style={{ fontSize: ".8rem" }}
+                required
+              />
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Ingredient 3"
+                name="ingredientThree"
+                style={{ fontSize: ".8rem" }}
+                required
+              />
+            </div>
+            <div>
+              <button type="submit" className="btn btn-primary btn-sm mt-2 mb-3">
+                Search
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
       <div>
         <AiPage />

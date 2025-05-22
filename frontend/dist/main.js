@@ -83137,8 +83137,15 @@ function AiPage() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUpdate, [didMount]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUnmount, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "container mt-5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Recipe Decider AI"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
+    className: "container mt-5 d-flex flex-column align-items-center",
+    style: {
+      width: "75%",
+      minWidth: 400,
+      margin: "0 auto"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
+    className: "mb-5"
+  }, "Recipe Decider AI"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
     onSubmit: handleSubmit
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
     htmlFor: "questionInput"
@@ -84159,13 +84166,21 @@ function RecipeApiResponsePage() {
     return _handleSearch.apply(this, arguments);
   }
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "container mt-5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Recipe Finder"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
+    className: "container mt-5 d-flex flex-column align-items-center",
+    style: {
+      width: "50%",
+      minWidth: 300,
+      margin: "0 auto"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Recipe Finder"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
     onSubmit: handleSearch
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", null, "Enter three ingredients for find a recipe"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
+    className: "mt-5"
+  }, "Enter three ingredients for find a recipe"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "d-flex justify-content-center",
     "data-bs-theme": "dark",
     style: {
+      width: "100%",
       fontSize: ".8rem"
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
@@ -84195,10 +84210,10 @@ function RecipeApiResponsePage() {
       fontSize: ".8rem"
     },
     required: true
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     type: "submit",
     className: "btn btn-primary btn-sm mt-2 mb-3"
-  }, "Search"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_AiPage__WEBPACK_IMPORTED_MODULE_3__.AiPage, null)));
+  }, "Search"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_AiPage__WEBPACK_IMPORTED_MODULE_3__.AiPage, null)));
   function componentDidMount() {
     var action = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.recipeApiDidMount(true);
     dispatch(action);
@@ -84763,9 +84778,9 @@ function CollapsibleNavbar() {
 
 /***/ }),
 
-/***/ "./src/Views/components/GithubNavbar.tsx":
+/***/ "./src/Views/components/GitHubNavbar.tsx":
 /*!***********************************************!*\
-  !*** ./src/Views/components/GithubNavbar.tsx ***!
+  !*** ./src/Views/components/GitHubNavbar.tsx ***!
   \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -88633,6 +88648,7 @@ function selectHandleRefreshDidMount(state) {
 function selectTestBackendDidMount(state) {
   return state.testBackendStateVar.didMount;
 }
+
 //ai page
 function selectAiPageDidMount(state) {
   return state.aiPageStateVar.didMount;
@@ -89577,7 +89593,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Views_BackendTest__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./Views/BackendTest */ "./src/Views/BackendTest.tsx");
 /* harmony import */ var _Views_AiPage__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./Views/AiPage */ "./src/Views/AiPage.tsx");
 /* harmony import */ var _Views_RecipeApiResponsePage__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./Views/RecipeApiResponsePage */ "./src/Views/RecipeApiResponsePage.tsx");
-/* harmony import */ var _Views_components_GithubNavbar__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./Views/components/GithubNavbar */ "./src/Views/components/GithubNavbar.tsx");
+/* harmony import */ var _Views_components_GitHubNavbar__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./Views/components/GitHubNavbar */ "./src/Views/components/GitHubNavbar.tsx");
 
 
 
@@ -89611,7 +89627,7 @@ var rootPath = "";
 var Navbar = _Views_components_CollapsibleNavbar__WEBPACK_IMPORTED_MODULE_8__.CollapsibleNavbar;
 if (domain === "anyoneout.github.io") {
   rootPath = "/Capstone-Level-4";
-  Navbar = _Views_components_GithubNavbar__WEBPACK_IMPORTED_MODULE_22__.GitHubNavbar;
+  Navbar = _Views_components_GitHubNavbar__WEBPACK_IMPORTED_MODULE_22__.GitHubNavbar;
 }
 root.render(/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_redux__WEBPACK_IMPORTED_MODULE_23__.Provider, {
   store: _redux_store__WEBPACK_IMPORTED_MODULE_18__.store

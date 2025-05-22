@@ -22,8 +22,11 @@ export function AiPage() {
 
   return (
     <main>
-      <div className="container mt-5">
-        <h2>Recipe Decider AI</h2>
+      <div
+        className="container mt-5 d-flex flex-column align-items-center"
+        style={{ width: "75%", minWidth: 400, margin: "0 auto" }}
+      >
+        <h2 className="mb-5">Recipe Decider AI</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="questionInput">What is the single best recipe that uses these ingredients?</label>
           <div className="d-flex justify-content-center" data-bs-theme="dark" style={{ fontSize: ".8rem" }}>
