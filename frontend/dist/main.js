@@ -86842,6 +86842,8 @@ function LoginModal() {
     dispatch(closeSignInModal);
     var didUnMount = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInDidMount(false);
     dispatch(didUnMount);
+    var clearError = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInError("");
+    dispatch(clearError);
   }
   function handleSubmit(_x) {
     return _handleSubmit.apply(this, arguments);
@@ -86892,7 +86894,7 @@ function LoginModal() {
             _setErrorResponse2 = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInError("User not found");
             return _context.abrupt("return", dispatch(_setErrorResponse2));
           case 17:
-            _context.next = 39;
+            _context.next = 38;
             break;
           case 19:
             console.log(result);
@@ -86915,8 +86917,7 @@ function LoginModal() {
             dispatch(didUnMount);
             closeModal = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.signInShowModal(false);
             dispatch(closeModal);
-            window.location.reload();
-          case 39:
+          case 38:
           case "end":
             return _context.stop();
         }

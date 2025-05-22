@@ -31,6 +31,8 @@ export function LoginModal() {
     dispatch(closeSignInModal);
     const didUnMount = set.signInDidMount(false);
     dispatch(didUnMount);
+    const clearError = set.signInError("");
+    dispatch(clearError);
   }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -77,7 +79,6 @@ export function LoginModal() {
       dispatch(didUnMount);
       const closeModal = set.signInShowModal(false);
       dispatch(closeModal);
-      window.location.reload();
     }
   }
 
