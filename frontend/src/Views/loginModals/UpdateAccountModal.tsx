@@ -94,8 +94,6 @@ export function UpdateAccountModal() {
     dispatch(closeUpdateModal);
     const didUnMount = set.updateDidMount(false);
     dispatch(didUnMount);
-    const isSignedOut = set.signInIsSignedIn(false);
-    dispatch(isSignedOut);
   }
 
   async function handleUpdateSubmit(event: React.FormEvent<HTMLFormElement>) {

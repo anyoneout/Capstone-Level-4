@@ -29,7 +29,7 @@ export function AiPage() {
         <h2 className="mb-5">Recipe Decider AI</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="questionInput">What is the single best recipe that uses these ingredients?</label>
-          <div className="d-flex justify-content-center" data-bs-theme="dark" style={{ fontSize: ".8rem" }}>
+          <div className="d-flex justify-content-center border-1" data-bs-theme="dark" style={{ fontSize: ".8rem" }}>
             <input
               id="questionInput"
               type="text"

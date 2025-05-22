@@ -83150,7 +83150,7 @@ function AiPage() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("label", {
     htmlFor: "questionInput"
   }, "What is the single best recipe that uses these ingredients?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "d-flex justify-content-center",
+    className: "d-flex justify-content-center border-1",
     "data-bs-theme": "dark",
     style: {
       fontSize: ".8rem"
@@ -87160,8 +87160,6 @@ function UpdateAccountModal() {
     dispatch(closeUpdateModal);
     var didUnMount = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.updateDidMount(false);
     dispatch(didUnMount);
-    var isSignedOut = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInIsSignedIn(false);
-    dispatch(isSignedOut);
   }
   function handleUpdateSubmit(_x) {
     return _handleUpdateSubmit.apply(this, arguments);
