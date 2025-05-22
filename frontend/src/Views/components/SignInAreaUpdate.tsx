@@ -135,7 +135,7 @@ export default function SignInAreaUpdate() {
     const clearResponseMessage = set.createShowModal("");
     dispatch(clearResponseMessage);
     handleClearLocalStorage();
-    window.location.reload();
+    /*     window.location.reload(); */
     /*     const action = set.globalAccount("");
     dispatch(action); */
   }

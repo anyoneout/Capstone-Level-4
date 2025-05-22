@@ -69,8 +69,6 @@ export function CreateAccountModal() {
 
     if (result.status === 200) {
       const action = set.createResponseMessage(`User created successfully!`);
-      const loggedIn = set.authUserIsSignedIn(true);
-      dispatch(loggedIn);
       const currentLoginState = set.signInIsSignedIn(true);
       dispatch(currentLoginState);
       savePersistentLogin(email, password);

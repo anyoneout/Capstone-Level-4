@@ -85365,7 +85365,7 @@ function SignInAreaUpdate() {
     var clearResponseMessage = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.createShowModal("");
     dispatch(clearResponseMessage);
     (0,_controllers_handleClearLocalStorage__WEBPACK_IMPORTED_MODULE_10__.handleClearLocalStorage)();
-    window.location.reload();
+    /*     window.location.reload(); */
     /*     const action = set.globalAccount("");
     dispatch(action); */
   }
@@ -86454,10 +86454,10 @@ function AccountProfileModal() {
             dispatch(clearAuthUserEmail);
             clearAuthUserPassword = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserPassword("");
             dispatch(clearAuthUserPassword);
-            window.location.reload();
+            /*     window.location.reload(); */
             /*  const action = set.globalAccount("");
             dispatch(action); */
-          case 12:
+          case 11:
           case "end":
             return _context2.stop();
         }
@@ -86598,7 +86598,7 @@ function CreateAccountModal() {
   }
   function _handleSubmit() {
     _handleSubmit = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee(event) {
-      var form, email, password, name, phone, hfToken, oaToken, account, setErrorResponse, result, action, _action, _action2, loggedIn, currentLoginState, didMount, _action3;
+      var form, email, password, name, phone, hfToken, oaToken, account, setErrorResponse, result, action, _action, _action2, currentLoginState, didMount, _action3;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -86645,12 +86645,10 @@ function CreateAccountModal() {
             return _context.abrupt("return", dispatch(_action));
           case 22:
             if (!(result.status === 200)) {
-              _context.next = 41;
+              _context.next = 39;
               break;
             }
             _action2 = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createResponseMessage("User created successfully!");
-            loggedIn = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.authUserIsSignedIn(true);
-            dispatch(loggedIn);
             currentLoginState = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.signInIsSignedIn(true);
             dispatch(currentLoginState);
             (0,_modules_savePersistentLogin__WEBPACK_IMPORTED_MODULE_4__.savePersistentLogin)(email, password);
@@ -86664,10 +86662,10 @@ function CreateAccountModal() {
             didMount = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createDidMount(false);
             dispatch(didMount);
             return _context.abrupt("return", dispatch(_action2));
-          case 41:
+          case 39:
             _action3 = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createResponseMessage("User wasn't created");
             return _context.abrupt("return", dispatch(_action3));
-          case 43:
+          case 41:
           case "end":
             return _context.stop();
         }
