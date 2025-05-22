@@ -109,8 +109,8 @@ export default function SignInAreaUpdate() {
     const clearAuthUserOaToken = set.authUserOaToken("");
     dispatch(clearAuthUserOaToken);
     handleClearLocalStorage();
-    const action = set.globalAccount("");
-    dispatch(action);
+    /*   const action = set.globalAccount("");
+    dispatch(action); */
   }
 
   //clears authorized redux, local storage and signs out

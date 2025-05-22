@@ -83433,8 +83433,8 @@ __webpack_require__.r(__webpack_exports__);
 function BfPage() {
   var didMount = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectBfPageDidMount);
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useDispatch)();
-  var hfToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectAuthUserHfToken);
-  var oaToken = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(_redux_stateSelectors__WEBPACK_IMPORTED_MODULE_3__.selectAuthUserOaToken);
+  var oaToken = localStorage.getItem("oaToken");
+  var hfToken = localStorage.getItem("hfToken");
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidMount, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUpdate, [didMount]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(componentDidUnmount, []);
@@ -85304,7 +85304,7 @@ function SignInAreaUpdate() {
   } //clears authorized redux, local storage and signs out
   function _handleDelete() {
     _handleDelete = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-      var email, password, clearIsSignedIn, clearAuthUserEmail, clearAuthUserPassword, clearAuthUserName, clearAuthUserPhone, clearAuthUserHfToken, clearAuthUserOaToken, action;
+      var email, password, clearIsSignedIn, clearAuthUserEmail, clearAuthUserPassword, clearAuthUserName, clearAuthUserPhone, clearAuthUserHfToken, clearAuthUserOaToken;
       return _regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
@@ -85335,9 +85335,9 @@ function SignInAreaUpdate() {
             clearAuthUserOaToken = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.authUserOaToken("");
             dispatch(clearAuthUserOaToken);
             (0,_controllers_handleClearLocalStorage__WEBPACK_IMPORTED_MODULE_10__.handleClearLocalStorage)();
-            action = _redux_store__WEBPACK_IMPORTED_MODULE_1__.set.globalAccount("");
-            dispatch(action);
-          case 21:
+            /*   const action = set.globalAccount("");
+            dispatch(action); */
+          case 19:
           case "end":
             return _context2.stop();
         }
@@ -86592,6 +86592,8 @@ function CreateAccountModal() {
     dispatch(didUnMount);
     var closeUpdateModal = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createShowModal(false);
     dispatch(closeUpdateModal);
+    var clearError = _redux_store__WEBPACK_IMPORTED_MODULE_2__.set.createResponseMessage("");
+    dispatch(clearError);
   }
   function handleSubmit(_x) {
     return _handleSubmit.apply(this, arguments);

@@ -9,8 +9,8 @@ import { handleBfFetchUpdate } from "../controllers/handleBfFetchUpdate";
 export function BfPage() {
   const didMount = useSelector(selectBfPageDidMount);
   const dispatch = useDispatch();
-  const hfToken = useSelector(selectAuthUserHfToken);
-  const oaToken = useSelector(selectAuthUserOaToken);
+  const oaToken = localStorage.getItem("oaToken");
+  const hfToken = localStorage.getItem("hfToken");
   useEffect(componentDidMount, []);
   useEffect(componentDidUpdate, [didMount]);
   useEffect(componentDidUnmount, []);

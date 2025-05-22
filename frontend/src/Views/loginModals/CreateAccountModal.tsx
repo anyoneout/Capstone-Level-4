@@ -36,6 +36,8 @@ export function CreateAccountModal() {
     dispatch(didUnMount);
     const closeUpdateModal = set.createShowModal(false);
     dispatch(closeUpdateModal);
+    const clearError = set.createResponseMessage("");
+    dispatch(clearError);
   }
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
