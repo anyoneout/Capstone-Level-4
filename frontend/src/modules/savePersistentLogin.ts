@@ -2,7 +2,6 @@ import { Credentials } from "../types/Credentials";
 
 export function savePersistentLogin(email: string, password: string): void {
   const currentTimeStamp = Date.now();
-
   const credentials: Credentials = {
     email,
     password,

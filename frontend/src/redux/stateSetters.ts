@@ -324,10 +324,10 @@ export const stateSetters = {
   },
 
   //global account
-  /*   globalAccount: function (state: StateVariables, action) {
+  globalAccount: function (state: StateVariables, action: ActionAccount) {
     const newValue = action.payload;
     state.globalAccountState.account = newValue;
-  }, */
+  },
 };
 
 type Action = {
@@ -340,7 +340,7 @@ type ActionBoolean = {
   type: string;
 };
 
-/* type ActionAccount = {
+type ActionAccount = {
   payload: Account;
   type: string;
-}; */
+};

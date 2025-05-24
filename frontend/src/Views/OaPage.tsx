@@ -7,9 +7,9 @@ import { set } from "../redux/store";
 import { handleOaFetchUpdate } from "../controllers/handleOaFetchUpdate";
 
 export function OaPage() {
+  const hfToken = localStorage.getItem("hfToken");
   const didMount = useSelector(selectOaPageDidMount);
   const dispatch = useDispatch();
-  const hfToken = localStorage.getItem("hfToken");
 
   useEffect(componentDidMount, []);
   useEffect(componentDidUpdate, [didMount]);

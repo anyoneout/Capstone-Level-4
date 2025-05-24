@@ -14,6 +14,8 @@ import { readAccount } from "../../modules/crud/readAccount";
 import { handleClearLocalStorage } from "../../controllers/handleClearLocalStorage";
 
 export function AccountProfileModal() {
+  const authEmailLs = localStorage.getItem("email");
+  const authPasswordLs = localStorage.getItem("password");
   const showProfileModal = useSelector(selectProfileShowModal);
   const authEmail = useSelector(selectAuthUserEmail);
   const authPassword = useSelector(selectAuthUserPassword);
@@ -21,8 +23,6 @@ export function AccountProfileModal() {
   const authPhone = useSelector(selectAuthUserPhone);
   const authHfToken = useSelector(selectAuthUserHfToken);
   const authOaToken = useSelector(selectAuthUserOaToken);
-  const authEmailLs = localStorage.getItem("email");
-  const authPasswordLs = localStorage.getItem("password");
 
   const dispatch = useDispatch();
 
@@ -59,25 +59,18 @@ export function AccountProfileModal() {
         return dispatch(setErrorResponse);
       }
     } else {
-      localStorage.setItem("loggedIn", "true");
       const saveEmail = set.authUserEmail(result.email);
       dispatch(saveEmail);
-      localStorage.setItem("email", result.email);
       const savePassword = set.authUserPassword(result.password);
       dispatch(savePassword);
-      localStorage.setItem("password", result.password);
       const saveName = set.authUserName(result.name);
       dispatch(saveName);
-      localStorage.setItem("name", result.name);
       const savePhone = set.authUserPhone(result.phone);
       dispatch(savePhone);
-      localStorage.setItem("phone", result.phone);
       const saveHfToken = set.authUserHfToken(result.hfToken);
       dispatch(saveHfToken);
-      localStorage.setItem("hfToken", result.hfToken);
       const saveOaToken = set.authUserOaToken(result.oaToken);
       dispatch(saveOaToken);
-      localStorage.setItem("oaToken", result.oaToken);
     }
   }
 
@@ -89,7 +82,7 @@ export function AccountProfileModal() {
   }
 
   function handleUpdateModal() {
-    const didUnMount = set.accountProfileDidMount(true);
+    const didUnMount = set.accountProfileDidMount(false);
     dispatch(didUnMount);
     const hideProfileModal = set.accountProfileShowModal(false);
     dispatch(hideProfileModal);
@@ -109,9 +102,6 @@ export function AccountProfileModal() {
     dispatch(clearAuthUserEmail);
     const clearAuthUserPassword = set.authUserPassword("");
     dispatch(clearAuthUserPassword);
-    /*     window.location.reload(); */
-    /*  const action = set.globalAccount("");
-    dispatch(action); */
   }
 
   return (

@@ -252,6 +252,6 @@ export function selectSignInError(state: StateVariables): string {
 }
 
 //global account
-/* export function selectGlobalAccount(state: StateVariables): Account {
+export function selectGlobalAccount(state: StateVariables): Account {
   return state.globalAccountState.account;
-} */
+}

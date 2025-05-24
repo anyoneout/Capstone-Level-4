@@ -56,11 +56,13 @@ export function AiPage() {
   );
   async function handleSubmit(event: any) {
     event.preventDefault();
+
     const form = event.target.elements;
     const userQuestion = form.question.value;
     const userContext = form.context.value;
 
     let response = await getAnswer(userQuestion, userContext);
+
     console.log("Submitting:", userQuestion, userContext);
     const answer = set.aiPageAnswer(response);
     dispatch(answer);

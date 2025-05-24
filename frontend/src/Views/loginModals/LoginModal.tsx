@@ -2,12 +2,11 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { set } from "../../redux/store";
 import { readAccount } from "../../modules/crud/readAccount";
-import { selectSignInDidMount, selectSignInError, selectSignInShowModal } from "../../redux/stateSelectors";
+import { selectSignInError, selectSignInShowModal } from "../../redux/stateSelectors";
 import { savePersistentLogin } from "../../modules/savePersistentLogin";
 
 export function LoginModal() {
   //declares Redux
-  const didMount = useSelector(selectSignInDidMount);
   const showSignInModal = useSelector(selectSignInShowModal);
   const errorResponse = useSelector(selectSignInError);
 
@@ -61,12 +60,7 @@ export function LoginModal() {
     } else {
       console.log(result);
       //if user exists, signs in, saves authorized user email, password, sets localstorage, and closes login modal
-      const currentLoginState = set.signInIsSignedIn(true);
-      dispatch(currentLoginState);
-      const currentLoginError = set.signInError("");
-      dispatch(currentLoginError);
-      const authUserLoginState = set.authUserIsSignedIn(true);
-      dispatch(authUserLoginState);
+      savePersistentLogin(email, password);
       localStorage.setItem("loggedIn", "true");
       localStorage.setItem("email", result.email);
       localStorage.setItem("password", result.password);
@@ -74,7 +68,10 @@ export function LoginModal() {
       localStorage.setItem("phone", result.phone);
       localStorage.setItem("hfToken", result.hfToken);
       localStorage.setItem("oaToken", result.oaToken);
-      savePersistentLogin(email, password);
+      const currentLoginState = set.signInIsSignedIn(true);
+      dispatch(currentLoginState);
+      const currentLoginError = set.signInError("");
+      dispatch(currentLoginError);
       const didUnMount = set.signInDidMount(false);
       dispatch(didUnMount);
       const closeModal = set.signInShowModal(false);
@@ -88,16 +85,11 @@ export function LoginModal() {
     dispatch(hideLoginModal);
     const didUnMount = set.signInDidMount(false);
     dispatch(didUnMount);
+    const currentLoginError = set.signInError("");
+    dispatch(currentLoginError);
     const showCreateAccountModal = set.createShowModal(true);
     dispatch(showCreateAccountModal);
   }
-  /*   function showUpdateAccountModal(event: React.FormEvent) {
-    event.preventDefault();
-    const hideLoginModal = set.signInShowModal(false);
-    dispatch(hideLoginModal);
-    const showUpdateAccountModal = set.updateShowModal(true);
-    dispatch(showUpdateAccountModal);
-  } */
 
   return (
     <>
@@ -169,12 +161,6 @@ export function LoginModal() {
                       Sign Up
                     </a>{" "}
                   </div>
-                  {/*    <div className="mx-auto" style={{ fontSize: "13px", color: "rgba(156, 156, 156, 0.7)" }}>
-                    Need to make changes?{" "}
-                    <a href="#" className="text-decoration-none" onClick={showUpdateAccountModal}>
-                      Update Account
-                    </a>{" "}
-                  </div> */}
                 </div>
               </form>
             </div>

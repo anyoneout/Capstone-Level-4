@@ -1,4 +1,4 @@
-import React, { FormEvent, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectAuthUserIsSignedIn,
@@ -73,7 +73,10 @@ export function CreateAccountModal() {
       const action = set.createResponseMessage(`User created successfully!`);
       const currentLoginState = set.signInIsSignedIn(true);
       dispatch(currentLoginState);
-      savePersistentLogin(email, password);
+      const didMount = set.createDidMount(false);
+      dispatch(didMount);
+      const clearError = set.createResponseMessage("");
+      dispatch(clearError);
       localStorage.setItem("loggedIn", "true");
       localStorage.setItem("email", email);
       localStorage.setItem("hfToken", hfToken);
@@ -81,8 +84,7 @@ export function CreateAccountModal() {
       localStorage.setItem("name", name);
       localStorage.setItem("password", password);
       localStorage.setItem("phone", phone);
-      const didMount = set.createDidMount(false);
-      dispatch(didMount);
+      savePersistentLogin(email, password);
 
       return dispatch(action);
     } else {

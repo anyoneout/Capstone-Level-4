@@ -136,6 +136,17 @@ export const stateVariables = {
     apiIngredients: "",
     validIngredients: "",
   },
+
+  globalAccountState: {
+    account: {
+      email: "",
+      oaToken: "",
+      hfToken: "",
+      name: "",
+      phone: "",
+      password: "",
+    },
+  },
 };
 
 export type StateVariables = typeof stateVariables;

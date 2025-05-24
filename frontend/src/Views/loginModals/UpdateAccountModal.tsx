@@ -18,7 +18,6 @@ export function UpdateAccountModal() {
   const showUpdateModal = useSelector(selectUpdateShowModal);
   const responseMessage = useSelector(selectUpdateResponseMessage);
 
-  const password = useSelector(selectAuthUserPassword);
   const name = useSelector(selectAuthUserName);
   const phone = useSelector(selectAuthUserPhone);
   const hfToken = useSelector(selectAuthUserHfToken);
@@ -65,27 +64,18 @@ export function UpdateAccountModal() {
         return dispatch(setErrorResponse);
       }
     } else {
-      //if user exists, signs in, saves authorized user email, password, sets localstorage, and closes login modal
-
-      localStorage.setItem("loggedIn", "true");
       const saveEmail = set.authUserEmail(result.email);
       dispatch(saveEmail);
-      localStorage.setItem("email", result.email);
       const savePassword = set.authUserPassword(result.password);
       dispatch(savePassword);
-      localStorage.setItem("password", result.password);
       const saveName = set.authUserName(result.name);
       dispatch(saveName);
-      localStorage.setItem("name", result.name);
       const savePhone = set.authUserPhone(result.phone);
       dispatch(savePhone);
-      localStorage.setItem("phone", result.phone);
       const saveHfToken = set.authUserHfToken(result.hfToken);
       dispatch(saveHfToken);
-      localStorage.setItem("hfToken", result.hfToken);
       const saveOaToken = set.authUserOaToken(result.oaToken);
       dispatch(saveOaToken);
-      localStorage.setItem("oaToken", result.oaToken);
     }
   }
 
@@ -135,9 +125,9 @@ export function UpdateAccountModal() {
       return dispatch(action);
     }
   }
-  /*   if (isSignedIn) {
+  /*      if (isSignedIn) {
     return null;
-  } */
+  }  */
 
   return (
     <>
