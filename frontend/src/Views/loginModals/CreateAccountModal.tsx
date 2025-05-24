@@ -19,16 +19,13 @@ export function CreateAccountModal() {
   useEffect(componentDidMount, []);
   //sets modal visibility to true upon page load via componentDidMount
   function componentDidMount(): void {
-    handleOpenModal();
+    const didMount = set.createDidMount(true);
+    dispatch(didMount);
   }
 
   function handleOpenModal() {
-    const didMount = set.createDidMount(true);
-    dispatch(didMount);
-    const hideSignInModal = set.signInShowModal(false);
-    dispatch(hideSignInModal);
-    const showCreateModal = set.createShowModal(true);
-    dispatch(showCreateModal);
+    /*     const showCreateModal = set.createShowModal(true);
+    dispatch(showCreateModal); */
   }
 
   function handleCloseModal() {

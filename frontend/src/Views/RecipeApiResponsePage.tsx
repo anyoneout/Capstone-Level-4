@@ -10,6 +10,7 @@ import {
   selectValidIngredients,
 } from "../redux/stateSelectors";
 import { AiPage } from "./AiPage";
+import { sortedIngredients } from "../../assets/text/sortedIngredients";
 
 export function RecipeApiResponsePage() {
   const dispatch = useDispatch();
@@ -56,13 +57,37 @@ export function RecipeApiResponsePage() {
         <h2>Recipe Finder</h2>
         <div>
           <form onSubmit={handleSearch}>
-            <label className="mt-5">Enter three ingredients for find a recipe</label>
+            <label className="mt-5">Choose three ingredients to find a recipe</label>
             <div
               className="d-flex justify-content-center"
               data-bs-theme="dark"
               style={{ width: "100%", fontSize: ".8rem" }}
             >
-              <input
+              <select className="form-select" id="chosenIng1" style={{ fontSize: ".8rem" }}>
+                <option value="">Select an ingredient</option>
+                {sortedIngredients.map((ingredient, index) => (
+                  <option key={index} value={ingredient}>
+                    {ingredient}
+                  </option>
+                ))}
+              </select>
+              <select className="form-select" id="chosenIng2" style={{ fontSize: ".8rem" }}>
+                <option value="">Select an ingredient</option>
+                {sortedIngredients.map((ingredient, index) => (
+                  <option key={index} value={ingredient}>
+                    {ingredient}
+                  </option>
+                ))}
+              </select>
+              <select className="form-select" id="chosenIng3" style={{ fontSize: ".8rem" }}>
+                <option value="">Select an ingredient</option>
+                {sortedIngredients.map((ingredient, index) => (
+                  <option key={index} value={ingredient}>
+                    {ingredient}
+                  </option>
+                ))}
+              </select>
+              {/* <input
                 type="text"
                 className="form-control"
                 placeholder="Ingredient 1"
@@ -85,7 +110,7 @@ export function RecipeApiResponsePage() {
                 name="ingredientThree"
                 style={{ fontSize: ".8rem" }}
                 required
-              />
+              /> */}
             </div>
             <div>
               <button type="submit" className="btn btn-primary btn-sm mt-2 mb-3">

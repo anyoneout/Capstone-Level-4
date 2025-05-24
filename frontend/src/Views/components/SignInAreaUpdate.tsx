@@ -27,13 +27,14 @@ export default function SignInAreaUpdateA() {
   const showUpdateModal = useSelector(selectUpdateShowModal);
   const showProfileModal = useSelector(selectProfileShowModal);
   const dispatch = useDispatch();
-
+  /* 
   //timer to check if redux isSignedIn has been updated
   useEffect(() => {
     const timerId = setInterval(getPersistentLogin, 5000);
     return () => clearInterval(timerId);
-  }, []);
+  }, []); */
 
+  getPersistentLogin();
   async function getPersistentLogin() {
     const login = localStorage.getItem("credentials");
     if (login) {
@@ -41,7 +42,7 @@ export default function SignInAreaUpdateA() {
       const { email, password, timestamp } = credentials;
       const currentTimestamp = Date.now();
       const elapsedTime = currentTimestamp - timestamp;
-      const isExpired = elapsedTime > 15000;
+      const isExpired = elapsedTime > 8640000;
       const elapsedInSecs = elapsedTime / 1000;
       const timeElapsedSecs = elapsedInSecs.toString();
       localStorage.setItem("timeElapsedSecs", timeElapsedSecs);
@@ -56,10 +57,6 @@ export default function SignInAreaUpdateA() {
           const action = set.globalAccount(account);
           dispatch(action);
         } else localStorage.setItem("credentials", "");
-        const clearAuthEmail = set.authUserEmail("");
-        dispatch(clearAuthEmail);
-        const clearAuthPassword = set.authUserPassword("");
-        dispatch(clearAuthPassword);
       }
     }
   }
@@ -68,16 +65,16 @@ export default function SignInAreaUpdateA() {
 
   function componentDidMount(): void {
     const isLoggedIn = localStorage.getItem("loggedIn") === "true";
-    const email = localStorage.getItem("email") || "";
-    const password = localStorage.getItem("password") || "";
+    const email = localStorage.getItem("email");
+    const password = localStorage.getItem("password");
 
     if (isLoggedIn) {
       const isSignedIn = set.signInIsSignedIn(true);
       dispatch(isSignedIn);
-      /*       const authEmail = set.authUserEmail(email);
+      const authEmail = set.authUserEmail(email);
       dispatch(authEmail);
       const authPassword = set.authUserPassword(password);
-      dispatch(authPassword) */
+      dispatch(authPassword);
     }
   }
 

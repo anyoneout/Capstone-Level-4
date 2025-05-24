@@ -35,8 +35,6 @@ export function AccountProfileModal() {
   async function handleOpenModal() {
     const didMount = set.accountProfileDidMount(true);
     dispatch(didMount);
-    const hideSignInModal = set.signInShowModal(false);
-    dispatch(hideSignInModal);
     const showCreateModal = set.accountProfileShowModal(true);
     dispatch(showCreateModal);
 
@@ -59,6 +57,7 @@ export function AccountProfileModal() {
         return dispatch(setErrorResponse);
       }
     } else {
+      console.log(result);
       const saveEmail = set.authUserEmail(result.email);
       dispatch(saveEmail);
       const savePassword = set.authUserPassword(result.password);
@@ -102,6 +101,14 @@ export function AccountProfileModal() {
     dispatch(clearAuthUserEmail);
     const clearAuthUserPassword = set.authUserPassword("");
     dispatch(clearAuthUserPassword);
+    const clearAuthUserName = set.authUserName("");
+    dispatch(clearAuthUserName);
+    const clearAuthUserPhone = set.authUserPhone("");
+    dispatch(clearAuthUserPhone);
+    const clearAuthUserHfToken = set.authUserHfToken("");
+    dispatch(clearAuthUserHfToken);
+    const clearAuthUserOaToken = set.authUserOaToken("");
+    dispatch(clearAuthUserOaToken);
   }
 
   return (

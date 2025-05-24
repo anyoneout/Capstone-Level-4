@@ -38,13 +38,6 @@ export function UpdateAccountModal() {
   }
 
   async function handleOpenModal() {
-    const didMount = set.updateDidMount(true);
-    dispatch(didMount);
-    const hideSignInModal = set.signInShowModal(false);
-    dispatch(hideSignInModal);
-    const showUpdateModal = set.updateShowModal(true);
-    dispatch(showUpdateModal);
-
     const result = await readAccount({
       email: authEmailLs,
       password: authPasswordLs,
@@ -84,6 +77,8 @@ export function UpdateAccountModal() {
     dispatch(closeUpdateModal);
     const didUnMount = set.updateDidMount(false);
     dispatch(didUnMount);
+    const clearResponseMessage = set.updateResponseMessage("");
+    return dispatch(clearResponseMessage);
   }
 
   async function handleUpdateSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -118,6 +113,14 @@ export function UpdateAccountModal() {
       return dispatch(action);
     }
     if (response.status === 200) {
+      const saveName = set.authUserName(updateName);
+      dispatch(saveName);
+      const savePhone = set.authUserPhone(updatePhone);
+      dispatch(savePhone);
+      const saveHfToken = set.authUserHfToken(updateHfToken);
+      dispatch(saveHfToken);
+      const saveOaToken = set.authUserOaToken(updateOaToken);
+      dispatch(saveOaToken);
       const action = set.updateResponseMessage(`Successfully updated!`);
       dispatch(action);
     } else {
@@ -220,11 +223,18 @@ export function UpdateAccountModal() {
                       className="form-control"
                       name="updateHfToken"
                       aria-label="update Hugging Face token"
+                      defaultValue={hfToken}
                     />
                   </div>
                   <div className="input-group mb-1">
                     <span className="input-group-text">Open AI:</span>
-                    <input type="text" className="form-control" name="updateOaToken" aria-label="update OpenAI token" />
+                    <input
+                      type="text"
+                      className="form-control"
+                      name="updateOaToken"
+                      aria-label="update OpenAI token"
+                      defaultValue={oaToken}
+                    />
                   </div>
 
                   <div style={{ minHeight: "1.35rem", fontSize: ".85rem" }} className="mx-auto text-danger">
