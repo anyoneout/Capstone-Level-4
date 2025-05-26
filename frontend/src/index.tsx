@@ -29,15 +29,13 @@ const root = createRoot(bodyTag);
 const domain = window.location.hostname;
 let rootPath = "";
 //specific navbar being rended for class assignments
-let Navbar = CollapsibleNavbar;
 if (domain === "anyoneout.github.io") {
   rootPath = "/Capstone-Level-4";
-  Navbar = GitHubNavbar;
 }
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-      <Navbar />
+      <CollapsibleNavbar />
       <HandleRefresh>
         <Routes>
           <Route path={`${rootPath}/`} element={<Home />} />

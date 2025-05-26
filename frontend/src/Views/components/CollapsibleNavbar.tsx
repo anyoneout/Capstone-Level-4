@@ -43,36 +43,11 @@ export function CollapsibleNavbar() {
                 <i className="bi bi-images me-2"></i>Examples
               </NavLink>
             </li>
-            {/*        <li className="nav-item">
-              <NavLink to={`${rootPath}/trivia`} className="nav-link">
-                <i className="bi bi-images me-2"></i>Trivia Api
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to={`${rootPath}/dynamo`} className="nav-link">
-                <i className="bi bi-images me-2"></i>Dynamo Auth
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to={`${rootPath}/aws`} className="nav-link">
-                <i className="bi bi-images me-2"></i>AWS
-              </NavLink>
-            </li> */}
             <li className="nav-item">
               <NavLink to={`${rootPath}/backendTest`} className="nav-link">
                 <i className="bi bi-images me-2"></i>Test Backend
               </NavLink>
             </li>
-            {/*          <li className="nav-item">
-              <NavLink to={`${rootPath}/ai`} className="nav-link">
-                <i className="bi bi-images me-2"></i>AI
-              </NavLink>
-            </li> */}
-            {/*     <li className="nav-item">
-              <NavLink to={`${rootPath}/recipe`} className="nav-link">
-                <i className="bi bi-images me-2"></i>Recipe AI/Api
-              </NavLink>
-            </li> */}
             <li className="nav-item">
               <NavLink to={`${rootPath}/About`} className="nav-link">
                 <i className="bi-exclamation-circle me-2"></i>About
