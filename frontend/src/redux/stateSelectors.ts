@@ -53,6 +53,17 @@ export function selectValidIngredients(state: StateVariables): string {
   return state.recipeApiStateVar.validIngredients;
 }
 
+//recipe ai
+export function selectRecipeAiUserQuestion(state: StateVariables): string {
+  return state.recipeAiStateVar.userQuestion;
+}
+export function selectRecipeAiUserContext(state: StateVariables): string {
+  return state.recipeAiStateVar.userContext;
+}
+export function selectRecipeAiQuestionResponse(state: StateVariables): string {
+  return state.recipeAiStateVar.questionResponse;
+}
+
 //trivia api
 export function selectTriviaApiDidMount(state: StateVariables): boolean {
   return state.triviaApiStateVar.didMount;

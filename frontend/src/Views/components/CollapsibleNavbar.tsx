@@ -68,11 +68,11 @@ export function CollapsibleNavbar() {
                 <i className="bi bi-images me-2"></i>AI
               </NavLink>
             </li> */}
-            <li className="nav-item">
+            {/*     <li className="nav-item">
               <NavLink to={`${rootPath}/recipe`} className="nav-link">
                 <i className="bi bi-images me-2"></i>Recipe AI/Api
               </NavLink>
-            </li>
+            </li> */}
             <li className="nav-item">
               <NavLink to={`${rootPath}/About`} className="nav-link">
                 <i className="bi-exclamation-circle me-2"></i>About

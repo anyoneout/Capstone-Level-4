@@ -1,4 +1,4 @@
-[
+export const ingredients: string[] = [
   "winter squash",
   "mexican seasoning",
   "mixed spice",
@@ -14895,5 +14895,5 @@
   "rosarita premium whole black beans",
   "hunt's fire roasted diced tomatoes",
   "skinless halibut fillet",
-  "nepitella"
-]
+  "nepitella",
+];

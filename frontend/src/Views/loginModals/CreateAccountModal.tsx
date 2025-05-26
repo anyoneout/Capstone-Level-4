@@ -1,10 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  selectAuthUserIsSignedIn,
-  selectCreateResponseMessage,
-  selectCreateShowModal,
-} from "../../redux/stateSelectors";
+import { selectAuthUserIsSignedIn, selectCreateResponseMessage, selectCreateShowModal } from "../../redux/stateSelectors";
 import { set } from "../../redux/store";
 import { createAccount } from "../../modules/crud/createAccount";
 import { savePersistentLogin } from "../../modules/savePersistentLogin";
@@ -21,11 +17,6 @@ export function CreateAccountModal() {
   function componentDidMount(): void {
     const didMount = set.createDidMount(true);
     dispatch(didMount);
-  }
-
-  function handleOpenModal() {
-    /*     const showCreateModal = set.createShowModal(true);
-    dispatch(showCreateModal); */
   }
 
   function handleCloseModal() {
@@ -97,11 +88,7 @@ export function CreateAccountModal() {
   return (
     <>
       {showCreateModal && (
-        <div
-          className="modal fade show"
-          id="createAccountModal"
-          style={{ display: "block", backgroundColor: "rgba(0,0,0,0.7)" }}
-        >
+        <div className="modal fade show" id="createAccountModal" style={{ display: "block", backgroundColor: "rgba(0,0,0,0.7)" }}>
           <div className="modal-dialog modal-dialog-centered mx-auto" style={{ width: "340px" }} data-bs-theme="dark">
             <div className="modal-content mx-auto bg-dark text-white border rounded-0">
               <div className="modal-header d-flex justify-content-center">
@@ -112,58 +99,22 @@ export function CreateAccountModal() {
               <form onSubmit={handleSubmit}>
                 <div className="modal-body d-flex justify-content-center">
                   <div className="d-flex justify-content-center">
-                    <input
-                      type="email"
-                      className="form-control my-1"
-                      placeholder="Email"
-                      name="email"
-                      style={{ width: "95%" }}
-                    />
+                    <input type="email" className="form-control my-1" placeholder="Email" name="email" style={{ width: "95%" }} />
                   </div>
                   <div className="d-flex justify-content-center">
-                    <input
-                      type="password"
-                      className="form-control mb-1"
-                      placeholder="Password"
-                      name="password"
-                      style={{ width: "95%" }}
-                    />
+                    <input type="password" className="form-control mb-1" placeholder="Password" name="password" style={{ width: "95%" }} />
                   </div>
                   <div className="d-flex justify-content-center">
-                    <input
-                      type="text"
-                      className="form-control my-1"
-                      placeholder="Name"
-                      name="name"
-                      style={{ width: "95%" }}
-                    />
+                    <input type="text" className="form-control my-1" placeholder="Name" name="name" style={{ width: "95%" }} />
                   </div>
                   <div className="d-flex justify-content-center">
-                    <input
-                      type="tel"
-                      className="form-control mb-1"
-                      placeholder="Phone"
-                      name="phone"
-                      style={{ width: "95%" }}
-                    />
+                    <input type="tel" className="form-control mb-1" placeholder="Phone" name="phone" style={{ width: "95%" }} />
                   </div>
                   <div className="d-flex justify-content-center">
-                    <input
-                      type="text"
-                      className="form-control my-1"
-                      placeholder="Hugging Face token"
-                      name="hfToken"
-                      style={{ width: "95%" }}
-                    />
+                    <input type="text" className="form-control my-1" placeholder="Hugging Face token" name="hfToken" style={{ width: "95%" }} />
                   </div>
                   <div className="d-flex justify-content-center">
-                    <input
-                      type="text"
-                      className="form-control mb-1"
-                      placeholder="Open AI token"
-                      name="oaToken"
-                      style={{ width: "95%" }}
-                    />
+                    <input type="text" className="form-control mb-1" placeholder="Open AI token" name="oaToken" style={{ width: "95%" }} />
                   </div>
                   <div style={{ minHeight: "1.35rem", fontSize: ".85rem" }} className="text-danger text-center fw-bold">
                     {" "}

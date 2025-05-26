@@ -2,15 +2,17 @@ import React, { useEffect } from "react";
 import { ApiFluxIcon } from "../modules/icons";
 import { recipeArray } from "../modules/recipeArray";
 import { useDispatch, useSelector } from "react-redux";
-import { selectBfPageDidMount } from "../redux/stateSelectors";
+import { selectBfPageDidMount, selectRecipeApiRecipe } from "../redux/stateSelectors";
 import { set } from "../redux/store";
 import { handleBfFetchUpdate } from "../controllers/handleBfFetchUpdate";
+import { RecipeApiResponsePage } from "./RecipeApiResponsePage";
 
 export function BfPage() {
-  const didMount = useSelector(selectBfPageDidMount);
   const oaToken = localStorage.getItem("oaToken");
   const hfToken = localStorage.getItem("hfToken");
   const dispatch = useDispatch();
+  const didMount = useSelector(selectBfPageDidMount);
+  const aiRecipeChoice = localStorage.getItem("aiRecipe");
 
   useEffect(componentDidMount, []);
   useEffect(componentDidUpdate, [didMount]);
@@ -28,49 +30,45 @@ export function BfPage() {
             *This model may timeout on the first attempt, if not currently warm on huggingface.co
           </div>
         </div>
+
         <div className="col-md-6 mt-2">
-          <form className="api-form">
-            <fieldset>
-              <legend>Select a recipe or enter a recipe</legend>
-              <div className="input-group mb-2" data-bs-theme="dark">
-                <select className="form-select" id="chosenRecipe" style={{ fontSize: ".8rem" }}>
-                  <option value="">Select a Recipe...</option>
-                  {recipeArray.map((recipe, index) => (
-                    <option key={index} value={recipe}>
-                      {recipe}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="input-group mt-2" data-bs-theme="dark">
-                <input
-                  type="text"
-                  className="form-control"
-                  id="customRecipeInputBf"
-                  placeholder="Or enter a custom recipe..."
-                  style={{ fontSize: ".8rem" }}
-                />
-                <button
-                  className="btn btn-sm btn-outline-secondary"
-                  type="button"
-                  id="bfFetchButton"
-                  onClick={handleClick}
-                >
-                  Submit
-                </button>
-              </div>
-            </fieldset>
-          </form>
+          <fieldset>
+            <legend>Select a recipe or enter a recipe</legend>
+            <div className="input-group mb-2" data-bs-theme="dark">
+              <select className="form-select" id="chosenRecipe" style={{ fontSize: ".8rem" }}>
+                <option value="">Select a Recipe...</option>
+                {recipeArray.map((recipe, index) => (
+                  <option key={index} value={recipe}>
+                    {recipe}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <RecipeApiResponsePage />
+            </div>
+            <div className="input-group mt-2" data-bs-theme="dark">
+              <input
+                type="text"
+                className="form-control"
+                id="customRecipeInputBf"
+                placeholder="Or enter a custom recipe..."
+                style={{ fontSize: ".8rem" }}
+              />
+              <button className="btn btn-sm btn-outline-secondary" type="button" id="bfFetchButton" onClick={handleClick}>
+                Submit
+              </button>
+            </div>
+          </fieldset>
+          <div className="mt-2 pt-2 d-flex justify-content-center">
+            <h5>{aiRecipeChoice}</h5>
+          </div>
         </div>
       </div>
+
       <div className="row">
         <div className="col-12 col-md-5 d-flex align-items-center justify-content-center">
-          <div
-            className="spinner-border text-info position-absolute top-60 start-25"
-            role="status"
-            id="spinnerOne"
-            style={{ visibility: "hidden" }}
-          >
+          <div className="spinner-border text-info position-absolute top-60 start-25" role="status" id="spinnerOne" style={{ visibility: "hidden" }}>
             <span className="visually-hidden"></span>
           </div>
           <img id="recipeAI" className="rounded-circle" style={{ maxWidth: "100%" }} />
@@ -111,6 +109,7 @@ export function BfPage() {
   function componentDidUnmount(): () => void {
     return () => {
       dispatch(set.bfPageDidMount(false));
+      localStorage.setItem("aiRecipe", "");
       console.log("component has unmounted");
     };
   }

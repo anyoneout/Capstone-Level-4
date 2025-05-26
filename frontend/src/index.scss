@@ -135,16 +135,13 @@ legend {
   border: solid 1px #ffffff69;
   border-radius: 25px;
 }
-/* * {
-  border: solid 1px yellow;
-} */
 
 .form-control:focus {
   background-color: transparent;
 }
 
 .create-user-style {
-  background-color: "transparent";
+  background-color: "transparent"; /*  */
   box-shadow: "none";
 }
 
@@ -156,3 +153,7 @@ legend {
 .modal-button-style:hover {
   background-color: rgba(47, 178, 204, 0.7);
 }
+
+/* * {
+  border: solid 1px yellow;
+} */

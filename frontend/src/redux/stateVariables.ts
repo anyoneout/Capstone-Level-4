@@ -137,6 +137,12 @@ export const stateVariables = {
     validIngredients: "",
   },
 
+  recipeAiStateVar: {
+    userQuestion: "",
+    userContext: "",
+    questionResponse: "",
+  },
+
   globalAccountState: {
     account: {
       email: "",

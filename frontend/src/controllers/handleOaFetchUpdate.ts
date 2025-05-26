@@ -1,13 +1,14 @@
+import { useSelector } from "react-redux";
 import { fetchOaIngredientsImage, fetchOaIngredientsList, fetchOaRecipeImage } from "../modules/oaFetchFunctionsUpdate";
+import { selectRecipeApiRecipe } from "../redux/stateSelectors";
 
 export async function handleOaFetchUpdate() {
   const elements = getDomElements();
-  const { recipeSelect, recipeImg, ingredientsImg, ingredientsHTML, spinnerOne, spinnerTwo, customRecipeInput } =
-    elements;
-
+  const { recipeSelect, recipeImg, ingredientsImg, ingredientsHTML, spinnerOne, spinnerTwo, customRecipeInput } = elements;
+  const aiRecipeChoice = localStorage.getItem("aiRecipe");
   const dropDownRecipeChoice = recipeSelect.value;
   const inputRecipeChoice = customRecipeInput.value;
-  const recipeChoice = inputRecipeChoice !== "" ? inputRecipeChoice : dropDownRecipeChoice;
+  const recipeChoice = inputRecipeChoice || dropDownRecipeChoice || aiRecipeChoice;
 
   const oaUserToken = localStorage.getItem("oaToken");
 

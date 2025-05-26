@@ -1,12 +1,7 @@
 import React, { useEffect } from "react";
 import { getAnswer } from "../modules/appEngine/getAnswer";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  selectAiPageAnswer,
-  selectAiPageDidMount,
-  selectRecipeApiIngredients,
-  selectRecipeApiRecipe,
-} from "../redux/stateSelectors";
+import { selectAiPageAnswer, selectAiPageDidMount, selectRecipeApiIngredients, selectRecipeApiRecipe } from "../redux/stateSelectors";
 import { set } from "../redux/store";
 
 export function AiPage() {
@@ -22,10 +17,7 @@ export function AiPage() {
 
   return (
     <main>
-      <div
-        className="container mt-5 d-flex flex-column align-items-center"
-        style={{ width: "75%", minWidth: 400, margin: "0 auto" }}
-      >
+      <div className="container mt-5 d-flex flex-column align-items-center" style={{ width: "75%", minWidth: 400, margin: "0 auto" }}>
         <h2 className="mb-5">Recipe Decider AI</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="questionInput">What is the single best recipe that uses these ingredients?</label>
@@ -38,13 +30,7 @@ export function AiPage() {
               style={{ fontSize: ".8rem" }}
               defaultValue={chosenIngredients}
             />
-            <input
-              type="text"
-              className="form-control mx-2"
-              name="context"
-              style={{ fontSize: ".8rem" }}
-              defaultValue={recipes}
-            />
+            <input type="text" className="form-control mx-2" name="context" style={{ fontSize: ".8rem" }} defaultValue={recipes} />
           </div>
           <button type="submit" className="btn btn-primary btn-sm mt-2 mb-3">
             Search

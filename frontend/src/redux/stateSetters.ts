@@ -67,7 +67,6 @@ export const stateSetters = {
   },
   recipeApiRecipe: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
-
     state.recipeApiStateVar.apiRecipe = newValue;
   },
   recipeApiStatus: function (state: StateVariables, action: Action) {
@@ -81,6 +80,20 @@ export const stateSetters = {
   recipeValidIngredients: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
     state.recipeApiStateVar.validIngredients = newValue;
+  },
+
+  //recipe ai
+  recipeAiUserQuestion: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.recipeAiStateVar.userQuestion = newValue;
+  },
+  recipeAiUserContext: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.recipeAiStateVar.userContext = newValue;
+  },
+  recipeAiQuestionResponse: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.recipeAiStateVar.questionResponse = newValue;
   },
 
   //dynamo auth
