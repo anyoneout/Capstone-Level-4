@@ -16,5 +16,10 @@ export function recipesSimple(request: Request, response: Response): void {
     }
   }
 
-  response.send(firstRecipeMatched.name);
+  if (firstRecipeMatched) {
+    console.log(firstRecipeMatched);
+    response.send(firstRecipeMatched.name);
+  } else {
+    response.send("No recipe found with those ingredients!");
+  }
 }

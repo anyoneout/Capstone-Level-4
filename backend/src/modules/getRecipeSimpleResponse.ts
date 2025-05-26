@@ -11,5 +11,6 @@ export async function getRecipeApiResponse(ingredients: string): Promise<any> {
   const baseUrl = getBaseUrl();
   const url = `${baseUrl}/recipesSimple?ingredients=${ingredients}`;
   const response = await axios.get(url);
+  console.log(response);
   return response.data;
 }

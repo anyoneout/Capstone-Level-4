@@ -1,4 +1,4 @@
-import { Account } from "../../types/Account";
+import { Account } from "../../routes/types/Account";
 import { getDynamoNiceClient } from "./getDynamoNiceClient";
 
 //DynamoDB user authentication with AWS credentials

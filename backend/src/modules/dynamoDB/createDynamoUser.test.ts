@@ -1,4 +1,4 @@
-import { Account } from "../../types/Account";
+import { Account } from "../../routes/types/Account";
 import { createDynamoUser } from "./createDynamoUser";
 
 describe("createDynamoUser", () => {
