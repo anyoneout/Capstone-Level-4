@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { ApiFluxIcon } from "../modules/icons";
 import { recipeArray } from "../modules/recipeArray";
 import { useDispatch, useSelector } from "react-redux";
-import { selectBfPageDidMount, selectRecipeApiRecipe } from "../redux/stateSelectors";
+import { selectBfPageDidMount, selectRecipeApiIngredients, selectRecipeApiRecipe } from "../redux/stateSelectors";
 import { set } from "../redux/store";
 import { handleBfFetchUpdate } from "../controllers/handleBfFetchUpdate";
-import { RecipeApiResponsePage } from "./RecipeApiResponsePage";
+import { RecipeApiResponsePage } from "../../archive/RecipeApiResponsePage";
 
 export function BfPage() {
   const oaToken = localStorage.getItem("oaToken");
@@ -13,6 +13,7 @@ export function BfPage() {
   const dispatch = useDispatch();
   const didMount = useSelector(selectBfPageDidMount);
   const aiRecipeChoice = localStorage.getItem("aiRecipe");
+  const chosenIngredients = useSelector(selectRecipeApiIngredients);
 
   useEffect(componentDidMount, []);
   useEffect(componentDidUpdate, [didMount]);
@@ -62,6 +63,7 @@ export function BfPage() {
           </fieldset>
           <div className="mt-2 pt-2 d-flex justify-content-center">
             <h5>{aiRecipeChoice}</h5>
+            {chosenIngredients}
           </div>
         </div>
       </div>

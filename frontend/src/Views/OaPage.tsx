@@ -2,16 +2,28 @@ import React, { useEffect } from "react";
 import { ApiDalleIcon, ApiOpenAiIcon } from "../modules/icons";
 import { recipeArray } from "../modules/recipeArray";
 import { useDispatch, useSelector } from "react-redux";
-import { selectOaPageDidMount, selectRecipeApiRecipe } from "../redux/stateSelectors";
+import {
+  selectOaPageDidMount,
+  selectRecipeApiCustomRecipe,
+  selectRecipeApiDropDownRecipe,
+  selectRecipeApiRecipe,
+  selectRecipeApiStatus,
+} from "../redux/stateSelectors";
 import { set } from "../redux/store";
 import { handleOaFetchUpdate } from "../controllers/handleOaFetchUpdate";
-import { RecipeApiResponsePage } from "./RecipeApiResponsePage";
+import { RecipeApiResponsePage } from "../../archive/RecipeApiResponsePage";
+import { getRecipe } from "../modules/getRecipe";
+import { getAiResponse } from "../modules/getAiResponse";
 
 export function OaPage() {
   const oaToken = localStorage.getItem("oaToken");
   const dispatch = useDispatch();
   const didMount = useSelector(selectOaPageDidMount);
-  const aiRecipeChoice = localStorage.getItem("aiRecipe");
+  /*   const aiRecipeChoice = localStorage.getItem("aiRecipe"); */
+  const apiStatus = useSelector(selectRecipeApiStatus);
+  const dropDownRecipeChoice = useSelector(selectRecipeApiDropDownRecipe);
+  const customRecipeChoice = useSelector(selectRecipeApiCustomRecipe);
+  const aiRecipeChoice = useSelector(selectRecipeApiRecipe);
 
   useEffect(componentDidMount, []);
   useEffect(componentDidUpdate, [didMount]);
@@ -30,37 +42,68 @@ export function OaPage() {
         </div>
 
         <div className="col-md-6 mt-2 mb-4">
-          <fieldset>
+          <form onSubmit={handleClick}>
             <legend>Select a recipe, enter ingredients or enter a recipe</legend>
-            <div className="input-group mb-2" data-bs-theme="dark">
-              <select className="form-select" id="chosenRecipe" style={{ fontSize: ".8rem" }}>
-                <option value="">Select a Recipe...</option>
-                {recipeArray.map((recipe, index) => (
-                  <option key={index} value={recipe}>
-                    {recipe}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div>
-              {" "}
-              <RecipeApiResponsePage />
-            </div>
-            <div className="input-group mt-2" data-bs-theme="dark">
-              <input
-                type="text"
-                className="form-control"
-                id="customRecipeInputOa"
-                placeholder="Or enter a custom recipe..."
-                style={{ fontSize: ".8rem" }}
-              />
-              <button className="btn btn-sm btn-outline-secondary" type="button" id="oaFetchButton" onClick={handleClick}>
-                Submit
-              </button>
-            </div>
-          </fieldset>
+            <fieldset>
+              <div className="input-group mb-2" data-bs-theme="dark">
+                <select className="form-select" id="chosenRecipe" style={{ fontSize: ".8rem" }}>
+                  <option value="">Select a Recipe...</option>
+                  {recipeArray.map((recipe, index) => (
+                    <option key={index} value={recipe}>
+                      {recipe}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="input-group">
+                <div className="d-flex justify-content-center" data-bs-theme="dark" style={{ width: "100%", fontSize: ".8rem" }}>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Ingredient 1"
+                    name="ingredientOne"
+                    style={{ fontSize: ".8rem" }}
+                    id="ingredientOne"
+                  />
+                  <input
+                    type="text"
+                    className="form-control mx-2"
+                    placeholder="Ingredient 2"
+                    name="ingredientTwo"
+                    style={{ fontSize: ".8rem" }}
+                    id="ingredientTwo"
+                  />
+
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Ingredient 3"
+                    name="ingredientThree"
+                    style={{ fontSize: ".8rem" }}
+                    id="ingredientThree"
+                  />
+                </div>
+              </div>
+
+              <div className="input-group mt-2" data-bs-theme="dark">
+                <input
+                  type="text"
+                  className="form-control"
+                  id="customRecipeInputOa"
+                  placeholder="Or enter a custom recipe..."
+                  style={{ fontSize: ".8rem" }}
+                />
+                <button className="btn btn-sm btn-outline-secondary" type="submit" id="oaFetchButton">
+                  Submit
+                </button>
+              </div>
+            </fieldset>
+          </form>
+
           <div className="mt-2 pt-2 d-flex justify-content-center">
             <h5>{aiRecipeChoice}</h5>
+            <h5>{apiStatus}</h5>
           </div>
         </div>
       </div>
@@ -85,12 +128,22 @@ export function OaPage() {
     </div>
   );
 
-  function handleClick() {
+  async function handleClick(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
     if (!oaToken) {
-      alert("An Open AI token is required!");
-      return;
+      return alert("An Open AI token is required!");
     }
-    handleOaFetchUpdate();
+    const form = event.target;
+    const dropDownRecipe = form[1].value;
+    const ingredient1 = form[2].value;
+    const ingredient2 = form[3].value;
+    const ingredient3 = form[4].value;
+    const customRecipe = form[5].value;
+    dispatch(set.recipeApiDropDownRecipe(dropDownRecipe));
+    dispatch(set.recipeApiCustomRecipe(customRecipe));
+    const searchIngredients = [ingredient1, ingredient2, ingredient3].join(",");
+    const recipeReturned = await getRecipe(dispatch, searchIngredients);
+    handleOaFetchUpdate(dropDownRecipe, customRecipe, recipeReturned);
   }
 
   function componentDidMount(): void {

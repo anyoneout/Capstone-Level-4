@@ -1,14 +1,10 @@
-import { useSelector } from "react-redux";
 import { fetchOaIngredientsImage, fetchOaIngredientsList, fetchOaRecipeImage } from "../modules/oaFetchFunctionsUpdate";
-import { selectRecipeApiRecipe } from "../redux/stateSelectors";
 
-export async function handleOaFetchUpdate() {
+export async function handleOaFetchUpdate(dropDownRecipe: string, customRecipe: string, aiRecipe: string) {
   const elements = getDomElements();
-  const { recipeSelect, recipeImg, ingredientsImg, ingredientsHTML, spinnerOne, spinnerTwo, customRecipeInput } = elements;
-  const aiRecipeChoice = localStorage.getItem("aiRecipe");
-  const dropDownRecipeChoice = recipeSelect.value;
-  const inputRecipeChoice = customRecipeInput.value;
-  const recipeChoice = inputRecipeChoice || dropDownRecipeChoice || aiRecipeChoice;
+  const { recipeImg, ingredientsImg, ingredientsHTML, spinnerOne, spinnerTwo } = elements;
+  const recipeChoice = customRecipe || dropDownRecipe || aiRecipe;
+  console.log(recipeChoice);
 
   const oaUserToken = localStorage.getItem("oaToken");
 
@@ -32,13 +28,11 @@ export async function handleOaFetchUpdate() {
 
   function getDomElements() {
     return {
-      recipeSelect: document.getElementById("chosenRecipe") as HTMLSelectElement,
       recipeImg: document.getElementById("recipeAI") as HTMLImageElement,
       ingredientsImg: document.getElementById("ingredientsAI") as HTMLImageElement,
       ingredientsHTML: document.getElementById("recipeIngredients") as HTMLElement,
       spinnerOne: document.getElementById("spinnerOne") as HTMLElement,
       spinnerTwo: document.getElementById("spinnerTwo") as HTMLElement,
-      customRecipeInput: document.getElementById("customRecipeInputOa") as HTMLInputElement,
     };
   }
 

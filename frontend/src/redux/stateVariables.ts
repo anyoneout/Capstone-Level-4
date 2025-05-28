@@ -135,6 +135,8 @@ export const stateVariables = {
     apiStatus: "",
     apiIngredients: "",
     validIngredients: "",
+    apiDropDownRecipe: "",
+    apiCustomRecipe: "",
   },
 
   recipeAiStateVar: {

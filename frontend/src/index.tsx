@@ -20,15 +20,13 @@ import AwsForms from "./Views/AwsForms";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { BackendTest } from "./Views/BackendTest";
-import { AiPage } from "./Views/AiPage";
-import { RecipeApiResponsePage } from "./Views/RecipeApiResponsePage";
-import { GitHubNavbar } from "./Views/components/GitHubNavbar";
+import { AiPage } from "../archive/AiPage";
+import { RecipeApiResponsePage } from "../archive/RecipeApiResponsePage";
 
 const bodyTag = document.getElementById("bodyTag");
 const root = createRoot(bodyTag);
 const domain = window.location.hostname;
 let rootPath = "";
-//specific navbar being rended for class assignments
 if (domain === "anyoneout.github.io") {
   rootPath = "/Capstone-Level-4";
 }

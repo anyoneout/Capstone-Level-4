@@ -43,6 +43,12 @@ export function selectRecipeApiDidMount(state: StateVariables): boolean {
 export function selectRecipeApiRecipe(state: StateVariables): string {
   return state.recipeApiStateVar.apiRecipe;
 }
+export function selectRecipeApiDropDownRecipe(state: StateVariables): string {
+  return state.recipeApiStateVar.apiDropDownRecipe;
+}
+export function selectRecipeApiCustomRecipe(state: StateVariables): string {
+  return state.recipeApiStateVar.apiCustomRecipe;
+}
 export function selectRecipeApiStatus(state: StateVariables): string {
   return state.recipeApiStateVar.apiStatus;
 }

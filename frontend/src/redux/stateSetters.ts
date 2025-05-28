@@ -69,6 +69,14 @@ export const stateSetters = {
     const newValue = action.payload;
     state.recipeApiStateVar.apiRecipe = newValue;
   },
+  recipeApiDropDownRecipe: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.recipeApiStateVar.apiDropDownRecipe = newValue;
+  },
+  recipeApiCustomRecipe: function (state: StateVariables, action: Action) {
+    const newValue = action.payload;
+    state.recipeApiStateVar.apiCustomRecipe = newValue;
+  },
   recipeApiStatus: function (state: StateVariables, action: Action) {
     const newValue = action.payload;
     state.recipeApiStateVar.apiStatus = newValue;
