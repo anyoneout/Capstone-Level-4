@@ -11,18 +11,12 @@ import {
 } from "../redux/stateSelectors";
 import { set } from "../redux/store";
 import { handleOaFetchUpdate } from "../controllers/handleOaFetchUpdate";
-import { RecipeApiResponsePage } from "../../archive/RecipeApiResponsePage";
 import { getRecipe } from "../modules/getRecipe";
-import { getAiResponse } from "../modules/getAiResponse";
 
 export function OaPage() {
-  const oaToken = localStorage.getItem("oaToken");
   const dispatch = useDispatch();
   const didMount = useSelector(selectOaPageDidMount);
-  /*   const aiRecipeChoice = localStorage.getItem("aiRecipe"); */
   const apiStatus = useSelector(selectRecipeApiStatus);
-  const dropDownRecipeChoice = useSelector(selectRecipeApiDropDownRecipe);
-  const customRecipeChoice = useSelector(selectRecipeApiCustomRecipe);
   const aiRecipeChoice = useSelector(selectRecipeApiRecipe);
 
   useEffect(componentDidMount, []);
@@ -46,7 +40,7 @@ export function OaPage() {
             <legend>Select a recipe, enter ingredients or enter a recipe</legend>
             <fieldset>
               <div className="input-group mb-2" data-bs-theme="dark">
-                <select className="form-select" id="chosenRecipe" style={{ fontSize: ".8rem" }}>
+                <select className="form-select" id="chosenOaRecipe" style={{ fontSize: ".8rem" }}>
                   <option value="">Select a Recipe...</option>
                   {recipeArray.map((recipe, index) => (
                     <option key={index} value={recipe}>
@@ -64,7 +58,7 @@ export function OaPage() {
                     placeholder="Ingredient 1"
                     name="ingredientOne"
                     style={{ fontSize: ".8rem" }}
-                    id="ingredientOne"
+                    id="ingredientOaOne"
                   />
                   <input
                     type="text"
@@ -72,7 +66,7 @@ export function OaPage() {
                     placeholder="Ingredient 2"
                     name="ingredientTwo"
                     style={{ fontSize: ".8rem" }}
-                    id="ingredientTwo"
+                    id="ingredientOaTwo"
                   />
 
                   <input
@@ -81,7 +75,7 @@ export function OaPage() {
                     placeholder="Ingredient 3"
                     name="ingredientThree"
                     style={{ fontSize: ".8rem" }}
-                    id="ingredientThree"
+                    id="ingredientOaThree"
                   />
                 </div>
               </div>
@@ -110,19 +104,24 @@ export function OaPage() {
 
       <div className="row mt-2">
         <div className="col-12 col-md-5 d-flex align-items-center justify-content-center">
-          <div className="spinner-border text-info position-absolute top-60 start-25" role="status" id="spinnerOne" style={{ visibility: "hidden" }}>
+          <div
+            className="spinner-border text-info position-absolute top-60 start-25"
+            role="status"
+            id="spinnerOaOne"
+            style={{ visibility: "hidden" }}
+          >
             <span className="visually-hidden"></span>
           </div>
-          <img id="recipeAI" className="rounded-circle" style={{ maxWidth: "100%" }} />
+          <img id="recipeOaAi" className="rounded-circle" style={{ maxWidth: "100%" }} />
         </div>
         <div className="col-12 col-md-5 d-flex align-items-center justify-content-center">
-          <div className="spinner-border text-info" role="status" id="spinnerTwo" style={{ visibility: "hidden" }}>
+          <div className="spinner-border text-info" role="status" id="spinnerOaTwo" style={{ visibility: "hidden" }}>
             <span className="visually-hidden"></span>
           </div>
-          <img id="ingredientsAI" style={{ maxWidth: "100%" }} />
+          <img id="ingredientsOaAi" style={{ maxWidth: "100%" }} />
         </div>
         <div className="col-10 col-md-2 d-flex align-items-center">
-          <div id="recipeIngredients"></div>
+          <div id="recipeOaIngredients"></div>
         </div>
       </div>
     </div>
@@ -130,6 +129,7 @@ export function OaPage() {
 
   async function handleClick(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const oaToken = localStorage.getItem("oaToken");
     if (!oaToken) {
       return alert("An Open AI token is required!");
     }

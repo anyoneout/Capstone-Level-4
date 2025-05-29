@@ -4,7 +4,6 @@ export async function handleOaFetchUpdate(dropDownRecipe: string, customRecipe: 
   const elements = getDomElements();
   const { recipeImg, ingredientsImg, ingredientsHTML, spinnerOne, spinnerTwo } = elements;
   const recipeChoice = customRecipe || dropDownRecipe || aiRecipe;
-  console.log(recipeChoice);
 
   const oaUserToken = localStorage.getItem("oaToken");
 
@@ -28,11 +27,11 @@ export async function handleOaFetchUpdate(dropDownRecipe: string, customRecipe: 
 
   function getDomElements() {
     return {
-      recipeImg: document.getElementById("recipeAI") as HTMLImageElement,
-      ingredientsImg: document.getElementById("ingredientsAI") as HTMLImageElement,
-      ingredientsHTML: document.getElementById("recipeIngredients") as HTMLElement,
-      spinnerOne: document.getElementById("spinnerOne") as HTMLElement,
-      spinnerTwo: document.getElementById("spinnerTwo") as HTMLElement,
+      recipeImg: document.getElementById("recipeOaAi") as HTMLImageElement,
+      ingredientsImg: document.getElementById("ingredientsOaAi") as HTMLImageElement,
+      ingredientsHTML: document.getElementById("recipeOaIngredients") as HTMLElement,
+      spinnerOne: document.getElementById("spinnerOaOne") as HTMLElement,
+      spinnerTwo: document.getElementById("spinnerOaTwo") as HTMLElement,
     };
   }
 

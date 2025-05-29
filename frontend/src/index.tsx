@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Home } from "./Views/Home";
 import { About } from "./Views/About";
-import { BfPage } from "./Views/BfPage";
 import { OaPage } from "./Views/OaPage";
 import Examples from "./Views/Examples";
 import { HandleRefresh } from "./Views/components/HandleRefresh";
@@ -22,6 +21,7 @@ import { store } from "./redux/store";
 import { BackendTest } from "./Views/BackendTest";
 import { AiPage } from "../archive/AiPage";
 import { RecipeApiResponsePage } from "../archive/RecipeApiResponsePage";
+import { BfPage } from "./Views/BfPage";
 
 const bodyTag = document.getElementById("bodyTag");
 const root = createRoot(bodyTag);

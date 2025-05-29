@@ -1,16 +1,12 @@
 import { fetchBfIngredientsImage, fetchBfIngredientsList, fetchBfRecipeImage } from "../modules/bfFetchFunctionsUpdate";
 
-export async function handleBfFetchUpdate() {
+export async function handleBfFetchUpdate(dropDownRecipe: string, customRecipe: string, aiRecipe: string) {
+  const elements = getDomElements();
+  const { recipeImg, ingredientsImg, ingredientsHTML, spinnerOne, spinnerTwo } = elements;
+  const recipeChoice = customRecipe || dropDownRecipe || aiRecipe;
+
   const hfUserToken = localStorage.getItem("hfToken");
   const oaUserToken = localStorage.getItem("oaToken");
-  const elements = getDomElements();
-  const { recipeSelect, recipeImg, ingredientsImg, ingredientsHTML, spinnerOne, spinnerTwo, customRecipeInput } =
-    elements;
-
-  const dropDownRecipeChoice = recipeSelect.value;
-  const inputRecipeChoice = customRecipeInput.value;
-  const recipeChoice = inputRecipeChoice !== "" ? inputRecipeChoice : dropDownRecipeChoice;
-
   isVisibleElement(spinnerOne, true);
 
   const recipeImageUrl = await fetchBfRecipeImage(recipeChoice, hfUserToken);
@@ -32,13 +28,11 @@ export async function handleBfFetchUpdate() {
 
   function getDomElements() {
     return {
-      recipeSelect: document.getElementById("chosenRecipe") as HTMLSelectElement,
-      recipeImg: document.getElementById("recipeAI") as HTMLImageElement,
-      ingredientsImg: document.getElementById("ingredientsAI") as HTMLImageElement,
-      ingredientsHTML: document.getElementById("recipeIngredients") as HTMLElement,
-      spinnerOne: document.getElementById("spinnerOne") as HTMLElement,
-      spinnerTwo: document.getElementById("spinnerTwo") as HTMLElement,
-      customRecipeInput: document.getElementById("customRecipeInputBf") as HTMLInputElement,
+      recipeImg: document.getElementById("recipeBfAi") as HTMLImageElement,
+      ingredientsImg: document.getElementById("ingredientsBfAi") as HTMLImageElement,
+      ingredientsHTML: document.getElementById("recipeBfIngredients") as HTMLElement,
+      spinnerOne: document.getElementById("spinnerBfOne") as HTMLElement,
+      spinnerTwo: document.getElementById("spinnerBfTwo") as HTMLElement,
     };
   }
 
