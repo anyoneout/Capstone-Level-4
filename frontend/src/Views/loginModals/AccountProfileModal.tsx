@@ -114,65 +114,65 @@ export function AccountProfileModal() {
   return (
     <>
       {showProfileModal && (
-        <div
-          className="modal fade show w-100"
-          id="profileModal"
-          style={{ display: "block", backgroundColor: "rgba(0,0,0,0.7)" }}
-        >
-          <div
-            className="modal-dialog modal-dialog-centered mx-auto w-100"
-            data-bs-theme="dark"
-            style={{ width: "340px" }}
-          >
+        <div className="modal fade show w-100" id="profileModal" style={{ display: "block", backgroundColor: "rgba(0,0,0,0.7)" }}>
+          <div className="modal-dialog modal-dialog-centered mx-auto w-100" data-bs-theme="dark" style={{ width: "340px" }}>
             <div className="modal-content mx-auto border rounded-0">
               <div className="modal-body w-100 mx-auto">
                 <div className="container mt-3">
-                  <div className="card">
+                  <div className="card border-0">
                     <h5 className="mb-3 border-bottom pb-2">Personal details</h5>
 
                     <div className="row mb-2">
-                      <div className="col-md-6 fw-bold">Full name:</div>
+                      <div className="col-md-6 fw-bold">
+                        <h6>Full name:</h6>
+                      </div>
                       <div className="col-md-6">{authName}</div>
                     </div>
 
                     <div className="row mb-2">
-                      <div className="col-md-6 fw-bold">Password:</div>
+                      <div className="col-md-6 fw-bold">
+                        <h6>Password:</h6>
+                      </div>
                       <div className="col-md-6">{authPassword}</div>
                     </div>
 
                     <div className="row mb-2">
-                      <div className="col-md-6 fw-bold">Phone Number:</div>
+                      <div className="col-md-6 fw-bold">
+                        <h6>Phone Number:</h6>
+                      </div>
                       <div className="col-md-6">{authPhone}</div>
                     </div>
 
                     <div className="row mb-2">
-                      <div className="col-md-6 fw-bold">Email:</div>
+                      <div className="col-md-6 fw-bold">
+                        <h6>Email:</h6>
+                      </div>
                       <div className="col-md-6">{authEmail}</div>
                     </div>
 
                     <br />
                     <div className="row mb-2">
-                      <div className="col-md-6 fw-bold">Hugging Face token:</div>
+                      <div className="col-md-6 fw-bold">
+                        <h6>Hugging Face token:</h6>
+                      </div>
                       <div className="col-md-6">{authHfToken.slice(0, 20)}</div>
                     </div>
                     <div className="row mb-2">
-                      <div className="col-md-6 fw-bold">Open AI token:</div>
+                      <div className="col-md-6 fw-bold">
+                        <h6>Open AI token:</h6>
+                      </div>
                       <div className="col-md-6">{authOaToken.slice(0, 20)}</div>
                     </div>
                   </div>
                 </div>
-                <button
-                  onClick={handleUpdateModal}
-                  type="button"
-                  className="mx-auto mt-5 pt-1 btn btn-warning btn-sm w-100"
-                >
+                <button onClick={handleUpdateModal} type="button" className="mx-auto mt-5 pt-1 btn btn-warning btn-sm w-100">
                   Update
-                </button>
-                <button onClick={handleLogOut} type="button" className="mx-auto pt-1 btn btn-primary btn-sm w-100">
-                  Log out
                 </button>
                 <button onClick={handleCloseModal} type="button" className="btn btn-secondary w-100 btn-sm">
                   Close
+                </button>
+                <button onClick={handleLogOut} type="button" className="mx-auto pt-1 btn btn-primary btn-sm w-100">
+                  Log out
                 </button>
               </div>
             </div>

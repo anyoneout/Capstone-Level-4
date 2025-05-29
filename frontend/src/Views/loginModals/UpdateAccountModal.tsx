@@ -135,11 +135,7 @@ export function UpdateAccountModal() {
   return (
     <>
       {showUpdateModal && (
-        <div
-          className="modal fade show"
-          id="updateModal"
-          style={{ display: "block", backgroundColor: "rgba(0,0,0,0.7)" }}
-        >
+        <div className="modal fade show" id="updateModal" style={{ display: "block", backgroundColor: "rgba(0,0,0,0.7)" }}>
           <div className="modal-dialog modal-dialog-centered mx-auto" data-bs-theme="dark" style={{ width: "340px" }}>
             <div className="modal-content mx-auto bg-dark text-white border rounded-0">
               <div className="modal-header d-flex justify-contents-center text-center">
@@ -190,37 +186,25 @@ export function UpdateAccountModal() {
                   </div>
                   <div className="input-group mb-1 mt-4">
                     <span className="input-group-text">Email:</span>
-                    <input
-                      type="email"
-                      className="form-control"
-                      aria-label="user email"
-                      defaultValue={authEmail}
-                      readOnly
-                    />
+                    <input type="email" className="form-control custom-focus-border" aria-label="user email" defaultValue={authEmail} readOnly />
                   </div>
                   <div className="input-group mb-1">
                     <span className="input-group-text">Password:</span>
-                    <input
-                      type="text"
-                      className="form-control"
-                      aria-label="password"
-                      defaultValue={authPassword}
-                      readOnly
-                    />
+                    <input type="text" className="form-control custom-focus-border" aria-label="password" defaultValue={authPassword} readOnly />
                   </div>
                   <div className="input-group mb-1">
                     <span className="input-group-text">Name:</span>
-                    <input type="text" className="form-control" name="updateName" aria-label="update user name" />
+                    <input type="text" className="form-control custom-focus-border" name="updateName" aria-label="update user name" />
                   </div>
                   <div className="input-group mb-1">
                     <span className="input-group-text">Phone:</span>
-                    <input type="tel" className="form-control" name="updatePhone" aria-label="update user phone" />
+                    <input type="tel" className="form-control custom-focus-border" name="updatePhone" aria-label="update user phone" />
                   </div>
                   <div className="input-group mb-1">
                     <span className="input-group-text">Hugging Face:</span>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control custom-focus-border"
                       name="updateHfToken"
                       aria-label="update Hugging Face token"
                       defaultValue={hfToken}
@@ -230,7 +214,7 @@ export function UpdateAccountModal() {
                     <span className="input-group-text">Open AI:</span>
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control custom-focus-border"
                       name="updateOaToken"
                       aria-label="update OpenAI token"
                       defaultValue={oaToken}

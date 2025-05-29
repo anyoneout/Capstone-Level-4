@@ -99,22 +99,40 @@ export function CreateAccountModal() {
               <form onSubmit={handleSubmit}>
                 <div className="modal-body d-flex justify-content-center">
                   <div className="d-flex justify-content-center">
-                    <input type="email" className="form-control my-1" placeholder="Email" name="email" style={{ width: "95%" }} />
+                    <input type="email" className="form-control my-1 custom-focus-border" placeholder="Email" name="email" style={{ width: "95%" }} />
                   </div>
                   <div className="d-flex justify-content-center">
-                    <input type="password" className="form-control mb-1" placeholder="Password" name="password" style={{ width: "95%" }} />
+                    <input
+                      type="password"
+                      className="form-control mb-1 custom-focus-border"
+                      placeholder="Password"
+                      name="password"
+                      style={{ width: "95%" }}
+                    />
                   </div>
                   <div className="d-flex justify-content-center">
-                    <input type="text" className="form-control my-1" placeholder="Name" name="name" style={{ width: "95%" }} />
+                    <input type="text" className="form-control my-1 custom-focus-border" placeholder="Name" name="name" style={{ width: "95%" }} />
                   </div>
                   <div className="d-flex justify-content-center">
-                    <input type="tel" className="form-control mb-1" placeholder="Phone" name="phone" style={{ width: "95%" }} />
+                    <input type="tel" className="form-control mb-1 custom-focus-border" placeholder="Phone" name="phone" style={{ width: "95%" }} />
                   </div>
                   <div className="d-flex justify-content-center">
-                    <input type="text" className="form-control my-1" placeholder="Hugging Face token" name="hfToken" style={{ width: "95%" }} />
+                    <input
+                      type="text"
+                      className="form-control my-1 custom-focus-border"
+                      placeholder="Hugging Face token"
+                      name="hfToken"
+                      style={{ width: "95%" }}
+                    />
                   </div>
                   <div className="d-flex justify-content-center">
-                    <input type="text" className="form-control mb-1" placeholder="Open AI token" name="oaToken" style={{ width: "95%" }} />
+                    <input
+                      type="text"
+                      className="form-control mb-1 custom-focus-border"
+                      placeholder="Open AI token"
+                      name="oaToken"
+                      style={{ width: "95%" }}
+                    />
                   </div>
                   <div style={{ minHeight: "1.35rem", fontSize: ".85rem" }} className="text-danger text-center fw-bold">
                     {" "}

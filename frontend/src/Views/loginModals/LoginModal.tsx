@@ -94,11 +94,7 @@ export function LoginModal() {
   return (
     <>
       {showSignInModal && (
-        <div
-          className="modal fade show"
-          id="loginModal"
-          style={{ display: "block", backgroundColor: "rgba(0,0,0,0.7)" }}
-        >
+        <div className="modal fade show" id="loginModal" style={{ display: "block", backgroundColor: "rgba(0,0,0,0.7)" }}>
           <div
             className="modal-dialog 
            modal-dialog-centered mx-auto"
@@ -117,28 +113,19 @@ export function LoginModal() {
               <form onSubmit={handleSubmit}>
                 <div className="modal-body" data-bs-theme="dark">
                   <div className="d-flex justify-content-center">
-                    <input
-                      type="email"
-                      className="form-control my-1"
-                      placeholder="Email"
-                      name="email"
-                      style={{ width: "95%" }}
-                    />
+                    <input type="email" className="form-control my-1 custom-focus-border" placeholder="Email" name="email" style={{ width: "95%" }} />
                   </div>
                   <div className="d-flex justify-content-center">
                     <input
                       type="password"
-                      className="form-control mb-1"
+                      className="form-control mb-1 custom-focus-border"
                       placeholder="Password"
                       name="password"
                       style={{ width: "95%" }}
                     />
                   </div>
                   <div className="d-flex justify-content-center">
-                    <div
-                      style={{ minHeight: "1.35rem", fontSize: ".85rem", width: "95%" }}
-                      className="text-danger text-center fw-bold"
-                    >
+                    <div style={{ minHeight: "1.35rem", fontSize: ".85rem", width: "95%" }} className="text-danger text-center fw-bold">
                       {" "}
                       {errorResponse}
                     </div>

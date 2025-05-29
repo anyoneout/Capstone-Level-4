@@ -31,12 +31,12 @@ export function BfPage() {
           </div>
         </div>
 
-        <div className="col-md-6 mt-2 mb-4">
+        <div className="col-md-6 mb-4">
           <form onSubmit={handleClick}>
             <legend>Select a recipe, enter ingredients or enter a recipe</legend>
             <fieldset>
-              <div className="input-group mb-2" data-bs-theme="dark">
-                <select className="form-select" id="chosenBfRecipe" style={{ fontSize: ".8rem" }} onFocus={clearResponse}>
+              <div className="input-group mb-2 " data-bs-theme="dark">
+                <select className="form-select custom-focus-border" id="chosenBfRecipe" style={{ fontSize: ".8rem" }} onFocus={clearResponse}>
                   <option value="">Select a Recipe...</option>
                   {recipeArray.map((recipe, index) => (
                     <option key={index} value={recipe}>
@@ -50,7 +50,7 @@ export function BfPage() {
                 <div className="d-flex justify-content-center" data-bs-theme="dark" style={{ width: "100%", fontSize: ".8rem" }}>
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control custom-focus-border"
                     placeholder="Ingredient 1"
                     name="ingredientOne"
                     style={{ fontSize: ".8rem" }}
@@ -59,7 +59,7 @@ export function BfPage() {
                   />
                   <input
                     type="text"
-                    className="form-control mx-2"
+                    className="form-control mx-2 custom-focus-border"
                     placeholder="Ingredient 2"
                     name="ingredientTwo"
                     style={{ fontSize: ".8rem" }}
@@ -69,7 +69,7 @@ export function BfPage() {
 
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control custom-focus-border"
                     placeholder="Ingredient 3"
                     name="ingredientThree"
                     style={{ fontSize: ".8rem" }}
@@ -82,7 +82,7 @@ export function BfPage() {
               <div className="input-group mt-2" data-bs-theme="dark">
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control custom-focus-border"
                   id="customRecipeInputBf"
                   placeholder="Or enter a custom recipe..."
                   style={{ fontSize: ".8rem" }}

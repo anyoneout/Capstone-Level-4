@@ -39,6 +39,10 @@ body {
   }
 }
 
+.custom-focus-border:focus {
+  border-color: #8cecff !important;
+}
+
 .navbar-width {
   max-width: 920px;
   width: 100%;

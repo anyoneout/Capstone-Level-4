@@ -19,7 +19,7 @@ export function OaPage() {
   return (
     <div className="container api-container navbar-width mt-5 mb-5">
       <div className="row mt-5 mb-5">
-        <div className="col-md-6 mb-5">
+        <div className="col-md-6 mt-3 mb-5">
           <div className="d-flex justify-content-start align-items-center" style={{ color: "#fff78a", padding: "10px 0" }}>
             <ApiOpenAiIcon />
           </div>
@@ -28,12 +28,12 @@ export function OaPage() {
           </div>
         </div>
 
-        <div className="col-md-6 mt-2 mb-4">
+        <div className="col-md-6 mb-4">
           <form onSubmit={handleClick}>
             <legend>Select a recipe, enter ingredients or enter a recipe</legend>
             <fieldset>
               <div className="input-group mb-2" data-bs-theme="dark">
-                <select className="form-select" id="chosenOaRecipe" style={{ fontSize: ".8rem" }} onFocus={clearResponse}>
+                <select className="form-select custom-focus-border" id="chosenOaRecipe" style={{ fontSize: ".8rem" }} onFocus={clearResponse}>
                   <option value="">Select a Recipe...</option>
                   {recipeArray.map((recipe, index) => (
                     <option key={index} value={recipe}>
@@ -47,7 +47,7 @@ export function OaPage() {
                 <div className="d-flex justify-content-center" data-bs-theme="dark" style={{ width: "100%", fontSize: ".8rem" }}>
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control custom-focus-border"
                     placeholder="Ingredient 1"
                     name="ingredientOne"
                     style={{ fontSize: ".8rem" }}
@@ -56,7 +56,7 @@ export function OaPage() {
                   />
                   <input
                     type="text"
-                    className="form-control mx-2"
+                    className="form-control mx-2 custom-focus-border"
                     placeholder="Ingredient 2"
                     name="ingredientTwo"
                     style={{ fontSize: ".8rem" }}
@@ -66,7 +66,7 @@ export function OaPage() {
 
                   <input
                     type="text"
-                    className="form-control"
+                    className="form-control custom-focus-border"
                     placeholder="Ingredient 3"
                     name="ingredientThree"
                     style={{ fontSize: ".8rem" }}
@@ -79,7 +79,7 @@ export function OaPage() {
               <div className="input-group mt-2" data-bs-theme="dark">
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control custom-focus-border"
                   id="customRecipeInputOa"
                   placeholder="Or enter a custom recipe..."
                   style={{ fontSize: ".8rem" }}
