@@ -2,13 +2,7 @@ import React, { useEffect } from "react";
 import { ApiDalleIcon, ApiOpenAiIcon } from "../modules/icons";
 import { recipeArray } from "../modules/recipeArray";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  selectOaPageDidMount,
-  selectRecipeApiCustomRecipe,
-  selectRecipeApiDropDownRecipe,
-  selectRecipeApiRecipe,
-  selectRecipeApiStatus,
-} from "../redux/stateSelectors";
+import { selectOaPageDidMount, selectRecipeApiRecipe } from "../redux/stateSelectors";
 import { set } from "../redux/store";
 import { handleOaFetchUpdate } from "../controllers/handleOaFetchUpdate";
 import { getRecipe } from "../modules/getRecipe";
@@ -16,7 +10,6 @@ import { getRecipe } from "../modules/getRecipe";
 export function OaPage() {
   const dispatch = useDispatch();
   const didMount = useSelector(selectOaPageDidMount);
-  const apiStatus = useSelector(selectRecipeApiStatus);
   const aiRecipeChoice = useSelector(selectRecipeApiRecipe);
 
   useEffect(componentDidMount, []);
@@ -40,7 +33,7 @@ export function OaPage() {
             <legend>Select a recipe, enter ingredients or enter a recipe</legend>
             <fieldset>
               <div className="input-group mb-2" data-bs-theme="dark">
-                <select className="form-select" id="chosenOaRecipe" style={{ fontSize: ".8rem" }}>
+                <select className="form-select" id="chosenOaRecipe" style={{ fontSize: ".8rem" }} onFocus={clearResponse}>
                   <option value="">Select a Recipe...</option>
                   {recipeArray.map((recipe, index) => (
                     <option key={index} value={recipe}>
@@ -59,6 +52,7 @@ export function OaPage() {
                     name="ingredientOne"
                     style={{ fontSize: ".8rem" }}
                     id="ingredientOaOne"
+                    onFocus={clearResponse}
                   />
                   <input
                     type="text"
@@ -67,6 +61,7 @@ export function OaPage() {
                     name="ingredientTwo"
                     style={{ fontSize: ".8rem" }}
                     id="ingredientOaTwo"
+                    onFocus={clearResponse}
                   />
 
                   <input
@@ -76,6 +71,7 @@ export function OaPage() {
                     name="ingredientThree"
                     style={{ fontSize: ".8rem" }}
                     id="ingredientOaThree"
+                    onFocus={clearResponse}
                   />
                 </div>
               </div>
@@ -87,6 +83,7 @@ export function OaPage() {
                   id="customRecipeInputOa"
                   placeholder="Or enter a custom recipe..."
                   style={{ fontSize: ".8rem" }}
+                  onFocus={clearResponse}
                 />
                 <button className="btn btn-sm btn-outline-secondary" type="submit" id="oaFetchButton">
                   Submit
@@ -97,7 +94,6 @@ export function OaPage() {
 
           <div className="mt-2 pt-2 d-flex justify-content-center">
             <h5>{aiRecipeChoice}</h5>
-            <h5>{apiStatus}</h5>
           </div>
         </div>
       </div>
@@ -143,9 +139,18 @@ export function OaPage() {
     dispatch(set.recipeApiCustomRecipe(customRecipe));
     const searchIngredients = [ingredient1, ingredient2, ingredient3].join(",");
     const recipeReturned = await getRecipe(dispatch, searchIngredients);
+    if (recipeReturned === "No recipe found with those ingredients!") {
+      dispatch(set.recipeApiRecipe("No recipe found. Please try different ingredients."));
+      return;
+    }
     handleOaFetchUpdate(dropDownRecipe, customRecipe, recipeReturned);
   }
 
+  function clearResponse(): void {
+    if (aiRecipeChoice) {
+      dispatch(set.recipeApiRecipe(""));
+    }
+  }
   function componentDidMount(): void {
     dispatch(set.oaPageDidMount(true));
     document.title = "Recipe Deconstructor - Open AI Dall-E-3";
@@ -158,6 +163,7 @@ export function OaPage() {
   function componentDidUnmount(): () => void {
     return function delayedUnmount(): void {
       dispatch(set.oaPageDidMount(false));
+      dispatch(set.recipeApiRecipe(""));
       localStorage.setItem("aiRecipe", "");
       console.log("component has unmounted");
     };

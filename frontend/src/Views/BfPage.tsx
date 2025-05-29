@@ -36,7 +36,7 @@ export function BfPage() {
             <legend>Select a recipe, enter ingredients or enter a recipe</legend>
             <fieldset>
               <div className="input-group mb-2" data-bs-theme="dark">
-                <select className="form-select" id="chosenBfRecipe" style={{ fontSize: ".8rem" }}>
+                <select className="form-select" id="chosenBfRecipe" style={{ fontSize: ".8rem" }} onFocus={clearResponse}>
                   <option value="">Select a Recipe...</option>
                   {recipeArray.map((recipe, index) => (
                     <option key={index} value={recipe}>
@@ -55,6 +55,7 @@ export function BfPage() {
                     name="ingredientOne"
                     style={{ fontSize: ".8rem" }}
                     id="ingredientBfOne"
+                    onFocus={clearResponse}
                   />
                   <input
                     type="text"
@@ -63,6 +64,7 @@ export function BfPage() {
                     name="ingredientTwo"
                     style={{ fontSize: ".8rem" }}
                     id="ingredientBfTwo"
+                    onFocus={clearResponse}
                   />
 
                   <input
@@ -72,6 +74,7 @@ export function BfPage() {
                     name="ingredientThree"
                     style={{ fontSize: ".8rem" }}
                     id="ingredientBfThree"
+                    onFocus={clearResponse}
                   />
                 </div>
               </div>
@@ -83,6 +86,7 @@ export function BfPage() {
                   id="customRecipeInputBf"
                   placeholder="Or enter a custom recipe..."
                   style={{ fontSize: ".8rem" }}
+                  onFocus={clearResponse}
                 />
                 <button className="btn btn-sm btn-outline-secondary" type="submit" id="bfFetchButton">
                   Submit
@@ -140,8 +144,19 @@ export function BfPage() {
     dispatch(set.recipeApiCustomRecipe(customRecipe));
     const searchIngredients = [ingredient1, ingredient2, ingredient3].join(",");
     const recipeReturned = await getRecipe(dispatch, searchIngredients);
+    if (recipeReturned === "No recipe found with those ingredients!") {
+      dispatch(set.recipeApiRecipe("No recipe found. Please try different ingredients."));
+      return;
+    }
     handleBfFetchUpdate(dropDownRecipe, customRecipe, recipeReturned);
   }
+
+  function clearResponse(): void {
+    if (aiRecipeChoice) {
+      dispatch(set.recipeApiRecipe(""));
+    }
+  }
+
   function componentDidMount(): void {
     dispatch(set.bfPageDidMount(true));
     document.title = "Recipe Deconstructor - Black Forest Flux";
@@ -158,6 +173,7 @@ export function BfPage() {
     return () => {
       dispatch(set.bfPageDidMount(false));
       localStorage.setItem("aiRecipe", "");
+      dispatch(set.recipeApiRecipe(""));
       console.log("component has unmounted");
     };
   }
